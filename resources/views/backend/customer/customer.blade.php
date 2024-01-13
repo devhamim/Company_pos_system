@@ -30,6 +30,7 @@
                                     <th>Mobile</th>
                                     <th>Email</th>
                                     <th>Address</th>
+                                    <th>Added By</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -42,6 +43,13 @@
                                         <td>{{$customer->customer_phone}}</td>
                                         <td>{{$customer->customer_email == null ? 'null': $customer->customer_email}}</td>
                                         <td>{{$customer->customer_address == null ? 'null': $customer->customer_address}}</td>
+                                        <td>
+                                            @if ($customer->rel_to_customer != null )
+                                                {{$customer->rel_to_customer->name}}
+                                            @else
+                                                Null
+                                            @endif
+                                        </td>
                                         <td><a href="{{route('customer.delete', $customer->id)}}" class=""><i class="fa fa-trash"></i> </a></td>
                                     </tr>
 

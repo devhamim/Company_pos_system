@@ -113,7 +113,7 @@
                                         <select name="status" class="form-control">
                                             <option value="0" {{ $orders->status == 0?'selected':'' }}>Pending</option>
                                             <option value="1" {{ $orders->status == 1?'selected':'' }}>Processing</option>
-                                            <option value="2" {{ $orders->status == 2?'selected':'' }}>In Review</option>
+                                            <option value="2" {{ $orders->status == 2?'selected':'' }}>On Going</option>
                                             <option value="3" {{ $orders->status == 3?'selected':'' }}>Due Payment</option>
                                             <option value="4" {{ $orders->status == 4?'selected':'' }}>Refund payment</option>
                                             <option value="5" {{ $orders->status == 5?'selected':'' }}>Completed</option>

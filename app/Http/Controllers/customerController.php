@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\customers;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class customerController extends Controller
 {
     //customer_list
     function customer_list(){
-        $customer_list = customers::orderBy('created_at', 'desc')->get();
+        if(Auth::user()->role == 1){
+            $customer_list = customers::orderBy('created_at', 'desc')->get();
+        }
+        else{
+            $customer_list = customers::where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        }
         return view('backend.customer.customer',[
             'customer_list'=>$customer_list,
         ]);
@@ -25,6 +31,7 @@ class customerController extends Controller
         ]);
 
         customers::insert([
+            'added_by' => Auth::user()->id,
             'customer_name'=> $request->customer_name,
             'busines_name'=> $request->busines_name,
             'customer_phone'=> $request->customer_phone,

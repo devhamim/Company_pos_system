@@ -10,4 +10,8 @@ class customers extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    function rel_to_customer() {
+        return $this->belongsTo(User::class, 'added_by');
+    }
 }

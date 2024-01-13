@@ -44,7 +44,7 @@
                                             @elseif ($user->role == 2)
                                                 Manager
                                             @else
-                                                Employee
+                                                Sales
                                             @endif
                                         </td>
                                         <td>
@@ -122,7 +122,7 @@
                             <select name="role" id="role" class="form-control">
                                 <option value="1">Super Admin</option>
                                 <option value="2">Manager</option>
-                                <option value="3">Employee</option>
+                                <option value="3">Sales</option>
                             </select>
                             @error('role')
                                 <span class="text-danger">{{$message}}</span>

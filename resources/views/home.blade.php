@@ -88,7 +88,7 @@
             <a href="{{ route('orders.list.status', 2) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-warning">Total In Review</h5>
+                        <h5 class="text-warning">Total On Going</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_in_review }}</h1>
                         </div>
