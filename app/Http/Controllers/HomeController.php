@@ -47,6 +47,7 @@ class HomeController extends Controller
             $total_completed = Order::where('status', 5)->count();
             $total_canceled = Order::where('status', 6)->count();
             $refund_payment = Order::where('status', 4)->get();
+            $customers_count = customers::count();
         }
         else{
             $todayOrders = Order::where('added_by', Auth::user()->id)->whereDate('created_at', now()->toDateString())->count();
@@ -60,8 +61,8 @@ class HomeController extends Controller
             $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
             $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
             $refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->get();
+            $customers_count = customers::where('added_by', Auth::user()->id)->count();
         }
-        $customers_count = customers::count();
         $product_id = Product::all();
         $products_count = Product::count();
         $users_count = User::count();

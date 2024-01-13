@@ -12,18 +12,21 @@
     </div>
     <div class="row">
 
-        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a>
-                <div class="card border-3 border-top border-top-success">
-                    <div class="card-body">
-                        <h5 class="text-info">Total Staff</h5>
-                        <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">{{ $users_count }}</h1>
+        @if (Auth::user()->role == 1)
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                <a>
+                    <div class="card border-3 border-top border-top-success">
+                        <div class="card-body">
+                            <h5 class="text-info">Total Staff</h5>
+                            <div class="metric-value d-inline-block">
+                                <h1 class="mb-1">{{ $users_count }}</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endif
+
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <a>
                 <div class="card border-3 border-top border-top-success">
