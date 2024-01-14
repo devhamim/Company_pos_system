@@ -30,16 +30,22 @@ class customerController extends Controller
             'customer_phone'=>'required',
         ]);
 
-        customers::insert([
-            'added_by' => Auth::user()->id,
-            'customer_name'=> $request->customer_name,
-            'busines_name'=> $request->busines_name,
-            'customer_phone'=> $request->customer_phone,
-            'customer_email'=> $request->customer_email,
-            'customer_address'=> $request->customer_address,
-            'created_at'=> Carbon::now(),
-        ]);
-        return back()->withSuccess('Customer add successfully');
+        if(customers::where('customer_phone',$request->customer_phone)->exists()){
+            return back()->withError('Customer Number Already Exists');
+        }
+        else{
+            customers::insert([
+                'added_by' => Auth::user()->id,
+                'customer_name'=> $request->customer_name,
+                'busines_name'=> $request->busines_name,
+                'customer_phone'=> $request->customer_phone,
+                'customer_email'=> $request->customer_email,
+                'customer_address'=> $request->customer_address,
+                'created_at'=> Carbon::now(),
+            ]);
+            return back()->withSuccess('Customer add successfully');
+        }
+
     }
 
     function customer_delete($id){
