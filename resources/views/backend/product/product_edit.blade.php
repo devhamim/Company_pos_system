@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
                         <div class="row">
-                            
+
                             <div class="col-lg-6">
                                 <div class="position-relative">
                                     <label class="floating-label" for="Category">Product Category *</label>
@@ -21,7 +21,7 @@
                                                 $after_explode = explode(',', $product->category_id);
                                             @endphp
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}" data-select2-id="{{ $category->id }}" {{ in_array($category->id, $after_explode) ? 'selected' : '' }}>
+                                                <option value="{{ $category->id }}" {{ in_array($category->id, $after_explode) ? 'selected' : '' }}>
                                                     {{ $category->category_name }}
                                                 </option>
                                             @endforeach
@@ -29,7 +29,7 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Regular Price *</label>
@@ -124,56 +124,21 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-4 mb-4 ml-3 m-auto pb-5 text-center">
                         <button class="btn btn-primary">Submit</button>
                     </div>
             </div>
-        </div> 
-    </div>
-    </form>
-        
-    </div>
-
-    {{-- <div class="row">
-        <div class="col-10 m-auto">
-            
         </div>
-    </div> --}}
+    </div>
     </form>
+
+    </div>
 </div>
 @endsection
 
 @section('footer_script')
 
-<script>
-    var loop_count = 1;
-    function add() {
-        loop_count++;
-        // <input type="text" name="paid[]" id="paid"" />
-        var html = '<div class="row mt-4" id="product_attr_'+loop_count+'">';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">SKU</label><input type="text" id="sku" name="sku[]" class="form-control" placeholder="sku" aria-required="true" aria-invalid="false" required></div></div>';
-
-        var color_id_html = jQuery('#color_id').html();
-        html+='<div class="col-md-4"><div class="form-group"><label class="floating-label" for="color_id">Color</label><select class="form-control" name="color_id[]" id="color_id">'+color_id_html+'</select></div></div>';
-        
-        var size_id_html = jQuery('#size_id').html();
-        html+='<div class="col-md-4"><div class="form-group"><label class="floating-label" for="size_id">Size</label><select class="form-control" name="size_id[]" id="size_id">'+size_id_html+'</select></div></div>';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">product quantity</label><input type="number" id="quantity" name="quantity[]" class="form-control" placeholder="quantity"></div></div>';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">Action</label><div><button class="btn btn-danger" name="remove" id="remove" onclick=remove_more("'+loop_count+'")> - Remove</button></div></div></div>';
-
-        html+='</div>';
-
-        jQuery('#product_attr_box').append(html);
-    }
-
-    function remove_more(loop_count) {
-        jQuery('#product_attr_'+loop_count).remove();
-    }
-</script>
 @endsection

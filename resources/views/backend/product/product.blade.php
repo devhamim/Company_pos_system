@@ -17,7 +17,7 @@
                                     <select class="select2-demo form-control select2-hidden-accessible" multiple="" style="width: 100%" data-select2-id="4" tabindex="-1" aria-hidden="true" name="category_id[]">
                                         <optgroup label="" data-select2-id="">
                                             @foreach ($categories as $category)
-                                                <option value="{{$category->id}}" data-select2-id="{{$category->id}}">{{$category->category_name}}</option>
+                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
                                             @endforeach
                                         </optgroup>
                                     </select>
@@ -116,117 +116,14 @@
                         <button class="btn btn-primary">Submit</button>
                     </div>
             </div>
-        </div> 
-    </div>
-    </form>
-        
-    </div>
-
-    {{-- <div class="row">
-        <div class="col-10 m-auto">
-            
         </div>
-    </div> --}}
+    </div>
     </form>
+
+    </div>
 </div>
 @endsection
 
 @section('footer_script')
 
-{{-- <script>
-    var loop_count = 1;
-    function add() {
-        loop_count++;
-
-        var html = '<div class="row mt-4" id="product_attr_'+loop_count+'">';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">SKU</label><input type="text" id="sku" name="sku[]" class="form-control" placeholder="sku" aria-required="true" aria-invalid="false" required></div></div>';
-
-        var color_id_html = jQuery('#color_id').html();
-        html+='<div class="col-md-4"><div class="form-group"><label class="floating-label" for="color_id">Color</label><select class="form-control" name="color_id[]" id="color_id">'+color_id_html+'</select></div></div>';
-        
-        var size_id_html = jQuery('#size_id').html();
-        html+='<div class="col-md-4"><div class="form-group"><label class="floating-label" for="size_id">Size</label><select class="form-control" name="size_id[]" id="size_id">'+size_id_html+'</select></div></div>';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">product quantity</label><input type="number" id="quantity" name="quantity[]" class="form-control" placeholder="quantity"></div></div>';
-
-        html+='<div class="col-md-4"><div class="form-group"><label class="form-label">Action</label><div><button class="btn btn-danger" name="remove" id="remove" onclick=remove_more("'+loop_count+'")> - Remove</button></div></div></div>';
-
-        html+='</div>';
-
-        jQuery('#product_attr_box').append(html);
-    }
-
-    function remove_more(loop_count) {
-        jQuery('#product_attr_'+loop_count).remove();
-    }
-</script> --}}
-    <script>
-    // $(document).ready(function () {
-    //     $('#add').click(function(e) {
-    //         alert('okay');
-            // e.preventDefault();
-            // function add_more() {
-            //     var html = '<div class="row" id="add_more"></div>'
-
-            //     html += '<h1>Hello</h1>'
-
-            //             jQuery('#add_more').append(html);
-            // }
-
-    //     })
-    // })
-
-        // $(document).ready(function () {
-        //     $('#add_more').click(function(e) {
-        //         e.preventDefault();
-        //         var html = '<div class="row mt-5 mb-5 bg-info" id="product_attr_box"></div>'
-            
-        //     html += '<div class="row mt-5 mb-5 bg-info mt-1"><div class="col-12"><div class="row mt-5"><div class="col-md-4"><div class="form-group"><label class="floating-label" <option value="">Product category</option>@foreach ($categories as $category)<option value="{{$category->id}}">{{$category->category_name}}</option>@endforeach</select></div></div><div class="col-md-4"><div class="form-group"><label class="form-label">product quantity</label><input type="number" name="quantity" class="form-control" placeholder="quantity"> @error('quantity') <span class="text-danger">{{$message}}</span>@enderror</div></div><div class="col-md-4"><div class="form-group"><label class="form-label">Action</label><div><button class="btn" id="add_more">Add new one</button></div></div></div></div></div>'
-
-        //     jQuery('#product_attr_box').append(html);
-        //     })
-        // })
-        // function add_more() {
-        //     var html = '<div class="row mt-5 mb-5" id="product_attr_box"><div class="col-md-12"></div></div>'
-            
-        //     html += '<div class="row mt-5 mb-5" id="product_attr_box"><div class="col-md-4">Hello</div></div>'
-
-        //     jQuery('#product_attr_box').append(html);
-        // }
-
-        // var i = 0;
-        // $('#add').click(function () {
-        //     ++i;
-        //     $('#add_more').append(
-        //         `<div class="col-md-4">
-        //                         <div class="form-group">
-        //                             <label class="floating-label" for="Category">Category</label>
-        //                             <select class="form-control" name="category_id[`+i+`]" id="Category">
-        //                                 <option value="">Product category</option>
-        //                                 @foreach ($categories as $category)
-        //                                     <option value="{{$category->id}}">{{$category->category_name}}</option>
-        //                                 @endforeach
-        //                             </select>
-        //                         </div>
-        //                     </div>
-        //                     <div class="col-md-4">
-        //                         <div class="form-group">
-        //                             <label class="form-label">product quantity</label>
-        //                             <input type="number" name="quantity[`+i+`]" class="form-control" placeholder="quantity">
-        //                             @error('quantity')
-        //                                 <span class="text-danger">{{$message}}</span>
-        //                             @enderror
-        //                         </div>
-        //                     </div>
-        //                     <div class="col-md-4">
-        //                         <div class="form-group">
-        //                             <label class="form-label">Action</label>
-        //                             <div>
-        //                                 <button class="btn btn-danger" id="add">Add new one</button>
-        //                             </div>
-        //                         </div>
-        //                     </div>`;)
-        // });
-    </script>
 @endsection
