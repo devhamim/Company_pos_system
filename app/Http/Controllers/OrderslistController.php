@@ -210,8 +210,8 @@ function orders_store(Request $request){
     ]);
 
     // Create billing details
-    if($request->customer_id){
-        customers::where('id', $request->customer_id)->update([
+    if(customers::where('customer_phone', $request->customer_phone)->exists()){
+        customers::where('customer_phone', $request->customer_phone)->update([
             'customer_name' => $request->input('customer_name'),
             'customer_phone' => $request->input('customer_phone'),
             'customer_address' => $request->input('customer_address'),
