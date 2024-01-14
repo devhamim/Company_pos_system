@@ -222,6 +222,7 @@ function orders_store(Request $request){
     }
     else{
         customers::create([
+            'added_by' => Auth::user()->id,
             'customer_name' => $request->input('customer_name'),
             'customer_phone' => $request->input('customer_phone'),
             'customer_address' => $request->input('customer_address'),
