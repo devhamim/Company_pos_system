@@ -115,7 +115,7 @@
             <a href="{{ route('orders.list.status', 4) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-success">Total Refund payment</h5>
+                        <h5 class="text-success">Total Refund</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_refund_payment }}</h1>
                         </div>
@@ -198,7 +198,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <div class="card border-3 border-top border-top-success">
                 <div class="card-body">
-                    <h5 class="text-success">Total Refund Payment</h5>
+                    <h5 class="text-success">Total Refund</h5>
                     <div class="metric-value d-inline-block">
                         <h1 class="mb-1">৳{{ $total_refund }}</h1>
                     </div>
