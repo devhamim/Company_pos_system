@@ -178,7 +178,7 @@ class OrderslistController extends Controller
 function orders_store(Request $request){
     $request->validate([
         'customer_name' => 'required',
-        'customer_phone' => 'required|max:11',
+        'customer_phone' => 'required|min:11|max:11',
         'busines_name' => 'required',
     ]);
     $order_id = 'INV'.'-'.rand(1000,9999);
@@ -354,7 +354,7 @@ public function orders_update(Request $request)
 {
     $request->validate([
         'customer_name' => 'required',
-        'customer_phone' => 'required|max:11',
+        'customer_phone' => 'required|min:11|max:11',
         'busines_name' => 'required',
     ]);
 

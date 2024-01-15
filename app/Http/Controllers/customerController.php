@@ -27,7 +27,7 @@ class customerController extends Controller
         $request->validate([
             'customer_name'=>'required',
             'busines_name'=>'required',
-            'customer_phone'=>'required',
+            'customer_phone'=>'required|min:11|max:11',
         ]);
 
         if(customers::where('customer_phone',$request->customer_phone)->exists()){
