@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class customerController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //customer_list
     function customer_list(){
         if(Auth::user()->role == 1){

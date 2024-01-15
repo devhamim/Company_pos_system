@@ -11,6 +11,16 @@ use App\Models\setting;
 
 class invoiceController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     //invoice_download
     function invoice_download($order_id){
         $data = Order::find($order_id);
@@ -26,5 +36,5 @@ class invoiceController extends Controller
             'order_id'=>$order_id,
         ]);
         return $invoice->download('invoice.pdf');
-    } 
+    }
 }

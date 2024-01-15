@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Cookie;
 
 class WishlistController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     function wishlist() {
         $categories = Category::all();
         $cookie_data = stripslashes(Cookie::get('shopping_wishlist'));
@@ -33,7 +42,7 @@ class WishlistController extends Controller
                 {
                     $wishlist_data = array();
                 }
-                
+
                 $item_id_list = array_column($wishlist_data, 'item_id');
                 $prod_id_is_there = $prod_id;
 
@@ -57,7 +66,7 @@ class WishlistController extends Controller
                     $prod_slug = $products->slug;
                     $prod_image = $products->preview_image;
                     $priceval = $products->after_discount;
-    
+
                     if($products)
                     {
                         $item_array = array(
@@ -71,7 +80,7 @@ class WishlistController extends Controller
                             'item_slug' => $prod_slug
                         );
                         $wishlist_data[] = $item_array;
-    
+
                         $item_data = json_encode($wishlist_data);
                         $minutes = 60;
                         Cookie::queue(Cookie::make('shopping_wishlist', $item_data, $minutes));
@@ -81,17 +90,17 @@ class WishlistController extends Controller
             } else {
                 return response()->json(['status'=> 'Out of stock']);
             }
-                        
+
             // if(Inventory::where('product_id', $prod_id)->where('color_id', 0)->where('size_id', 0)->first()->quantity == 0) {
-                
-                
+
+
 
 
             // } else {
             //     return response()->json(['status'=> 'Product has color and size']);
             // }
 
-            
+
         } else {
             return response()->json(['status'=> 'Product has color and size']);
         }
@@ -100,7 +109,7 @@ class WishlistController extends Controller
     // delete_from_wishlist
     function delete_from_wishlist(Request $request) {
         $prod_id = $request->input('product_id');
-        
+
         $cookie_data = stripslashes(Cookie::get('shopping_wishlist'));
         $wishlist_data = json_decode($cookie_data, true);
 

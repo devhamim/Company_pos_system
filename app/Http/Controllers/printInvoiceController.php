@@ -6,13 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Billingdetails;
 use App\Models\OrderProduct;
-use app\Exports\OrdersExport;
-use Excel;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class printInvoiceController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //view_invoice
     public function view_invoice($orderId)
 {
@@ -79,15 +87,15 @@ public function excel_exportOrdersReport(Request $request)
             $spreadSheet = new Spreadsheet();
             $spreadSheet->getActiveSheet()->getDefaultColumnDimension()->setWidth(20);
             $spreadSheet->getActiveSheet()->fromArray($data);
-            
+
             $Excel_writer = new Xls($spreadSheet);
 
             header('Content-Type: application/vnd.ms-excel');
             header('Content-Disposition: attachment;filename="order-report.xls"');
             header('Cache-Control: max-age=0');
-            
+
             ob_end_clean();
-            
+
             $Excel_writer->save('php://output');
             exit();
         } catch (SpreadsheetException $e) {

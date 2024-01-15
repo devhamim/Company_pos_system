@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
 use App\Models\Category;
-use App\Models\Color;
-use App\Models\Inventory;
 use App\Models\Product;
 use App\Models\ProductGallery;
-use App\Models\Size;
 use Carbon\Carbon;
-use Carbon\Cli\Invoker;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Str;
 use Image;
 
@@ -28,7 +21,7 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     //product_add
     function product_add() {
         $categories = Category::all();
@@ -47,7 +40,7 @@ class ProductController extends Controller
             'preview_image' => 'required',
             'quantity' => 'required',
             'gallery_image' => 'required',
-            
+
         ]);
         $after_emplode_cat = implode(',', $request->category_id);
             $product_id = Product::insertGetId([
@@ -62,7 +55,7 @@ class ProductController extends Controller
                 'slug' => Str::random(8).'-'.rand(10000,99999),
                 'created_at' => Carbon::now(),
             ]);
-        
+
         // Preview image
 
         $uploaded_file_one = $request->preview_image;
@@ -87,7 +80,7 @@ class ProductController extends Controller
                 'created_at' => Carbon::now(),
             ]);
         }
-        
+
         return back()->withSuccess('Product added successfully.');
     }
 
@@ -182,9 +175,9 @@ class ProductController extends Controller
                 'slug' => Str::random(8).'-'.rand(10000,99999),
                 'updated_at' => Carbon::now(),
             ]);
-        
-        
+
+
         return redirect()->route('product.list')->withSuccess('Product updated successfully');
     }
-    
+
 }
