@@ -28,6 +28,7 @@ use App\Http\Controllers\courierZoneController;
 use App\Http\Controllers\mediaController;
 use App\Http\Controllers\OrderslistController;
 use App\Http\Controllers\customerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
@@ -47,7 +48,8 @@ Route::get('/product/quick/view/{product_id}', [FrontendController::class, 'prod
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 
 
 // User
@@ -74,19 +76,7 @@ Route::post('/editCourier/{id}', [courierController::class, 'editCourier'])->nam
 Route::post('/courire/update', [courierController::class, 'courire_update'])->name('courire.update');
 Route::get('/courire/delete/{id}', [courierController::class, 'courire_delete'])->name('courire.delete');
 
-// city.list
-Route::get('/city/list', [cityController::class, 'city_list'])->name('city.list');
-Route::post('/city/store', [cityController::class, 'city_store'])->name('city.store');
-Route::post('/editcity/{id}', [cityController::class, 'editcity'])->name('editcity');
-Route::post('/city/update', [cityController::class, 'city_update'])->name('city.update');
-Route::get('/city/delete/{id}', [cityController::class, 'city_delete'])->name('city.delete');
 
-// zone
-Route::get('/zone/list', [courierZoneController::class, 'zone_list'])->name('zone.list');
-Route::post('/zone/store', [courierZoneController::class, 'zone_store'])->name('zone.store');
-Route::post('/editzone/{id}', [courierZoneController::class, 'editzone'])->name('editzone');
-Route::post('/zone/update', [courierZoneController::class, 'zone_update'])->name('zone.update');
-Route::get('/zone/delete/{id}', [courierZoneController::class, 'zone_delete'])->name('zone.delete');
 
 // media
 Route::get('/media/list', [mediaController::class, 'media_list'])->name('media.list');
@@ -145,11 +135,7 @@ Route::get('/banner/delete/{banner_id}', [bannerContoller::class, 'banner_delete
 Route::post('/banner/update/', [bannerContoller::class, 'banner_update'])->name('banner.update');
 
 
-// Color
-Route::get('/color/add', [ColorController::class, 'color_add'])->name('color.add');
-Route::post('/color/store', [ColorController::class, 'color_store'])->name('color.store');
-Route::get('/color/list', [ColorController::class, 'color_list'])->name('color.list');
-Route::get('/color/delete/{color_id}', [ColorController::class, 'color_delete'])->name('color.delete');
+
 
 // Size
 Route::get('/size/add', [SizeController::class, 'size_add'])->name('size.add');
@@ -169,12 +155,7 @@ Route::get('/product/delete/{product_id}', [ProductController::class, 'product_d
 Route::get('/product/edit/{product_id}', [ProductController::class, 'product_edit'])->name('product.edit');
 Route::post('/product/update', [ProductController::class, 'product_update'])->name('product.update');
 
-// order
-Route::get('/order/list', [orderController::class, 'order_list'])->name('order.list');
-Route::post('/order/delivere', [orderController::class, 'order_delivere'])->name('order.delivere');
-Route::get('/order/delete/{order_id}', [orderController::class, 'order_delete'])->name('order.delete');
-Route::get('/order/details/{order_id}', [orderController::class, 'order_details'])->name('order.details');
-Route::post('/order/update', [orderController::class, 'order_update'])->name('order.update');
+
 
 // terms policy
 Route::get('/terms/condition', [TermsconditionController::class, 'terms_condition'])->name('terms.condition');
@@ -182,9 +163,7 @@ Route::get('/terms/privacy/policy', [TermsconditionController::class, 'terms_pri
 Route::post('/terms/conditions/update/{id}', [TermsconditionController::class, 'terms_conditions_update'])->name('terms.conditions.update');
 Route::post('/privacy/policy/update/{id}', [TermsconditionController::class, 'privacy_policy_update'])->name('privacy.policy.update');
 
-// Product timer
-Route::get('/timer/add', [TimerController::class, 'timer_add'])->name('timer.add');
-Route::post('/timer/store', [TimerController::class, 'timer_store'])->name('timer.store');
+
 
 
 // Role management system

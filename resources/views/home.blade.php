@@ -2,16 +2,30 @@
 
 @section('content')
 <div class="container-fluid flex-grow-1 container-p-y">
-    <h4 class="font-weight-bold py-3 mb-0">Ecommerce</h4>
-    <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
+    <div class="d-flex justify-content-between">
+        <h4 class="font-weight-bold py-3 mb-0">Application</h4>
+        <div class="filter">
+            <form action="{{ route('home') }}" method="GET">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
+
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date" value="{{ $defaultEndDate }}" optional>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-muted small mt-0 mb-4 d-block breadcrumb d-flex justify-between">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
             <li class="breadcrumb-item ">Dashboard</li>
-            <li class="breadcrumb-item active">Ecommerce</li>
+            <li class="breadcrumb-item active">Application</li>
         </ol>
     </div>
-    <div class="row">
 
+    <div class="row">
         @if (Auth::user()->role == 1)
             <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
                 <a>
@@ -154,7 +168,7 @@
             $total_refund = 0;
             $total_blance = 0;
             $total_commission = 0;
-            foreach ($orders_list as $order) {
+            foreach ($month_order as $order) {
                 $total_amount += $order->sub_total-$order->discount;
                 $total_payment += $order->paid;
                 $total_due += $order->due;
@@ -246,27 +260,27 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($orders_list->take(5) as $sl=>$orders)
+                            @foreach ($month_order->take(5) as $sl=>$orders)
                             <tr>
                                 <td>{{ $sl+1 }}</td>
-                                <td>{{ $orders->created_at->format('d M') }}</td>
+                                <td>{{ $orders->created_at->format('d M Y') }}</td>
                                 <td>{{ $orders->rel_to_billing->customer_name }}</td>
                                 <td>{{ $orders->rel_to_billing->customer_phone }}</td>
                                 <td>{{ $orders->created_at->format('d-M-Y') }}</td>
                                 <td>
                                     <label class="label label-warning">
                                         @if ($orders->status == 0)
-                                            <div class="badge badge-info">Processing</div>
+                                            <div class="badge badge-info">Pending</div>
                                         @elseif ($orders->status == 1)
-                                            <div class="badge badge-primary">On Hold</div>
+                                            <div class="badge badge-primary">Processing</div>
                                         @elseif ($orders->status == 2)
-                                            <div class="badge badge-success">Completed</div>
+                                            <div class="badge badge-success">In Review</div>
                                         @elseif ($orders->status == 3)
-                                            <div class="badge badge-warning">Pending Payment</div>
-                                        @elseif ($orders->status == 5)
-                                            <div class="badge badge-default">On Delivary</div>
+                                            <div class="badge badge-warning">Due Payment</div>
+                                        @elseif ($orders->status == 4)
+                                            <div class="badge badge-default">Refund Payment</div>
                                         @elseif ($orders->status == 6)
-                                            <div class="badge badge-dark">Pending Invoice</div>
+                                            <div class="badge badge-dark">Completed</div>
                                         @else
                                             <div class="badge badge-danger">Canceled</div>
                                         @endif
@@ -424,7 +438,6 @@
                 }
             }
         };
-        //Flot Ecommerce Chart Start
         $.plot($("#ecom-chart-1"), [{
             data: [
                 [0, 30],

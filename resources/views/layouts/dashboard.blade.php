@@ -380,9 +380,7 @@
     @endif
 
     <!-- Demo -->
-    {{-- <script src="{{asset('backend/js/demo.js"></script> --}}
     <script src="{{asset('backend/js/analytics.js')}}"></script>
-    {{-- <script src="{{asset('backend/js/pages/dashboards_ecommerce.js')}}"></script> --}}
     <script src="{{asset('backend/js/demo.js')}}"></script>
     <script src="{{asset('backend/js/pages/ui_modals.js')}}"></script>
     <script src="{{asset('backend/js/pages/forms_pickers.js')}}"></script>

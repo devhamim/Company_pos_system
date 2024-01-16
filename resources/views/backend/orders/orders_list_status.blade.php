@@ -12,7 +12,20 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">All Orders</h2>
+                            <div class="d-flex justify-content-between">
+                                <h4 class="font-weight-bold py-3 mb-0">All Orders</h4>
+                                <div class="filter">
+                                    <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
+                                        <label for="start_date">Start Date:</label>
+                                        <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
+
+                                        <label for="end_date">End Date:</label>
+                                        <input type="date" id="end_date" name="end_date" value="{{ $defaultEndDate }}" optional>
+
+                                        <button type="submit">Filter</button>
+                                    </form>
+                                </div>
+                            </div>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
