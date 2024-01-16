@@ -289,7 +289,6 @@
                                             <th>Company</th>
                                             <th>D. Date</th>
                                             <th>Status</th>
-                                            <th>Note</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -346,7 +345,6 @@
                                                         @endif
                                                 </div>
                                             </td>
-                                            <td>{{ Str::limit($order->order_note, 10, '...') }}</td>
                                             {{-- <td>Mr. Employee</td> --}}
 
                                             <td class="text-center">
