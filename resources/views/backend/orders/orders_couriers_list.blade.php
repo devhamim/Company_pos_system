@@ -346,7 +346,7 @@
                                                         @endif
                                                 </div>
                                             </td>
-                                            <td>{{ $order->order_note }}</td>
+                                            <td>{{ Str::limit($order->order_note, 10, '...') }}</td>
                                             {{-- <td>Mr. Employee</td> --}}
 
                                             <td class="text-center">
