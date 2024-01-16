@@ -7,7 +7,7 @@
         <div class="filter">
             <form action="{{ route('home') }}" method="GET">
             @csrf
-                
+
                 <label for="start_date">Start Date:</label>
                 <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
 
@@ -276,7 +276,7 @@
                                         @elseif ($orders->status == 1)
                                             <div class="badge badge-primary">Processing</div>
                                         @elseif ($orders->status == 2)
-                                            <div class="badge badge-success">In Review</div>
+                                            <div class="badge badge-success">On Going</div>
                                         @elseif ($orders->status == 3)
                                             <div class="badge badge-warning">Due Payment</div>
                                         @elseif ($orders->status == 4)
