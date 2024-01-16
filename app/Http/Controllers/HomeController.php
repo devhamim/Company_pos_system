@@ -43,10 +43,10 @@ class HomeController extends Controller
                 $startDate = '';
                 $endDate = '';
             }
-            // else {
-            //     $endDates = Carbon::parse($endDate)->addDay();
-            //     $endDate = $endDates->format('Y-m-d');
-            // }
+            else {
+                $endDates = Carbon::parse($endDate)->addDay();
+                $endDate = $endDates->format('Y-m-d');
+            }
         if(Auth::user()->role == 1){
             if(!empty($startDate) && !empty($endDate)){
                 $month_order = Order::whereBetween('created_at', [$startDate, $endDate])->orderBy('id', 'DESC')->get();

@@ -37,10 +37,10 @@ class OrderslistController extends Controller
                 $startDate = '';
                 $endDate = '';
             }
-            // else {
-            //     $endDate = Carbon::parse($endDate)->addDay();
-            //     $endDate = $endDate->format('Y-m-d');
-            // }
+            else {
+                $endDate = Carbon::parse($endDate)->addDay();
+                $endDate = $endDate->format('Y-m-d');
+            }
         if(Auth::user()->role == 1){
             if(!empty($startDate) && !empty($endDate)){
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->orderBy('created_at', 'desc')->get();
@@ -123,10 +123,10 @@ class OrderslistController extends Controller
                 $startDate = '';
                 $endDate = '';
             }
-            // else {
-            //     $endDate = Carbon::parse($endDate)->addDay();
-            //     $endDate = $endDate->format('Y-m-d');
-            // }
+            else {
+                $endDate = Carbon::parse($endDate)->addDay();
+                $endDate = $endDate->format('Y-m-d');
+            }
         if(Auth::user()->role == 1){
             if(!empty($startDate) && !empty($endDate)){
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->orderBy('created_at', 'desc')->get();
