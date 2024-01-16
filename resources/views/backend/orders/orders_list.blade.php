@@ -16,6 +16,7 @@
                                 <h4 class="font-weight-bold py-3 mb-0">All Orders</h4>
                                 <div class="filter">
                                     <form action="{{ route('orders.list') }}" method="GET">
+                                        @csrf
                                         <label for="start_date">Start Date:</label>
                                         <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
 

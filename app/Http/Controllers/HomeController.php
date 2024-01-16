@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\courier;
 use App\Models\customers;
 use App\Models\Order;
 use App\Models\Product;
@@ -43,8 +44,8 @@ class HomeController extends Controller
                 $endDate = '';
             }
             else {
-                $endDate = Carbon::parse($endDate)->addDay();
-                $endDate = $endDate->format('Y-m-d');
+                $endDates = Carbon::parse($endDate)->addDay();
+                $endDate = $endDates->format('Y-m-d');
             }
         if(Auth::user()->role == 1){
             if(!empty($startDate) && !empty($endDate)){
@@ -118,7 +119,6 @@ class HomeController extends Controller
             'total_orders'=>$total_orders,
             'users_count'=>$users_count,
             'products_count'=>$products_count,
-            // 'orders_list'=>$orders_list,
             'month_order'=>$month_order,
             'total_pending'=>$total_pending,
             'total_processing'=>$total_processing,

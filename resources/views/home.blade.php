@@ -6,6 +6,8 @@
         <h4 class="font-weight-bold py-3 mb-0">Application</h4>
         <div class="filter">
             <form action="{{ route('home') }}" method="GET">
+            @csrf
+                
                 <label for="start_date">Start Date:</label>
                 <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
 

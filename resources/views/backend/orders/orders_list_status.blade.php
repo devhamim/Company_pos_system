@@ -15,7 +15,12 @@
                             <div class="d-flex justify-content-between">
                                 <h4 class="font-weight-bold py-3 mb-0">All Orders</h4>
                                 <div class="filter">
-                                    <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
+                                    @if ($order_status->first())
+                                        <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
+                                    @else
+                                        <form action="{{ route('orders.list.status',$order_status) }}" method="GET">
+                                    @endif
+
                                         <label for="start_date">Start Date:</label>
                                         <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
 

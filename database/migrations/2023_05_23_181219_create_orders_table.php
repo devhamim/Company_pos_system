@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('due');
             $table->string('company_name');
             $table->string('lead_customer');
-            $table->string('order_note')->nullable();
+            $table->longText('order_note')->nullable();
             $table->integer('status')->default(0);
             $table->timestamps();
         });

@@ -49,7 +49,6 @@ Route::get('/product/quick/view/{product_id}', [FrontendController::class, 'prod
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/home', [HomeController::class, 'index'])->name('dashboard');
 
 
 // User
