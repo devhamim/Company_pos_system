@@ -71,7 +71,7 @@
             <a href="{{ route('orders.list') }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5>Total Order</h5>
+                        <h5 class="text-primary">Total Order</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_orders }}</h1>
                         </div>
@@ -83,7 +83,7 @@
             <a href="{{ route('orders.list.status', 0) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-info">Total Pending</h5>
+                        <h5 class="text-grey">Total Pending</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_pending }}</h1>
                         </div>
@@ -95,9 +95,9 @@
             <a href="{{ route('orders.list.status', 1) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-secondary">Total Processing</h5>
+                        <h5 class="text-info">Total On Going</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">{{ $total_processing }}</h1>
+                            <h1 class="mb-1">{{ $total_in_review }}</h1>
                         </div>
                     </div>
                 </div>
@@ -107,9 +107,9 @@
             <a href="{{ route('orders.list.status', 2) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-warning">Total On Going</h5>
+                        <h5 class="text-warning">Total Due Payment</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">{{ $total_in_review }}</h1>
+                            <h1 class="mb-1">{{ $total_due_payment }}</h1>
                         </div>
                     </div>
                 </div>
@@ -119,19 +119,7 @@
             <a href="{{ route('orders.list.status', 3) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-danger">Total Due Payment</h5>
-                        <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">{{ $total_due_payment }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 4) }}">
-                <div class="card border-3 border-top border-top-success">
-                    <div class="card-body">
-                        <h5 class="text-success">Total Refund</h5>
+                        <h5 class="text-secondary">Total Refund</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_refund_payment }}</h1>
                         </div>
@@ -140,7 +128,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 5) }}">
+            <a href="{{ route('orders.list.status', 4) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-success">Total Completed</h5>
@@ -152,10 +140,10 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 6) }}">
+            <a href="{{ route('orders.list.status', 5) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
-                        <h5 class="text-success">Total Canceled</h5>
+                        <h5 class="text-danger">Total Canceled</h5>
                         <div class="metric-value d-inline-block">
                             <h1 class="mb-1">{{ $total_canceled }}</h1>
                         </div>
@@ -184,7 +172,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <div class="card border-3 border-top border-top-success">
                 <div class="card-body">
-                    <h5 class="text-success">Total Amount</h5>
+                    <h5 class="text-secondary">Total Amount</h5>
                     <div class="metric-value d-inline-block">
                         <h1 class="mb-1">৳{{ $total_amount }}</h1>
                     </div>
@@ -194,7 +182,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <div class="card border-3 border-top border-top-success">
                 <div class="card-body">
-                    <h5 class="text-success">Total Payment</h5>
+                    <h5 class="text-info">Total Payment</h5>
                     <div class="metric-value d-inline-block">
                         <h1 class="mb-1">৳{{ $total_payment }}</h1>
                     </div>
@@ -204,7 +192,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <div class="card border-3 border-top border-top-success">
                 <div class="card-body">
-                    <h5 class="text-success">Total Due</h5>
+                    <h5 class="text-warning">Total Due</h5>
                     <div class="metric-value d-inline-block">
                         <h1 class="mb-1">৳{{ $total_due }}</h1>
                     </div>
@@ -214,7 +202,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
             <div class="card border-3 border-top border-top-success">
                 <div class="card-body">
-                    <h5 class="text-success">Total Refund</h5>
+                    <h5 class="text-danger">Total Refund payment</h5>
                     <div class="metric-value d-inline-block">
                         <h1 class="mb-1">৳{{ $total_refund }}</h1>
                     </div>
@@ -272,17 +260,15 @@
                                 <td>
                                     <label class="label label-warning">
                                         @if ($orders->status == 0)
-                                            <div class="badge badge-info">Pending</div>
+                                            <div class="badge badge-default">Pending</div>
                                         @elseif ($orders->status == 1)
-                                            <div class="badge badge-primary">Processing</div>
+                                            <div class="badge badge-info">On Going</div>
                                         @elseif ($orders->status == 2)
-                                            <div class="badge badge-success">On Going</div>
-                                        @elseif ($orders->status == 3)
                                             <div class="badge badge-warning">Due Payment</div>
+                                        @elseif ($orders->status == 3)
+                                            <div class="badge badge-secondary">Refund Payment</div>
                                         @elseif ($orders->status == 4)
-                                            <div class="badge badge-default">Refund Payment</div>
-                                        @elseif ($orders->status == 6)
-                                            <div class="badge badge-dark">Completed</div>
+                                            <div class="badge badge-success">Completed</div>
                                         @else
                                             <div class="badge badge-danger">Canceled</div>
                                         @endif
@@ -321,7 +307,7 @@
 
 @endsection
 
-<script>
+{{-- <script>
     function buildchart() {
     $(function() {
         var graph = Morris.Donut({
@@ -499,4 +485,4 @@
         }], options_ct);
     });
 }
-</script>
+</script> --}}

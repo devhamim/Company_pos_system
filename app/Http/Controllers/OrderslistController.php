@@ -49,24 +49,22 @@ class OrderslistController extends Controller
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 0)->count();
-                $total_processing = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 1)->count();
-                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->count();
-                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 3)->count();
-                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->count();
-                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 5)->count();
-                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 6)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 1)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 3)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 5)->count();
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->get();
             }
             else{
                 $order_id = Order::with('rel_to_billing')->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::count();
                 $total_pending = Order::where('status', 0)->count();
-                $total_processing = Order::where('status', 1)->count();
-                $total_in_review = Order::where('status', 2)->count();
-                $total_due_payment = Order::where('status', 3)->count();
-                $total_refund_payment = Order::where('status', 4)->count();
-                $total_completed = Order::where('status', 5)->count();
-                $total_canceled = Order::where('status', 6)->count();
+                $total_in_review = Order::where('status', 1)->count();
+                $total_due_payment = Order::where('status', 2)->count();
+                $total_refund_payment = Order::where('status', 3)->count();
+                $total_completed = Order::where('status', 4)->count();
+                $total_canceled = Order::where('status', 5)->count();
                 $refund_payment = Order::where('status', 4)->get();
             }
 
@@ -76,24 +74,22 @@ class OrderslistController extends Controller
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_processing = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 1)->count();
-                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 6)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 1)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 2)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 3)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 5)->count();
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
             else{
                 $order_id = Order::with('rel_to_billing')->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_processing = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
-                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
+                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
+                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
+                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
+                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
+                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
                 $refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
 
@@ -104,7 +100,6 @@ class OrderslistController extends Controller
             'order_id'=>$order_id,
             'total_orders'=>$total_orders,
             'total_pending'=>$total_pending,
-            'total_processing'=>$total_processing,
             'total_in_review'=>$total_in_review,
             'total_due_payment'=>$total_due_payment,
             'total_refund_payment'=>$total_refund_payment,
@@ -136,12 +131,11 @@ class OrderslistController extends Controller
                 $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', $status)->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 0)->count();
-                $total_processing = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 1)->count();
-                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->count();
-                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 3)->count();
-                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->count();
-                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 5)->count();
-                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 6)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 1)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 3)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 5)->count();
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->get();
             }
             else{
@@ -149,12 +143,11 @@ class OrderslistController extends Controller
                 $order_status = Order::where('status', $status)->get();
                 $total_orders = Order::count();
                 $total_pending = Order::where('status', 0)->count();
-                $total_processing = Order::where('status', 1)->count();
-                $total_in_review = Order::where('status', 2)->count();
-                $total_due_payment = Order::where('status', 3)->count();
-                $total_refund_payment = Order::where('status', 4)->count();
-                $total_completed = Order::where('status', 5)->count();
-                $total_canceled = Order::where('status', 6)->count();
+                $total_in_review = Order::where('status', 1)->count();
+                $total_due_payment = Order::where('status', 2)->count();
+                $total_refund_payment = Order::where('status', 3)->count();
+                $total_completed = Order::where('status', 4)->count();
+                $total_canceled = Order::where('status', 5)->count();
                 $refund_payment = Order::where('status', 4)->get();
             }
 
@@ -165,12 +158,11 @@ class OrderslistController extends Controller
                 $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', $status)->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_processing = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 1)->count();
-                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 6)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 1)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 2)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 3)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 5)->count();
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
             else{
@@ -178,12 +170,11 @@ class OrderslistController extends Controller
                 $order_status = Order::where('added_by', Auth::user()->id)->where('status', $status)->get();
                 $total_orders = Order::where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_processing = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
-                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
+                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
+                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
+                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
+                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
+                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
                 $refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
         }
@@ -193,7 +184,6 @@ class OrderslistController extends Controller
             'order_id'=>$order_id,
             'total_orders'=>$total_orders,
             'total_pending'=>$total_pending,
-            'total_processing'=>$total_processing,
             'total_in_review'=>$total_in_review,
             'total_due_payment'=>$total_due_payment,
             'total_refund_payment'=>$total_refund_payment,
@@ -214,24 +204,22 @@ class OrderslistController extends Controller
             $order_id = Order::where('lead_customer', $request->lead_customer)->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
             $total_orders = Order::count();
             $total_pending = Order::where('status', 0)->count();
-            $total_processing = Order::where('status', 1)->count();
-            $total_in_review = Order::where('status', 2)->count();
-            $total_due_payment = Order::where('status', 3)->count();
-            $total_refund_payment = Order::where('status', 4)->count();
-            $total_completed = Order::where('status', 5)->count();
-            $total_canceled = Order::where('status', 6)->count();
+            $total_in_review = Order::where('status', 1)->count();
+            $total_due_payment = Order::where('status', 2)->count();
+            $total_refund_payment = Order::where('status', 3)->count();
+            $total_completed = Order::where('status', 4)->count();
+            $total_canceled = Order::where('status', 5)->count();
             $refund_payment = Order::where('lead_customer', $request->lead_customer)->where('status', 4)->get();
         }
         else{
             $order_id = Order::where('added_by', Auth::user()->id)->where('lead_customer', $request->lead_customer)->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
             $total_orders = Order::where('added_by', Auth::user()->id)->count();
             $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-            $total_processing = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
-            $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-            $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-            $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-            $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-            $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
+            $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 1)->count();
+            $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
+            $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
+            $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
+            $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
             $refund_payment = Order::where('added_by', Auth::user()->id)->where('lead_customer', $request->lead_customer)->where('status', 4)->get();
         }
 
@@ -240,7 +228,6 @@ class OrderslistController extends Controller
             'order_id'=>$order_id,
             'total_orders'=>$total_orders,
             'total_pending'=>$total_pending,
-            'total_processing'=>$total_processing,
             'total_in_review'=>$total_in_review,
             'total_due_payment'=>$total_due_payment,
             'total_refund_payment'=>$total_refund_payment,
@@ -474,6 +461,7 @@ public function orders_update(Request $request)
     // If you have an existing order_id, retrieve the order
     $order_id = $request->input('order_id') ?: 'INV' . '-' . rand(1000, 9999);
     $order = Order::where('order_id', $order_id)->first();
+    $currentStatus = $order->status;
 
     Order::where('order_id',$order_id)->update([
         'delivery_date' => $request->delivery_date,
@@ -515,6 +503,105 @@ public function orders_update(Request $request)
             );
         }
     }
+
+    // on going
+if($request->status == 1 && $currentStatus != 1){
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Hi ' .$request->customer_name.',
+Order #'.$order_id.' Update:
+We are started working on your order at Nugortech IT. Our team is dedicated to delivering great results. Stay tuned for more updates!
+
+Best,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+}
+
+// due payment
+if($request->status == 2 && $currentStatus != 2){
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Hi ' .$request->customer_name.',
+Friendly reminder: Your bill ('.$request->due.'Tk) is due ['.$request->delivery_date.']. Please ensure payment is made by then to avoid any inconvenience.
+
+Best,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+}
+// Refund
+if($request->status == 3 && $currentStatus != 3){
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Hi ' .$request->customer_name.',
+Great news! Your refund for order #'.$order_id.' is complete. The refunded amount should now be reflected in your account. If you have any further questions, feel free to contact us.
+
+Best,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+}
+// Completed
+if($request->status == 4 && $currentStatus != 4){
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Hi ' .$request->customer_name.',
+Good news! Your order #'.$order_id.' has been successfully completed. We hope you are satisfied with our service. If you have any questions or feedback, feel free to reach out.
+
+Best,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+}
+// Canceled
+if($request->status == 5 && $currentStatus != 5){
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Hi ' .$request->customer_name.',
+We regret to inform you that your order #'.$order_id.' has been canceled. If you have any concerns or require further assistance, feel free to contact us.
+
+Best,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+}
+
 
     return redirect()->route('orders.list')->withSuccess('Order updated successfully');
 }
