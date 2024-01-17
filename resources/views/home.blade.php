@@ -92,7 +92,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 1) }}">
+            <a href="{{ route('orders.list.status', 2) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-info">Total On Going</h5>
@@ -104,7 +104,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 2) }}">
+            <a href="{{ route('orders.list.status', 3) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-warning">Total Due Payment</h5>
@@ -116,7 +116,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 3) }}">
+            <a href="{{ route('orders.list.status', 4) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-secondary">Total Refund</h5>
@@ -128,7 +128,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 4) }}">
+            <a href="{{ route('orders.list.status', 5) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-success">Total Completed</h5>
@@ -140,7 +140,7 @@
             </a>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-            <a href="{{ route('orders.list.status', 5) }}">
+            <a href="{{ route('orders.list.status', 6) }}">
                 <div class="card border-3 border-top border-top-success">
                     <div class="card-body">
                         <h5 class="text-danger">Total Canceled</h5>
@@ -261,13 +261,13 @@
                                     <label class="label label-warning">
                                         @if ($orders->status == 0)
                                             <div class="badge badge-default">Pending</div>
-                                        @elseif ($orders->status == 1)
-                                            <div class="badge badge-info">On Going</div>
                                         @elseif ($orders->status == 2)
-                                            <div class="badge badge-warning">Due Payment</div>
+                                            <div class="badge badge-info">On Going</div>
                                         @elseif ($orders->status == 3)
-                                            <div class="badge badge-secondary">Refund Payment</div>
+                                            <div class="badge badge-warning">Due Payment</div>
                                         @elseif ($orders->status == 4)
+                                            <div class="badge badge-secondary">Refund Payment</div>
+                                        @elseif ($orders->status == 5)
                                             <div class="badge badge-success">Completed</div>
                                         @else
                                             <div class="badge badge-danger">Canceled</div>

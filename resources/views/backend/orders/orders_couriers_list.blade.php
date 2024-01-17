@@ -102,7 +102,7 @@
                         </a>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-                        <a href="{{ route('orders.list.status', 1) }}">
+                        <a href="{{ route('orders.list.status', 2) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-info">Total On Going</h5>
@@ -114,7 +114,7 @@
                         </a>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-                        <a href="{{ route('orders.list.status', 2) }}">
+                        <a href="{{ route('orders.list.status', 3) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-warning">Total Due Payment</h5>
@@ -126,7 +126,7 @@
                         </a>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-                        <a href="{{ route('orders.list.status', 3) }}">
+                        <a href="{{ route('orders.list.status', 4) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-secondary">Total Refund</h5>
@@ -138,7 +138,7 @@
                         </a>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-                        <a href="{{ route('orders.list.status', 4) }}">
+                        <a href="{{ route('orders.list.status', 5) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-success">Total Completed</h5>
@@ -150,7 +150,7 @@
                         </a>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
-                        <a href="{{ route('orders.list.status', 5) }}">
+                        <a href="{{ route('orders.list.status', 6) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-danger">Total Canceled</h5>
@@ -242,20 +242,6 @@
                 </div>
 
                     <div class="row mb-2">
-                        {{-- <div class="col-md-2 col-12">
-                            <form action="https://ecom.prodevsltd.com/admin-orders/all-status" method="post" id="all_status_form">
-                                <input type="hidden" name="_token" value="ktLkxYSgW2CFqo1LaSSBAFMYLYEfg60BNopr8gRu">                                <input type="hidden" id="all_status" name="all_status">
-                                <select name="status" id="status" class="form-control">
-                                    <option value="">Select Status</option>
-                                    <option value="0">On Hold</option>
-                                    <option value="2">Processing</option>
-                                    <option value="3">Pending Payment</option>
-                                    <option value="1">Delivered</option>
-                                    <option value="4">Canceled</option>
-                                </select>
-                            </form>
-                        </div> --}}
-
 
                     </div>
                    <div class="row">
@@ -318,13 +304,13 @@
                                                 <div class="dropdown mx-1">
                                                     @if ($order->status == 0)
                                                         <div class="badge badge-default">Pending</div>
-                                                    @elseif ($order->status == 1)
-                                                        <div class="badge badge-info">On Going</div>
                                                     @elseif ($order->status == 2)
-                                                        <div class="badge badge-warning">Due Payment</div>
+                                                        <div class="badge badge-info">On Going</div>
                                                     @elseif ($order->status == 3)
-                                                        <div class="badge badge-secondary">Refund payment</div>
+                                                        <div class="badge badge-warning">Due Payment</div>
                                                     @elseif ($order->status == 4)
+                                                        <div class="badge badge-secondary">Refund payment</div>
+                                                    @elseif ($order->status == 5)
                                                         <div class="badge badge-success">Completed</div>
                                                     @else
                                                         <div class="badge badge-danger">Canceled</div>
