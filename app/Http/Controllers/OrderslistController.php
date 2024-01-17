@@ -14,6 +14,9 @@ use App\Models\customers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Str;
+use Log;
+use Illuminate\Support\Facades\Http;
+
 
 class OrderslistController extends Controller
 {
@@ -331,7 +334,30 @@ function orders_store(Request $request){
             'price' => $prices[$key],
         ]);
     }
-    return back()->withSuccess('Order add successfully');
+    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617620771";
+    $smsqMessage = 'Dear ' .$request->customer_name.',
+Thank you for placing your order with Nugortech IT!
+Order Number: #'.$order_id.'
+Our team will begin working on your order shortly. Expect updates soon!
+
+Best Regards,
+Nugortech IT
+www.nugortechit.com';
+
+    $smsqMessage = urlencode($smsqMessage);
+    $smsqMobileNumbers = '+88' .$request->customer_phone;
+
+    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+    $response = Http::get($smsqUrl);
+    if ($response->successful()) {
+        return back()->withSuccess('Order added successfully.');
+    } else {
+        Log::error("SMSQ API Request failed. Response: " . $response->status());
+        return back()->withErrors(['sms_error' => 'Failed to send SMS to customer.']);
+    }
 }
 
 
