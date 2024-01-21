@@ -513,7 +513,7 @@ if($request->status == 2 && $currentStatus != 2){
 Order #'.$order_id.' Update:
 We are started working on your order at Nugortech IT. Our team is dedicated to delivering great results. Stay tuned for more updates!
 
-Best,
+Best Regards,
 Nugortech IT
 www.nugortechit.com';
 
@@ -533,7 +533,7 @@ if($request->status == 3 && $currentStatus != 3){
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Friendly reminder: Your bill ('.$request->due.'Tk) is due ['.$request->delivery_date.']. Please ensure payment is made by then to avoid any inconvenience.
 
-Best,
+Best Regards,
 Nugortech IT
 www.nugortechit.com';
 
@@ -552,7 +552,7 @@ if($request->status == 4 && $currentStatus != 4){
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Great news! Your refund for order #'.$order_id.' is complete. The refunded amount should now be reflected in your account. If you have any further questions, feel free to contact us.
 
-Best,
+Best Regards,
 Nugortech IT
 www.nugortechit.com';
 
@@ -571,7 +571,7 @@ if($request->status == 5 && $currentStatus != 5){
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Good news! Your order #'.$order_id.' has been successfully completed. We hope you are satisfied with our service. If you have any questions or feedback, feel free to reach out.
 
-Best,
+Best Regards,
 Nugortech IT
 www.nugortechit.com';
 
@@ -590,7 +590,7 @@ if($request->status == 6 && $currentStatus != 6){
     $smsqMessage = 'Hi ' .$request->customer_name.',
 We regret to inform you that your order #'.$order_id.' has been canceled. If you have any concerns or require further assistance, feel free to contact us.
 
-Best,
+Best Regards,
 Nugortech IT
 www.nugortechit.com';
 
