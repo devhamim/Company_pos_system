@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}" rel="icon" />
+    <title>{{ $order->first()->order_id }}-{{$order->first()->status}}</title>
     <meta name="author" content="harnishdesign.net">
 
     <!-- Web Fonts
