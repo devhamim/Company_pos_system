@@ -143,11 +143,36 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         function printInvoice() {
             window.print();
         }
         window.onload = printInvoice;
+    </script> --}}
+
+    <script>
+        var isPrinted = false;
+
+        function printInvoice() {
+            window.print();
+        }
+
+        function handleAfterPrint() {
+            if (isPrinted) {
+                window.location.href = "{{ route('orders.list') }}";
+            }
+        }
+        window.addEventListener('afterprint', handleAfterPrint);
+        function handleKeyPress(event) {
+            if (event.key !== undefined) {
+                printInvoice();
+            }
+        }
+        window.onload = printInvoice;
+        function onPrintStart() {
+            isPrinted = true;
+        }
+        window.onbeforeprint = onPrintStart;
     </script>
 
 </body>
