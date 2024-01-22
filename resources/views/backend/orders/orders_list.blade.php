@@ -348,7 +348,6 @@
 
                                             <td class="text-center">
                                                 {{-- <a href="{{ route('invoice.download', $order->id) }}" class="d-block mb-1 print" data-id="12"><i class="fa fa-print"></i></a> --}}
-
                                                 <a href="{{ route('view.invoice', $order->order_id) }}" class="d-block mb-1 print" data-id="{{ $order->id }}"><i class="fa fa-print"></i></a>
 
                                                 <a href="{{ route('orders.edit', $order->order_id) }}" class="d-block mb-1">
