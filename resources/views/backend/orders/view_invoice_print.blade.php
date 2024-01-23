@@ -86,8 +86,8 @@
                     <table class="table border mb-0">
                         <thead>
                             <tr class="bg-light">
-                                <td class="col-3"><strong>Service</strong></td>
-                                <td class="col-4"><strong>Description</strong></td>
+                                <td class="col-3"><strong>SL.</strong></td>
+                                <td class="col-4"><strong>Service/Product</strong></td>
                                 <td class="col-2 text-center"><strong>Rate</strong></td>
                                 <td class="col-1 text-center"><strong>QTY</strong></td>
                                 <td class="col-2 text-end"><strong>Amount</strong></td>

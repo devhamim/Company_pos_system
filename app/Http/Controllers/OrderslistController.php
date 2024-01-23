@@ -313,13 +313,25 @@ function orders_store(Request $request){
     $productIds = $request->product_id;
     $prices = $request->price;
 
+    // foreach ($request->quantity as $key => $quantity) {
+    //     OrderProduct::create([
+    //         'order_id' => $order_id,
+    //         'product_id' => $productIds[$key],
+    //         'quantity' => $quantity,
+    //         'price' => $prices[$key],
+    //     ]);
+    // }
     foreach ($request->quantity as $key => $quantity) {
-        OrderProduct::create([
-            'order_id' => $order_id,
-            'product_id' => $productIds[$key],
-            'quantity' => $quantity,
-            'price' => $prices[$key],
-        ]);
+        if (isset($productIds[$key]) && isset($prices[$key])) {
+            OrderProduct::create([
+                'order_id' => $order_id,
+                'product_id' => $productIds[$key],
+                'quantity' => $quantity,
+                'price' => $prices[$key],
+            ]);
+        } else {
+            echo 'nai';
+        }
     }
     $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
     $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";

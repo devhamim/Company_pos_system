@@ -61,10 +61,16 @@
                                         <div class="form-group col-md-6 col-12">
                                             <label for="customer_name">Customer Name <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" id="customer_name" name="customer_name" value="{{ $billingdetails->customer_name ?? '' }}" required>
+                                            @error('customer_name')
+                                                <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6 col-12">
                                             <label for="busines_name">Busines Name <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" id="busines_name" name="busines_name" value="{{ $billingdetails->busines_name ?? '' }}" required>
+                                            @error('busines_name')
+                                                <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6 col-12">
                                             <label for="customer_email">Customer Email</label>
@@ -74,6 +80,9 @@
                                         <div class="form-group col-md-6 col-12">
                                             <label for="customer_phone">Customer Phone <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" id="customer_phone" name="customer_phone" value="{{ $billingdetails->customer_phone ?? '' }}" required>
+                                            @error('customer_phone')
+                                                <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
                                         </div>
                                     </div>
 
@@ -175,7 +184,6 @@
                                         </table>
                                     </div>
 
-                                    {{-- ===================== --}}
                                     <div class="form-group row" style="padding: 6px 0;">
                                         <label for="sub_total" class="offset-md-6 col-md-2 col-form-label text-right">Sub Total</label>
                                         <div class="col-md-4">
@@ -229,76 +237,6 @@
 
 @section('footer_script')
 
-
-<script>
-    $(document).ready(function () {
-        var selectedCourierId = {{ $orders->city_id ?? 0 }};
-
-        $("#courier_id").on('change', function () {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': CSRF_TOKEN
-                }
-            });
-
-            // Fetch cities
-            $.ajax({
-                url: '{{ route('getCities') }}',
-                type: 'POST',
-                data: { _token: CSRF_TOKEN, id: $(this).val() },
-                success: function (data) {
-                    $("#city_id").empty();
-                    $("#city_id").append('<option value="">Select A City</option>');
-                    $.each(data.cities, function (index, value) {
-                        $("#city_id").append(new Option(value, index));
-                    });
-                    $('#shipping_cost').val(data.charge);
-                    $("#city_id").val(selectedCourierId).trigger('change');
-                }
-            });
-        });
-    });
-
-</script>
-
-<script>
-    $(document).ready(function () {
-        var selectedCityId = {{ $orders->city_id ?? 0 }};
-
-        $("#city_id").on('change', function () {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': CSRF_TOKEN
-                }
-            });
-            $.ajax({
-                url: '/getzone',
-                type: 'POST',
-                data: {_token: CSRF_TOKEN, id: $(this).val()},
-                success: function (data) {
-                    $("#zone_id").empty();
-                    $("#zone_id").append('<option value="">Select A Zone</option>');
-
-                    $.each(data, function (index, value) {
-                            $("#zone_id").append(new Option(value, index));
-                        });
-
-                    $("#zone_id").val(selectedCityId).trigger('change');
-                },
-                error: function (xhr, status, error) {
-                    // Handle AJAX errors
-                    console.error('Error during AJAX request:', status, error);
-                }
-            });
-        });
-    });
-</script>
-
-
 <script>
      $(document).ready(function () {
     $('.datetimepicker').datetimepicker({
@@ -319,98 +257,90 @@
 
 <script>
     $(document).ready(function () {
-        $('#product').on('change', function () {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $('#product').on('change', function () {
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': CSRF_TOKEN
-                }
-            });
-
-            $.ajax({
-                url: '/getProduct',
-                type: 'POST',
-                data: {_token: CSRF_TOKEN, id: $(this).val()},
-                success: function (data) {
-                    var newRowHtml = '<tr>' +
-                        '<td>' + (data.sku ? data.sku : 'null') + '</td>' +
-                        '<td>' +
-                        '<input type="hidden" name="product_id[]" value="' + (data.product_id ? data.product_id : '') + '">' +
-                        '<input type="text" class="form-control" value="' + (data.productName ? data.productName : '') + '" readonly>' +
-                        '</td>' +
-                        '<td>' +
-                        '<input style="width: 60px; border: 1px solid #ddd;" min="1" type="number" class="form-control qty" name="quantity[]" value="1">' +
-                        '<input type="hidden" name="price" class="price" value="' + (data.product_price ? data.product_price : '') + '">' +
-                        '</td>' +
-                        '<td class="total_price">' + ((data.product_price ? data.product_price : 0) * 1).toFixed(2) + '</td>' +
-                        '<td><button class="btn btn-danger" onclick="removeProduct(this)">Remove</button></td>' +
-                        '</tr>';
-
-                    // Append the new row to the table body
-                    $('#prod_row').append(newRowHtml);
-
-                    // Update totals
-                    updateTotals();
-                }
-            });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': CSRF_TOKEN
+            }
         });
 
-        $(document).on('input', '.qty', function () {
-            updateRowTotal($(this));
+        $.ajax({
+            url: '/getProduct',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, id: $(this).val()},
+            success: function (data) {
+                var newRowHtml = '<tr>' +
+                    '<td>' + (data.sku ? data.sku : 'null') + '</td>' +
+                    '<td>' +
+                    '<input type="hidden" name="product_id[]" value="' + (data.product_id ? data.product_id : '') + '">' +
+                    '<input type="text" class="form-control" value="' + (data.productName ? data.productName : '') + '" readonly>' +
+                    '</td>' +
+                    '<td>' +
+                    '<input style="width: 60px; border: 1px solid #ddd;" min="1" type="number" class="form-control qty" name="quantity[]" value="1">' +
+                    '<input type="hidden" name="price[]" class="price" value="' + (data.product_price ? data.product_price : '') + '">' +
+                    '</td>' +
+                    '<td class="total_price">' + ((data.product_price ? data.product_price : 0) * 1).toFixed(2) + '</td>' +
+                    '<td><button class="btn btn-danger" onclick="removeProduct(this)">Remove</button></td>' +
+                    '</tr>';
+
+                $('#prod_row').append(newRowHtml);
+
+                updateTotals();
+            }
         });
-        $(document).on('input', '#discount','#paid', function () {
-            updateTotals();
-        });
-        function updateRowTotal(input) {
-            var row = input.closest('tr');
-            var productPrice = parseFloat(row.find('.price').val());
-            var quantity = parseFloat(input.val());
-            var totalCell = row.find('.total_price');
-            var newTotal = productPrice * quantity;
-            totalCell.text(newTotal.toFixed(2));
-
-            // Update totals
-            updateTotals();
-
-            // Update OrderProduct on the server
-            var productId = row.find('input[name="product_id[]"]').val();
-            updateOrderProduct(productId, quantity);
-        }
-
-
-        // Function to update the overall totals
-        function updateTotals() {
-            var subTotal = 0;
-
-            // Update sub-total
-            $('.total_price').each(function () {
-                subTotal += parseFloat($(this).text());
-            });
-
-            $('#sub_total').val(subTotal.toFixed(2));
-
-            // Update total
-            var total = subTotal - parseFloat($('#discount').val()) - parseFloat($('#paid').val());
-            $('#due').val(total.toFixed(2));
-
-            finalCalc();
-        }
-
-        $('#paid').on('input', function () {
-            updateTotals();
-        });
-
-        // Function to remove a product row
-        window.removeProduct = function (button) {
-            // Get the parent <tr> element and remove it
-            var row = $(button).closest('tr');
-            row.remove();
-
-            // Update totals after removing the row
-            updateTotals();
-        };
     });
+
+    $(document).on('input', '.qty', function () {
+        updateRowTotal($(this));
+    });
+
+    $(document).on('input', '#discount, #paid', function () {
+        updateTotals();
+    });
+
+    function updateRowTotal(input) {
+        var row = input.closest('tr');
+        var productPrice = parseFloat(row.find('.price').val());
+        var quantity = parseFloat(input.val());
+        var totalCell = row.find('.total_price');
+        var newTotal = productPrice * quantity;
+        totalCell.text(newTotal.toFixed(2));
+
+        updateTotals();
+
+
+        var productId = row.find('input[name="product_id[]"]').val();
+        updateOrderProduct(productId, quantity);
+    }
+
+    function updateTotals() {
+        var subTotal = 0;
+
+        $('.total_price').each(function () {
+            subTotal += parseFloat($(this).text());
+        });
+
+        $('#sub_total').val(subTotal.toFixed(2));
+
+        var total = subTotal - parseFloat($('#discount').val()) - parseFloat($('#paid').val());
+        $('#due').val(total.toFixed(2));
+
+        finalCalc();
+    }
+
+    $('#paid').on('input', function () {
+        updateTotals();
+    });
+
+    window.removeProduct = function (button) {
+        var row = $(button).closest('tr');
+        row.remove();
+        updateTotals();
+    };
+});
+
 </script>
 
 @endsection
