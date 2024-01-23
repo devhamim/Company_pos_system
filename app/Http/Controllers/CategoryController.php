@@ -87,9 +87,9 @@ class CategoryController extends Controller
             ]);
             return redirect()->route('category.list')->withSuccess('Category updated successfully');
         } else {
-            // $category_img_del = Category::where('id', $request->category_id)->first()->category_image;
-            // $delete_from = public_path('uploads/category/'.$category_img_del);
-            // unlink($delete_from);
+            $category_img_del = Category::where('id', $request->category_id)->first()->category_image;
+            $delete_from = public_path('uploads/category/'.$category_img_del);
+            unlink($delete_from);
             $upload_img = $request->category_image;
             $extension = $upload_img->getClientOriginalExtension();
             $after_replace = str_replace(' ', '-', $request->category_name);
