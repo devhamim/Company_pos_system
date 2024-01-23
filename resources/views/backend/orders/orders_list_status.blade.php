@@ -259,21 +259,6 @@
                 </div>
 
                     <div class="row mb-2">
-                        {{-- <div class="col-md-2 col-12">
-                            <form action="https://ecom.prodevsltd.com/admin-orders/all-status" method="post" id="all_status_form">
-                                <input type="hidden" name="_token" value="ktLkxYSgW2CFqo1LaSSBAFMYLYEfg60BNopr8gRu">                                <input type="hidden" id="all_status" name="all_status">
-                                <select name="status" id="status" class="form-control">
-                                    <option value="">Select Status</option>
-                                    <option value="0">On Hold</option>
-                                    <option value="2">Processing</option>
-                                    <option value="3">Pending Payment</option>
-                                    <option value="1">Delivered</option>
-                                    <option value="4">Canceled</option>
-                                </select>
-                            </form>
-                        </div> --}}
-
-
                     </div>
                    <div class="row">
                     <div class="col-12">

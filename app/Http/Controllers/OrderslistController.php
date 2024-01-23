@@ -128,7 +128,7 @@ class OrderslistController extends Controller
         if(Auth::user()->role == 1){
             if(!empty($startDate) && !empty($endDate)){
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->orderBy('created_at', 'desc')->get();
-                $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', $status)->get();
+                $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', $status)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 0)->count();
                 $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->count();
@@ -140,7 +140,7 @@ class OrderslistController extends Controller
             }
             else{
                 $order_id = Order::with('rel_to_billing')->orderBy('created_at', 'desc')->get();
-                $order_status = Order::where('status', $status)->get();
+                $order_status = Order::where('status', $status)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::count();
                 $total_pending = Order::where('status', 0)->count();
                 $total_in_review = Order::where('status', 2)->count();
@@ -150,12 +150,11 @@ class OrderslistController extends Controller
                 $total_canceled = Order::where('status', 6)->count();
                 $refund_payment = Order::where('status', 4)->get();
             }
-
         }
         else{
             if(!empty($startDate) && !empty($endDate)){
                 $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-                $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', $status)->get();
+                $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', $status)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 0)->count();
                 $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 2)->count();
@@ -167,7 +166,7 @@ class OrderslistController extends Controller
             }
             else{
                 $order_id = Order::with('rel_to_billing')->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-                $order_status = Order::where('added_by', Auth::user()->id)->where('status', $status)->get();
+                $order_status = Order::where('added_by', Auth::user()->id)->where('status', $status)->orderBy('created_at', 'desc')->get();
                 $total_orders = Order::where('added_by', Auth::user()->id)->count();
                 $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
                 $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
