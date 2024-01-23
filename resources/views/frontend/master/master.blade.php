@@ -39,6 +39,28 @@
         {!! $setting->first()->googletag !!}
     @endif
     <!-- End googletag Code -->
+    <style>
+        /* Add your custom styling for the popup here */
+        #popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+        #popup-container h3{
+            position: fixed;
+            top: 50%;
+            left: 35%;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,7 +86,7 @@
                                 <ul class="navigation">
                                     <li ><a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
 
-                                    {{-- <li class="dropdown"> <a href="#">Pages</a>
+                                    <li class="dropdown"> <a href="#">Pages</a>
                                         <ul>
                                             <li><a href="page-about.html">About</a></li>
                                             <li class="dropdown"> <a href="#">Projects</a>
@@ -106,12 +128,12 @@
                                             <li><a href="news-details.html">News Details</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="page-contact.html">Contact</a></li> --}}
+                                    <li><a href="page-contact.html">Contact</a></li>
                                 </ul>
                             </nav>
 
                         </div>
-                        {{-- <div class="outer-box">
+                        <div class="outer-box">
                             <div class="search-btn">
                                 <a href="#" class="search"><i class="flaticon-search-3"></i></a>
                             </div>
@@ -121,7 +143,7 @@
                             <div class="mobile-nav-toggler">
                                 <i class="fa fa-bars"></i>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
 
                 </div>
@@ -393,8 +415,28 @@
             <div class="scroll-to-top scroll-to-target arrow-btn" data-target="html" style><i
                     class="fa-sharp fa-solid fa-arrow-up"></i></div>
         </footer>
+        <div id="popup-container">
+            <!-- Add your popup content here -->
+            <h3>This site is under construction</h3>
+        </div>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show the popup after 10 seconds
+            setTimeout(function () {
+                document.getElementById('popup-container').style.display = 'block';
+            }, 1); // 10 seconds in milliseconds
+
+            // Hide the popup when the user clicks on it
+            document.getElementById('popup-container').addEventListener('click', function () {
+                this.style.display = 'none';
+            });
+        });
+    </script>
+
+
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="{{asset('frontend')}}/js/jquery.js"></script>
     <script src="{{asset('frontend')}}/js/popper.min.js"></script>
@@ -407,6 +449,7 @@
     <script src="{{asset('frontend')}}/js/appear.js"></script>
     <script src="{{asset('frontend')}}/js/mixitup.js"></script>
     <script src="{{asset('frontend')}}/js/script.js"></script>
+
 </body>
 
 </html>
