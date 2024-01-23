@@ -79,9 +79,9 @@ class BrandController extends Controller
             ]);
             return back()->withSuccess('Brand successfully updated');
         } else {
-            // $brand_img_del = brand::where('id', $request->brand_id)->first()->brand_image;
-            // $delete_from = public_path('uploads/brand/'.$brand_img_del);
-            // unlink($delete_from);
+            $brand_img_del = brand::where('id', $request->brand_id)->first()->brand_image;
+            $delete_from = public_path('uploads/brand/'.$brand_img_del);
+            unlink($delete_from);
             $upload_img = $request->brand_image;
             $extension = $upload_img->getClientOriginalExtension();
             $after_replace = str_replace(' ', '-', $request->brand_name);

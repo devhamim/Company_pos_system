@@ -74,9 +74,9 @@ class bannerContoller extends Controller
             return redirect()->route('banner.list')->withSuccess('Category updated successfully');
         }
         else {
-            $banner_img_del = banner::where('id', $request->banner_id)->first()->banner_image;
-            $delete_from = public_path('uploads/banner/'.$banner_img_del);
-            unlink($delete_from);
+            // $banner_img_del = banner::where('id', $request->banner_id)->first()->banner_image;
+            // $delete_from = public_path('uploads/banner/'.$banner_img_del);
+            // unlink($delete_from);
 
             $upload_img = $request->banner_image;
             $extension = $upload_img->getClientOriginalExtension();
