@@ -37,6 +37,7 @@ class settingController extends Controller
             'about'=>'',
             'phone'=>'',
             'logo'=>'',
+            'white_logo'=>'',
             'favicon'=>'',
             'address'=>'',
             'footer'=>'',
@@ -61,6 +62,13 @@ class settingController extends Controller
             $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
             $image->move(public_path('uploads/setting'), $file_name);
             $validatesData['logo'] = $file_name;
+        }
+        if ($request->hasFile('white_logo')) {
+            $image = $request->file('white_logo');
+            $extension = $image->getClientOriginalExtension();
+            $file_name = Str::random(5) . rand(1000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/setting'), $file_name);
+            $validatesData['white_logo'] = $file_name;
         }
         if ($request->hasFile('favicon')) {
             $image = $request->file('favicon');

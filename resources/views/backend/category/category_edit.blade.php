@@ -18,6 +18,14 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
+                            <label class="form-label">Category Description</label>
+                            <textarea name="category_desp" id="" class="form-control" cols="30" rows="5" placeholder="Description">{{$category->category_desp}}</textarea>
+                            @error('category_desp')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
                             <label class="form-label mb-2">Status</label>
                             <select name="status" id="status" class="form-control">
                                 <option value="1" {{$category->status == 1 ? 'selected' : ''}}>Active</option>

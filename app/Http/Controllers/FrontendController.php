@@ -20,9 +20,9 @@ class FrontendController extends Controller
     //home
     function home() {
 
-       
+
         $categories = Category::all();
-        $category= Category::take(6)->get();
+        $category= Category::take(8)->get();
         $products = Product::where('status', '1')->get();
         // $top_selling_products = Order::groupBy('product_id')
         // ->selectRaw('sum(total) as sum, product_id')
@@ -35,7 +35,7 @@ class FrontendController extends Controller
         // $discount_products_count = Product::where('status', '1')->where('product_discount', '!=', null)->where('validity', '>', Carbon::now())->get();
         $banners = banner::all();
 
- 
+
         return view('frontend.home.index', [
             'categories' => $categories,
             'categoryy' => $category,
@@ -68,7 +68,7 @@ class FrontendController extends Controller
         return view('frontend.category.category_two', compact(['categories', 'products']));
     }
 
-    
+
 
     // offer
     function offer() {

@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h3>Sliders</h3>
-                    <a href="{{route('banner.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i> Sliders</a>
+                    <a href="{{route('banner.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i>add Sliders</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -24,8 +24,8 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Sliders image</th>
-                                    {{-- <th>Sliders Title</th>
-                                    <th>Sliders Link</th> --}}
+                                    <th>Sliders Title</th>
+                                    <th>Sliders Description</th>
                                     <th>Options</th>
                                 </tr>
                             </thead>
@@ -36,8 +36,8 @@
                                         <td>
                                             <img src="{{asset('uploads/banner')}}/{{$banner->banner_image}}" alt class="img-fluid wid-100">
                                         </td>
-                                        {{-- <td>{{$banner->banner_title}}</td>
-                                        <td>{{$banner->banner_link}}</td> --}}
+                                        <td>{{ Str::limit($banner->banner_title, 30, '...') }}</td>
+                                        <td>{{ Str::limit($banner->banner_desp, 30, '...') }}</td>
                                         <td>
                                             <a href="{{route('banner.edit', $banner->id)}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                             <a href="{{route('banner.delete', $banner->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>

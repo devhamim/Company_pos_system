@@ -18,6 +18,14 @@
                             @enderror
                             <div class="clearfix"></div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label">Category Description</label>
+                            <textarea name="category_desp" class="form-control" id="" cols="30" rows="5" placeholder="Description"></textarea>
+                            @error('category_desp')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                            <div class="clearfix"></div>
+                        </div>
                         <div class="form-group fill">
                             <label class="floating-label" for="role">Status</label>
                             <select name="status" id="" class="form-control">

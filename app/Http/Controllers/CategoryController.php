@@ -20,7 +20,7 @@ class CategoryController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     //category_add
     function category_add() {
         return view('backend.category.category_add');
@@ -30,11 +30,13 @@ class CategoryController extends Controller
     function category_store(Request $request) {
         $request->validate([
             'category_name' => 'required|unique:categories',
+            'category_desp' => 'required|max:50',
             'category_image' => 'required|mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
 
         $category_id = Category::insertGetId([
             'category_name' => $request->category_name,
+            'category_desp' => $request->category_desp,
             'added_by' => Auth::id(),
             'status' => $request->status,
             'created_at' => Carbon::now(),
@@ -45,7 +47,7 @@ class CategoryController extends Controller
         $after_replace = str_replace(' ', '-', $request->category_name);
         $file_name = Str::lower($after_replace).'-'.rand(1000, 9999).'.'.$extension;
         Image::make($category_image)->save(public_path('uploads/category/'.$file_name));
-        
+
         Category::find($category_id)->update([
             'category_image' => $file_name,
         ]);
@@ -72,11 +74,13 @@ class CategoryController extends Controller
     function category_update(Request $request) {
         $request->validate([
             'category_name' => 'required',
+            'category_desp' => 'required|max:60',
             'category_image' => 'mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
         if($request->category_image == null) {
             Category::find($request->category_id)->update([
                 'category_name' => $request->category_name,
+                'category_desp' => $request->category_desp,
                 'status' => $request->status,
                 'added_by' => Auth::id(),
                 'updated_at' => Carbon::now(),

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
+            $table->string('white_logo')->nullable();
             $table->string('favicon')->nullable();
             $table->string('name');
             $table->string('email')->nullable();

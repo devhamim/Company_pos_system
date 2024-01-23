@@ -19,7 +19,7 @@ class bannerContoller extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     //banner_add
     function banner_add() {
         return view('backend.banner.banner_add');
@@ -28,23 +28,23 @@ class bannerContoller extends Controller
     // banner_store
     function banner_store(Request $request) {
         $request->validate([
-            'banner_image' => 'required|mimes:jpg,jpeg,gif,png,webp|file|max:5000',
+            'banner_image' => 'required',
         ]);
 
         $banner_image = $request->banner_image;
         $extension = $banner_image->getClientOriginalExtension();
         $file_name = Str::random(5). rand(1000,999999).'.'.$extension;
         Image::make($banner_image)->save(public_path('uploads/banner/'.$file_name));
-        
+
 
             banner::insert([
             'banner_title' => $request->banner_title,
-            'banner_link' => $request->banner_link,
+            'banner_desp' => $request->banner_desp,
             'banner_image' => $file_name,
             'created_at' => Carbon::now(),
         ]);
 
-        return back()->withSuccess('Banner added successfully.');
+        return redirect()->route('banner.list')->withSuccess('Banner added successfully.');
     }
 
     // banner list
@@ -69,10 +69,10 @@ class bannerContoller extends Controller
         if($request->banner_image == null) {
             banner::find($request->banner_id)->update([
                 'banner_title' => $request->banner_title,
-                'banner_link' => $request->banner_link,
+                'banner_desp' => $request->banner_desp,
             ]);
-            return back()->withSuccess('Category updated successfully');
-        } 
+            return redirect()->route('banner.list')->withSuccess('Category updated successfully');
+        }
         else {
             $banner_img_del = banner::where('id', $request->banner_id)->first()->banner_image;
             $delete_from = public_path('uploads/banner/'.$banner_img_del);
@@ -84,15 +84,19 @@ class bannerContoller extends Controller
             Image::make($upload_img)->save(public_path('uploads/banner/'.$file_name));
             banner::find($request->banner_id)->update([
                 'banner_title' => $request->banner_title,
-                'banner_link' => $request->banner_link,
+                'banner_desp' => $request->banner_desp,
                 'banner_image' => $file_name,
             ]);
-            return back()->withSuccess('Banner updated successfully');
+            return redirect()->route('banner.list')->withSuccess('Banner updated successfully');
         }
     }
 
     // banner_delete
     function banner_delete($banner_id){
+        $banner_img_del = banner::where('id', $banner_id)->first()->banner_image;
+        $delete_from = public_path('uploads/banner/'.$banner_img_del);
+        unlink($delete_from);
+
         banner::find($banner_id)->delete();
         return back()->withSuccess('Banner Delete successfully');
     }

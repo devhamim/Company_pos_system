@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <h3>Category</h3>
-                    <a href="{{route('category.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i> Category</a>
+                    <a href="{{route('category.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i>add Category</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -25,6 +25,7 @@
                                     <th>SL</th>
                                     <th>Category image</th>
                                     <th>Category name</th>
+                                    <th>Category Description</th>
                                     <th>Status</th>
                                     <th>Options</th>
                                 </tr>
@@ -37,6 +38,7 @@
                                             <img src="{{asset('uploads/category')}}/{{$category->category_image}}" alt class="img-fluid wid-40">
                                         </td>
                                         <td>{{$category->category_name}}</td>
+                                        <td>{{$category->category_desp}}</td>
                                         <td>
                                             @if ($category->status == 1)
                                                 <span class="badge badge-success">Active</span>
