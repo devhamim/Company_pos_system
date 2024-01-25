@@ -311,7 +311,8 @@
                                             <td>{{ $sl+1 }}</td>
                                             <td>{{ $order->order_id }}</td>
                                             <td>
-                                                <span> {{ $order->rel_to_billing ? $order->rel_to_billing->customer_name : 'No Billing Details' }}</span> <br>
+                                                <span> {{ $order->rel_to_billing ? $order->rel_to_billing->customer_name : 'No Billing Details' }}</span>
+                                                <br>
                                                 <a href="tel: {{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Billing Details' }}"><span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Billing Details' }}</span></a>
                                                 <br>
                                                 <span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_address : 'No Billing Details' }}</span>
