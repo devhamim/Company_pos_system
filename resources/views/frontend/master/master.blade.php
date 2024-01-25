@@ -40,14 +40,13 @@
     @endif
     <!-- End googletag Code -->
     <style>
-        /* Add your custom styling for the popup here */
         #popup-container {
             display: none;
             position: fixed;
             top: 50%;
             left: 50%;
-            width: 50%;
-            height: 50%;
+            /* width: 50%;
+            height: 50%; */
             transform: translate(-50%, -50%);
             padding: 20px;
             background-color: #fff;
@@ -417,7 +416,8 @@
         </footer>
         <div id="popup-container">
             <!-- Add your popup content here -->
-            <h3>This site is under construction</h3>
+            {{-- <h3>This site is under construction</h3> --}}
+            <img src="{{ asset('frontend/images/121.jpg') }}" alt="">
         </div>
 
     </div>
