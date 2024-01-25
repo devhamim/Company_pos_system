@@ -179,6 +179,8 @@
                         </a>
                     </div>
                     @php
+                        $total_p_price = 0;
+                        $total_p_discount = 0;
                         $total_amount = 0;
                         $total_payment = 0;
                         $total_due = 0;
@@ -186,16 +188,39 @@
                         $total_blance = 0;
                         $total_commission = 0;
                         foreach ($order_id as $order) {
+                            $total_p_price += $order->sub_total;
+                            $total_p_discount += $order->discount;
                             $total_amount += $order->sub_total-$order->discount;
                             $total_payment += $order->paid;
-                            $total_due += $order->due;
+                            // $total_due += $order->due;
                         }
+                        $total_due = $total_amount-$total_payment;
                         foreach ($refund_payment as $refund) {
                             $total_refund += $refund->paid;
                         }
                         $total_blance = $total_payment-$total_refund;
                         $total_commission = $total_blance*5/100;
                     @endphp
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                        <div class="card border-3 border-top border-top-success">
+                            <div class="card-body">
+                                <h5 class="text-secondary">Total P. Price</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">৳{{ $total_p_price }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                        <div class="card border-3 border-top border-top-success">
+                            <div class="card-body">
+                                <h5 class="text-secondary">Total P. Discound</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">৳{{ $total_p_discount }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
@@ -292,9 +317,11 @@
                                             <td>{{ $order->order_id }}</td>
                                             <td>
                                                 <span> {{ $order->rel_to_billing ? $order->rel_to_billing->customer_name : 'No Billing Details' }}</span> <br>
-                                                <a href="tel: {{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Billing Details' }}"><span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Billing Details' }}</span></a>
+                                                <a href="tel: {{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Customer Number' }}"><span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_phone : 'No Customer Number' }}</span></a>
                                                 <br>
-                                                <span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_address : 'No Billing Details' }}</span>
+                                                <span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_address : 'No Customer Address' }}</span>
+                                                <br>
+                                                <span>{{ $order->rel_to_billing ? $order->rel_to_billing->busines_name : 'No Busines Name' }}</span>
                                                 <br>
 
                                             </td>

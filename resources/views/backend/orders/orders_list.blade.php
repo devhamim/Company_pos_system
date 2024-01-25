@@ -248,7 +248,7 @@
                     <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
-                                <h5 class="text-danger">Total R. Payment</h5>
+                                <h5 class="text-danger">Total Refund Pay</h5>
                                 <div class="metric-value d-inline-block">
                                     <h1 class="mb-1">৳{{ $total_refund }}</h1>
                                 </div>
@@ -316,7 +316,8 @@
                                                 <br>
                                                 <span>{{ $order->rel_to_billing ? $order->rel_to_billing->customer_address : 'No Billing Details' }}</span>
                                                 <br>
-
+                                                <span>{{ $order->rel_to_billing ? $order->rel_to_billing->busines_name : 'No Busines Name' }}</span>
+                                                <br>
                                             </td>
                                             <td>
                                                 @foreach ($order->rel_to_orderpro as $OrderProduct)
