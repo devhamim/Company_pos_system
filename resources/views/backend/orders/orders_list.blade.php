@@ -276,8 +276,6 @@
                         </div>
                     </div>
                 </div>
-                    <div class="row mb-2">
-                    </div>
                    <div class="row mt-5">
                     <div class="col-12">
                         <div class="card ">
