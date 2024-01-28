@@ -88,85 +88,85 @@
 
                 </div>
                 <div class="row mb-md-4 mb-3">
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list') }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-primary">Total Order</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_orders }}</h1>
+                                        <h3 class="mb-1">{{ $total_orders }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 0) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-grey">Total Pending</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_pending }}</h1>
+                                        <h3 class="mb-1">{{ $total_pending }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 2) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-info">Total On Going</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_in_review }}</h1>
+                                        <h3 class="mb-1">{{ $total_in_review }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 3) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-warning">Total Due Payment</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_due_payment }}</h1>
+                                        <h3 class="mb-1">{{ $total_due_payment }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 4) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-secondary">Total Refund</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_refund_payment }}</h1>
+                                        <h3 class="mb-1">{{ $total_refund_payment }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 5) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-success">Total Completed</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_completed }}</h1>
+                                        <h3 class="mb-1">{{ $total_completed }}</h3>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <a href="{{ route('orders.list.status', 6) }}">
                             <div class="card border-3 border-top border-top-success">
                                 <div class="card-body">
                                     <h5 class="text-danger">Total Canceled</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">{{ $total_canceled }}</h1>
+                                        <h3 class="mb-1">{{ $total_canceled }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -195,82 +195,82 @@
                         $total_blance = $total_payment-$total_refund;
                         $total_commission = $total_blance*5/100;
                     @endphp
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-secondary">Total P. Price</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_p_price }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_p_price }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-secondary">Total P. Discound</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_p_discount }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_p_discount }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-secondary">Total Amount</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_amount }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_amount }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-info">Total Payment</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_payment }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_payment }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-warning">Total Due</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_due }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_due }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-danger">Total Refund Pay</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_refund }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_refund }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-success">Total Blance</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_blance }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_blance }}</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-md-4 mb-3">
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6 ">
                         <div class="card border-3 border-top border-top-success">
                             <div class="card-body">
                                 <h5 class="text-success">Total Commission</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">৳{{ $total_commission }}</h1>
+                                    <h3 class="mb-1">৳{{ $total_commission }}</h3>
                                 </div>
                             </div>
                         </div>
