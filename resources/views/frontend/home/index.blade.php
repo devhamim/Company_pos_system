@@ -42,7 +42,7 @@
 <section class="service-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <h2>WE WILL PROVIDE YOUTHE <br>BEST SERVICE</h2>
+            <h2>WE WILL PROVIDE YOU THE <br>BEST SERVICE</h2>
         </div>
         <div class="row">
             @foreach ($categoryy->take(8) as $category)
@@ -72,7 +72,7 @@
             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="image-box">
-                        <figure class="image overlay-anim"><img src="{{asset('frontend')}}/images/resource/about1-1.jpg" alt></figure>
+                        <figure class="image overlay-anim"><img style="ru" src="{{asset('frontend')}}/images/resource/about1-1.jpg" alt></figure>
                         <div class="play-box">
                             <figure class="image-2 overlay-anim"><img src="{{asset('frontend')}}/images/resource/about1-2.jpg" alt>
                             </figure>
@@ -95,32 +95,29 @@
                 <div class="inner-column">
                     <div class="sec-title light">
                         <h2>Get the better experience & grow your business with us</h2>
-                        <div class="text">Pull in ten extra bodies to help roll the tortoise idea shower. What
-                            do you feel you would bring to the table if you were hired for this position
-                            exposing new ways to evolve our design language, everyone thinks tastes better. we
-                            can't hear you , so reinvent the wheel hop on the bandwagon.</div>
+                        <div class="text">Unlock unparalleled growth with our professional digital marketing agency. Elevate your business experience with strategic campaigns, cutting-edge techniques, and a results-driven approach. Trust us to optimize your online presence, engage your audience, and drive success. Experience the difference in business growth with our expertise at your service.</div>
                     </div>
                     <div class="inner-box">
                         <div class="content-box">
-                            <span>30+</span>
+                            <span>7+</span>
                             <h6 class="title">Years of expericen</h6>
                         </div>
                         <div class="content-box">
-                            <span>500K+</span>
+                            <span>500+</span>
                             <h6 class="title">Successful project </h6>
                         </div>
                         <div class="content-box">
-                            <span>5M+</span>
+                            <span>10K+</span>
                             <h6 class="title">Happy customer </h6>
                         </div>
                     </div>
                     <div class="btn-box">
-                        <a href="page-about.html" class="theme-btn-v2">Get started <i
+                        <a href="{{ route('about') }}" class="theme-btn-v2">Get started <i
                                 class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
                         <div class="contact-btn">
                             <i class="flaticon-telephone-1"></i>
                             <span>Call us</span>
-                            <h6 class="title">(000) 123 456 789</h6>
+                            <h6 class="title">09613753442</h6>
                         </div>
                     </div>
                 </div>

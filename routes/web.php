@@ -5,26 +5,21 @@ use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\orderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\TermsconditionController;
-use App\Http\Controllers\TimerController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\settingController;
 use App\Http\Controllers\shippingMethodsController;
 use App\Http\Controllers\courierController;
-use App\Http\Controllers\cityController;
-use App\Http\Controllers\courierZoneController;
 use App\Http\Controllers\mediaController;
 use App\Http\Controllers\OrderslistController;
 use App\Http\Controllers\customerController;
@@ -44,7 +39,7 @@ use App\Http\Controllers\invoiceController;
 |
 */
 Route::get('/', [FrontendController::class, 'home'])->name('site');
-Route::get('/product/quick/view/{product_id}', [FrontendController::class, 'product_quick_view'])->name('product_quick_view');
+
 
 Auth::routes();
 
@@ -170,20 +165,15 @@ Route::get('/role/add', [RoleController::class, 'role'])->name('role');
 Route::post('/permission/store', [RoleController::class, 'perimission_store'])->name('permission.store');
 
 /******* Frontend start here *********/
-// category
-Route::get('/category/single/{category_id}', [FrontendController::class, 'category_one'])->name('category.one');
-Route::get('/category', [FrontendController::class, 'category_two'])->name('category');
+
+Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
 
 Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->name('privacy.policy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
+Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 
-
-// offer
-Route::get('/offer', [FrontendController::class, 'offer'])->name('offer');
-
-// campaign
-Route::get('/campaign', [FrontendController::class, 'campaign'])->name('campaign');
 
 // Customer authentication
 Route::post('/customer/auth/register', [CustomerAuthController::class, 'customer_auth_register'])->name('customer.auth.register');
@@ -211,13 +201,8 @@ Route::get('/clear-cart', [CartController::class, 'clear_cart']);
 Route::post('/add_single_cart', [CartController::class, 'cart_single_store']);
 
 
-// Buy
-// Route::post('/buy/now/store', [BuyController::class, 'buy_now_store'])->route('buy.now.store');
-
-
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
-
 
 // Order
 Route::post('/order/store', [CheckoutController::class, 'order_store'])->name('order.store');
@@ -232,22 +217,12 @@ Route::post('/coupon/store', [CouponController::class, 'coupon_store'])->name('c
 Route::post('/coupon/update', [CouponController::class, 'coupon_update'])->name('coupon.update');
 Route::post('/check-coupon-code', [CouponController::class, 'check_coupon_code']);
 
-
-// Wishlist
-Route::post('/add-wishlist', [WishlistController::class, 'add_wishlist']);
-Route::get('/wishlist', [WishlistController::class, 'wishlist'])->name('wishlist');
-Route::delete('/delete-from-wishlist', [WishlistController::class, 'delete_from_wishlist']);
-Route::post('/wishlist-to-cart', [WishlistController::class, 'wishlist_to_cart']);
-Route::get('/wishlist/clear', [WishlistController::class, 'wishlist_clear'])->name('wishlist.clear');
-
-
 // Buy
 Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store');
 
-
 // Shop
-Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
-Route::post('/shop/filter', [ShopController::class, 'shop_filter'])->name('shop.filter');
+// Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
+// Route::post('/shop/filter', [ShopController::class, 'shop_filter'])->name('shop.filter');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');

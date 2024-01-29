@@ -386,9 +386,7 @@
 @endsection
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        //check value
         var checkboxes = document.querySelectorAll('.sub_chk');
-        //passing data to input
         let checked_value = document.getElementById('checked_value');
 
         checkboxes.forEach(function(checkbox) {
@@ -401,17 +399,13 @@
                 });
 
                 checked_value.value = checkedIDs.join(', ');
-                // console.log(checkedIDs); // Display the array of checked IDs in the console
-                // You can perform further actions with the checkedIDs array here
             });
         });
     });
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        //check value
         var checkboxes = document.querySelectorAll('.sub_chk');
-        //passing data to input
         let checked_value = document.getElementById('all_ord_id');
 
         checkboxes.forEach(function(checkbox) {
@@ -424,8 +418,6 @@
                 });
 
                 checked_value.value = checkedIDs.join(', ');
-                // console.log(checkedIDs); // Display the array of checked IDs in the console
-                // You can perform further actions with the checkedIDs array here
             });
         });
     });

@@ -1,90 +1,348 @@
 @extends('frontend.master.master')
-@section('computer')
-<div class="dropdown category-dropdown show is-on" data-visible="false">
-    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-display="static" title="Browse Categories">
-        ক্যাটেগরীজ
-    </a>
-    <div class="dropdown-menu">
-        <nav class="side-nav">
-            <ul class="menu-vertical sf-arrows">
-                @foreach ($categories->take(10) as $category)
-                    <li><a href="{{route('category', $category->id)}}">{{$category->category_name}}</a></li>
-                @endforeach
-                <li><a href="{{route('category')}}">All</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
-@endsection
-
 @section('content')
+    <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.png);">
+        <div class="auto-container">
+            <div class="title-outer text-center">
+                <h1 class="title">About Us</h1>
+                <ul class="page-breadcrumb">
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li>About Us</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<div class="page-content">
-    <div id="shopify-section-about-template" class="shopify-section"><!-- about-template.liquid -->
 
-        <style data-shopify>
-            .content_1566459467440 {
-                margin-top: 0;
-                margin-bottom: 0;
-                padding: 4.5rem 0;
-            }
-        </style>
-        <div class="container" data-block="item_banner">
-            <div class="content_1566459467440 bg-image lazyload" style="background: url({{ asset('frontend/assets/images/about-header-bg.jpg') }})">
-                <div class="section-width w-100">
-                    <div class="text-content text-center">
-                        <h2 class="text-white">About us<span>Who we are</span></h2>
+    <section class="about-section innerpage">
+        <div class="auto-container">
+            <div class="row">
+
+                <div class="image-column col-lg-6">
+                    <div class="inner-column">
+                        <div class="image-box">
+                            <figure class="image overlay-anim"><img
+                                    src="{{ asset('frontend') }}/images/resource/about1-1.jpg" alt>
+                            </figure>
+                            <div class="play-box">
+                                <figure class="image-2 overlay-anim"><img
+                                        src="{{ asset('frontend') }}/images/resource/about1-2.jpg" alt>
+                                </figure>
+                                <a title href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
+                                    data-caption>
+                                    <i class="icon fa fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="exp-box">
+                                <div class="icon-box">
+                                    <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
+                                </div>
+                                <h4 class="title">MARKETING SOLUTION</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="section-width w-100">
-                <div class="row mt-5">
-                    <div class="col-12 col-md-6">
-                        <h2 class="title">Our Vision</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit.
-                            Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id,
-                            mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                            libero sodales leo, eget blandit nunc tortor eu nibh.</p>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <h2 class="title">Our Mission</h2>
-                        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus
-                            libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida
-                            id, est. Sed lectus. <br>Praesent elementum hendrerit tortor. Sed semper lorem
-                            at felis.</p>
+
+                <div class="content-column col-lg-6">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <h2>Get the better experience & grow your business with us</h2>
+                            <div class="text">Unlock unparalleled growth with our professional digital marketing agency.
+                                Elevate your business experience with strategic campaigns, cutting-edge techniques, and a
+                                results-driven approach. Trust us to optimize your online presence, engage your audience,
+                                and drive success. Experience the difference in business growth with our expertise at your
+                                service.</div>
+                        </div>
+                        <div class="inner-box">
+                            <div class="content-box">
+                                <span>7+</span>
+                                <h6 class="title">Years of expericen</h6>
+                            </div>
+                            <div class="content-box">
+                                <span>500+</span>
+                                <h6 class="title">Successful project </h6>
+                            </div>
+                            <div class="content-box">
+                                <span>10K+</span>
+                                <h6 class="title">Happy customer </h6>
+                            </div>
+                        </div>
+                        <div class="btn-box">
+                            <a href="#" class="theme-btn-v2">Get started <i
+                                    class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                            </a>
+                            <div class="contact-btn">
+                                <i class="flaticon-telephone-1"></i>
+                                <span>Call us</span>
+                                <h6 class="title">09613753442</h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <style data-shopify>
-            .content_1566459607551 {
-                margin-top: 5rem;
-                margin-bottom: 0;
-                padding: 5rem 0;
-                background-color: #f9f9f9;
-            }
-        </style>
-        <div class="w-100" data-block="item_who_we_are">
-            <div class="content_1566459607551">
-                <div class="section-width container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <h2 class="title">Who We Are</h2>
-                            <p class="lead text-primary mb-3">Pellentesque odio nisi, euismod pharetra a
-                                ultricies <br>in diam. Sed arcu. Cras consequat</p>
-                            <p class="mb-2">Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                                libero sodales leo, eget blandit nunc tortor eu nibh. Suspendisse potenti.
-                                Sed egestas, ante et vulputate volutpat, uctus metus libero eu augue. </p>
+    </section>
 
-                            {{-- <a href="#" class="btn btn-sm btn-minwidth btn-outline-primary-2">
-                                <span>VIEW OUR NEWS</span><i class="fkt-long-arrow-right"></i>
-                            </a> --}}
-
+    <section class="team-section position-relative pt-120 pb-100 bg-light">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2 class="text-white">OUR TEAM</h2>
+            </div>
+            <div class="row">
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-1.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="col-lg-6 offset-lg-1">
-                            <div class="about-images">
-                                <div class="img__banner lazyload"
-                                style="padding-bottom: 64.28571428571429%; background: url({{ asset('frontend/assets/images/about/img-1.jpg') }})">
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Cameron Williamson</a></h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-2.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Marvin McKinney</a></h4>
+                            <span>Creative Director</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-3.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Wade Warren</a></h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-4.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Albert Flores</a></h4>
+                            <span>Head Of marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-2.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Marvin McKinney</a></h4>
+                            <span>Creative Director</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="600ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-3.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Wade Warren</a></h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="700ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-4.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Albert Flores</a></h4>
+                            <span>Head Of marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="800ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><img src="images/resource/team1-1.png" alt></figure>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="content-box">
+                            <h4 class="title"><a href="page-team-details.html">Cameron Williamson</a></h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2>WE WILL PROVIDE YOU THE <br>BEST SERVICE</h2>
+            </div>
+            <div class="row">
+                @foreach ($categoryy->take(8) as $category)
+                    <div class="service-block col-lg-3 col-sm-6">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="">
+                            </div>
+                            <div class="content-box">
+                                <h3 class="title"><a href="page-service-details.html">{{ $category->category_name }}</a>
+                                </h3>
+                                <div class="text">{{ $category->category_desp }}</div>
+                                <a href="page-service-details.html" data-animation-in="fadeInUp" data-delay-in="0.4"
+                                    class="theme-btn ser-btn">Learn more <i
+                                        class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="inner-container">
+            <div class="sec-title text-center">
+                <h2>WHAT’s TALKING about<br> our coustomer?</h2>
+            </div>
+            <div class="row testi-slider">
+
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
+                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
+                                Tincidunt lobortis feugiat vivamus at augue.</div>
+                            <div class="auther-info">
+                                <img src="{{ asset('frontend') }}/images/resource/auther1-1.jpg" alt>
+                                <div class="info-box">
+                                    <h6 class="title">Brooklyn Simmons</h6>
+                                    <span>Product Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
+                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
+                                Tincidunt lobortis feugiat vivamus at augue.</div>
+                            <div class="auther-info">
+                                <img src="{{ asset('frontend') }}/images/resource/auther1-2.jpg" alt>
+                                <div class="info-box">
+                                    <h6 class="title">Leslie Alexander</h6>
+                                    <span>Graphic Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
+                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
+                                Tincidunt lobortis feugiat vivamus at augue.</div>
+                            <div class="auther-info">
+                                <img src="{{ asset('frontend') }}/images/resource/auther1-1.jpg" alt>
+                                <div class="info-box">
+                                    <h6 class="title">Brooklyn Simmons</h6>
+                                    <span>Product Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
+                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
+                                Tincidunt lobortis feugiat vivamus at augue.</div>
+                            <div class="auther-info">
+                                <img src="{{ asset('frontend') }}/images/resource/auther1-2.jpg" alt>
+                                <div class="info-box">
+                                    <h6 class="title">Leslie Alexander</h6>
+                                    <span>Graphic Designer</span>
                                 </div>
                             </div>
                         </div>
@@ -92,226 +350,72 @@
                 </div>
             </div>
         </div>
-        
-        
-        <style data-shopify>
-            .content_1566460432072 {
-                margin-top: 0;
-                margin-bottom: 0;
-                padding: 0;
-            }
-        </style>
+    </section>
 
-        <style data-shopify>
-            .content_1566460593227 {
-                margin-top: 0;
-                margin-bottom: 0;
-                padding: 6rem 0;
-                background-color: #f9f9f9;
-            }
-        </style>
+    <section class="choose-us-section">
+        <div class="auto-container">
+            <div class="row">
 
-        <style>
-            [data-block="item_banner"] .text-content {
-                min-height: 354px;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-            }
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="sec-title light">
+                            <h2>Why you should choose our services?</h2>
+                            <div class="text">phasellus egestas tellus rutrum. Facilisi morbi tempus
+                                iaculis urna id for volutpat lacus. Vel fringilla est ullamcorper eget nulla.
+                                Placerat orci nulla pellentesque dignissim. Cursus euismod quis viverra nibh
+                                pulvinar.
+                            </div>
+                        </div>
+                        <div class="list-sec">
+                            <ul class="list">
+                                <li><i class="fa-solid fa-circle-check"></i>Make website without a coding</li>
+                                <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
+                            </ul>
+                            <ul class="list">
+                                <li><i class="fa-solid fa-circle-check"></i>Make website without a coding</li>
+                                <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
+                                <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
+                                <div class="inner-box">
+                                    <div class="icon-box">
+                                        <i class="flaticon-title"></i>
+                                    </div>
+                                    <h6 class="title">best Consulting and Strategy</h6>
+                                </div>
+                            </div>
+                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
+                                <div class="inner-box">
+                                    <div class="icon-box">
+                                        <i class="flaticon-creativity"></i>
+                                    </div>
+                                    <h6 class="title">search engine optimization</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            [data-block="item_banner"] .text-content h2 {
-                font-weight: 400;
-                letter-spacing: -.025em;
-                margin-bottom: 0;
-            }
-
-            [data-block="item_banner"] .text-content h2 span {
-                display: block;
-                font-size: 1.6rem;
-                margin-top: .4rem;
-                letter-spacing: 0;
-            }
-
-            .brands-text {
-                max-width: 430px;
-                margin-top: 2.5rem;
-                margin-bottom: 3rem;
-            }
-
-            .brand {
-                display: block;
-                margin-bottom: 1rem;
-            }
-
-            .member {
-                margin-bottom: 2rem;
-                max-width: 376px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .member p {
-                max-width: 240px;
-            }
-
-            .member.text-center p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .member.text-center .social-icons {
-                justify-content: center;
-            }
-
-            .member-media {
-                position: relative;
-                margin: 0;
-            }
-
-            .member-content {
-                padding-top: 2.4rem;
-                padding-bottom: 2.4rem;
-                overflow: hidden;
-            }
-
-            .member-title {
-                font-weight: 400;
-                font-size: 1.6rem;
-                letter-spacing: 0;
-                margin-bottom: 0;
-            }
-
-            .member-title span {
-                display: block;
-                color: #999999;
-                font-weight: 300;
-                font-size: 1.4rem;
-                margin-top: 0.3rem;
-            }
-
-            .member-overlay {
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: rgba(102, 102, 102, 0.7);
-                color: #fff;
-                opacity: 0;
-                visibility: hidden;
-                overflow: hidden;
-            }
-
-            .member-overlay .member-title {
-                color: inherit;
-                margin-bottom: 1.5rem;
-            }
-
-            .member-overlay .member-title span {
-                color: #ebebeb;
-            }
-
-            .member-overlay .social-icons {
-                margin-top: 2.7rem;
-            }
-
-            .member-overlay .social-icon {
-                font-size: 1.5rem;
-            }
-
-            .member-overlay .social-icon+.social-icon {
-                margin-left: 2.8rem;
-            }
-
-            .member-overlay .social-icon:not(:hover) {
-                color: inherit;
-            }
-
-            .member-content,
-            .member-overlay {
-                transition: all 0.45s ease;
-            }
-
-            .member:hover .member-content {
-                opacity: 0;
-            }
-
-            .member:hover .member-overlay {
-                visibility: visible;
-                opacity: 1;
-            }
-
-            .member:hover.member-anim .member-overlay .member-title,
-            .member:hover.member-anim .member-overlay p,
-            .member:hover.member-anim .member-overlay .social-icons {
-                animation-name: fadeInUpShort;
-                animation-duration: 0.65s;
-                animation-fill-mode: both;
-            }
-
-            .member:hover.member-anim .member-overlay p {
-                animation-delay: 0.1s;
-            }
-
-            .member:hover.member-anim .member-overlay .social-icons {
-                animation-delay: 0.2s;
-            }
-
-            .member:hover.member-anim .member-content .member-title {
-                animation-name: fadeOutUpShort;
-                animation-duration: 0.65s;
-                animation-fill-mode: both;
-            }
-
-            @keyframes fadeInUpShort {
-                from {
-                    opacity: 0;
-                    -webkit-transform: translate3d(0, 100px, 0);
-                    transform: translate3d(0, 100px, 0);
-                }
-
-                to {
-                    opacity: 1;
-                    -webkit-transform: translate3d(0, 0, 0);
-                    transform: translate3d(0, 0, 0);
-                }
-            }
-
-            @keyframes fadeOutUpShort {
-                from {
-                    opacity: 1;
-                    -webkit-transform: translate3d(0, 0, 0);
-                    transform: translate3d(0, 0, 0);
-                }
-
-                to {
-                    opacity: 0;
-                    -webkit-transform: translate3d(0, -100px, 0);
-                    transform: translate3d(0, -100px, 0);
-                }
-            }
-
-            .about-testimonials blockquote {
-                color: #666666;
-                max-width: 850px;
-                margin-left: auto;
-                margin-right: auto;
-                font-style: normal;
-                line-height: 1.875;
-            }
-        </style>
-    </div>
-</div>
-
-        
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="image-box">
+                            <figure class="image overlay-anim"><a href="page-about.html"><img
+                                        src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt></a></figure>
+                            <div class="exp-box bounce-y">
+                                <h6 class="title">25+</h6>
+                                <div class="text">Years of
+                                    experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 @endsection
+
+

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\banner;
 use App\Models\Category;
-use App\Models\Color;
 use App\Models\Inventory;
 use App\Models\Order;
 use App\Models\privacy_policy;
@@ -49,73 +48,35 @@ class FrontendController extends Controller
         ]);
     }
 
-    // category
-    function category_one($category_id) {
-        $categories = Category::all();
-        $products = Product::where('status', '1')->where('category_id', $category_id)->get();
-        $category_id_num = $category_id;
-        return view('frontend.category.category_one', [
-            'categories' => $categories,
-            'products' => $products,
-            'category_id_num' => $category_id_num,
-        ]);
-    }
-
-    // category_two
-    function category_two() {
-        $categories = Category::all();
-        $products = Product::where('status', '1')->get();
-        return view('frontend.category.category_two', compact(['categories', 'products']));
-    }
-
-
-
-    // offer
-    function offer() {
-        $categories = Category::all();
-        $products = Product::where('status', '1')->where('product_discount', '!=', null)->where('validity', '>', Carbon::now())->get();
-        return view('frontend.offer.offer', [
-            'categories' => $categories,
-            'products' => $products,
-        ]);
-    }
-
-    function campaign() {
-        $categories = Category::all();
-        $products = Product::where('status', '1')->where('campaign', '1')->where('validity', '>', Carbon::now())->get();
-        return view('frontend.campaign.campaign', [
-            'categories' => $categories,
-            'products' => $products,
-        ]);
-    }
-
-    function product_quick_view($product_id) {
-        $product = Product::find($product_id);
-        $product_gallery = ProductGallery::where('product_id', $product->id)->get();
-        $available_colors = Inventory::where('product_id', $product->id)
-        ->groupBy('color_id')
-        ->selectRaw('count(*) as total, color_id')
-        ->get();
-
-        $available_sizes = Inventory::where('product_id', $product->id)
-        ->groupBy('size_id')
-        ->selectRaw('count(*) as total, size_id')
-        ->get();
-        return view('frontend.home.product_quick_view.product_quick_view', [
-            'product'=> $product,
-            'colors'=> $available_colors,
-            'sizes' => $available_sizes,
-            'product_gallery' => $product_gallery,
-        ]);
-    }
-
     // about
     function about(){
-        $categories = Category::all();
+        // $categories = Category::all();
+        $category= Category::take(8)->get();
         return view('frontend.about.about', [
-            'categories'=>$categories,
+            // 'categories'=>$categories,
+            'categoryy' => $category,
         ]);
     }
+
+
+    // our_services
+    function our_services() {
+        $services = Category::where('status', '1')->get();
+        return view('frontend.service.index', compact(['services']));
+    }
+
+
+    // our_products
+    function our_products(){
+        return view('frontend.product.index');
+    }
+
+    // our_blogs
+    function our_blogs(){
+        return view('frontend.blogs.index');
+    }
+
+
 
     // privacy_policy
     function privacy_policy(){

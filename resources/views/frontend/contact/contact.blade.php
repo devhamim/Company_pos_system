@@ -1,117 +1,153 @@
 @extends('frontend.master.master')
-@section('computer')
-<div class="dropdown category-dropdown show is-on" data-visible="false">
-    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-display="static" title="Browse Categories">
-        ক্যাটেগরীজ
-    </a>
-    <div class="dropdown-menu">
-        <nav class="side-nav">
-            <ul class="menu-vertical sf-arrows">
-                @foreach ($categories->take(10) as $category)
-                    <li><a href="{{route('category', $category->id)}}">{{$category->category_name}}</a></li>
-                @endforeach
-                <li><a href="{{route('category')}}">All</a></li>
-            </ul>
-        </nav>
-    </div>
-</div>
-@endsection
 
 @section('content')
-<hr class="mt-4 mb-5">
-<div class="page-content pb-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 mb-2 mb-lg-0">
-                <h2 class="title mb-1">Contact Information</h2>
-                @if($setting->first()->about != null)
-                    <p class="mb-3 pr-3">{{ $setting->first()->about  }}</p>
-                @endif
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-info">
-                            <ul class="contact-list">
-                                <li>
-                                    <i class="icon-map-marker"></i>
-                                    @if($setting->first()->settings != null)
-                                        {{ $setting->first()->settings }}
-                                    @endif
-                                </li>
-                                <li>
-                                    <i class="icon-phone"></i>
-                                    @if($setting->first()->phone != null)
-                                    <a href="tel:{{ $setting->first()->phone }}">{{ $setting->first()->phone }}</a>
-                                    @endif
-                                </li>
-                                <li>
-                                    <i class="icon-envelope"></i>
-                                    @if($setting->first()->email != null)
-                                        <a href="mailto:{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
-                                    @endif
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {{-- <div class="row">
-                    <div class="col-12">
-                        <div class="contact-info">
-                                <span class="float-left mr-5" style="font-size: 18px">Social: </span>
-                                <a href="#" class="mr-3" style="font-size: 17px" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
-                                <a href="#" class="mr-3" style="font-size: 17px" title="Facebook" target="_blank"><i class="icon-twitter"></i></a>
-                                <a href="#" class="mr-3" style="font-size: 17px" title="Facebook" target="_blank"><i class="icon-instagram"></i></a>
-                                <a href="#" class="mr-3" style="font-size: 17px" title="Facebook" target="_blank"><i class="icon-youtube"></i></a>
-                                <a href="#" class="mr-3" style="font-size: 17px" title="Facebook" target="_blank"><i class="icon-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div> --}}
-            </div>
-            <div class="col-lg-7">
-                <h2 class="title mb-1">Got Any Questions?</h2>
-                <p class="mb-2">Use the form below to get in touch with the sales team</p>
 
-                <form action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
+<section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.png);">
+    <div class="auto-container">
+        <div class="title-outer text-center">
+            <h1 class="title">Contact Us</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-details">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xl-7 col-lg-6">
+                <div class="sec-title">
+                    <span class="sub-title">Send us email</span>
+                    <h2>Feel free to write</h2>
+                </div>
+
+                <form id="contact_form" name="contact_form" class action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="cname" class="sr-only">Name</label>
-                            <input type="text" name="name" class="form-control" id="cname" placeholder="Name *" required>
+                            <div class="mb-3">
+                                <input name="name" class="form-control" type="text" placeholder="Enter Name">
+                            </div>
                         </div>
-
                         <div class="col-sm-6">
-                            <label for="cemail" class="sr-only">Email</label>
-                            <input type="email" name="email" class="form-control" id="cemail" placeholder="Email *" required>
+                            <div class="mb-3">
+                                <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
+                            </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-sm-12">
-                            <label for="cphone" class="sr-only">Phone</label>
-                            <input type="tel" name="phone" class="form-control" id="cphone" placeholder="Phone">
+                            <div class="mb-3">
+                                <input name="phone" class="form-control" type="text" placeholder="Enter Phone">
+                            </div>
                         </div>
                     </div>
-
-                    <label for="cmessage" class="sr-only">Message</label>
-                    <textarea class="form-control" name="message" cols="30" rows="4" id="cmessage" required placeholder="Message *"></textarea>
-
-                    <button type="submit" class="btn btn-outline-primary-2 btn-minwidth-sm">
-                        <span>SUBMIT</span>
-                        <i class="icon-long-arrow-right"></i>
-                    </button>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                    </div>
+                    <div class="mb-5">
+                        <input name="form_botcheck" class="form-control" type="hidden" value />
+                        <button type="submit" class="theme-btn btn-style-one"
+                            data-loading-text="Please wait..."><span class="btn-title">Send
+                                message</span></button>
+                        <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span
+                                class="btn-title">Reset</span></button>
+                    </div>
                 </form>
+
+            </div>
+            <div class="col-xl-5 col-lg-6">
+                <div class="contact-details__right">
+                    <div class="sec-title">
+                        <span class="sub-title">Need any help?</span>
+                        <h2>Get in touch with us</h2>
+                        <div class="text">
+                            @if($setting->first()->about != null)
+                                {{ $setting->first()->about  }}
+                            @endif
+                        </div>
+                    </div>
+                    <ul class="list-unstyled contact-details__info">
+                        <li>
+                            <div class="icon">
+                                <span class="lnr-icon-phone-plus"></span>
+                            </div>
+                            <div class="text">
+                                <h6>Have any question?</h6>
+                                @if($setting->first()->phone != null)
+                                    <a href="tel:{{ $setting->first()->phone }}"><span>Free</span> {{ $setting->first()->phone }}</a>
+                                @endif
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="lnr-icon-envelope1"></span>
+                            </div>
+                            <div class="text">
+                                <h6>Write email</h6>
+                                @if($setting->first()->email != null)
+                                    <a href="{{ $setting->first()->email }}">
+                                        <span class="__cf_email__" data-cfemail="28464d4d4c404d4458684b474558494651064b4745">{{ $setting->first()->email }}</span>
+                                    </a>
+                                @endif
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <span class="lnr-icon-location"></span>
+                            </div>
+                            <div class="text">
+                                <h6>Visit anytime</h6>
+                                @if($setting->first()->address != null)
+                                    <span>{{ $setting->first()->address }}</span>
+                                @endif
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-
-
     </div>
-</div>
+</section>
+
+
+<section class="map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645.5242486789646!2d90.35682867659125!3d23.760335347486667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf5fc8dbffff%3A0xbf6b3813840a5d2!2sRainbow%20Express%20Courier%20Ltd!5e0!3m2!1sen!2sbd!4v1706530800394!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
 @endsection
 
-@section('mobile')
-<ul class="mobile-cats-menu">
-    @foreach ($categories as $category)
-    <li><a href="{{route('category', $category->id)}}">{{$category->category_name}}</a></li>
-    @endforeach
-    <li><a href="#">All</a></li>
-</ul>
+@section('footer_script')
+<script>
+    (function($) {
+        $("#contact_form").validate({
+            submitHandler: function(form) {
+                var form_btn = $(form).find('button[type="submit"]');
+                var form_result_div = '#form-result';
+                $(form_result_div).remove();
+                form_btn.before(
+                    '<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>'
+                    );
+                var form_btn_old_msg = form_btn.html();
+                form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                $(form).ajaxSubmit({
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.status == 'true') {
+                            $(form).find('.form-control').val('');
+                        }
+                        form_btn.prop('disabled', false).html(form_btn_old_msg);
+                        $(form_result_div).html(data.message).fadeIn('slow');
+                        setTimeout(function() {
+                            $(form_result_div).fadeOut('slow')
+                        }, 6000);
+                    }
+                });
+            }
+        });
+    })(jQuery);
+</script>
 @endsection

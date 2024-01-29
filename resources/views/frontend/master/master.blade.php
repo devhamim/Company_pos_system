@@ -84,8 +84,10 @@
                             <nav class="nav main-menu">
                                 <ul class="navigation">
                                     <li ><a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('our.services') }}">Services</a></li>
 
-                                    <li class="dropdown"> <a href="#">Pages</a>
+                                    {{-- <li class="dropdown"> <a href="#">Pages</a>
                                         <ul>
                                             <li><a href="page-about.html">About</a></li>
                                             <li class="dropdown"> <a href="#">Projects</a>
@@ -105,29 +107,17 @@
                                             <li><a href="page-faq.html">FAQ</a></li>
                                             <li><a href="page-404.html">Page 404</a></li>
                                         </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="page-services.html">Services List</a></li>
-                                            <li><a href="page-service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href="#">Shop</a>
-                                        <ul>
-                                            <li><a href="shop-products.html">Products</a></li>
-                                            <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-                                            <li><a href="shop-product-details.html">Product Details</a></li>
-                                            <li><a href="shop-cart.html">Cart</a></li>
-                                            <li><a href="shop-checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"> <a href="#">News</a>
+                                    </li> --}}
+
+                                    <li> <a href="{{ route('our.products') }}">Product</a></li>
+                                    <li> <a href="{{ route('our.blogs') }}">Blogs</a></li>
+                                    {{-- <li class="dropdown"> <a href="#">News</a>
                                         <ul>
                                             <li><a href="news-grid.html">News Grid</a></li>
                                             <li><a href="news-details.html">News Details</a></li>
                                         </ul>
-                                    </li>
-                                    <li><a href="page-contact.html">Contact</a></li>
+                                    </li> --}}
+                                    <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
 
@@ -437,6 +427,7 @@
     </script>
 
 
+
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="{{asset('frontend')}}/js/jquery.js"></script>
     <script src="{{asset('frontend')}}/js/popper.min.js"></script>
@@ -449,6 +440,8 @@
     <script src="{{asset('frontend')}}/js/appear.js"></script>
     <script src="{{asset('frontend')}}/js/mixitup.js"></script>
     <script src="{{asset('frontend')}}/js/script.js"></script>
+
+    @yield('footer_script')
 
 </body>
 
