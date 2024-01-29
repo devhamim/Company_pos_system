@@ -115,7 +115,7 @@
 
 
 <section class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645.5242486789646!2d90.35682867659125!3d23.760335347486667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf5fc8dbffff%3A0xbf6b3813840a5d2!2sRainbow%20Express%20Courier%20Ltd!5e0!3m2!1sen!2sbd!4v1706530800394!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d645.5242486789646!2d90.35682867659125!3d23.760335347486667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf5fc8dbffff%3A0xbf6b3813840a5d2!2sRainbow%20Express%20Courier%20Ltd!5e0!3m2!1sen!2sbd!4v1706530800394!5m2!1sen!2sbd" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 @endsection
