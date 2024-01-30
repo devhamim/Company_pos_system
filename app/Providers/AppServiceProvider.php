@@ -44,6 +44,10 @@ class AppServiceProvider extends ServiceProvider
         $view->with('setting', setting::all());
     });
      // setting
+     View::composer('frontend.home.index', function ($view){
+        $view->with('setting', setting::all());
+    });
+     // setting
      View::composer('layouts.dashboard', function ($view){
         $view->with('setting', setting::all());
     });

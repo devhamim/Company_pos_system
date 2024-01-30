@@ -115,9 +115,11 @@
                         <a href="{{ route('about') }}" class="theme-btn-v2">Get started <i
                                 class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
                         <div class="contact-btn">
-                            <i class="flaticon-telephone-1"></i>
-                            <span>Call us</span>
-                            <h6 class="title">09613753442</h6>
+                            @if ($setting->first()->phone != null)
+                                <i class="flaticon-telephone-1"></i>
+                                <span>Call us</span>
+                                <h6 class="title">{{ $setting->first()->phone }}</h6>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -585,18 +587,11 @@
 
                             <div class="contact-block col-sm-6">
                                 <div class="inner-box">
-                                    <div class="icon-box"> <i class="flaticon-map-locator"></i> </div>
-                                    <div class="content-box"> <span>Location</span>
-                                        <h6 class="title">255 sheet, new city, ny</h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="contact-block col-sm-6">
-                                <div class="inner-box">
                                     <div class="icon-box"> <i class="flaticon-call-3"></i> </div>
                                     <div class="content-box"> <span>Phone</span>
-                                        <h6 class="title">(000) 123 567 889</h6>
+                                        @if ($setting->first()->phone != null)
+                                            <h6 class="title">{{ $setting->first()->phone }}</h6>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -605,20 +600,22 @@
                                 <div class="inner-box">
                                     <div class="icon-box"> <i class="flaticon-envelope"></i> </div>
                                     <div class="content-box"> <span>Email</span>
-                                        <h6 class="title"><a
-                                                href="https://html.kodesolution.com/cdn-cgi/l/email-protection"
-                                                class="__cf_email__"
-                                                data-cfemail="345d5a525b745051595b59555d581a575b59">[email&#160;protected]</a>
+                                        <h6 class="title">
+                                            @if ($setting->first()->email != null)
+                                                <a href="{{ $setting->first()->email }}" class="__cf_email__" data-cfemail="345d5a525b745051595b59555d581a575b59">{{ $setting->first()->email }}</a>
+                                            @endif
                                         </h6>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="contact-block col-sm-6">
+                            <div class="contact-block col-sm-12">
                                 <div class="inner-box">
-                                    <div class="icon-box"> <i class="flaticon-worldwide"></i> </div>
-                                    <div class="content-box"> <span>Website</span>
-                                        <h6 class="title">www.yourwebsite.com</h6>
+                                    <div class="icon-box"> <i class="flaticon-map-locator"></i> </div>
+                                    <div class="content-box"> <span>Location</span>
+                                        @if ($setting->first()->address != null)
+                                            <h6 class="title">{{ $setting->first()->address }}</h6>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -629,18 +626,18 @@
                 <div class="form-column col-lg-6">
                     <div class="inner-column">
                         <h4 class="title">Get in touch</h4>
-                        <form method="post" action="https://html.kodesolution.com/2023/digitex-html/get"
-                            id="contact-form">
+                        <form method="post" action="{{route('contact.message')}}" id="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-lg-12">
                                     <div class="input-outer">
-                                        <input type="email" name="Email" placeholder="Your Email" required>
+                                        <input type="text" name="name" placeholder="Enter Name" required>
                                         <span class="icon fa fa-user"></span>
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-12">
                                     <div class="input-outer">
-                                        <input type="text" name="Phone" placeholder="Phone Number" required>
+                                        <input type="email" name="email" placeholder="Your Email" required>
                                         <span class="icon fa fa-envelope"></span>
                                     </div>
                                 </div>
@@ -657,9 +654,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-12">
-                                    <button class="theme-btn" type="submit" name="submit-form"><span
-                                            class="btn-title">send your message</span><i
-                                            class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i></button>
+                                    <button class="theme-btn" type="submit" name="submit-form">
+                                        <span  class="btn-title">send your message</span>
+                                        <i class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i>
+                                    </button>
                                 </div>
                             </div>
                         </form>

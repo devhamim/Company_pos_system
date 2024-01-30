@@ -3,7 +3,7 @@
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.png);">
     <div class="auto-container">
         <div class="title-outer text-center">
-            <h1 class="title">Services</h1>
+            <h1 class="title">Our Services</h1>
             <ul class="page-breadcrumb">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Services</li>
@@ -15,21 +15,22 @@
 <section class="service-section-two">
     <div class="auto-container">
         <div class="row">
-
             @foreach ($services as $service)
                 <div class="service-block-two col-xl-3 col-lg-4 col-md-6">
                     <div class="inner-box">
                         <div class="icon-box">
-                            <img src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
+                            <img style="height: 100%" src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
                         </div>
                         <div class="content-box">
                             <h3 class="title"><a href="page-service-details.html">{{$service->category_name}}</a></h3>
                             <div class="text">{{$service->category_desp}}</div>
+                            <a href="{{ route('services.product', $service->id) }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn ser-btn">Learn more
+                                <i class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
     </div>
 </section>

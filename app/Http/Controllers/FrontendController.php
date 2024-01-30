@@ -65,6 +65,19 @@ class FrontendController extends Controller
         return view('frontend.service.index', compact(['services']));
     }
 
+    // services_product
+    function services_product($id) {
+        $services = Category::where('status', '1')->where('id', $id)->get();
+        $products = Product::where('status', '1')->where('category_id', $id)->get();
+        return view('frontend.service.details', compact(['products','services']));
+    }
+
+    // services_product_details
+    function services_product_details($id) {
+        $products = Product::where('status', '1')->where('id', $id)->get();
+        return view('frontend.service.product_details', compact(['products']));
+    }
+
 
     // our_products
     function our_products(){
