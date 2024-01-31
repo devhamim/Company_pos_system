@@ -123,9 +123,9 @@
                             </div>
                             <p class="mb-0 mt-3 text-white">Order Confirm with live chat:</p>
                             <div class=" mt-3">
-                                <a href="https://www.facebook.com/messages/t/m.me/218057834721211" target="_blank"><i class="fa-brands fa-facebook-messenger" style="color: #ffffff; font-size: 40px;"></i></a>
+                                <a href="https://m.me/218057834721211?ref=Hello%20there,%20I%20found%20you%20on%20website!%20I%20would%20like%20to%20talk%20about%20your%20service%20in%20details.%20Product:%20{{ urlencode($products->first()->product_name) }}" target="_blank"><i class="fa-brands fa-facebook-messenger" style="color: #ffffff; font-size: 40px;"></i></a>
 
-                                <a href="https://api.whatsapp.com/send?phone=8801303523442&text=Hello%20there,%20I%20found%20you%20on%20website!%20i%20would%20like%20to%20talk%20about%20your%20service%20in%20details.%20product:%20{{ urlencode($products->first()->product_name) }}" target="_blank">
+                                <a href="https://api.whatsapp.com/send?phone=8801303523442&text=Hello%20there,%20I%20found%20you%20on%20website!%20i%20would%20like%20to%20talk%20about%20your%20service%20in%20details.%20product:%20{{ urlencode($products->first()->product_name) }}%20-%20{{ urlencode(route('product.details',$products->first()->slug)) }}" target="_blank">
                                     <i class="fa-brands fa-whatsapp" style="color: #ffffff; font-size: 40px; padding-left: 20px"></i>
                                 </a>
                             </div>
