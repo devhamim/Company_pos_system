@@ -29,7 +29,7 @@
                             <h4 class="title"><a href="page-team-details.html">{{ $product->product_name }}</a></h4>
                         </div>
                         <div class="content-box">
-                            <a href="{{ route('services.product.details',$product->id) }}" class="btn btn-dark w-100" style="background: #F94A29">View More</a>
+                            <a href="{{ route('services.product.details',$product->slug) }}" class="btn btn-dark w-100" style="background: #F94A29">View More</a>
                         </div>
                     </div>
                 </div>

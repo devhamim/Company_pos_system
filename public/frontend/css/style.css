@@ -12649,8 +12649,8 @@ table.tbl-shopping-cart>tfoot>tr>th {
     position: relative;
     display: block;
     padding: 57px 30px;
-    margin-top: 30px;
-    /* text-align: center; */
+    /* margin-top: 30px; */
+    text-align: center;
     z-index: 1;
     background-color: var(--theme-color1);
     border-radius: 15px;

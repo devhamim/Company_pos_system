@@ -168,7 +168,7 @@ Route::post('/permission/store', [RoleController::class, 'perimission_store'])->
 
 Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
 Route::get('/services/product/{id}', [FrontendController::class, 'services_product'])->name('services.product');
-Route::get('/services/product/details/{id}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
+Route::get('/services/product/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
 
 Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->name('privacy.policy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');

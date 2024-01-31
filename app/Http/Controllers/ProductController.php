@@ -61,7 +61,7 @@ class ProductController extends Controller
         $uploaded_file_one = $request->preview_image;
         $extension = $uploaded_file_one->getClientOriginalExtension();
         $file_name_one = Str::random(8).'-'.rand(1000, 9999).'.'.$extension;
-        Image::make($uploaded_file_one)->resize(218, 220)->save(public_path('uploads/products/preview/'.$file_name_one));
+        Image::make($uploaded_file_one)->save(public_path('uploads/products/preview/'.$file_name_one));
         Product::find($product_id)->update([
             'preview_image' => $file_name_one,
             'updated_at' => Carbon::now(),
@@ -72,7 +72,7 @@ class ProductController extends Controller
         foreach ($uploaded_thumbnails as $thumbnail) {
             $thumb_extension = $thumbnail->getClientOriginalExtension();
             $thumb_name = Str::random(8).'-'.rand(1000,9999).'.'.$thumb_extension;
-            Image::make($thumbnail)->resize(458, 458)->save(public_path('uploads/products/gallery/'.$thumb_name));
+            Image::make($thumbnail)->save(public_path('uploads/products/gallery/'.$thumb_name));
 
             ProductGallery::insert([
                 'product_id' => $product_id,
@@ -95,15 +95,15 @@ class ProductController extends Controller
     // product_delete
     function product_delete($product_id) {
         $preview_image_one = Product::where('id', $product_id)->get();
-        // $delete_preview_one = public_path('uploads/products/preview/'. $preview_image_one->first()->preview_image);
-        // unlink($delete_preview_one);
+        $delete_preview_one = public_path('uploads/products/preview/'. $preview_image_one->first()->preview_image);
+        unlink($delete_preview_one);
         Product::find($product_id)->delete();
         $thumb_image = ProductGallery::where('product_id', $product_id)->get();
-        // foreach($thumb_image as $thumb) {
-        //     $delete_thumbnails = public_path('uploads/products/gallery/'. $thumb->gallery_image);
-        //     unlink($delete_thumbnails);
-        //     ProductGallery::find($thumb->id)->delete();
-        // }
+        foreach($thumb_image as $thumb) {
+            $delete_thumbnails = public_path('uploads/products/gallery/'. $thumb->gallery_image);
+            unlink($delete_thumbnails);
+            ProductGallery::find($thumb->id)->delete();
+        }
         return back()->withSuccess('Product item deleted successfully');
     }
 
@@ -133,7 +133,7 @@ class ProductController extends Controller
             $uploaded_file_one = $request->preview_image;
             $extension = $uploaded_file_one->getClientOriginalExtension();
             $file_name_one = Str::random(8).'-'.rand(1000, 9999).'.'.$extension;
-            Image::make($uploaded_file_one)->resize(218, 220)->save(public_path('uploads/products/preview/'.$file_name_one));
+            Image::make($uploaded_file_one)->save(public_path('uploads/products/preview/'.$file_name_one));
             Product::find($request->product_id)->update([
                 'preview_image' => $file_name_one,
                 'updated_at' => Carbon::now(),
@@ -145,16 +145,16 @@ class ProductController extends Controller
         // Gallery image
         if($request->gallery_image != null) {
             $thumb_image = ProductGallery::where('product_id', $request->product_id)->get();
-            // foreach($thumb_image as $thumb) {
-            //     $delete_from_thumb = public_path('uploads/products/gallery/'.$thumb->gallery_image);
-            //     unlink($delete_from_thumb);
-            // }
+            foreach($thumb_image as $thumb) {
+                $delete_from_thumb = public_path('uploads/products/gallery/'.$thumb->gallery_image);
+                unlink($delete_from_thumb);
+            }
             ProductGallery::where('product_id', $request->product_id)->delete();
             $uploaded_thumbnails = $request->gallery_image;
             foreach ($uploaded_thumbnails as $thumbnail) {
                 $thumb_extension = $thumbnail->getClientOriginalExtension();
                 $thumb_name = Str::random(8).'-'.rand(1000,9999).'.'.$thumb_extension;
-                Image::make($thumbnail)->resize(458, 458)->save(public_path('uploads/products/gallery/'.$thumb_name));
+                Image::make($thumbnail)->save(public_path('uploads/products/gallery/'.$thumb_name));
                 ProductGallery::insert([
                     'product_id' => $request->product_id,
                     'gallery_image' => $thumb_name,
