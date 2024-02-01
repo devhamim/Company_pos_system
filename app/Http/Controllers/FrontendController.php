@@ -99,11 +99,7 @@ class FrontendController extends Controller
             'quantity'=>'required | min:1',
         ]);
 
-        if(serviceOrderCart::where('phone', $request->phone)->exists() && serviceOrderCart::where('product_id', $request->product_id)->exists()){
-
-        }
-        else{
-            $order_id = 'INV'.'-'.rand(10000,99999);
+        $order_id = 'INV'.'-'.rand(10000,99999);
             $sub_total = $request->quantity*$request->price;
             $mobile_verify = rand(100000,999999);
             $service_cart_id = serviceOrderCart::insertGetId([
@@ -121,7 +117,6 @@ class FrontendController extends Controller
                 'total'=> $sub_total-$request->coupon,
                 'created_at'=>Carbon::now(),
             ]);
-        }
 
 
     $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
