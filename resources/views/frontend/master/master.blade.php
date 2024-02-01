@@ -127,7 +127,7 @@
                                 <a href="#" class="search"><i class="flaticon-search-3"></i></a>
                             </div>
                             <div class="btn">
-                                <a href="page-contact.html" class="theme-btn">Let’s Talk</a>
+                                <a href="#" class="theme-btn">Consultancy</a>
                             </div>
                             <div class="mobile-nav-toggler">
                                 <i class="fa fa-bars"></i>
@@ -226,7 +226,7 @@
                             <nav class="main-menu">
                                 <div class="navbar-collapse show collapse clearfix">
                                     <ul class="navigation clearfix">
-
+                                        <a href="#" class="theme-btn" style="padding: 0 30px; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px">Consultancy</a>
                                     </ul>
                                 </div>
                             </nav>
