@@ -119,7 +119,11 @@
                             <h2 class="help-title">Order For Online</h2>
                             <h4 class="help-title-price text-white">Offer Price: {{ $products->first()->product_discount}}Tk - <del>{{ $products->first()->product_price }}Tk</del></h4>
                             <div class="help-contact">
-                                <a href="" class="btn btn-light" style="color: #F94A29">Order Now</a>
+                                <form action="{{ route('services.product.checkout') }}" method="POST">
+                                @csrf
+                                    <input type="hidden" name="product_id" value="{{ $products->first()->id }}">
+                                    <button type="submit" class="btn btn-light" style="color: #F94A29;"><a>Order Now</a></button>
+                                </form>
                             </div>
                             <p class="mb-0 mt-3 text-white">Order Confirm with live chat:</p>
                             <div class=" mt-3">

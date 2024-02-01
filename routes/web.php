@@ -169,6 +169,11 @@ Route::post('/permission/store', [RoleController::class, 'perimission_store'])->
 Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
 Route::get('/services/product/{id}', [FrontendController::class, 'services_product'])->name('services.product');
 Route::get('/services/product/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
+Route::post('/services/product/checkout', [FrontendController::class, 'services_product_checkout'])->name('services.product.checkout');
+Route::post('/services/order/checkout', [FrontendController::class, 'services_order_checkout'])->name('services.order.checkout');
+Route::get('/service/order/otp/{id}', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');
+Route::post('/number/otp', [FrontendController::class, 'number_otp'])->name('number.otp');
+Route::get('/service/order/success', [FrontendController::class, 'service_order_success'])->name('service.order.success');
 
 Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->name('privacy.policy');
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');

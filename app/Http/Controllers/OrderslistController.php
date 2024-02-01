@@ -13,7 +13,7 @@ use App\Models\OrderProduct;
 use App\Models\customers;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Str;
+use DB;
 use Log;
 use Illuminate\Support\Facades\Http;
 
@@ -33,6 +33,11 @@ class OrderslistController extends Controller
 
     //orders_list
     function orders_list(Request $request){
+            $currentMonth = now()->format('Y-m');
+            $month_order =  DB::table('orders')
+            ->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])
+            ->get();
+
             $startDate = $request->start_date;
             $endDate = $request->end_date;
 
@@ -57,15 +62,15 @@ class OrderslistController extends Controller
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->get();
             }
             else{
-                $order_id = Order::with('rel_to_billing')->orderBy('created_at', 'desc')->get();
-                $total_orders = Order::count();
-                $total_pending = Order::where('status', 0)->count();
-                $total_in_review = Order::where('status', 2)->count();
-                $total_due_payment = Order::where('status', 3)->count();
-                $total_refund_payment = Order::where('status', 4)->count();
-                $total_completed = Order::where('status', 5)->count();
-                $total_canceled = Order::where('status', 6)->count();
-                $refund_payment = Order::where('status', 4)->get();
+                $order_id = Order::with('rel_to_billing')->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_pending = Order::where('status', 0)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_in_review = Order::where('status', 2)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_due_payment = Order::where('status', 3)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_refund_payment = Order::where('status', 4)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_completed = Order::where('status', 5)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_canceled = Order::where('status', 6)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $refund_payment = Order::where('status', 4)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->get();
             }
 
         }
@@ -82,15 +87,15 @@ class OrderslistController extends Controller
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
             else{
-                $order_id = Order::with('rel_to_billing')->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-                $total_orders = Order::where('added_by', Auth::user()->id)->count();
-                $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
-                $refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->get();
+                $order_id = Order::with('rel_to_billing')->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_pending = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 0)->count();
+                $total_in_review = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 2)->count();
+                $total_due_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 3)->count();
+                $total_refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->count();
+                $total_completed = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 5)->count();
+                $total_canceled = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 6)->count();
+                $refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->get();
             }
 
         }
@@ -114,6 +119,11 @@ class OrderslistController extends Controller
 
     //orders_list_status
     function orders_list_status(Request $request, $status){
+        $currentMonth = now()->format('Y-m');
+            $month_order =  DB::table('orders')
+            ->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])
+            ->get();
+
         $startDate = $request->start_date;
             $endDate = $request->end_date;
 
@@ -139,16 +149,16 @@ class OrderslistController extends Controller
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->get();
             }
             else{
-                $order_id = Order::with('rel_to_billing')->orderBy('created_at', 'desc')->get();
-                $order_status = Order::where('status', $status)->orderBy('created_at', 'desc')->get();
-                $total_orders = Order::count();
-                $total_pending = Order::where('status', 0)->count();
-                $total_in_review = Order::where('status', 2)->count();
-                $total_due_payment = Order::where('status', 3)->count();
-                $total_refund_payment = Order::where('status', 4)->count();
-                $total_completed = Order::where('status', 5)->count();
-                $total_canceled = Order::where('status', 6)->count();
-                $refund_payment = Order::where('status', 4)->get();
+                $order_id = Order::with('rel_to_billing')->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->orderBy('created_at', 'desc')->get();
+                $order_status = Order::where('status', $status)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_pending = Order::where('status', 0)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_in_review = Order::where('status', 2)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_due_payment = Order::where('status', 3)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_refund_payment = Order::where('status', 4)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_completed = Order::where('status', 5)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_canceled = Order::where('status', 6)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $refund_payment = Order::where('status', 4)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->get();
             }
         }
         else{
@@ -165,16 +175,16 @@ class OrderslistController extends Controller
                 $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', Auth::user()->id)->where('status', 4)->get();
             }
             else{
-                $order_id = Order::with('rel_to_billing')->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
-                $order_status = Order::where('added_by', Auth::user()->id)->where('status', $status)->orderBy('created_at', 'desc')->get();
-                $total_orders = Order::where('added_by', Auth::user()->id)->count();
-                $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-                $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-                $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-                $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-                $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-                $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
-                $refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->get();
+                $order_id = Order::with('rel_to_billing')->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('added_by', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+                $order_status = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', $status)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+                $total_pending = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 0)->count();
+                $total_in_review = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 2)->count();
+                $total_due_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 3)->count();
+                $total_refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->count();
+                $total_completed = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 5)->count();
+                $total_canceled = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 6)->count();
+                $refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->get();
             }
         }
 
@@ -199,27 +209,32 @@ class OrderslistController extends Controller
 
     // orders.courier.list
     function orders_courier_list(Request $request){
+        $currentMonth = now()->format('Y-m');
+            $month_order =  DB::table('orders')
+            ->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])
+            ->get();
+
         if(Auth::user()->role == 1){
-            $order_id = Order::where('lead_customer', $request->lead_customer)->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
-            $total_orders = Order::count();
-            $total_pending = Order::where('status', 0)->count();
-            $total_in_review = Order::where('status', 2)->count();
-            $total_due_payment = Order::where('status', 3)->count();
-            $total_refund_payment = Order::where('status', 4)->count();
-            $total_completed = Order::where('status', 5)->count();
-            $total_canceled = Order::where('status', 6)->count();
-            $refund_payment = Order::where('lead_customer', $request->lead_customer)->where('status', 4)->get();
+            $order_id = Order::where('lead_customer', $request->lead_customer)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
+            $total_orders = Order::whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_pending = Order::where('status', 0)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_in_review = Order::where('status', 2)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_due_payment = Order::where('status', 3)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_refund_payment = Order::where('status', 4)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_completed = Order::where('status', 5)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_canceled = Order::where('status', 6)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $refund_payment = Order::where('lead_customer', $request->lead_customer)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->get();
         }
         else{
-            $order_id = Order::where('added_by', Auth::user()->id)->where('lead_customer', $request->lead_customer)->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
-            $total_orders = Order::where('added_by', Auth::user()->id)->count();
-            $total_pending = Order::where('added_by', Auth::user()->id)->where('status', 0)->count();
-            $total_in_review = Order::where('added_by', Auth::user()->id)->where('status', 2)->count();
-            $total_due_payment = Order::where('added_by', Auth::user()->id)->where('status', 3)->count();
-            $total_refund_payment = Order::where('added_by', Auth::user()->id)->where('status', 4)->count();
-            $total_completed = Order::where('added_by', Auth::user()->id)->where('status', 5)->count();
-            $total_canceled = Order::where('added_by', Auth::user()->id)->where('status', 6)->count();
-            $refund_payment = Order::where('added_by', Auth::user()->id)->where('lead_customer', $request->lead_customer)->where('status', 4)->get();
+            $order_id = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('lead_customer', $request->lead_customer)->with('rel_to_billing')->orderBy('created_at', 'desc')->get();
+            $total_orders = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->count();
+            $total_pending = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 0)->count();
+            $total_in_review = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 2)->count();
+            $total_due_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 3)->count();
+            $total_refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 4)->count();
+            $total_completed = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 5)->count();
+            $total_canceled = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('status', 6)->count();
+            $refund_payment = Order::where('added_by', Auth::user()->id)->whereRaw('DATE_FORMAT(created_at, "%Y-%m") = ?', [$currentMonth])->where('lead_customer', $request->lead_customer)->where('status', 4)->get();
         }
 
         $couriers = courier::all();
