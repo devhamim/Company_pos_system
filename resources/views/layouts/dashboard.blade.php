@@ -374,12 +374,10 @@
             var start_date = '{{ $defaultStartDate }}';
             var end_date = '{{ $defaultEndDate }}';
 
-            // Check if start_date and end_date are not empty or undefined
             if (start_date && end_date) {
                 start_date = moment(start_date, 'YYYY-MM-DD');
                 end_date = moment(end_date, 'YYYY-MM-DD');
             } else {
-                // If not selected, show the calendar for the last 7 days
                 start_date = moment().subtract(6, 'days');
                 end_date = moment();
             }

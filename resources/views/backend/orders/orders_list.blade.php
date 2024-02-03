@@ -29,7 +29,6 @@
                                             <button type="submit">Filter</button>
                                         </form>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="page-breadcrumb">

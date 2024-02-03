@@ -14,7 +14,7 @@
                         <div class="page-header">
                             <div class="d-flex justify-content-between">
                                 <h4 class="font-weight-bold py-3 mb-0">All Orders</h4>
-                                <div class="filter">
+                                {{-- <div class="filter">
                                     @if ($order_status->first())
                                         <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
                                     @else
@@ -29,6 +29,26 @@
 
                                         <button type="submit">Filter</button>
                                     </form>
+                                </div> --}}
+                                <div class="filter row">
+                                    <div class="col-lg-10">
+                                        <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                            <i class="fa fa-calendar"></i>&nbsp;
+                                            <span></span> <i class="fa fa-caret-down"></i>
+                                         </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        @if ($order_status->first())
+                                            <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
+                                        @else
+                                            <form action="{{ route('orders.list.status',$order_status) }}" method="GET">
+                                        @endif
+                                            <!-- ... (other form fields) -->
+                                            <input type="hidden" name="start_date" id="start_date" value="{{ $defaultStartDate }}">
+                                            <input type="hidden" name="end_date" id="end_date" value="{{ $defaultEndDate }}">
+                                            <button type="submit">Filter</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <div class="page-breadcrumb">
