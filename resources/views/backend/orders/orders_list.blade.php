@@ -324,11 +324,11 @@
                                                 <br>
                                             </td>
                                             <td>
-                                                {{-- @forelse ($order->rel_to_orderpro as $OrderProduct)
+                                                @forelse ($order->rel_to_orderpro as $OrderProduct)
                                                     {{ $OrderProduct->quantity }} x {{ $OrderProduct->rel_to_product->product_name }} <br>
                                                 @empty
                                                     N/A
-                                                @endforelse --}}
+                                                @endforelse
                                             </td>
                                             <td>৳ {{ $order->discount }}</td>
                                             <td>৳ {{ $order->sub_total-$order->discount }}</td>
