@@ -4,18 +4,32 @@
 <div class="container-fluid flex-grow-1 container-p-y">
     <div class="d-flex justify-content-between">
         <h4 class="font-weight-bold py-3 mb-0">Application</h4>
-        <div class="filter">
-            <form action="{{ route('home') }}" method="GET">
-            @csrf
+        {{-- <form action="{{ route('home') }}" method="GET">
+        @csrf
 
-                <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
 
-                <label for="end_date">End Date:</label>
-                <input type="date" id="end_date" name="end_date" value="{{ $defaultEndDate }}" optional>
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" value="{{ $defaultEndDate }}" optional>
 
-                <button type="submit">Filter</button>
-            </form>
+            <button type="submit">Filter</button>
+        </form> --}}
+        <div class="filter row">
+            <div class="col-lg-10">
+                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
+                 </div>
+            </div>
+            <div class="col-lg-2">
+                <form action="{{ route('home') }}" method="GET">
+                    <!-- ... (other form fields) -->
+                    <input type="hidden" name="start_date" id="start_date" value="{{ $defaultStartDate }}">
+                    <input type="hidden" name="end_date" id="end_date" value="{{ $defaultEndDate }}">
+                    <button type="submit">Filter</button>
+                </form>
+            </div>
         </div>
     </div>
 

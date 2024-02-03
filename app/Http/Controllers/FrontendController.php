@@ -99,7 +99,7 @@ class FrontendController extends Controller
             'quantity'=>'required | min:1',
         ]);
 
-        $order_id = 'INV'.'-'.rand(10000,99999);
+            $order_id = 'INV'.'-'.rand(10000,99999);
             $sub_total = $request->quantity*$request->price;
             $mobile_verify = rand(100000,999999);
             $service_cart_id = serviceOrderCart::insertGetId([

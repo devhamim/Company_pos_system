@@ -85,7 +85,7 @@
                             <div class="field-input message-btn">
                                 <input type="hidden" value="{{ $product_id->id }}" name="product_id">
                                 <input type="hidden" value="{{ $product_id->product_discount }}" name="price">
-                                <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait...">Order Now</button>
+                                <button type="submit" class="theme-btn btn-style-one w-100" data-loading-text="Please wait...">Order Now</button>
                             </div>
                         </div>
                     </div>

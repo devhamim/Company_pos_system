@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="{{asset('backend/css/shreerang-material.css')}}">
     <link rel="stylesheet" href="{{asset('backend/css/uikit.css')}}">
 
+    {{-- calander --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
     <!-- Libs -->
     <link rel="stylesheet" href="{{asset('backend/libs/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/flot/flot.css')}}">
@@ -41,7 +44,7 @@
     <link rel="stylesheet" href="{{asset('backend/libs/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-datepicker/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/timepicker/timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/minicolors/minicolors.css')}}">
@@ -294,11 +297,18 @@
     </div>
     <!-- [ Layout wrapper] End -->
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <!-- Core scripts -->
     <script src="{{asset('backend/js/pace.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    {{-- calander --}}
+    {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
     <script src="{{asset('backend/js/sidenav.js')}}"></script>
     <script src="{{asset('backend/js/layout-helpers.js')}}"></script>
     <script src="{{asset('backend/js/material-ripple.js')}}"></script>
@@ -314,15 +324,15 @@
     <script src="{{asset('backend/libs/raphael/raphael.js')}}"></script>
     <script src="{{asset('backend/libs/morris/morris.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{asset('backend/libs/moment/moment.js')}}"></script>
-    <script src="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script>
+    {{-- <script src="{{asset('backend/libs/moment/moment.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script> --}}
     <script src="{{asset('backend/libs/datatables/datatables.js')}}"></script>
     <script src="{{asset('backend/libs/bootbox/bootbox.js')}}"></script>
     <script src="{{asset('backend/libs/select2/select2.js')}}"></script>
     <script src="{{asset('backend/js/pages/forms_selects.js')}}"></script>
     <script src="{{asset('backend/libs/bootstrap-sweetalert/bootstrap-sweetalert.js')}}"></script>
     <script src="{{asset('backend/libs/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script>
+    {{-- <script src="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script> --}}
     <script src="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js')}}"></script>
     <script src="{{asset('backend/libs/timepicker/timepicker.js')}}"></script>
     <script src="{{asset('backend/libs/minicolors/minicolors.js')}}"></script>
@@ -331,6 +341,74 @@
 
 
     @yield('footer_script')
+
+    {{-- <script type="text/javascript">
+        $(document).ready(function () {
+            var start_date = moment('{{ $defaultStartDate }}');
+            var end_date = moment('{{ $defaultEndDate }}');
+
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                $('#start_date').val(start.format('YYYY-MM-DD'));
+                $('#end_date').val(end.format('YYYY-MM-DD'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start_date,
+                endDate: end_date,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start_date, end_date);
+        });
+    </script> --}}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var start_date = '{{ $defaultStartDate }}';
+            var end_date = '{{ $defaultEndDate }}';
+
+            // Check if start_date and end_date are not empty or undefined
+            if (start_date && end_date) {
+                start_date = moment(start_date, 'YYYY-MM-DD');
+                end_date = moment(end_date, 'YYYY-MM-DD');
+            } else {
+                // If not selected, show the calendar for the last 7 days
+                start_date = moment().subtract(6, 'days');
+                end_date = moment();
+            }
+
+            function cb(start, end) {
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                $('#start_date').val(start.format('YYYY-MM-DD'));
+                $('#end_date').val(end.format('YYYY-MM-DD'));
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start_date,
+                endDate: end_date,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start_date, end_date);
+        });
+    </script>
+
+
+
     @if(session('success')) {
     <script>
 
