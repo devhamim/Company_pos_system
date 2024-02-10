@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en" class="default-style layout-fixed layout-navbar-fixed">
-
-
-<!-- Mirrored from html.phoenixcoded.net/empire/bootstrap/default/pages_authentication_login-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 May 2023 13:38:33 GMT -->
 <head>
     @if($setting->first()->title != null)
         <title>{{$setting->first()->title}}</title>
@@ -12,9 +8,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Empire is one of the unique admin template built on top of Bootstrap 4 framework. It is easy to customize, flexible code styles, well tested, modern & responsive are the topmost key factors of Empire Dashboard Template" />
-    <meta name="keywords" content="bootstrap admin template, dashboard template, backend panel, bootstrap 4, backend template, dashboard template, saas admin, CRM dashboard, eCommerce dashboard">
-    <meta name="author" content="Codedthemes" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="nugortechit" />
     @if($setting->first()->favicon != null)
         <link rel="icon" type="image/x-icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}">
     @endif
@@ -130,7 +126,4 @@
     {{-- <script src="{{asset('backend/js/demo.js')}}"></script><script src="{{asset('backend/js/analytics.js')}}"></script> --}}
 
 </body>
-
-
-<!-- Mirrored from html.phoenixcoded.net/empire/bootstrap/default/pages_authentication_login-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 May 2023 13:38:33 GMT -->
 </html>

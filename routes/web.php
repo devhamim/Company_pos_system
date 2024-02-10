@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\bannerContoller;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
@@ -16,7 +17,6 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\TermsconditionController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\settingController;
 use App\Http\Controllers\shippingMethodsController;
 use App\Http\Controllers\courierController;
@@ -41,10 +41,18 @@ use App\Http\Controllers\invoiceController;
 Route::get('/', [FrontendController::class, 'home'])->name('site');
 
 
-Auth::routes();
+// Auth::routes();
+// routes/web.php
+
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Custom login route
+Route::get('/hamim-login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Route::post('/hamim-login', 'App\Http\Controllers\Auth\LoginController@login');
+
+// Custom logout route
+Route::post('/hamim-logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 // User
 Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');
@@ -69,7 +77,6 @@ Route::post('/courire/store', [courierController::class, 'courire_store'])->name
 Route::post('/editCourier/{id}', [courierController::class, 'editCourier'])->name('editCourier');
 Route::post('/courire/update', [courierController::class, 'courire_update'])->name('courire.update');
 Route::get('/courire/delete/{id}', [courierController::class, 'courire_delete'])->name('courire.delete');
-
 
 
 // media
