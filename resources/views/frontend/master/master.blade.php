@@ -86,37 +86,8 @@
                                     <li ><a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
                                     <li><a href="{{ route('about') }}">About</a></li>
                                     <li><a href="{{ route('our.services') }}">Services</a></li>
-
-                                    {{-- <li class="dropdown"> <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="page-about.html">About</a></li>
-                                            <li class="dropdown"> <a href="#">Projects</a>
-                                                <ul>
-                                                    <li><a href="page-projects.html">Projects List</a></li>
-                                                    <li><a href="page-project-details.html">Project Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"> <a href="#">Team</a>
-                                                <ul>
-                                                    <li><a href="page-team.html">Team List</a></li>
-                                                    <li><a href="page-team-details.html">Team Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="page-testimonial.html">Testimonial</a></li>
-                                            <li><a href="page-pricing.html">Pricing</a></li>
-                                            <li><a href="page-faq.html">FAQ</a></li>
-                                            <li><a href="page-404.html">Page 404</a></li>
-                                        </ul>
-                                    </li> --}}
-
                                     <li> <a href="{{ route('our.products') }}">Product</a></li>
                                     <li> <a href="{{ route('our.blogs') }}">Blogs</a></li>
-                                    {{-- <li class="dropdown"> <a href="#">News</a>
-                                        <ul>
-                                            <li><a href="news-grid.html">News Grid</a></li>
-                                            <li><a href="news-details.html">News Details</a></li>
-                                        </ul>
-                                    </li> --}}
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
@@ -127,11 +98,12 @@
                                 <a href="#" class="search"><i class="flaticon-search-3"></i></a>
                             </div>
                             <div class="btn">
-                                <a href="#" class="theme-btn">Consultancy</a>
+                                <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
                             </div>
                             <div class="mobile-nav-toggler">
                                 <i class="fa fa-bars"></i>
                             </div>
+
                         </div>
                     </div>
 

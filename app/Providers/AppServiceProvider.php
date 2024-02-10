@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
 {
+
     // footer category
     View::composer('frontend.master.master', function ($view){
         $view->with('categorys', Category::all());
@@ -39,35 +40,47 @@ class AppServiceProvider extends ServiceProvider
         $view->with('totalItemsInCart', count($cart_data));
     });
 
-     // setting
+     // master setting
      View::composer('frontend.master.master', function ($view){
         $view->with('setting', setting::all());
     });
-     // setting
+     // customer header setting
+     View::composer('customer.layout.header', function ($view){
+        $view->with('setting', setting::all());
+    });
+     // customer footer setting
+     View::composer('customer.layout.footer', function ($view){
+        $view->with('setting', setting::all());
+    });
+     // customer app setting
+     View::composer('customer.layout.app', function ($view){
+        $view->with('setting', setting::all());
+    });
+     // home setting
      View::composer('frontend.home.index', function ($view){
         $view->with('setting', setting::all());
     });
-     // setting
+     // product setting
      View::composer('frontend.service.product_details', function ($view){
         $view->with('setting', setting::all());
     });
-     // setting
+     // dashboard setting
      View::composer('layouts.dashboard', function ($view){
         $view->with('setting', setting::all());
     });
-    // setting
+    // login setting
      View::composer('auth.login', function ($view){
         $view->with('setting', setting::all());
     });
-    // setting
+    // invoice setting
      View::composer('invoice.invoice', function ($view){
         $view->with('setting', setting::all());
     });
-    // setting
+    // view invoice print setting
      View::composer('backend.orders.view_invoice_print', function ($view){
         $view->with('setting', setting::all());
     });
-    // setting
+    // multi view invoice print setting
      View::composer('backend.orders.multi_view_invoice_print', function ($view){
         $view->with('setting', setting::all());
     });

@@ -15,6 +15,10 @@ use Laravel\Socialite\Facades\Socialite;
 
 class CustomerAuthController extends Controller
 {
+    // customer_login
+    function customer_login(){
+        return view('customer.customer_login');
+    }
     //customer_auth_register
     function customer_auth_register(Request $request) {
         if(CustomerAuth::where('email', $request->customer_email_reg)->exists()){

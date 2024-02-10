@@ -191,6 +191,7 @@ Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.bl
 
 
 // Customer authentication
+Route::get('/customer/login', [CustomerAuthController::class, 'customer_login'])->name('customer.login');
 Route::post('/customer/auth/register', [CustomerAuthController::class, 'customer_auth_register'])->name('customer.auth.register');
 Route::post('/customer/auth/login', [CustomerAuthController::class, 'customer_auth_login'])->name('customer.auth.login');
 Route::get('/customer/auth/logout', [CustomerAuthController::class, 'customer_auth_logout'])->name('customer.logout');
