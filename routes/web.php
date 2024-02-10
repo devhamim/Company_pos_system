@@ -48,11 +48,11 @@ Route::get('/', [FrontendController::class, 'home'])->name('site');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Custom login route
-Route::get('/hamim-login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
-Route::post('/hamim-login', 'App\Http\Controllers\Auth\LoginController@login');
+Route::get('/system/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Route::post('/system/login', 'App\Http\Controllers\Auth\LoginController@login');
 
 // Custom logout route
-Route::post('/hamim-logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Route::post('/system/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 // User
 Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');

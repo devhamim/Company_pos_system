@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- molla/404.html  22 Nov 2019 10:04:04 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Molla - Bootstrap eCommerce Template</title>
+    <title> eCommerce Template</title>
     <meta name="keywords" content="HTML5 Template">
-    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="description" content=" eCommerce Template">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('frontend/assets/images/icons/apple-touch-icon.png')}}">
@@ -18,8 +16,8 @@
     <link rel="manifest" href="{{asset('frontend/assets/images/icons/site.html')}}">
     <link rel="mask-icon" href="{{asset('frontend/assets/images/icons/safari-pinned-tab.svg')}}" color="#666666">
     <link rel="shortcut icon" href="{{asset('frontend/assets/images/icons/favicon.ico')}}">
-    <meta name="apple-mobile-web-app-title" content="Molla">
-    <meta name="application-name" content="Molla">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="application-name" content="">
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="{{asset('frontend/assets/images/icons/browserconfig.xml')}}">
     <meta name="theme-color" content="#ffffff">
@@ -60,7 +58,7 @@
                 <input type="search" class="form-control" name="mobile-search" id="mobile-search" placeholder="Search in..." required>
                 <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
             </form>
-            
+
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
                     <li class="active">
@@ -345,6 +343,4 @@
     <script src="{{asset('frontend/assets/js/main.js')}}"></script>
 </body>
 
-
-<!-- molla/404.html  22 Nov 2019 10:04:04 GMT -->
 </html>
