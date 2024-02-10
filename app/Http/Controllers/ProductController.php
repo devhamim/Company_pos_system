@@ -122,7 +122,7 @@ class ProductController extends Controller
             'category_id'=> 'required',
             'description'=> 'required',
             'product_price'=> 'required',
-            'sku*' => 'required',
+            'sku' => 'required',
             'quantity' => 'required',
         ], [
             'category_id.required' => 'The category field is required',
@@ -141,14 +141,13 @@ class ProductController extends Controller
 
         }
 
-
         // Gallery image
         if($request->gallery_image != null) {
             $thumb_image = ProductGallery::where('product_id', $request->product_id)->get();
-            foreach($thumb_image as $thumb) {
-                $delete_from_thumb = public_path('uploads/products/gallery/'.$thumb->gallery_image);
-                unlink($delete_from_thumb);
-            }
+            // foreach($thumb_image as $thumb) {
+            //     $delete_from_thumb = public_path('uploads/products/gallery/'.$thumb->gallery_image);
+            //     unlink($delete_from_thumb);
+            // }
             ProductGallery::where('product_id', $request->product_id)->delete();
             $uploaded_thumbnails = $request->gallery_image;
             foreach ($uploaded_thumbnails as $thumbnail) {
@@ -172,7 +171,6 @@ class ProductController extends Controller
                 'sku' => $request->sku,
                 'status' => $request->status,
                 'description' => $request->description,
-                'slug' => Str::random(8).'-'.rand(10000,99999),
                 'updated_at' => Carbon::now(),
             ]);
 
