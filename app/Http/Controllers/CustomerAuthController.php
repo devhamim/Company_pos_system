@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Billingdetails;
 use App\Models\Category;
 use App\Models\CustomerAuth;
+use App\Models\customers;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use Carbon\Carbon;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Image;
 use Laravel\Socialite\Facades\Socialite;
+use Http;
 
 class CustomerAuthController extends Controller
 {
@@ -19,6 +21,63 @@ class CustomerAuthController extends Controller
     function customer_login(){
         return view('customer.customer_login');
     }
+
+
+    // customer_number_login
+    function customer_number_login(Request $request){
+        if(customers::where('customer_phone', $request->number)->exists()){
+
+            $verify_code = rand(100000, 999999);
+            customers::where('customer_phone', $request->number)->update([
+                'mobile_verify'=>$verify_code,
+            ]);
+
+            $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+            $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+            $smsqSenderId = "8809617620771";
+            $smsqMessage = 'Your 6 digit verify code is '.$verify_code;
+
+            $smsqMessage = urlencode($smsqMessage);
+            $smsqMobileNumbers = '+88' .$request->number;
+
+            $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+            $response = Http::get($smsqUrl);
+
+            $number_varify = [
+                'verify_code'=>$verify_code,
+                'customer_phone'=>$request->number,
+            ];
+            return view('customer.customer_number_verify', $number_varify);
+        }
+        else{
+            echo 'nai';
+        }
+    }
+
+    // customer_verify_view
+    function customer_verify_view($id){
+
+        $number_varifys = customers::where('id', $id)->get();
+        return view('customer.customer_number_verify',[
+            'number_varifys'=>$number_varifys,
+        ]);
+    }
+
+    // customer_verify
+    function customer_verify(Request $request){
+        $number_verify = customers::where('mobile_verify', $request->customer_verify)->first();
+        if($number_verify){
+            Auth::guard('customerauth')->login($number_verify);
+            return redirect('/');
+        }
+        else{
+            return back()->with('error','OTP not match');
+        }
+    }
+
+
+
     //customer_auth_register
     function customer_auth_register(Request $request) {
         if(CustomerAuth::where('email', $request->customer_email_reg)->exists()){

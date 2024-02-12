@@ -190,8 +190,13 @@ Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.bl
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 
 
+Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');
+Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'])->name('service.order.ipn');
 // Customer authentication
 Route::get('/customer/login', [CustomerAuthController::class, 'customer_login'])->name('customer.login');
+Route::post('/customer/number/login', [CustomerAuthController::class, 'customer_number_login'])->name('customer.number.login');
+Route::post('/customer/verify', [CustomerAuthController::class, 'customer_verify'])->name('customer.verify');
+Route::get('/customer/verify/view/{id}', [CustomerAuthController::class, 'customer_verify_view'])->name('customer.verify.view');
 Route::post('/customer/auth/register', [CustomerAuthController::class, 'customer_auth_register'])->name('customer.auth.register');
 Route::post('/customer/auth/login', [CustomerAuthController::class, 'customer_auth_login'])->name('customer.auth.login');
 Route::get('/customer/auth/logout', [CustomerAuthController::class, 'customer_auth_logout'])->name('customer.logout');

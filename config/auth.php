@@ -68,7 +68,7 @@ return [
             'model' => App\Models\User::class,
         ],'customerauths' => [
             'driver' => 'eloquent',
-            'model' => App\Models\CustomerAuth::class,
+            'model' => App\Models\customers::class,
         ],
 
         // 'users' => [

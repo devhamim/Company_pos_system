@@ -107,30 +107,32 @@
                 <div class="section-title">
                     <h2 class="ec-bg-title">Log In</h2>
                     <h2 class="ec-title">Log In</h2>
-                    <p class="sub-title mb-3">Please enter your phone number to login</p>
+                    <p class="sub-title mb-3">Please enter your 6 digit verify code</p>
                 </div>
             </div>
             <div class="ec-login-wrapper">
                 <div class="ec-login-container">
                     <div class="ec-login-form">
-                        <form action="{{ route('customer.number.login') }}" method="post">
-                        @csrf
-                            {{-- <span class="ec-login-wrap">
-                                <label>Email Address*</label>
-                                <input type="text" name="name" placeholder="Enter your email add..." required />
-                            </span> --}}
+                        <form action="{{ route('customer.verify') }}" method="post">
+                            @csrf
                             <span class="ec-login-wrap">
-                                <label>Phone Number*</label>
-                                <input type="number" name="number" placeholder="Enter your number" required />
+                                <label>Verify*</label>
+                                <input type="number" name="verify" placeholder="Enter your verify code" required />
+                                @if (session('error'))
+                                    <strong class="text-danger">{{ session('error') }}</strong>
+                                @endif
                             </span>
                             <span class="ec-login-wrap ec-login-btn">
-                                <button class="btn btn-primary" type="submit">Login</button>
-                                {{-- <a href="register.html" class="btn btn-secondary">Register</a> --}}
+                                {{-- @if($number_varify->isNotEmpty())
+                                    <input type="hidden" name="customer_verify" value="{{ $number_varify }}" >
+                                    @endif --}}
+                                    <button class="btn btn-primary" type="submit">Verify</button>
                             </span>
                         </form>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

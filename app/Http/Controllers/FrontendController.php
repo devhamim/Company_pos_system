@@ -14,6 +14,7 @@ use App\Models\terms_condition;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Log;
+use UddoktaPay\LaravelSDK\UddoktaPay;
 use Illuminate\Support\Facades\Http;
 
 class FrontendController extends Controller
@@ -139,7 +140,6 @@ www.nugortechit.com';
     $response = Http::get($smsqUrl);
 
     return redirect()->route('service.order.otp',$service_cart_id);
-
     }
 
     // service_order_otp
@@ -153,21 +153,45 @@ www.nugortechit.com';
     }
 
     // number_otp
-    function number_otp(Request $request){
-        $mobile_otp =  $request->mobile_varify_code;
+        function number_otp(Request $request){
+            $mobile_otp =  $request->mobile_varify_code;
 
-        $service_cart = serviceOrderCart::where('id', $request->service_cart_id)->get();
+            $service_cart = serviceOrderCart::where('id', $request->service_cart_id)->first();
 
-        if($request->mobile_varify_code == $service_cart->first()->mobile_verify){
-            serviceOrderCart::where('id', $service_cart->first()->id)->update([
-                'status'=> 1,
-            ]);
-            return redirect()->route('service.order.success');
+            if($mobile_otp == $service_cart->mobile_verify){
+                serviceOrderCart::where('id', $service_cart->id)->update([
+                    'status'=> 1,
+                ]);
+
+                $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
+                $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
+                $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+
+                $requestData = [
+                    'full_name'     => "John Doe",
+                    'email'         => "test@test.com",
+                    'amount'        => 10,
+                    'metadata'      => [
+                        'example_metadata_key' => "example_metadata_value",
+                    ],
+                    'redirect_url'  => route('service.order.success'),
+                    'return_type'   => 'GET',
+                    'cancel_url'    => route('service.order.cancel'),
+                    'webhook_url'   => route('service.order.ipn'),
+                ];
+
+                try {
+                    // Initiate payment
+                    $paymentUrl = $uddoktaPay->initPayment($requestData);
+                    return redirect($paymentUrl);
+                } catch (\Exception $e) {
+                    return back()->with('error', "Initialization Error: " . $e->getMessage());
+                }
+            }
+            else{
+                return back()->with('error','OTP not match');
+            }
         }
-        else{
-            return back()->with('error','OTP not match');
-        }
-    }
 
     // service_order_success
     function service_order_success(){
@@ -182,9 +206,6 @@ www.nugortechit.com';
     function our_blogs(){
         return view('frontend.blogs.index');
     }
-
-
-
 
 
     // privacy_policy
@@ -205,5 +226,14 @@ www.nugortechit.com';
             'categories'=>$categories,
             'terms'=>$terms,
         ]);
+    }
+
+    // service_order_cancel\
+    function service_order_cancel(){
+        echo 'cancel';
+    }
+    // service_order_ipn\
+    function service_order_ipn(){
+        echo 'ipn';
     }
 }
