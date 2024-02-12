@@ -236,4 +236,9 @@ www.nugortechit.com';
     function service_order_ipn(){
         echo 'ipn';
     }
+
+    // customer_dashboard
+    function customer_dashboard(){
+        return view('customer.customer_dashboard');
+    }
 }

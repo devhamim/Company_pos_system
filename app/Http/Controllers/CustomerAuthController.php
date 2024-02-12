@@ -66,10 +66,10 @@ class CustomerAuthController extends Controller
 
     // customer_verify
     function customer_verify(Request $request){
-        $number_verify = customers::where('mobile_verify', $request->customer_verify)->first();
+        $number_verify = customers::where('mobile_verify', $request->verify)->first();
         if($number_verify){
             Auth::guard('customerauth')->login($number_verify);
-            return redirect('/');
+            return redirect()->route('customer.dashboard');
         }
         else{
             return back()->with('error','OTP not match');

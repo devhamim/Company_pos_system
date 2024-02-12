@@ -198,7 +198,7 @@
                             <nav class="main-menu">
                                 <div class="navbar-collapse show collapse clearfix">
                                     <ul class="navigation clearfix">
-                                        <a href="#" class="theme-btn" style="padding: 0 30px; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px">Consultancy</a>
+                                        <a href="{{ route('customer.login') }}" class="theme-btn" style="padding: 0 30px; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px">login</a>
                                     </ul>
                                 </div>
                             </nav>

@@ -189,9 +189,12 @@ Route::get('/products', [FrontendController::class, 'our_products'])->name('our.
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 
-
+// paymentmethod
 Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');
 Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'])->name('service.order.ipn');
+
+// customer dashboard
+Route::get('/customer/dashboard', [FrontendController::class, 'customer_dashboard'])->name('customer.dashboard');
 // Customer authentication
 Route::get('/customer/login', [CustomerAuthController::class, 'customer_login'])->name('customer.login');
 Route::post('/customer/number/login', [CustomerAuthController::class, 'customer_number_login'])->name('customer.number.login');

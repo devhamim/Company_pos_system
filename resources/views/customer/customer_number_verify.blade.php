@@ -113,7 +113,7 @@
             <div class="ec-login-wrapper">
                 <div class="ec-login-container">
                     <div class="ec-login-form">
-                        <form action="{{ route('customer.verify') }}" method="post">
+                        <form action="{{ route('customer.verify') }}" method="POST">
                             @csrf
                             <span class="ec-login-wrap">
                                 <label>Verify*</label>

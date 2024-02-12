@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],'customerauth' => [
             'driver' => 'session',
-            'provider' => 'customerauths',
+            'provider' => 'customers',
         ],
     ],
 
@@ -66,7 +66,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],'customerauths' => [
+        ],'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\customers::class,
         ],
