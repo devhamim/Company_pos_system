@@ -168,9 +168,9 @@ www.nugortechit.com';
                 $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
 
                 $requestData = [
-                    'full_name'     => "John Doe",
-                    'email'         => "test@test.com",
-                    'amount'        => 10,
+                    'full_name'     => $service_cart->name,
+                    // 'email'         => "test@test.com",
+                    'amount'        => $service_cart->total,
                     'metadata'      => [
                         'example_metadata_key' => "example_metadata_value",
                     ],
