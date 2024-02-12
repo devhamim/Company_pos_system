@@ -169,7 +169,7 @@ www.nugortechit.com';
 
                 $requestData = [
                     'full_name'     => $service_cart->name,
-                    // 'email'         => "test@test.com",
+                    'email'         => "test@test.com",
                     'amount'        => $service_cart->total,
                     'metadata'      => [
                         'example_metadata_key' => "example_metadata_value",
