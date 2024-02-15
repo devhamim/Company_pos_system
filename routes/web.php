@@ -23,10 +23,12 @@ use App\Http\Controllers\courierController;
 use App\Http\Controllers\mediaController;
 use App\Http\Controllers\OrderslistController;
 use App\Http\Controllers\customerController;
+use App\Http\Controllers\customerdashboard;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
+use App\Http\Controllers\pandingcustomerdashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -178,7 +180,7 @@ Route::get('/services/product/{id}', [FrontendController::class, 'services_produ
 Route::get('/services/product/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
 Route::post('/services/product/checkout', [FrontendController::class, 'services_product_checkout'])->name('services.product.checkout');
 Route::post('/services/order/checkout', [FrontendController::class, 'services_order_checkout'])->name('services.order.checkout');
-Route::get('/service/order/otp/{id}', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');
+Route::get('/service/order/otp', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');
 Route::post('/number/otp', [FrontendController::class, 'number_otp'])->name('number.otp');
 Route::get('/service/order/success', [FrontendController::class, 'service_order_success'])->name('service.order.success');
 
@@ -194,14 +196,17 @@ Route::get('/service/order/cancel', [FrontendController::class, 'service_order_c
 Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'])->name('service.order.ipn');
 
 // customer dashboard
-Route::get('/customer/dashboard', [FrontendController::class, 'customer_dashboard'])->name('customer.dashboard');
+Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
+Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
+
+
 // Customer authentication
 Route::get('/customer/login', [CustomerAuthController::class, 'customer_login'])->name('customer.login');
 Route::post('/customer/number/login', [CustomerAuthController::class, 'customer_number_login'])->name('customer.number.login');
 Route::post('/customer/verify', [CustomerAuthController::class, 'customer_verify'])->name('customer.verify');
-Route::get('/customer/verify/view/{id}', [CustomerAuthController::class, 'customer_verify_view'])->name('customer.verify.view');
-Route::post('/customer/auth/register', [CustomerAuthController::class, 'customer_auth_register'])->name('customer.auth.register');
-Route::post('/customer/auth/login', [CustomerAuthController::class, 'customer_auth_login'])->name('customer.auth.login');
+Route::get('/customer/verify/view', [CustomerAuthController::class, 'customer_verify_view'])->name('customer.verify.view');
+Route::get('/customer/registers', [CustomerAuthController::class, 'customer_registers'])->name('customer.registers');
+Route::post('/customer/web/store', [CustomerAuthController::class, 'customer_web_store'])->name('customer.web.store');
 Route::get('/customer/auth/logout', [CustomerAuthController::class, 'customer_auth_logout'])->name('customer.logout');
 Route::get('/customer/profile', [CustomerAuthController::class, 'customer_profile'])->name('customer.profile');
 Route::post('/customer/profile/update', [CustomerAuthController::class, 'customer_profile_update'])->name('customer.profile.update');

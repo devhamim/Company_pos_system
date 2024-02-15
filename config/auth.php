@@ -42,6 +42,9 @@ return [
         ],'customerauth' => [
             'driver' => 'session',
             'provider' => 'customers',
+        ],'customerreg' => [
+            'driver' => 'session',
+            'provider' => 'customerreg',
         ],
     ],
 
@@ -69,12 +72,11 @@ return [
         ],'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\customers::class,
+        ],'customerreg' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\customer_registers::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

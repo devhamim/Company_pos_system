@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\banner;
 use App\Models\Category;
+use App\Models\customer_registers;
+use App\Models\customers;
 use App\Models\Inventory;
 use App\Models\Order;
 use App\Models\privacy_policy;
@@ -13,16 +15,16 @@ use App\Models\serviceOrderCart;
 use App\Models\terms_condition;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Log;
 use UddoktaPay\LaravelSDK\UddoktaPay;
-use Illuminate\Support\Facades\Http;
+use Http;
 
 class FrontendController extends Controller
 {
+
     //home
     function home() {
-
-
         $categories = Category::all();
         $category= Category::take(8)->get();
         $products = Product::where('status', '1')->get();
@@ -100,8 +102,9 @@ class FrontendController extends Controller
             'quantity'=>'required | min:1',
         ]);
 
+            $price = Product::where('id', $request->product_id)->first()->product_discount;
             $order_id = 'INV'.'-'.rand(10000,99999);
-            $sub_total = $request->quantity*$request->price;
+            $sub_total = $request->quantity*$price;
             $mobile_verify = rand(100000,999999);
             $service_cart_id = serviceOrderCart::insertGetId([
                 'order_id'=> $order_id,
@@ -112,7 +115,7 @@ class FrontendController extends Controller
                 'note'=> $request->note,
                 'mobile_verify'=> $mobile_verify,
                 'quantity'=> $request->quantity,
-                'price'=> $request->price,
+                'price'=> $price,
                 'sub_total'=> $sub_total,
                 'coupon'=> $request->coupon,
                 'total'=> $sub_total-$request->coupon,
@@ -123,14 +126,7 @@ class FrontendController extends Controller
     $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
     $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
     $smsqSenderId = "8809617620771";
-    $smsqMessage = 'Dear ' .$request->name.',
-Thank you for placing your order with Nugortech IT!
-Your mobile varify code is: '.$mobile_verify.'
-Our team will begin working on your order shortly. Expect updates soon!
-
-Best Regards,
-Nugortech IT
-www.nugortechit.com';
+    $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->phone;
@@ -139,29 +135,42 @@ www.nugortechit.com';
 
     $response = Http::get($smsqUrl);
 
-    return redirect()->route('service.order.otp',$service_cart_id);
+    $request->session()->put('mobile_verify', $mobile_verify);
+    $request->session()->put('phone_number', $request->phone);
+    $request->session()->put('service_cart_id', $service_cart_id);
+
+    return redirect()->route('service.order.otp');
     }
 
     // service_order_otp
-    function service_order_otp($id){
-
-        $service_order_cart = serviceOrderCart::where('id', $id)->get();
-
-            return view('frontend.service.mobile_varify', [
-                'service_order_cart'=>$service_order_cart,
-            ]);
+    function service_order_otp(){
+        return view('frontend.service.mobile_varify');
     }
 
     // number_otp
         function number_otp(Request $request){
+
+        $number_verify = $request->session()->get('mobile_verify');
+        $phone_number = $request->session()->get('phone_number');
+        $service_cart_id = $request->session()->get('service_cart_id');
+
             $mobile_otp =  $request->mobile_varify_code;
 
-            $service_cart = serviceOrderCart::where('id', $request->service_cart_id)->first();
+            $service_cart = serviceOrderCart::where('id', $service_cart_id)->first();
 
-            if($mobile_otp == $service_cart->mobile_verify){
-                serviceOrderCart::where('id', $service_cart->id)->update([
-                    'status'=> 1,
+            if($mobile_otp == $number_verify){
+
+                if(customer_registers::where('phone', $phone_number)->exists()){
+                    $customer_num =  customer_registers::where('phone', $phone_number)->first();
+                    if($customer_num){
+                        Auth::guard('customerreg')->loginUsingId($customer_num);
+                    }
+                }
+                $service_cart->update([
+                    'mobile_verify'=> null,
                 ]);
+                $request->session()->forget('mobile_verify');
+                $request->session()->forget('phone_number');
 
                 $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
                 $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
@@ -187,6 +196,7 @@ www.nugortechit.com';
                 } catch (\Exception $e) {
                     return back()->with('error', "Initialization Error: " . $e->getMessage());
                 }
+
             }
             else{
                 return back()->with('error','OTP not match');
@@ -194,9 +204,25 @@ www.nugortechit.com';
         }
 
     // service_order_success
-    function service_order_success(){
+    function service_order_success(Request $request){
+        $service_cart_id = $request->session()->get('service_cart_id');
+        $service_cart = serviceOrderCart::findOrFail($service_cart_id);
+        $service_cart->update(['status' => 1]);
         return view('frontend.checkout.order_success');
     }
+
+    // service_order_cancel\
+    function service_order_cancel(Request $request){
+        $service_cart_id = $request->session()->get('service_cart_id');
+        $service_cart = serviceOrderCart::findOrFail($service_cart_id);
+        $service_cart->update(['status' => 0]);
+        return redirect('/');
+    }
+    // service_order_ipn\
+    function service_order_ipn(){
+        return redirect('/');
+    }
+
     // our_products
     function our_products(){
         return view('frontend.product.index');
@@ -228,17 +254,7 @@ www.nugortechit.com';
         ]);
     }
 
-    // service_order_cancel\
-    function service_order_cancel(){
-        echo 'cancel';
-    }
-    // service_order_ipn\
-    function service_order_ipn(){
-        echo 'ipn';
-    }
 
-    // customer_dashboard
-    function customer_dashboard(){
-        return view('customer.customer_dashboard');
-    }
+
+
 }

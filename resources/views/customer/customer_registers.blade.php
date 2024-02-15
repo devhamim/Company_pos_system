@@ -100,32 +100,41 @@
 <!-- Ec breadcrumb end -->
 
 <!-- Ec login page -->
+<!-- Start Register -->
 <section class="ec-page-content section-space-p">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="section-title">
-                    <h2 class="ec-bg-title">Log In</h2>
-                    <h2 class="ec-title">Log In</h2>
-                    <p class="sub-title mb-3">Please enter your phone number to login</p>
+                    <h2 class="ec-bg-title">Register</h2>
+                    <h2 class="ec-title">Register</h2>
+                    <p class="sub-title mb-3">Please Register</p>
+                    @if (session('error'))
+                        <strong class="text-danger">{{ session('error') }}</strong>
+                    @endif
                 </div>
             </div>
-            <div class="ec-login-wrapper">
-                <div class="ec-login-container">
-                    <div class="ec-login-form">
-                        <form action="{{ route('customer.number.login') }}" method="POST">
+            <div class="ec-register-wrapper">
+                <div class="ec-register-container">
+                    <div class="ec-register-form">
+                        <form action="{{ route('customer.web.store') }}" method="post">
                             @csrf
-                            {{-- <span class="ec-login-wrap">
-                                <label>Email Address*</label>
-                                <input type="text" name="name" placeholder="Enter your email add..." required />
-                            </span> --}}
-                            <span class="ec-login-wrap">
-                                <label>Phone Number*</label>
-                                <input type="number" name="number" placeholder="Enter your number" required />
+                            <span class="ec-register-wrap ec-register-half">
+                                <label>Name*</label>
+                                <input type="text" name="name" placeholder="Enter your name" required />
                             </span>
-                            <span class="ec-login-wrap ec-login-btn ">
-                                <button class="btn btn-primary" type="submit">Login</button>
-                                <a href="{{ route('customer.registers') }}" class="btn btn-secondary">Register</a>
+                            <span class="ec-register-wrap ec-register-half">
+                                <label>Phone Number*</label>
+                                <input type="text" name="phone" placeholder="Enter your phone number"
+                                    required />
+                            </span>
+                            <span class="ec-register-wrap">
+                                <label>Business Name</label>
+                                <input type="text" name="business_name" placeholder="Business Name" />
+                            </span>
+
+                            <span class="ec-register-wrap ec-register-btn">
+                                <button class="btn btn-primary" type="submit">Register</button>
                             </span>
                         </form>
                     </div>
@@ -134,5 +143,6 @@
         </div>
     </div>
 </section>
+<!-- End Register -->
 @endsection
 

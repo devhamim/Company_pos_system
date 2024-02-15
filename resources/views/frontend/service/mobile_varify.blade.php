@@ -10,7 +10,6 @@
                     <h3>Please Varify Your 6 degite code</h3>
                     <input type="number" name="mobile_varify_code" class="form-control" placeholder="OTP">
                     <div class=" pt-5">
-                        <input type="hidden" name="service_cart_id" value="{{ $service_order_cart->first()->id }}">
                         @if (session('error'))
                             <strong class="text-danger">{{ session('error') }}</strong>
                         @endif

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class CustomerAuthMiddleware
+class pandingcustomermiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,9 @@ class CustomerAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::guard('customerauth')->check()) {
+        if (!Auth::guard('customerreg')->check()) {
             return redirect()->route('customer.login')->with('error', 'Please verify your phone number');
         }
-
         return $next($request);
     }
 }

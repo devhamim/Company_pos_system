@@ -123,9 +123,6 @@
                                 @endif
                             </span>
                             <span class="ec-login-wrap ec-login-btn">
-                                {{-- @if($number_varify->isNotEmpty())
-                                    <input type="hidden" name="customer_verify" value="{{ $number_varify }}" >
-                                    @endif --}}
                                     <button class="btn btn-primary" type="submit">Verify</button>
                             </span>
                         </form>

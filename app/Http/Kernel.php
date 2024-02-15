@@ -2,11 +2,32 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\pandingcustomermiddleware;
+use App\Jobs\ClearMobileVerification;
+use App\Models\customer_registers;
 use App\Models\customers;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+// use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends HttpKernel
 {
+
+     /**
+     * Define the application's command schedule.
+     *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @return void
+     */
+    protected function schedule(Schedule $schedule)
+    {
+        // Other scheduled commands...
+
+        // Add the job to clear mobile verification every five minutes
+        $schedule->job(new ClearMobileVerification)->everyFiveMinutes();
+    }
+
+
     /**
      * The application's global HTTP middleware stack.
      *
@@ -64,6 +85,11 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'pandingcustomer' => \App\Http\Middleware\pandingcustomermiddleware::class,
+        'customerlog' => \App\Http\Middleware\CustomerAuthMiddleware::class,
         'customerauth' => customers::class,
+        'customerreg' => customer_registers::class,
     ];
+
+
 }
