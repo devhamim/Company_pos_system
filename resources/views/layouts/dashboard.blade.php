@@ -134,6 +134,12 @@
                             <div>Media</div>
                         </a>
                     </li>
+                    <li class="sidenav-item {{ Request::is('service/product/order') ? 'active' : '' }}">
+                        <a href="{{route('service.product.order')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Service Product Order</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item {{ Request::is('courier*') ? 'active open' : '' }}">
                         <a href="{{route('courier.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-car"></i>
@@ -369,7 +375,7 @@
             cb(start_date, end_date);
         });
     </script> --}}
-    
+
 
 
 

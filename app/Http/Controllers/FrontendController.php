@@ -196,6 +196,8 @@ class FrontendController extends Controller
                 } catch (\Exception $e) {
                     return back()->with('error', "Initialization Error: " . $e->getMessage());
                 }
+                // // demo redirect
+                // return redirect()->route('service.order.success')->with('success', 'order success');
 
             }
             else{

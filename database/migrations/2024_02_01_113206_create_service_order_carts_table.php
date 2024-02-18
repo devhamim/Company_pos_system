@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('coupon')->nullable();
             $table->string('total');
             $table->integer('status')->default(0);
+            $table->integer('permission')->default(0);
             $table->timestamps();
         });
     }

@@ -29,6 +29,7 @@ use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
+use App\Http\Controllers\ServiceProductOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,10 @@ Route::get('/orders/exportOrdersReport', [OrderslistController::class, 'orders_e
 Route::get('/orders/product/delete/{id}', [OrderslistController::class, 'orders_product_delete'])->name('orders.product.delete');
 Route::get('/getcustomerdata/{customerid}', [OrderslistController::class, 'getcustomerdata'])->name('getcustomerdata');
 
+// service prduct order
+Route::get('/service/product/order', [ServiceProductOrderController::class, 'service_product_order'])->name('service.product.order');
+Route::get('/service/product/order/delete/{id}', [ServiceProductOrderController::class, 'service_product_order_delete'])->name('service.product.order.delete');
+Route::post('/service/product/order/update', [ServiceProductOrderController::class, 'service_product_order_update'])->name('service.product.order.update');
 
 
 // print
