@@ -121,12 +121,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="header_icon">
+                            {{-- <div class="header_icon">
                                 <i class="fa-regular fa-heart"></i>
                             </div>
                             <div class="header_icon">
                                 <i class="fa-regular fa-bag-shopping"></i>
-                            </div>
+                            </div> --}}
                         @else
                             @auth('customerreg')
                                 <div class="header_icon">
@@ -140,12 +140,12 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="header_icon">
+                                {{-- <div class="header_icon">
                                     <i class="fa-regular fa-heart"></i>
                                 </div>
                                 <div class="header_icon">
                                     <i class="fa-regular fa-bag-shopping"></i>
-                                </div>
+                                </div> --}}
                             @else
                                 <div class="btn">
                                     <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
@@ -207,7 +207,7 @@
                             <div class="contact-info-box">
                                 <span class="icon lnr-icon-clock"></span>
                                 <span class="title">Send Email</span>
-                                Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+                                Sat - Thu 10:00 - 6:00, Friday - CLOSED
                             </div>
                         </li>
                     </ul>
@@ -381,11 +381,11 @@
                                 <h4 class="widget-title">Useful Link</h4>
                                 <div class="widget-content">
                                     <ul class="user-links style-two">
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Our Services</a></li>
-                                        <li><a href="#">Our Portfolio</a></li>
-                                        <li><a href="#">Our Team</a></li>
-                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="{{ route('about') }}">About Us</a></li>
+                                        <li><a href="{{ route('our.services') }}">Our Services</a></li>
+                                        <li><a href="{{ route('our.products') }}">Our Product</a></li>
+                                        <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>

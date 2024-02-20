@@ -27,8 +27,16 @@ class ServiceProductOrderController extends Controller
 
     //service_product_order
     function service_product_order(){
-        $serviceproductorders = serviceOrderCart::all();
+        $serviceproductorders = serviceOrderCart::where('mobile_verify', null)->get();
         return view('backend.serviceproduct.serviceproductorder',[
+            'serviceproductorders'=>$serviceproductorders,
+        ]);
+    }
+
+    //service_product_order
+    function service_product_order_led(){
+        $serviceproductorders = serviceOrderCart::where('mobile_verify', '!=', null)->get();
+        return view('backend.serviceproduct.serviceproductorderled',[
             'serviceproductorders'=>$serviceproductorders,
         ]);
     }

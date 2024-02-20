@@ -113,7 +113,13 @@
                     <li class="sidenav-item {{ Request::is('product/list') ? 'active' : '' }}">
                         <a href="{{route('product.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-coffee-cup"></i>
-                            <div>Product</div>
+                            <div>Service</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item {{ Request::is('service/product/order') ? 'active' : '' }}">
+                        <a href="{{route('service.product.order')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Service Order</div>
                         </a>
                     </li>
                     <li class="sidenav-item {{ Request::is('category/list') ? 'active' : '' }}">
@@ -134,10 +140,10 @@
                             <div>Media</div>
                         </a>
                     </li>
-                    <li class="sidenav-item {{ Request::is('service/product/order') ? 'active' : '' }}">
-                        <a href="{{route('service.product.order')}}" class="sidenav-link">
+                    <li class="sidenav-item {{ Request::is('service/product/order/led') ? 'active' : '' }}">
+                        <a href="{{route('service.product.order.led')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Service Product Order</div>
+                            <div>Led</div>
                         </a>
                     </li>
                     <li class="sidenav-item {{ Request::is('courier*') ? 'active open' : '' }}">

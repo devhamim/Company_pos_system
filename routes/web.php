@@ -114,6 +114,7 @@ Route::get('/getcustomerdata/{customerid}', [OrderslistController::class, 'getcu
 
 // service prduct order
 Route::get('/service/product/order', [ServiceProductOrderController::class, 'service_product_order'])->name('service.product.order');
+Route::get('/service/product/order/led', [ServiceProductOrderController::class, 'service_product_order_led'])->name('service.product.order.led');
 Route::get('/service/product/order/delete/{id}', [ServiceProductOrderController::class, 'service_product_order_delete'])->name('service.product.order.delete');
 Route::post('/service/product/order/update', [ServiceProductOrderController::class, 'service_product_order_update'])->name('service.product.order.update');
 
@@ -203,6 +204,9 @@ Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'
 // customer dashboard
 Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
 Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
+Route::get('/customer/history', [pandingcustomerdashboard::class, 'customer_history'])->name('customer.history');
+Route::get('/customer/order/history', [customerdashboard::class, 'customer_order_history'])->name('customer.order.history');
+Route::post('/pay/due', [pandingcustomerdashboard::class, 'pay_due'])->name('pay.due');
 
 
 // Customer authentication

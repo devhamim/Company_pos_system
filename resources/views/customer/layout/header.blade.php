@@ -62,7 +62,7 @@
                                     <!-- Header User Start -->
                                     <div class="ec-header-user dropdown">
                                         <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
-                                                class="fi-rr-user"></i></button>
+                                                class="fi-rr-user text-white"></i></button>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                                 <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
@@ -70,16 +70,16 @@
                                     </div>
                                     <!-- Header User End -->
                                     <!-- Header wishlist Start -->
-                                    <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
-                                        <div class="header-icon"><i class="fi-rr-heart"></i></div>
+                                    {{-- <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
+                                        <div class="header-icon"><i class="fi-rr-heart text-white"></i></div>
                                         <span class="ec-header-count">4</span>
                                     </a>
                                     <!-- Header wishlist End -->
                                     <!-- Header Cart Start -->
                                     <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                                        <div class="header-icon"><i class="fi-rr-shopping-bag"></i></div>
+                                        <div class="header-icon"><i class="fi-rr-shopping-bag text-white"></i></div>
                                         <span class="ec-header-count cart-count-lable">3</span>
-                                    </a>
+                                    </a> --}}
                                     <!-- Header Cart End -->
                                 </div>
                             @else
@@ -88,7 +88,7 @@
                                         <!-- Header User Start -->
                                         <div class="ec-header-user dropdown">
                                             <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
-                                                    class="fi-rr-user"></i></button>
+                                                    class="fi-rr-user text-white"></i></button>
                                             <ul class="dropdown-menu dropdown-menu-right">
                                                     <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
                                                     <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
@@ -96,16 +96,16 @@
                                         </div>
                                         <!-- Header User End -->
                                         <!-- Header wishlist Start -->
-                                        <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
-                                            <div class="header-icon"><i class="fi-rr-heart"></i></div>
+                                        {{-- <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
+                                            <div class="header-icon"><i class="fi-rr-heart text-white"></i></div>
                                             <span class="ec-header-count">4</span>
                                         </a>
                                         <!-- Header wishlist End -->
                                         <!-- Header Cart Start -->
                                         <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                                            <div class="header-icon"><i class="fi-rr-shopping-bag"></i></div>
+                                            <div class="header-icon"><i class="fi-rr-shopping-bag text-white"></i></div>
                                             <span class="ec-header-count cart-count-lable">3</span>
-                                        </a>
+                                        </a> --}}
                                         <!-- Header Cart End -->
                                     </div>
                                 @else

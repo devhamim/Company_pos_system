@@ -87,7 +87,7 @@
                     <div class="col-md-6 col-sm-12">
                         <!-- ec-breadcrumb-list start -->
                         <ul class="ec-breadcrumb-list">
-                            <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="ec-breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                             <li class="ec-breadcrumb-item active">Profile</li>
                         </ul>
                         <!-- ec-breadcrumb-list end -->
@@ -116,8 +116,8 @@
                             </div> -->
                             <div class="ec-vendor-block-items">
                                 <ul>
-                                    <li><a href="user-profile.html">User Profile</a></li>
-                                    <li><a href="user-history.html">History</a></li>
+                                    <li><a href="{{ route('customer.dashboard') }}">User Profile</a></li>
+                                    <li><a href="{{ route('customer.order.history') }}">History</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>

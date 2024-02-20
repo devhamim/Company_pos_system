@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xl-8 col-lg-8">
+            <div class="col-xl-8 col-lg-8 col-md-8 ">
                 <div class="services-details__content">
                     <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt />
                     <h3 class="mt-4">Service Overview</h3>
@@ -26,7 +26,6 @@
                     <div class="content mt-40">
                         <div class="text">
                             <h3>Review</h3>
-
                         </div>
                         <div class="feature-list mt-4">
                             <div class="row clearfix">
@@ -108,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-4">
+            <div class="col-xl-4 col-lg-4 col-md-4">
                 <div class="service-sidebar">
 
                     <div class="sidebar-widget service-sidebar-single">

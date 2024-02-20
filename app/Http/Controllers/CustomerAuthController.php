@@ -14,13 +14,10 @@ use Http;
 class CustomerAuthController extends Controller
 {
 
-
-
     // customer_login
     function customer_login(){
         return view('customer.customer_login');
     }
-
 
     // customer_number_login
     function customer_number_login(Request $request){

@@ -11,4 +11,12 @@ class Billingdetails extends Model
 
     protected $guarded = ['id'];
 
+    public function rel_to_orderpro(){
+        return $this->hasMany(OrderProduct::class, 'order_id', 'order_id');
+    }
+
+    public function rel_to_order(){
+        return $this->belongsTo(Order::class, 'order_id', 'order_id');
+    }
+
 }

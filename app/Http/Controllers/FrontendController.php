@@ -122,7 +122,6 @@ class FrontendController extends Controller
                 'created_at'=>Carbon::now(),
             ]);
 
-
     $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
     $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
     $smsqSenderId = "8809617620771";
@@ -255,7 +254,6 @@ class FrontendController extends Controller
             'terms'=>$terms,
         ]);
     }
-
 
 
 
