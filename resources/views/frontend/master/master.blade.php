@@ -105,7 +105,7 @@
                             </nav>
 
                         </div>
-                        <div class="outer-box">
+                        <div class="mob_btn">
                             {{-- <div class="search-btn">
                                 <a href="#" class="search"><i class="flaticon-search-3"></i></a>
                             </div> --}}
@@ -212,10 +212,11 @@
                         </li>
                     </ul>
                     <ul class="social-links">
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/nugortechitbd/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://www.facebook.com/nugortechitcom" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@nugortechitbd" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fab fa-behance"></i></a></li>
                     </ul>
                 </nav>
             </div>
@@ -274,7 +275,6 @@
 
         <section class="clients-section">
             <div class="auto-container">
-
                 <ul class="clients-carousel">
                     <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-1.png" alt></a> </li>
                     <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-2.png" alt></a> </li>
@@ -352,10 +352,11 @@
                                         @endif
                                     </div>
                                     <ul class="social-icons">
-                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-behance"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/nugortechitbd/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.facebook.com/nugortechitcom" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.tiktok.com/@nugortechitbd" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                                        <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fa-brands fa-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

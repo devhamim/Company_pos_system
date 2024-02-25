@@ -51,8 +51,7 @@
                     <div class="mb-5">
                         <input name="form_botcheck" class="form-control" type="hidden" value />
                         <button type="submit" class="theme-btn btn-style-one"
-                            data-loading-text="Please wait..."><span class="btn-title">Send
-                                message</span></button>
+                            data-loading-text="Please wait..."><span class="btn-title">Send</span></button>
                         <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span
                                 class="btn-title">Reset</span></button>
                     </div>

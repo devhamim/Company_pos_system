@@ -30,11 +30,11 @@
     <div class="banner-social">
         <h4>Follow us</h4>
         <ul>
-            <li><a href="#" title><i class="fab fa-dribbble"></i></a></li>
-            <li><a href="#" title><i class="fab fa-behance"></i></a></li>
-            <li><a href="#" title><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="#" title><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" title><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.tiktok.com/@nugortechitbd" title><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="https://www.behance.net/nugortech_it" title><i class="fab fa-behance"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/nugortechitbd/" title><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://www.facebook.com/nugortechitcom" title><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.youtube.com/@NugortechIT" title><i class="fab fa-youtube"></i></a></li>
         </ul>
     </div>
 </section>
@@ -46,7 +46,7 @@
         </div>
         <div class="row">
             @foreach ($categoryy->take(8) as $category)
-                <div class="service-block col-lg-3 col-sm-6">
+                <div class="service-block col-lg-3 col-sm-6 col-6">
                     <div class="inner-box">
                         <div class="icon-box">
                             <img src="{{asset('uploads/category')}}/{{$category->category_image}}" alt="">
@@ -135,7 +135,7 @@
         </div>
         <div class="row">
 
-            <div class="process-block col-lg-3 col-sm-6">
+            <div class="process-block col-lg-3 col-sm-6 col-6">
                 <div class="inner-box">
                     <div class="icon-box">
                         <i class="flaticon-creativity-1"></i>
@@ -147,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="process-block col-lg-3 col-sm-6">
+            <div class="process-block col-lg-3 col-sm-6 col-6">
                 <div class="inner-box">
                     <div class="icon-box">
                         <i class="flaticon-workers"></i>
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="process-block col-lg-3 col-sm-6">
+            <div class="process-block col-lg-3 col-sm-6 col-6">
                 <div class="inner-box">
                     <div class="icon-box">
                         <i class="flaticon-winner"></i>
@@ -171,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="process-block col-lg-3 col-sm-6">
+            <div class="process-block col-lg-3 col-sm-6 col-6">
                 <div class="inner-box">
                     <div class="icon-box">
                         <i class="flaticon-web-programming"></i>
@@ -791,57 +791,65 @@
                     <ul class="accordion-box wow fadeInRight">
 
                         <li class="accordion block">
-                            <div class="acc-btn">Is my technology allowed on tech?<div
+                            <div class="acc-btn">আপনারা কি কি সার্ভিস প্রোভাইড করেন?<div
                                     class="icon fa fa-angle-down"></div>
                             </div>
                             <div class="acc-content">
                                 <div class="content">
-                                    <div class="text">Justo nec ultrices dui sapien eget mi proin. Sit amet
-                                        dictum sit amet justo. Aliquet sagittis id consectetur purus Urna.</div>
+                                    <div class="text">
+                                        <p>আমাদের সার্ভিস সমূহ :</p>
+                                        <ul>
+                                            <li>🔘সোশ্যাল মিডিয়া মার্কেটিং</li>
+                                            <li>🔘সোশ্যাল মিডিয়া কন্টেন্ট ডিজাইন</li>
+                                            <li>🔘ডিজিটাল মার্কেটিং স্ট্রাটেজি</li>
+                                            <li>🔘গ্রাফিস ডিজাইন</li>
+                                            <li>🔘ওয়েবসাইট ডেভেলপমেন্ট</li>
+                                            <li>🔘সফটওয়ার ডেভেলপমেন্ট</li>
+                                            <li>🔘আপস ডেভেলপমেন্ট</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </li>
 
                         <li class="accordion block active-block">
-                            <div class="acc-btn active">How to soft launch your business?<div
+                            <div class="acc-btn active">Facebook মার্কেটিং থেকে কি পরিমাণ সেল হতে পারে?<div
                                     class="icon fa fa-angle-down"></div>
                             </div>
                             <div class="acc-content current">
                                 <div class="content">
-                                    <div class="text">Justo nec ultrices dui sapien eget mi proin. Sit amet
-                                        dictum sit amet
-                                        justo. Aliquet sagittis id consectetur purus Urna.</div>
+                                    <div class="text">পোস্ট বুস্ট মানেই সেল না।
+                                        সেল নির্ভর করবে আপনার প্রোডাক্ট কোয়ালিটি, প্রাইসিং এবং কনভিন্সিং পাওয়ার এর উপর।
+                                        আমরা আপনার প্রোডাক্ট টার্গেট অডিয়েন্স এর কাছে রিচ করতে পারবো।
+                                        টার্গেট অডিয়েন্স বেসড প্রতি ডলার রিচ করবে ৫০০-২৫০০+-।
+                                        এখানে যার কাছে আপনার প্রোডাক্ট নিড ফিল মনে করবে সে আপনাকে কুয়েরি করবে।
+                                        কি পরিমান মেসেজ বা অর্ডার আসবে কখনো ফিক্সড করে বলা সম্ভব না এমন কি ফেসবুক ও ফিক্সড করে বলতে পারে না।
+                                        </div>
                                 </div>
                             </div>
                         </li>
 
                         <li class="accordion block">
-                            <div class="acc-btn">How to turn visitors into contributors? <div
+                            <div class="acc-btn">আমার অ্যাড অ্যাক্টিভ হতে কতক্ষন সময় লাগবে? <div
                                     class="icon fa fa-angle-down"></div>
                             </div>
                             <div class="acc-content">
                                 <div class="content">
-                                    <div class="text">Justo nec ultrices dui sapien eget mi proin. Sit amet
-                                        dictum sit amet justo. Aliquet sagittis id consectetur purus Urna.</div>
+                                    <div class="text">ফেসবুক মার্কেটিং সার্ভিস ১০০% অ্যাডভান্স করতে হবে।
+                                        আপনি পেমেন্ট করার ১ ঘণ্টার মধ্যে এড পাবলিশ করা
+                                        হবে এবং ফেসবুক এড একটিভ করতে ২৪ ঘণ্টা সময় নিতে পারে।
+                                        </div>
                                 </div>
                             </div>
                         </li>
 
                         <li class="accordion block">
-                            <div class="acc-btn">How can i find my solutions?<div class="icon fa fa-angle-down">
+                            <div class="acc-btn">আমি কেনো আপনাদের সার্ভিস নিবো?<div class="icon fa fa-angle-down">
                                 </div>
                             </div>
                             <div class="acc-content">
                                 <div class="content">
-                                    <div class="text">Justo nec ultrices dui sapien eget mi proin. Sit amet
-                                        dictum sit amet justo. Aliquet sagittis id consectetur purus Urna.</div>
-                                </div>
-                                <div class="acc-content">
-                                    <div class="content">
-                                        <div class="text">Justo nec ultrices dui sapien eget mi proin. Sit amet
-                                            dictum sit amet justo .Aliquet sagittis id consectetur purus Urna.
-                                        </div>
-                                    </div>
+                                    <div class="text">আমাদের রয়েছে ২৪/৭ অনলাইন সাপোর্ট। এবং অভিজ্ঞ ডিজিটাল মার্কেটিং টিম।</div>
                                 </div>
                             </div>
                         </li>

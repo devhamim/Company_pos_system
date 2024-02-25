@@ -1213,15 +1213,30 @@ figure.image {
     font-weight: 600;
     color: var(--theme-color-light);
     display: inline-block;
-    padding: 0 60px;
-    height: 70px;
-    line-height: 70px;
+    padding: 0 40px;
+    height: 50px;
+    line-height: 50px;
     font-size: 16px;
     font-family: var(--title-font2);
     position: relative;
     border: 0;
     z-index: 9;
     overflow: hidden
+}
+
+@media(max-width:575.98px) {
+    .mob_btn {
+        margin-left: 16%;
+    }
+}
+@media(max-width:575.98px) {
+    .theme-btn {
+        background-color: var(--theme-color1);
+        padding: 0 20px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
 }
 
 .theme-btn .btn-title {
@@ -3075,6 +3090,11 @@ figure.image {
     position: relative;
     height: 100vh
 }
+@media(max-width:575.98px) {
+    .banner-section {
+        height: 50vh
+    }
+}
 
 .banner-section .btn-box {
     display: -webkit-box;
@@ -3274,6 +3294,12 @@ figure.image {
     line-height: 100px;
     margin-bottom: 31px
 }
+@media(max-width:575.98px) {
+    .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box h1,
+.banner-section .banner-slider .banner-slide .outer-box .content-box h1 {
+    margin-bottom: 10px
+}
+}
 
 @media(max-width:1399.98px) {
 
@@ -3301,8 +3327,8 @@ figure.image {
 @media(max-width:575.98px) {
 
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box h1, .banner-section .banner-slider .banner-slide .outer-box .content-box h1 {
-        font-size: 25px;
-        line-height: 38px;
+        font-size: 18px;
+        line-height: 20px;
     }
 }
 
@@ -3318,8 +3344,8 @@ figure.image {
 }
 @media(max-width:575.98px) {
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .text, .banner-section .banner-slider .banner-slide .outer-box .content-box .text {
-        line-height: 22px;
-        font-size: 13px;
+        line-height: 18px;
+        font-size: 10px;
     }
 }
 
@@ -3675,7 +3701,7 @@ figure.image {
 
 @media(max-width:575.98px) {
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .theme-btn, .banner-section .banner-slider .banner-slide .outer-box .content-box .btn-box .theme-btn {
-        padding: 12px 15px;
+        padding: 8px 15px;
     }
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .theme-btn, .banner-section .banner-slider .banner-slide .outer-box .content-box .btn-box .theme-btn {
         font-size: 10px;
@@ -3685,9 +3711,9 @@ figure.image {
         line-height: 45px
     }
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .play-btn i, .banner-section .banner-slider .banner-slide .outer-box .content-box .btn-box .play-btn i {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
     }
 }
 
@@ -3845,7 +3871,13 @@ figure.image {
     text-align: center;
     background: #1e1e1e
 }
-
+@media(max-width:575.98px) {
+    .about-section .image-column .inner-column .image-box .exp-box .icon-box {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+}
 .about-section .image-column .inner-column .image-box .exp-box .title {
     font-size: 25px;
     color: var(--theme-color-light);
@@ -3857,6 +3889,8 @@ figure.image {
 
 @media(max-width:575.98px) {
     .about-section .image-column .inner-column .image-box .exp-box .title {
+        font-size: 12px;
+        padding: 29px 21px 22px;
         width: 168px
     }
 }
@@ -3890,8 +3924,8 @@ figure.image {
 
 @media(max-width:575.98px) {
     .about-section .content-column .inner-column .sec-title h2 {
-        font-size: 26px;
-        line-height: 39px
+        font-size: 18px;
+        line-height: 24px;
     }
 }
 
@@ -3912,7 +3946,13 @@ figure.image {
     margin-top: 30px;
     text-transform: lowercase
 }
-
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .sec-title .text {
+        line-height: 20px;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+}
 .about-section .content-column .inner-column .inner-box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4015,6 +4055,12 @@ figure.image {
     display: inline-block;
     margin-right: 30px
 }
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .btn-box .theme-btn-v2 {
+        padding: 8px 15px;
+        margin-right: 15px
+    }
+}
 
 .about-section .content-column .inner-column .btn-box .theme-btn-v2:hover {
     color: #000
@@ -4035,6 +4081,11 @@ figure.image {
     position: relative;
     padding-left: 75px
 }
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .btn-box .contact-btn {
+        padding-left: 55px
+    }
+}
 
 .about-section .content-column .inner-column .btn-box .contact-btn i {
     position: absolute;
@@ -4049,6 +4100,15 @@ figure.image {
     font-size: 28px
 }
 
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .btn-box .contact-btn i {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+}
+
 .about-section .content-column .inner-column .btn-box .contact-btn span {
     color: var(--theme-color1);
     font-family: var(--text-font);
@@ -4056,6 +4116,11 @@ figure.image {
     font-weight: 700;
     display: block;
     margin-bottom: 1px
+}
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .btn-box .contact-btn span {
+        font-size: 10px;
+    }
 }
 
 .about-section .content-column .inner-column .btn-box .contact-btn .title {
@@ -4066,7 +4131,12 @@ figure.image {
     color: var(--theme-color-light);
     margin-bottom: 0
 }
-
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .btn-box .contact-btn .title {
+        font-size: 14px;
+        line-height: 12px;
+    }
+}
 .about-section.innerpage {
     background-image: unset
 }
@@ -4446,6 +4516,11 @@ figure.image {
 }
 
 @media(max-width:575.98px) {
+    .service-section {
+        padding: 50px 0;
+    }
+}
+@media(max-width:575.98px) {
     .service-section .sec-title h2 {
         font-size: 27px
     }
@@ -4540,12 +4615,25 @@ figure.image {
         line-height: 33px
     }
 }
-
+@media(max-width:575.98px) {
+    .service-block .inner-box .content-box .title {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 6px;
+    }
+}
 .service-block .inner-box .content-box .text {
     line-height: 26px;
     text-transform: capitalize;
     font-weight: 500;
     margin-bottom: 20px
+}
+@media(max-width:575.98px) {
+    .service-block .inner-box .content-box .text {
+        line-height: 14px;
+        margin-bottom: 13px;
+        font-size: 11px;
+    }
 }
 
 .service-block .inner-box .content-box .ser-btn {
@@ -4557,6 +4645,11 @@ figure.image {
     background-color: unset;
     border: 1px solid rgba(69, 69, 69, .8);
     color: var(--text-color)
+}
+@media(max-width:575.98px) {
+    .service-block .inner-box .content-box .ser-btn {
+        padding: 5px 8px;
+    }
 }
 
 .service-block .inner-box .content-box .ser-btn svg {
@@ -5197,6 +5290,17 @@ figure.image {
     text-transform: uppercase;
     line-height: 35px;
     margin-bottom: 18px
+}
+@media(max-width:575.98px) {
+    .process-block .inner-box .content-box .title {
+        font-size: 16px;
+        line-height: 10px;
+        margin-bottom: 18px;
+    }
+    .process-block .inner-box .content-box .text {
+        line-height: 16px;
+        font-size: 12px;
+    }
 }
 
 .process-section-two {
@@ -8858,7 +8962,8 @@ figure.image {
 
 @media(max-width:575.98px) {
     .contact-banner-two .outer-box .title {
-        font-size: 42px
+        font-size: 27px;
+        line-height: 40px;
     }
 }
 
@@ -8875,7 +8980,9 @@ figure.image {
 
 @media(max-width:575.98px) {
     .contact-banner-two .outer-box .theme-btn-v2 {
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        font-size: 11px;
     }
 }
 
@@ -8908,7 +9015,9 @@ figure.image {
 
 @media(max-width:575.98px) {
     .contact-banner-two .outer-box .theme-btn-v2.two {
-        margin-left: 0
+        margin-left: 0;
+        padding: 10px 15px;
+        font-size: 11px;
     }
 }
 
@@ -8985,7 +9094,7 @@ figure.image {
 
 .contact-section .form-column {
     position: absolute;
-    bottom: -73px;
+    bottom: 3%;
     right: 0;
     z-index: 99
 }
@@ -9604,7 +9713,11 @@ figure.image {
     font-family: var(--text-font);
     opacity: .8
 }
-
+@media(max-width:575.98px) {
+    .footer-bottom .copyright-text {
+        font-size: 13px;
+    }
+}
 .footer-bottom .copyright-text a {
     color: inherit
 }
