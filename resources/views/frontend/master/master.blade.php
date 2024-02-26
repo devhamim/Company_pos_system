@@ -117,7 +117,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                         <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -136,7 +136,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-right">
                                                             <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                            <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
+                                                            <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -264,7 +264,7 @@
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">
                                                     <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -283,7 +283,7 @@
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                         <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                                 </ul>
                                             </div>
                                         </div>

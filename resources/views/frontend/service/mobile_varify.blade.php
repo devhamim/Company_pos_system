@@ -7,7 +7,7 @@
             <form action="{{ route('number.otp') }}" method="POST">
             @csrf
                 <div class="col-lg-6 m-auto rounded" style="background: #ffc5b9; padding: 20px 40px">
-                    <h3>Please Varify Your 6 degite code</h3>
+                    <h3>Please enter your 6 digit verify code</h3>
                     <input type="number" name="mobile_varify_code" class="form-control" placeholder="OTP">
                     <div class=" pt-5">
                         @if (session('error'))
