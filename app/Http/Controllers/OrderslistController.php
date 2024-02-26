@@ -268,7 +268,7 @@ function orders_store(Request $request){
         'customer_phone' => 'required|min:11|max:11',
         'busines_name' => 'required',
     ]);
-    $order_id = 'INV'.'-'.rand(1000,9999);
+    $order_id = 'INV'.'-'.rand(10000000,99999999);
     // Create an order
     $order = Order::create([
         'order_id' => $order_id,
@@ -319,18 +319,9 @@ function orders_store(Request $request){
         ]);
     }
 
-    // Insert order products
     $productIds = $request->product_id;
     $prices = $request->price;
 
-    // foreach ($request->quantity as $key => $quantity) {
-    //     OrderProduct::create([
-    //         'order_id' => $order_id,
-    //         'product_id' => $productIds[$key],
-    //         'quantity' => $quantity,
-    //         'price' => $prices[$key],
-    //     ]);
-    // }
     foreach ($request->quantity as $key => $quantity) {
         if (isset($productIds[$key]) && isset($prices[$key])) {
             OrderProduct::create([
@@ -481,7 +472,8 @@ public function orders_update(Request $request)
     ]);
 
     // If you have an existing order_id, retrieve the order
-    $order_id = $request->input('order_id') ?: 'INV' . '-' . rand(1000, 9999);
+    // $order_id = $request->input('order_id') ?: 'INV' . '-' . rand(1000, 9999);
+    $order_id = $request->order_id;
     $order = Order::where('order_id', $order_id)->first();
     $currentStatus = $order->status;
 
@@ -639,54 +631,54 @@ function orders_product_delete($id){
     return back()->withError('Order Delete Successfully');
 }
 
-function orders_exportOrdersReport(){
+// function orders_exportOrdersReport(){
 
-    $rules = [
-        'start_date' => '',
-        'end_date' => '',
-    ];
+//     $rules = [
+//         'start_date' => '',
+//         'end_date' => '',
+//     ];
 
-    $validatedData = $request->validate($rules);
+//     $validatedData = $request->validate($rules);
 
-    $sDate = $validatedData['start_date'];
-    $eDate = $validatedData['end_date'];
-
-
-    $purchases = DB::table('billingdetails')
-            ->join('products', 'purchase_details.product_id', '=', 'products.id')
-            ->join('purchases', 'purchase_details.purchase_id', '=', 'purchases.id')
-            ->whereBetween('purchases.purchase_date',[$sDate,$eDate])
-            ->where('purchases.purchase_status','1')
-            ->select( 'purchases.purchase_no', 'purchases.purchase_date', 'purchases.supplier_id','products.product_code', 'products.product_name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total')
-            ->get();
+//     $sDate = $validatedData['start_date'];
+//     $eDate = $validatedData['end_date'];
 
 
-        $purchase_array [] = array(
-            'Date',
-            'No Purchase',
-            'Supplier',
-            'Product Code',
-            'Product',
-            'Quantity',
-            'Unitcost',
-            'Total',
-        );
+//     $purchases = DB::table('billingdetails')
+//             ->join('products', 'purchase_details.product_id', '=', 'products.id')
+//             ->join('purchases', 'purchase_details.purchase_id', '=', 'purchases.id')
+//             ->whereBetween('purchases.purchase_date',[$sDate,$eDate])
+//             ->where('purchases.purchase_status','1')
+//             ->select( 'purchases.purchase_no', 'purchases.purchase_date', 'purchases.supplier_id','products.product_code', 'products.product_name', 'purchase_details.quantity', 'purchase_details.unitcost', 'purchase_details.total')
+//             ->get();
 
-        foreach($purchases as $purchase)
-        {
-            $purchase_array[] = array(
-                'Date' => $purchase->purchase_date,
-                'No Purchase' => $purchase->purchase_no,
-                'Supplier' => $purchase->supplier_id,
-                'Product Code' => $purchase->product_code,
-                'Product' => $purchase->product_name,
-                'Quantity' => $purchase->quantity,
-                'Unitcost' => $purchase->unitcost,
-                'Total' => $purchase->total,
-            );
-        }
 
-        $this->exportExcel($purchase_array);
-}
+//         $purchase_array [] = array(
+//             'Date',
+//             'No Purchase',
+//             'Supplier',
+//             'Product Code',
+//             'Product',
+//             'Quantity',
+//             'Unitcost',
+//             'Total',
+//         );
+
+//         foreach($purchases as $purchase)
+//         {
+//             $purchase_array[] = array(
+//                 'Date' => $purchase->purchase_date,
+//                 'No Purchase' => $purchase->purchase_no,
+//                 'Supplier' => $purchase->supplier_id,
+//                 'Product Code' => $purchase->product_code,
+//                 'Product' => $purchase->product_name,
+//                 'Quantity' => $purchase->quantity,
+//                 'Unitcost' => $purchase->unitcost,
+//                 'Total' => $purchase->total,
+//             );
+//         }
+
+//         $this->exportExcel($purchase_array);
+// }
 
 }

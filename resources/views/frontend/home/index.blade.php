@@ -103,7 +103,7 @@
                             <h6 class="title">Years of expericen</h6>
                         </div>
                         <div class="content-box">
-                            <span>500+</span>
+                            <span>50K+</span>
                             <h6 class="title">Successful project </h6>
                         </div>
                         <div class="content-box">

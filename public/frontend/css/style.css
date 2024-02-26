@@ -1651,6 +1651,7 @@ figure.image {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    justify-content: space-between;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -2188,7 +2189,7 @@ figure.image {
 .header-style-one .header-lower .sticky-header .inner-container {
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
 }
 
 @media(max-width:767.98px) {
@@ -2269,7 +2270,8 @@ figure.image {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center
+    align-items: center;
+    justify-content: space-between;
 }
 
 .sticky-header.fixed-header {

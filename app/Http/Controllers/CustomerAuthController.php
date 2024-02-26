@@ -45,7 +45,6 @@ class CustomerAuthController extends Controller
             return redirect()->route('customer.verify.view');
         }
         elseif(customer_registers::where('phone', $request->number)->exists()){
-
             $verify_code = rand(100000, 999999);
             customer_registers::where('phone', $request->number)->update([
                 'mobile_verify'=>$verify_code,
@@ -83,20 +82,6 @@ class CustomerAuthController extends Controller
         $number_verify = $request->session()->get('mobile_verify');
         $phone_number = $request->session()->get('phone_number');
         if($request->verify == $number_verify){
-            if(customer_registers::where('phone', $phone_number)->exists()){
-                $reg_customer = customer_registers::where('phone', $phone_number)->first();
-                if($reg_customer){
-
-                    Auth::guard('customerreg')->loginUsingId($reg_customer->id);
-
-                    $reg_customer->update([
-                        'mobile_verify'=>null,
-                    ]);
-                    $request->session()->forget('mobile_verify');
-                    $request->session()->forget('phone_number');
-                    return redirect()->route('panding.customer.dashboard');
-                }
-            }
             if(customers::where('customer_phone', $phone_number)->exists()){
                 $customer = customers::where('customer_phone', $phone_number)->first();
                 if($customer){
@@ -110,6 +95,24 @@ class CustomerAuthController extends Controller
                     return redirect()->route('customer.dashboard');
                 }
             }
+            elseif(customer_registers::where('phone', $phone_number)->exists()){
+                $reg_customer = customer_registers::where('phone', $phone_number)->first();
+                if($reg_customer){
+
+                    Auth::guard('customerreg')->loginUsingId($reg_customer->id);
+
+                    $reg_customer->update([
+                        'mobile_verify'=>null,
+                    ]);
+                    $request->session()->forget('mobile_verify');
+                    $request->session()->forget('phone_number');
+                    return redirect()->route('panding.customer.dashboard');
+                }
+            }
+            else{
+                return back()->with('error', 'Something is wrong, please try again or contact our customer care');
+            }
+
 
         }
         else{

@@ -103,7 +103,7 @@ class FrontendController extends Controller
         ]);
 
             $price = Product::where('id', $request->product_id)->first()->product_discount;
-            $order_id = 'INV'.'-'.rand(10000,99999);
+            $order_id = 'INV'.'-'.rand(10000000,99999999);
             $sub_total = $request->quantity*$price;
             $mobile_verify = rand(100000,999999);
             $service_cart_id = serviceOrderCart::insertGetId([
@@ -159,12 +159,29 @@ class FrontendController extends Controller
 
             if($mobile_otp == $number_verify){
 
-                if(customer_registers::where('phone', $phone_number)->exists()){
-                    $customer_num =  customer_registers::where('phone', $phone_number)->first();
+                customer_registers::insert([
+                    'name'=>$service_cart->name,
+                    'phone'=>$phone_number,
+                    'business_name'=>$service_cart->business_name,
+                    'mobile_verify'=>null,
+                    'created_at'=>Carbon::now(),
+                ]);
+
+
+                if(customers::where('customer_phone', $phone_number)->exists()){
+                    $customer_num = customers::where('customer_phone', $phone_number)->first();
                     if($customer_num){
-                        Auth::guard('customerreg')->loginUsingId($customer_num);
+                        Auth::guard('customerauth')->loginUsingId($customer_num->id);
                     }
                 }
+                elseif(customer_registers::where('phone', $phone_number)->exists()){
+                    $customer_num =  customer_registers::where('phone', $phone_number)->first();
+                    if($customer_num){
+                        Auth::guard('customerreg')->loginUsingId($customer_num->id);
+                    }
+                }
+
+
                 $service_cart->update([
                     'mobile_verify'=> null,
                 ]);
@@ -209,7 +226,8 @@ class FrontendController extends Controller
         $service_cart_id = $request->session()->get('service_cart_id');
         $service_cart = serviceOrderCart::findOrFail($service_cart_id);
         $service_cart->update(['status' => 1]);
-        return view('frontend.checkout.order_success');
+        // return view('frontend.checkout.order_success');
+        return redirect()->route('customer.history');
     }
 
     // service_order_cancel\
