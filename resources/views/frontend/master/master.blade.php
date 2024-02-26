@@ -252,19 +252,37 @@
                                 </ul>
                             </div>
                         </nav>
-                        <div class="nav_right">
-                            <div class="mob_btn">
-                                {{-- <div class="search-btn">
-                                    <a href="#" class="search"><i class="flaticon-search-3"></i></a>
-                                </div> --}}
-                                    @auth('customerauth')
+                        <div class="mob_btn" style="display: flex; align-items: center;">
+                            {{-- <div class="search-btn">
+                                <a href="#" class="search"><i class="flaticon-search-3"></i></a>
+                            </div> --}}
+                                @auth('customerauth')
+                                    <div class="header_icon">
+                                        <div class="ec-header-user dropdown">
+                                            <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                                                <i class="fa-regular fa-user"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="header_icon">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+                                    <div class="header_icon">
+                                        <i class="fa-regular fa-bag-shopping"></i>
+                                    </div> --}}
+                                @else
+                                    @auth('customerreg')
                                         <div class="header_icon">
                                             <div class="ec-header-user dropdown">
                                                 <button class="dropdown-toggle" data-bs-toggle="dropdown">
                                                     <i class="fa-regular fa-user"></i>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
                                                         <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
                                                 </ul>
                                             </div>
@@ -276,36 +294,13 @@
                                             <i class="fa-regular fa-bag-shopping"></i>
                                         </div> --}}
                                     @else
-                                        @auth('customerreg')
-                                            <div class="header_icon">
-                                                <div class="ec-header-user dropdown">
-                                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                                                        <i class="fa-regular fa-user"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-right">
-                                                            <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                            <li><a class="dropdown-item" href="{{ route('customer.logout') }}">logout</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="header_icon">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </div>
-                                            <div class="header_icon">
-                                                <i class="fa-regular fa-bag-shopping"></i>
-                                            </div> --}}
-                                        @else
-                                            <div class="btn">
-                                                <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
-                                            </div>
-                                        @endauth
-
+                                        <div class="btn">
+                                            <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
+                                        </div>
                                     @endauth
-                                <div class="mobile-nav-toggler">
-                                    <i class="fa fa-bars"></i>
-                                </div>
-                            </div>
-                            <div class="mobile-nav-toggler">
+
+                                @endauth
+                            <div class="mobile-nav-toggler" style="margin-top: -6%;">
                                 <i class="fa fa-bars"></i>
                             </div>
                         </div>
