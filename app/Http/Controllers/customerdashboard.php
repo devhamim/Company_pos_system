@@ -57,10 +57,10 @@ class customerdashboard extends Controller
                     'metadata'      => [
                         'example_metadata_key' => "example_metadata_value",
                     ],
-                    'redirect_url'  => route('site'),
+                    'redirect_url'  => route('service.order.success'),
                     'return_type'   => 'GET',
-                    'cancel_url'    => route('site'),
-                    'webhook_url'   => route('site'),
+                    'cancel_url'    => route('service.order.cancel'),
+                    'webhook_url'   => route('service.order.ipn'),
                 ];
 
 
