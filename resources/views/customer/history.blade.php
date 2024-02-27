@@ -62,8 +62,9 @@
                                                 </td>
                                                 <td><span>{{ $serviceproductorder->rel_to_product->product_name }}</span></td>
                                                 <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
-                                                <td><span>{{ $serviceproductorder->total }}</span></td>
+                                                <td><span>{{ $serviceproductorder->total }} </span></td>
                                                 <td>
+
                                                     <span>
                                                         @if ($serviceproductorder->status == 1)
                                                             <strong class="bg-success text-white px-2 py-1 rounded">Paid</strong>
@@ -81,6 +82,7 @@
                                             </tr>
                                         @endforeach
                                     @endif
+
                                     @if (Auth::guard('customerauth')->check())
                                             @if ($serviceorders)
                                                 @foreach ($serviceorders as $key => $serviceproductorder)
@@ -97,7 +99,13 @@
                                                                 @if ($serviceproductorder->status == 1)
                                                                     <strong class="bg-success text-white px-2 py-1 rounded">Paid</strong>
                                                                 @else
-                                                                    <strong class="bg-danger text-white px-2 py-1 rounded">Unpaid</strong>
+                                                                    <form action="{{ route('auth.pay.due') }}" method="POST">
+                                                                        @csrf
+                                                                            <input type="hidden" name="id" value="{{ $serviceproductorder->id }}">
+                                                                            <input type="hidden" name="name" value="{{ Auth::guard('customerauth')->user()->customer_name }}">
+                                                                            <input type="hidden" name="total" value="{{ $serviceproductorder->total }}">
+                                                                        <button type="submit" class="bg-danger text-white px-2 py-1 rounded">Unpaid</button>
+                                                                    </form>
                                                                 @endif
                                                             </span>
                                                         </td>

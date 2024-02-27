@@ -206,6 +206,7 @@ Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard
 Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
 Route::get('/customer/history', [pandingcustomerdashboard::class, 'customer_history'])->name('customer.history');
 Route::get('/customer/order/history', [customerdashboard::class, 'customer_order_history'])->name('customer.order.history');
+Route::post('/auth/pay/due', [customerdashboard::class, 'auth_pay_due'])->name('auth.pay.due');
 Route::post('/pay/due', [pandingcustomerdashboard::class, 'pay_due'])->name('pay.due');
 
 
