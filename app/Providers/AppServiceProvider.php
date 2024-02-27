@@ -84,5 +84,9 @@ class AppServiceProvider extends ServiceProvider
      View::composer('backend.orders.multi_view_invoice_print', function ($view){
         $view->with('setting', setting::all());
     });
+    // user dashboard setting
+     View::composer('backend.user.userdashboardview.app', function ($view){
+        $view->with('setting', setting::all());
+    });
 }
 }

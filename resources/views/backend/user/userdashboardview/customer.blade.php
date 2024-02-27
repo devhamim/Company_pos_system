@@ -1,11 +1,11 @@
-@extends('layouts.dashboard')
+@extends('backend.user.userdashboardview.app')
 @section('content')
 <div class="container-fluid flex-grow-1 container-p-y">
-    <h4 class="font-weight-bold py-3 mb-0">Users</h4>
+    <h4 class="font-weight-bold py-3 mb-0">Customer</h4>
     <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="feather icon-home"></i></a></li>
-            <li class="breadcrumb-item active"><a href="#!">Users</a></li>
+            <li class="breadcrumb-item active"><a href="#!">Customer</a></li>
         </ol>
     </div>
     <div class="row">
@@ -17,51 +17,40 @@
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-6 text-right">
-                            <button class="btn btn-success btn-sm mb-3 btn-round" data-toggle="modal" data-target="#user_register"><i class="feather icon-plus"></i> Users</button>
+                            <button class="btn btn-success btn-sm mb-3 btn-round" data-toggle="modal" data-target="#customer_add"><i class="feather icon-plus"></i> add Customer</button>
                         </div>
                     </div>
                     <div class="table table-bordered text-center table-striped">
-                        <table id="report-table" class="table mb-0">
+                        <table id="report-table" class=" mb-0">
                             <thead>
                                 <tr>
+                                    <th>SL</th>
                                     <th>Name</th>
-                                    <th>Email</th>
+                                    <th>Busines Name</th>
                                     <th>Mobile</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th>Options</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Added By</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $sl=>$user)
+                                @foreach ($customer_list as $sl=>$customer)
                                     <tr>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->mobile == null ? 'null': $user->mobile}}</td>
+                                        <td>{{$sl+1}}</td>
+                                        <td>{{$customer->customer_name}}</td>
+                                        <td>{{$customer->busines_name}}</td>
+                                        <td>{{$customer->customer_phone}}</td>
+                                        <td>{{$customer->customer_email == null ? 'null': $customer->customer_email}}</td>
+                                        <td>{{$customer->customer_address == null ? 'null': $customer->customer_address}}</td>
                                         <td>
-                                            @if ($user->role == 1)
-                                                Super Admin
-                                            @elseif ($user->role == 2)
-                                                Manager
+                                            @if ($customer->rel_to_customer != null )
+                                                {{$customer->rel_to_customer->name}}
                                             @else
-                                                Sales
+                                                Null
                                             @endif
                                         </td>
-                                        <td>
-                                            @if ($user->status == 1)
-                                                <span class="badge badge-success">Active</span>
-                                            @else
-                                                <span class="badge badge-danger">Deactive</span>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            {{-- <a href="{{route('user.delete', $user->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a> --}}
-                                            <a href="{{route('user.home.view', $user->id)}}" class="btn btn-warning btn-sm"><i class="feather icon-eye"></i>&nbsp;</a>
-                                            <button type="button" value="{{$user->id}}" class="btn btn-info btn-sm edit-btn" data-user-id="{{$user->id}}" data-toggle="modal" data-target="#modals-default">
-                                                <i class="feather icon-edit"></i>&nbsp;
-                                            </button>
-
-                                        </td>
+                                        <td><a href="{{route('customer.delete', $customer->id)}}" class=""><i class="fa fa-trash"></i> </a></td>
                                     </tr>
 
                                 @endforeach
@@ -75,6 +64,7 @@
     </div>
 </div>
 
+{{-- customer update --}}
 @if ($errors->has('user_name')||$errors->has('user_email') || session('user_password'))
     <div class="modal fade show" id="modals-default" aria-modal="true" style="display: block;">
 @else
@@ -123,7 +113,7 @@
                             <select name="role" id="role" class="form-control">
                                 <option value="1">Super Admin</option>
                                 <option value="2">Manager</option>
-                                <option value="3">Sales</option>
+                                <option value="3">Employee</option>
                             </select>
                             @error('role')
                                 <span class="text-danger">{{$message}}</span>
@@ -169,94 +159,62 @@
     </div>
 </div>
 
-@if ($errors->has('name')||$errors->has('email')||$errors->has('role')||$errors->has('mobile')||$errors->has('password') ||$errors->has('password_confirmation') || session('passworderror'))
-    <div class="modal show" id="user_register" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" style="display: block;" aria-modal="true">
+{{-- customer add --}}
+@if ($errors->has('customer_name')||$errors->has('customer_phone') ||$errors->has('busines_name'))
+    <div class="modal show" id="customer_add" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" style="display: block;" aria-modal="true">
 @else
-      <div class="modal" id="user_register" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+      <div class="modal" id="customer_add" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 @endif
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Add Users</h5>
+            <h5 class="modal-title">Add Customer</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-            <form method="POST" action="{{route('user.register')}}">
+            <form method="POST" action="{{route('customer.add')}}">
                 @csrf
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label class="floating-label" for="Name">Name</label>
-                            <input type="text" name="name" class="form-control" id="Name" placeholder="">
-                            @error('name')
+                            <label class="floating-label" for="customer_name">Name</label>
+                            <input type="text" name="customer_name" class="form-control" id="customer_name" placeholder="Name">
+                            @error('customer_name')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="floating-label" for="busines_name">Business Name</label>
+                            <input type="text" name="busines_name" class="form-control" id="busines_name" placeholder="Business Name">
+                            @error('busines_name')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group fill">
-                            <label class="floating-label" for="Email">Email</label>
-                            <input type="email" name="email" class="form-control" id="Email" placeholder="">
-                            @error('email')
+                            <label class="floating-label" for="customer_phone">Mobile</label>
+                            <input type="number" name="customer_phone" class="form-control" id="customer_phone" placeholder="Mobile">
+                            @error('customer_phone')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group fill">
-                            <label class="floating-label" for="mobile">Mobile</label>
-                            <input type="mobile" name="mobile" class="form-control" id="mobile" placeholder="">
-                            @error('mobile')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
+                            <label class="floating-label" for="customer_email">Email</label>
+                            <input type="email" name="customer_email" class="form-control" id="customer_email" placeholder="Email">
                         </div>
                     </div>
-                    <div class="col-sm-6">
+
+                    <div class="col-sm-12">
                         <div class="form-group fill">
-                            <label class="floating-label" for="role">Role</label>
-                            <select name="role" id="" class="form-control">
-                                <option value="1">Super Admin</option>
-                                <option value="2">Manager</option>
-                                <option value="3">Sales</option>
-                            </select>
-                            @error('role')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group fill">
-                            <label class="floating-label" for="Password">Password</label>
-                            <input type="password" name="password" class="form-control" id="Password" placeholder="">
-                            @error('password')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                            @if(session('passworderror'))
-                                <span class="text-danger">{{session('passworderror')}}</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group fill">
-                            <label class="floating-label" for="Password">Confirm Password</label>
-                            <input type="password" name="password_confirmation" class="form-control" id="Password" placeholder="">
-                            @error('password_confirmation')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-sm-6 mb-5">
-                        <div class="form-group fill">
-                            <label class="floating-label" for="role">Status</label>
-                            <select name="status" id="" class="form-control">
-                                <option value="1">Active</option>
-                                <option value="2">Deactive</option>
-                            </select>
-                            @error('status')
-                                <span class="text-danger">{{$message}}</span>
-                            @enderror
+                            <label class="floating-label" for="customer_address">Address</label>
+                            <input type="text" name="customer_address" class="form-control" id="customer_address" placeholder="Address">
                         </div>
                     </div>
                     <div class="col-sm-12">

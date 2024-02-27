@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\courier;
+use App\Models\customers;
+use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -116,7 +120,7 @@ class UserController extends Controller
         User::where('id', $user_id)->delete();
         return back()->withSuccess('User deleted successfully');
     }
-    
+
     // user_register
     function user_register(Request $request) {
         $request->validate([
@@ -200,4 +204,214 @@ class UserController extends Controller
             return back()->withSuccess('User updated successfully');
         }
     }
+
+    // user_dashbord_view
+    function user_order_view(Request $request){
+
+        $id = $request->session()->get('user_id');
+
+        $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+
+            if (empty($startDate) && empty($endDate)) {
+                $startDate = '';
+                $endDate = '';
+            }
+            else {
+                $endDate = Carbon::parse($endDate)->addDay();
+                $endDate = $endDate->format('Y-m-d');
+            }
+            if(!empty($startDate) && !empty($endDate)){
+                $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->count();
+                $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 0)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 2)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 3)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 4)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 5)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 6)->count();
+                $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 4)->get();
+            }
+            else{
+                $order_id = Order::with('rel_to_billing')->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::where('added_by', $id)->count();
+                $total_pending = Order::where('status', 0)->where('added_by', $id)->count();
+                $total_in_review = Order::where('status', 2)->where('added_by', $id)->count();
+                $total_due_payment = Order::where('status', 3)->where('added_by', $id)->count();
+                $total_refund_payment = Order::where('status', 4)->where('added_by', $id)->count();
+                $total_completed = Order::where('status', 5)->where('added_by', $id)->count();
+                $total_canceled = Order::where('status', 6)->where('added_by', $id)->count();
+                $refund_payment = Order::where('status', 4)->where('added_by', $id)->get();
+            }
+            $couriers = courier::all();
+        return view('backend.user.userdashboardview.userorderview', [
+            'order_id'=>$order_id,
+            'total_orders'=>$total_orders,
+            'total_pending'=>$total_pending,
+            'total_in_review'=>$total_in_review,
+            'total_due_payment'=>$total_due_payment,
+            'total_refund_payment'=>$total_refund_payment,
+            'total_completed'=>$total_completed,
+            'total_canceled'=>$total_canceled,
+            'couriers'=>$couriers,
+            'refund_payment'=>$refund_payment,
+            'defaultStartDate' => $startDate,
+            'defaultEndDate' => $endDate,
+        ]);
+    }
+
+    //user_orders_view_status
+    function user_orders_view_status(Request $request, $status){
+
+        $id = $request->session()->get('user_id');
+
+        $startDate = $request->start_date;
+            $endDate = $request->end_date;
+
+            if (empty($startDate) && empty($endDate)) {
+                $startDate = '';
+                $endDate = '';
+            }
+            else {
+                $endDate = Carbon::parse($endDate)->addDay();
+                $endDate = $endDate->format('Y-m-d');
+            }
+
+
+            if(!empty($startDate) && !empty($endDate)){
+                $order_id = Order::with('rel_to_billing')->whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $order_status = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', $status)->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->count();
+                $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 0)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 2)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 3)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 4)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 5)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 6)->count();
+                $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->where('status', 4)->get();
+            }
+            else{
+                $order_id = Order::with('rel_to_billing')->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $order_status = Order::where('status', $status)->where('added_by', $id)->orderBy('created_at', 'desc')->get();
+                $total_orders = Order::where('added_by', $id)->count();
+                $total_pending = Order::where('status', 0)->where('added_by', $id)->count();
+                $total_in_review = Order::where('status', 2)->where('added_by', $id)->count();
+                $total_due_payment = Order::where('status', 3)->where('added_by', $id)->count();
+                $total_refund_payment = Order::where('status', 4)->where('added_by', $id)->count();
+                $total_completed = Order::where('status', 5)->where('added_by', $id)->count();
+                $total_canceled = Order::where('status', 6)->where('added_by', $id)->count();
+                $refund_payment = Order::where('status', 4)->where('added_by', $id)->get();
+            }
+
+        $couriers = courier::all();
+        return view('backend.user.userdashboardview.orders_list_status', [
+            'order_id'=>$order_id,
+            'total_orders'=>$total_orders,
+            'total_pending'=>$total_pending,
+            'total_in_review'=>$total_in_review,
+            'total_due_payment'=>$total_due_payment,
+            'total_refund_payment'=>$total_refund_payment,
+            'total_completed'=>$total_completed,
+            'total_canceled'=>$total_canceled,
+            'couriers'=>$couriers,
+            'order_status'=>$order_status,
+            'refund_payment'=>$refund_payment,
+            'defaultStartDate' => $startDate,
+            'defaultEndDate' => $endDate,
+        ]);
+    }
+
+    //customer_list
+    function user_customer_list_view(Request $request){
+
+        $user_id = $request->session()->get('user_id');
+
+        $customer_list = customers::where('added_by', $user_id)->orderBy('created_at', 'desc')->get();
+
+        return view('backend.user.userdashboardview.customer',[
+            'customer_list'=>$customer_list,
+        ]);
+    }
+
+    // user_home_view
+    function user_home_view(Request $request ,$id){
+        $request->session()->put('user_id', $id);
+
+        $startDate = $request->start_date;
+            $endDate = $request->end_date;
+
+            if (empty($startDate) && empty($endDate)) {
+                $startDate = '';
+                $endDate = '';
+            }
+            else {
+                $endDates = Carbon::parse($endDate)->addDay();
+                $endDate = $endDates->format('Y-m-d');
+            }
+            if(!empty($startDate) && !empty($endDate)){
+                $month_order = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->orderBy('id', 'DESC')->get();
+                $todayOrders = Order::whereDate('created_at', now()->toDateString())->where('added_by', $id)->count();
+                $total_orders = Order::whereBetween('created_at', [$startDate, $endDate])->where('added_by', $id)->count();
+                $total_pending = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 0)->where('added_by', $id)->count();
+                $total_in_review = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 2)->where('added_by', $id)->count();
+                $total_due_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 3)->where('added_by', $id)->count();
+                $total_refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->where('added_by', $id)->count();
+                $total_completed = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 5)->where('added_by', $id)->count();
+                $total_canceled = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 6)->where('added_by', $id)->count();
+                $refund_payment = Order::whereBetween('created_at', [$startDate, $endDate])->where('status', 4)->where('added_by', $id)->get();
+                $customers_count = customers::count();
+            }
+            else{
+                $month_order = Order::orderBy('id', 'DESC')->where('added_by', $id)->get();
+                $todayOrders = Order::whereDate('created_at', now()->toDateString())->where('added_by', $id)->count();
+                $total_orders = Order::where('added_by', $id)->count();
+                $total_pending = Order::where('status', 0)->where('added_by', $id)->count();
+                $total_in_review = Order::where('status', 2)->where('added_by', $id)->count();
+                $total_due_payment = Order::where('status', 3)->where('added_by', $id)->count();
+                $total_refund_payment = Order::where('status', 4)->where('added_by', $id)->count();
+                $total_completed = Order::where('status', 5)->where('added_by', $id)->count();
+                $total_canceled = Order::where('status', 6)->where('added_by', $id)->count();
+                $refund_payment = Order::where('status', 4)->where('added_by', $id)->get();
+                $customers_count = customers::where('added_by', $id)->count();
+            }
+        $product_id = Product::all();
+        $products_count = Product::count();
+        $users_count = User::count();
+
+        return view('backend.user.userdashboardview.userdashbordview', [
+            'defaultStartDate' => $startDate,
+            'defaultEndDate' => $endDate,
+            'customers_count'=>$customers_count,
+            'total_orders'=>$total_orders,
+            'users_count'=>$users_count,
+            'products_count'=>$products_count,
+            'month_order'=>$month_order,
+            'total_pending'=>$total_pending,
+            'total_in_review'=>$total_in_review,
+            'total_due_payment'=>$total_due_payment,
+            'total_refund_payment'=>$total_refund_payment,
+            'total_completed'=>$total_completed,
+            'total_canceled'=>$total_canceled,
+            'refund_payment'=>$refund_payment,
+            'todayOrders'=>$todayOrders,
+            'statusCounts' => [
+                'pending' => $total_pending,
+                'in_review' => $total_in_review,
+                'due_payment' => $total_due_payment,
+                'refund_payment' => $total_refund_payment,
+                'completed' => $total_completed,
+                'canceled' => $total_canceled,
+            ],
+        ]);
+    }
+
+    // return_home
+    function return_home(Request $request){
+
+        $request->session()->forget('user_id');
+
+        return redirect()->route('home');
+
+    }
+
 }

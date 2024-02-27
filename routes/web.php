@@ -66,6 +66,11 @@ Route::post('/user/register', [UserController::class, 'user_register'])->name('u
 // Route::get('/user/edit/{user_id}', [UserController::class, 'user_edit'])->name('user.edit');
 Route::post('/user/update', [UserController::class, 'user_update'])->name('user.update');
 Route::post('/editUser/{id}', [UserController::class, 'editUser'])->name('editUser');
+Route::get('/user/order/view', [UserController::class, 'user_order_view'])->name('user.order.view');
+Route::get('/user/orders/view/status/{status}', [UserController::class, 'user_orders_view_status'])->name('user.orders.view.status');
+Route::get('/user/customer/list/view', [UserController::class, 'user_customer_list_view'])->name('user.customer.list.view');
+Route::get('/user/home/view/{id}', [UserController::class, 'user_home_view'])->name('user.home.view');
+Route::get('/return/home', [UserController::class, 'return_home'])->name('return.home');
 
 // shipping methods
 Route::get('/shipping/methods', [shippingMethodsController::class, 'shipping_methods'])->name('shipping.methods');
@@ -143,9 +148,6 @@ Route::get('/banner/edit/{banner_id}', [bannerContoller::class, 'banner_edit'])-
 Route::get('/banner/delete/{banner_id}', [bannerContoller::class, 'banner_delete'])->name('banner.delete');
 Route::post('/banner/update/', [bannerContoller::class, 'banner_update'])->name('banner.update');
 
-
-
-
 // Size
 Route::get('/size/add', [SizeController::class, 'size_add'])->name('size.add');
 Route::post('/size/store', [SizeController::class, 'size_store'])->name('size.store');
@@ -203,12 +205,12 @@ Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'
 
 // customer dashboard
 Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
-Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
-Route::get('/customer/history', [pandingcustomerdashboard::class, 'customer_history'])->name('customer.history');
 Route::get('/customer/order/history', [customerdashboard::class, 'customer_order_history'])->name('customer.order.history');
 Route::post('/auth/pay/due', [customerdashboard::class, 'auth_pay_due'])->name('auth.pay.due');
+// panding customer dashboard
+Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
+Route::get('/customer/history', [pandingcustomerdashboard::class, 'customer_history'])->name('customer.history');
 Route::post('/pay/due', [pandingcustomerdashboard::class, 'pay_due'])->name('pay.due');
-
 
 // Customer authentication
 Route::get('/customer/login', [CustomerAuthController::class, 'customer_login'])->name('customer.login');
