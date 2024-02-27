@@ -16,7 +16,10 @@
                  </div>
             </div>
             <div class="col-lg-2">
-                <form action="{{ route('home') }}" method="GET">
+                @php
+                    $id = session('user_id');
+                @endphp
+                <form action="{{ route('user.home.view', $id) }}" method="GET">
                     <!-- ... (other form fields) -->
                     <input type="hidden" name="start_date" id="start_date" value="{{ $defaultStartDate }}">
                     <input type="hidden" name="end_date" id="end_date" value="{{ $defaultEndDate }}">
