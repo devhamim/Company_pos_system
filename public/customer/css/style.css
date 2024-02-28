@@ -1210,6 +1210,23 @@ progress {
   -webkit-overflow-scrolling: touch;
 }
 
+.footer_icon li{
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    margin: 0 5px;
+}
+.footer_icon li:hover{
+    background-color: #f94a29;
+    border: 1px solid #f94a29;
+}
+.footer_icon li:hover a{
+    color: #fff !important;
+}
+.footer_icon li:first-child {
+    margin-left: 0;
+}
+
 .form-label {
   margin-bottom: 8px;
 }

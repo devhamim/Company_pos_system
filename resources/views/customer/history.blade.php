@@ -12,10 +12,10 @@
                         <div class="ec-vendor-block">
                             <div class="ec-vendor-block-items">
                                 <ul>
-                                    @if (Auth::guard('customerreg')->check())
+                                    {{-- @if (Auth::guard('customerreg')->check())
                                         <li><a href="{{ route('panding.customer.dashboard') }}">User Profile</a></li>
                                         <li><a href="{{ route('customer.history') }}">Billing</a></li>
-                                    @endif
+                                    @endif --}}
                                     @if (Auth::guard('customerauth')->check())
                                         <li><a href="{{ route('customer.dashboard') }}">User Profile</a></li>
                                         <li><a href="{{ route('customer.order.history') }}">Billing</a></li>
@@ -53,7 +53,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (Auth::guard('customerreg')->check())
+                                    {{-- @if (Auth::guard('customerreg')->check())
                                         @foreach ($serviceproductorders as $key => $serviceproductorder)
                                             <tr>
                                                 <th scope="row"><span>{{ $key+1 }}</span></th>
@@ -81,7 +81,7 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                    @endif
+                                    @endif --}}
 
                                     @if (Auth::guard('customerauth')->check())
                                             @if ($serviceorders)
@@ -102,7 +102,7 @@
                                                                     <form action="{{ route('auth.pay.due') }}" method="POST">
                                                                         @csrf
                                                                             <input type="hidden" name="id" value="{{ $serviceproductorder->id }}">
-                                                                            <input type="hidden" name="name" value="{{ Auth::guard('customerauth')->user()->customer_name }}">
+                                                                            <input type="hidden" name="name" value="{{ Auth::guard('customerauth')->user()->name }}">
                                                                             <input type="hidden" name="total" value="{{ $serviceproductorder->total }}">
                                                                         <button type="submit" class="bg-danger text-white px-2 py-1 rounded">Unpaid</button>
                                                                     </form>

@@ -438,14 +438,21 @@
                                 <h4 class="widget-title">Newsletter</h4>
                                 <div class="text">Corporate clients and leisure for travelers has been relying </div>
                                 <div class="subscribe-form-two">
-                                    <form method="post" action="#">
+                                    <form method="post" action="{{ route('subscribe.store') }}">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" class="email" value
-                                                placeholder="Your e-mail address" required>
-                                            <button type="button" class="theme-btn"><span class="btn-title">Subscribe
-                                                    Now</span><i
-                                                    class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                                            <input type="email" name="email" class="email" placeholder="Enter your email here..." required>
+                                            <button type="submit" class="theme-btn">
+                                                <span class="btn-title">Subscribe Now</span><i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
                                             </button>
+                                            <div class="mt-2">
+                                                @if (session('subscribe'))
+                                                    <strong class="text-success">{{ session('subscribe') }}</strong>
+                                                @endif
+                                                @error('email')
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                @enderror
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -460,7 +467,7 @@
                     <div class="inner-container">
                         <div class="copyright-text">
                             @if ($setting->first()->footer != null)
-                                {{ $setting->first()->footer }}| Design and Development By <a href="https://nugortechit.com/">Nugortech it</a>
+                                {{ $setting->first()->footer }}| Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>. All Rights Reserved.
                             @endif
                         </div>
                     </div>

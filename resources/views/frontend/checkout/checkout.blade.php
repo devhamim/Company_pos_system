@@ -48,11 +48,11 @@
                         </div>
                     </div>
                     <div class="col-md-6 mt-15">
-                        {{-- <h3>Coupon Code</h3>
+                        <h3>Coupon Code</h3>
                         <div class="mb-3 col-md-12 mb-5">
                             <label for="checkuot-form-fname">Coupon</label>
                             <input id="checkuot-form-fname" name="coupon" type="text" class="form-control" placeholder="Coupon">
-                        </div> --}}
+                        </div>
 
                         <h3>Your order</h3>
                         <table class="table table-striped table-bordered tbl-shopping-cart">

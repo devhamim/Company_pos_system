@@ -83,34 +83,7 @@
                                     <!-- Header Cart End -->
                                 </div>
                             @else
-                                @auth('customerreg')
-                                    <div class="ec-header-bottons text-white">
-                                        <!-- Header User Start -->
-                                        <div class="ec-header-user dropdown">
-                                            <button class="dropdown-toggle" data-bs-toggle="dropdown"><i
-                                                    class="fi-rr-user text-white"></i></button>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
-                                            </ul>
-                                        </div>
-                                        <!-- Header User End -->
-                                        <!-- Header wishlist Start -->
-                                        {{-- <a href="wishlist.html" class="ec-header-btn ec-header-wishlist">
-                                            <div class="header-icon"><i class="fi-rr-heart text-white"></i></div>
-                                            <span class="ec-header-count">4</span>
-                                        </a>
-                                        <!-- Header wishlist End -->
-                                        <!-- Header Cart Start -->
-                                        <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                                            <div class="header-icon"><i class="fi-rr-shopping-bag text-white"></i></div>
-                                            <span class="ec-header-count cart-count-lable">3</span>
-                                        </a> --}}
-                                        <!-- Header Cart End -->
-                                    </div>
-                                @else
-                                    <a href="{{ route('customer.login') }}" style="padding: 10px 30px; font-weight: 600; color: #fff; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px; background: #f94a29">login</a>
-                                @endauth
+                                <a href="{{ route('customer.login') }}" style="padding: 10px 30px; font-weight: 600; color: #fff; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px; background: #f94a29">login</a>
                             @endauth
 
                         </div>

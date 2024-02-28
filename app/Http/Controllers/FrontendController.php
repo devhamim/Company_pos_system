@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\banner;
 use App\Models\Category;
+use App\Models\Coupon;
 use App\Models\customer_registers;
 use App\Models\customers;
 use App\Models\Inventory;
@@ -12,6 +13,7 @@ use App\Models\privacy_policy;
 use App\Models\Product;
 use App\Models\ProductGallery;
 use App\Models\serviceOrderCart;
+use App\Models\subscribe;
 use App\Models\terms_condition;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 use Log;
 use UddoktaPay\LaravelSDK\UddoktaPay;
 use Http;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontendController extends Controller
 {
@@ -102,9 +105,17 @@ class FrontendController extends Controller
             'quantity'=>'required | min:1',
         ]);
 
+            if($request->coupon){
+                $coupon_name = Coupon::where('coupon_name', $request->coupon)->first();
+                $coupons = $coupon_name->coupon_amount;
+            }
+            else{
+              $coupons = 0;
+            }
             $price = Product::where('id', $request->product_id)->first()->product_discount;
             $order_id = 'INV'.'-'.rand(10000000,99999999);
             $sub_total = $request->quantity*$price;
+            $aftercoupon = $sub_total*$coupons/100;
             $mobile_verify = rand(100000,999999);
             $service_cart_id = serviceOrderCart::insertGetId([
                 'order_id'=> $order_id,
@@ -117,8 +128,8 @@ class FrontendController extends Controller
                 'quantity'=> $request->quantity,
                 'price'=> $price,
                 'sub_total'=> $sub_total,
-                'coupon'=> $request->coupon,
-                'total'=> $sub_total-$request->coupon,
+                'coupon'=> $coupons,
+                'total'=> $sub_total-$aftercoupon,
                 'created_at'=>Carbon::now(),
             ]);
 
@@ -159,27 +170,33 @@ class FrontendController extends Controller
 
             if($mobile_otp == $number_verify){
 
-                customer_registers::insert([
-                    'name'=>$service_cart->name,
-                    'phone'=>$phone_number,
-                    'business_name'=>$service_cart->business_name,
+                customers::insert([
+                    'added_by'=>0,
+                    'customer_name'=>$service_cart->name,
+                    'customer_phone'=>$phone_number,
+                    'busines_name'=>$service_cart->business_name,
                     'mobile_verify'=>null,
                     'created_at'=>Carbon::now(),
                 ]);
 
 
-                if(customers::where('customer_phone', $phone_number)->exists()){
                     $customer_num = customers::where('customer_phone', $phone_number)->first();
                     if($customer_num){
                         Auth::guard('customerauth')->loginUsingId($customer_num->id);
                     }
-                }
-                elseif(customer_registers::where('phone', $phone_number)->exists()){
-                    $customer_num =  customer_registers::where('phone', $phone_number)->first();
-                    if($customer_num){
-                        Auth::guard('customerreg')->loginUsingId($customer_num->id);
-                    }
-                }
+
+                // if(customers::where('customer_phone', $phone_number)->exists()){
+                //     $customer_num = customers::where('customer_phone', $phone_number)->first();
+                //     if($customer_num){
+                //         Auth::guard('customerauth')->loginUsingId($customer_num->id);
+                //     }
+                // }
+                // elseif(customer_registers::where('phone', $phone_number)->exists()){
+                //     $customer_num =  customer_registers::where('phone', $phone_number)->first();
+                //     if($customer_num){
+                //         Auth::guard('customerreg')->loginUsingId($customer_num->id);
+                //     }
+                // }
 
 
                 $service_cart->update([
@@ -227,7 +244,7 @@ class FrontendController extends Controller
         $service_cart = serviceOrderCart::findOrFail($service_cart_id);
         $service_cart->update(['status' => 1]);
         // return view('frontend.checkout.order_success');
-        return redirect()->route('customer.history');
+        return redirect()->route('customer.order.history');
     }
 
     // service_order_cancel\
@@ -273,6 +290,49 @@ class FrontendController extends Controller
         ]);
     }
 
+
+    // auth_pay_due
+function auth_pay_due(Request $request){
+    $service_cart_id = $request->id;
+    $request->session()->put('service_cart_id', $service_cart_id);
+
+    $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
+    $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
+    $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+
+    $requestData = [
+        'full_name'     => $request->name,
+        'email'         => "test@test.com",
+        'amount'        => $request->total,
+        'metadata'      => [
+            'example_metadata_key' => "example_metadata_value",
+        ],
+        'redirect_url'  => route('service.order.success'),
+        'return_type'   => 'GET',
+        'cancel_url'    => route('service.order.cancel'),
+        'webhook_url'   => route('service.order.ipn'),
+    ];
+
+    try {
+        // Initiate payment
+        $paymentUrl = $uddoktaPay->initPayment($requestData);
+        return redirect($paymentUrl);
+    } catch (\Exception $e) {
+        return back()->with('error', "Initialization Error: " . $e->getMessage());
+    }
+}
+
+// subscribe_store
+function subscribe_store(Request $request){
+    $request->validate([
+        'email'=>'required',
+    ]);
+
+    subscribe::insert([
+        'email'=>$request->email,
+    ]);
+    return back()->with('subscribe', 'You Subscribe Successfully');
+}
 
 
 }

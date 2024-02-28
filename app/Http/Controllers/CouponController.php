@@ -21,7 +21,7 @@ class CouponController extends Controller
     }
     //coupon
     function coupon_add() {
-        return view('frontend.coupon.coupon');
+        return view('backend.coupon.coupon');
     }
 
     function coupon_store(Request $request) {
@@ -36,13 +36,13 @@ class CouponController extends Controller
             'validity' => $request->coupon_validity,
             'created_at' => Carbon::now(),
         ]);
-        return back()->withSuccess('Cupon added successfully');
+        return redirect()->route('coupon.list')->withSuccess('Cupon added successfully');
     }
 
     // coupon_list
     function coupon_list() {
         $coupons = Coupon::all();
-        return view('frontend.coupon.coupon_list', [
+        return view('backend.coupon.coupon_list', [
             'coupons' => $coupons,
         ]);
     }
@@ -50,7 +50,7 @@ class CouponController extends Controller
     // coupon_edit
     function coupon_edit($coupon_id) {
         $coupon = Coupon::find($coupon_id);
-        return view('frontend.coupon.coupon_edit', compact(['coupon']));
+        return view('backend.coupon.coupon_edit', compact(['coupon']));
     }
 
     // coupon_delete
@@ -82,7 +82,7 @@ class CouponController extends Controller
         $coupon_name = $request->coupon_code;
         if(Coupon::where('coupon_name', $coupon_name)->exists()) {
             $coupon = Coupon::where('coupon_name', $coupon_name)->first();
-            
+
             if(Carbon::now()->format('Y-m-d') > Coupon::where('coupon_name', $coupon_name)->first()->validity)  {
                 return response()->json([
                     'status' => 'Coupon code has been expired.',

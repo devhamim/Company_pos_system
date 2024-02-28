@@ -44,29 +44,29 @@ class CustomerAuthController extends Controller
 
             return redirect()->route('customer.verify.view');
         }
-        elseif(customer_registers::where('phone', $request->number)->exists()){
-            $verify_code = rand(100000, 999999);
-            customer_registers::where('phone', $request->number)->update([
-                'mobile_verify'=>$verify_code,
-            ]);
+        // elseif(customer_registers::where('phone', $request->number)->exists()){
+        //     $verify_code = rand(100000, 999999);
+        //     customer_registers::where('phone', $request->number)->update([
+        //         'mobile_verify'=>$verify_code,
+        //     ]);
 
-            $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-            $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-            $smsqSenderId = "8809617620771";
-            $smsqMessage = 'Your nugortechit 6 digit verify code is '.$verify_code;
+        //     $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+        //     $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+        //     $smsqSenderId = "8809617620771";
+        //     $smsqMessage = 'Your nugortechit 6 digit verify code is '.$verify_code;
 
-            $smsqMessage = urlencode($smsqMessage);
-            $smsqMobileNumbers = '+88' .$request->number;
+        //     $smsqMessage = urlencode($smsqMessage);
+        //     $smsqMobileNumbers = '+88' .$request->number;
 
-            $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+        //     $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
 
-            $response = Http::get($smsqUrl);
+        //     $response = Http::get($smsqUrl);
 
-            $request->session()->put('mobile_verify', $verify_code);
-            $request->session()->put('phone_number', $request->number);
+        //     $request->session()->put('mobile_verify', $verify_code);
+        //     $request->session()->put('phone_number', $request->number);
 
-            return redirect()->route('customer.verify.view');
-        }
+        //     return redirect()->route('customer.verify.view');
+        // }
         else{
             return redirect()->route('customer.registers')->with('error', 'You are not register please register your account');
         }
@@ -95,20 +95,20 @@ class CustomerAuthController extends Controller
                     return redirect()->route('customer.dashboard');
                 }
             }
-            elseif(customer_registers::where('phone', $phone_number)->exists()){
-                $reg_customer = customer_registers::where('phone', $phone_number)->first();
-                if($reg_customer){
+            // elseif(customer_registers::where('phone', $phone_number)->exists()){
+            //     $reg_customer = customer_registers::where('phone', $phone_number)->first();
+            //     if($reg_customer){
 
-                    Auth::guard('customerreg')->loginUsingId($reg_customer->id);
+            //         Auth::guard('customerreg')->loginUsingId($reg_customer->id);
 
-                    $reg_customer->update([
-                        'mobile_verify'=>null,
-                    ]);
-                    $request->session()->forget('mobile_verify');
-                    $request->session()->forget('phone_number');
-                    return redirect()->route('panding.customer.dashboard');
-                }
-            }
+            //         $reg_customer->update([
+            //             'mobile_verify'=>null,
+            //         ]);
+            //         $request->session()->forget('mobile_verify');
+            //         $request->session()->forget('phone_number');
+            //         return redirect()->route('panding.customer.dashboard');
+            //     }
+            // }
             else{
                 return back()->with('error', 'Something is wrong, please try again or contact our customer care');
             }
@@ -133,15 +133,16 @@ class CustomerAuthController extends Controller
             'business_name'=>'required',
         ]);
 
-        if(customer_registers::where('phone', $request->phone)->exists() || customers::where('customer_phone', $request->phone)->exists()){
+        if(customers::where('customer_phone', $request->phone)->exists()){
             return back()->with('error', 'Already registered this number please login!');
         }
         else{
             $mobile_verify = rand(100000, 999999);
-            customer_registers::insert([
-                'name'=>$request->name,
-                'phone'=>$request->phone,
-                'business_name'=>$request->business_name,
+            customers::insert([
+                'added_by'=>0,
+                'customer_name'=>$request->name,
+                'customer_phone'=>$request->phone,
+                'busines_name'=>$request->business_name,
                 'mobile_verify'=>$mobile_verify,
                 'created_at'=>Carbon::now(),
             ]);
@@ -170,7 +171,7 @@ class CustomerAuthController extends Controller
     // customer_auth_logout
     function customer_auth_logout() {
         Auth::guard('customerauth')->logout();
-        Auth::guard('customerreg')->logout();
+        // Auth::guard('customerreg')->logout();
 
         return redirect('/')->withSuccess('Customer successfully logout');
     }

@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\ServiceProductOrderController;
+use App\Http\Controllers\SubscribeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -206,7 +207,7 @@ Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'
 // customer dashboard
 Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
 Route::get('/customer/order/history', [customerdashboard::class, 'customer_order_history'])->name('customer.order.history');
-Route::post('/auth/pay/due', [customerdashboard::class, 'auth_pay_due'])->name('auth.pay.due');
+Route::post('/auth/pay/due', [FrontendController::class, 'auth_pay_due'])->name('auth.pay.due');
 // panding customer dashboard
 Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
 Route::get('/customer/history', [pandingcustomerdashboard::class, 'customer_history'])->name('customer.history');
@@ -288,3 +289,8 @@ Route::get('/login/google/callback', [CustomerAuthController::class, 'handleGoog
 
 // invoice.download
 Route::get('/invoice/download/{order_id}', [invoiceController::class, 'invoice_download'])->name('invoice.download');
+
+// subscribe.store
+Route::post('/subscribe/store', [FrontendController::class, 'subscribe_store'])->name('subscribe.store');
+Route::get('/subscribe/list', [SubscribeController::class, 'subscribe_list'])->name('subscribe.list');
+Route::get('/subscribe/delete/{id}', [SubscribeController::class, 'subscribe_delete'])->name('subscribe.delete');

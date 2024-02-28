@@ -128,6 +128,12 @@
                             <div>Category</div>
                         </a>
                     </li>
+                    <li class="sidenav-item {{ Request::is('coupon/list') ? 'active' : '' }}">
+                        <a href="{{route('coupon.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon feather icon-grid"></i>
+                            <div>Coupon</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item {{ Request::is('banner/list') ? 'active' : '' }}">
                         <a href="{{route('banner.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
@@ -144,6 +150,12 @@
                         <a href="{{route('service.product.order.led')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
                             <div>Led</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item {{ Request::is('subscribe/list') ? 'active' : '' }}">
+                        <a href="{{route('subscribe.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Subscribe</div>
                         </a>
                     </li>
                     <li class="sidenav-item {{ Request::is('courier*') ? 'active open' : '' }}">

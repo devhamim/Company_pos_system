@@ -33,6 +33,15 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="mt-3">
+                                <ul class="social-icons footer_icon d-flex">
+                                    <li><a href="https://www.linkedin.com/company/nugortechitbd/" target="_blank"><i class="fi fi-brands-linkedin"></i></a></li>
+                                    <li><a href="https://www.facebook.com/nugortechitcom" target="_blank"><i class="fi fi-brands-facebook"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@nugortechitbd" target="_blank"><i class="fi fi-brands-tik-tok"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fi fi-brands-youtube"></i></a></li>
+                                    <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fi fi-brands-behance"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 ec-footer-account">
@@ -56,11 +65,11 @@
                             <h4 class="ec-footer-heading">Useful Link</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#">About Us</a></li>
-                                    <li class="ec-footer-link"><a href="#">Our Services</a></li>
-                                    <li class="ec-footer-link"><a href="#">Our Portfolio</a></li>
-                                    <li class="ec-footer-link"><a href="#">Our Team</a></li>
-                                    <li class="ec-footer-link"><a href="#">Contact Us</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('about') }}">About Us</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('our.services') }}">Our Services</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('our.products') }}">Our Products</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('our.blogs') }}">Our Blog</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,14 +83,19 @@
                                         special promos!</li>
                                 </ul>
                                 <div class="ec-subscribe-form">
-                                    <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
-                                        action="#">
+                                    <form id="ec-newsletter-form" name="ec-newsletter-form" method="post" action="{{ route('subscribe.store') }}">
+                                        @csrf
                                         <div id="ec_news_signup" class="ec-form">
-                                            <input class="ec-email" type="email" required=""
-                                                placeholder="Enter your email here..." name="ec-email" value="" />
-                                            <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                name="subscribe" value=""><i class="ecicon eci-paper-plane-o"
-                                                    aria-hidden="true"></i></button>
+                                            <input class="ec-email" type="email" required="" placeholder="Enter your email here..." name="email" />
+                                            <button id="ec-news-btn" class="button btn-primary" type="submit" name="subscribe" value=""><i class="ecicon eci-paper-plane-o" aria-hidden="true"></i></button>
+                                        </div>
+                                        <div class="mt-2">
+                                            @if (session('subscribe'))
+                                                <strong class="text-success">{{ session('subscribe') }}</strong>
+                                            @endif
+                                            @error('email')
+                                                <strong class="text-danger">{{ $message }}</strong>
+                                            @enderror
                                         </div>
                                     </form>
                                 </div>
@@ -99,7 +113,7 @@
                         <div class="footer-bottom-copy ">
                             <div class="ec-copy text-white">
                                 @if ($setting->first()->footer != null)
-                                    {{ $setting->first()->footer }}| Design and Development By <a class="text-white" href="https://nugortechit.com/">Nugortech it</a>
+                                    {{ $setting->first()->footer }}| Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>. All Rights Reserved.
                                 @endif
                             </div>
                         </div>
