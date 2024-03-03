@@ -140,6 +140,24 @@
                             <div>Sliders</div>
                         </a>
                     </li>
+                    <li class="sidenav-item {{ Request::is('portfolio/list') ? 'active' : '' }}">
+                        <a href="{{route('portfolio.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Portfolio</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item {{ Request::is('testimonial/list') ? 'active' : '' }}">
+                        <a href="{{route('testimonial.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Testimonial</div>
+                        </a>
+                    </li>
+                    <li class="sidenav-item {{ Request::is('team/list') ? 'active' : '' }}">
+                        <a href="{{route('team.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-picture"></i>
+                            <div>Team</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item {{ Request::is('media/list') ? 'active' : '' }}">
                         <a href="{{route('media.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
@@ -321,10 +339,10 @@
     </div>
     <!-- [ Layout wrapper] End -->
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
     <!-- Core scripts -->
     <script src="{{asset('backend/js/pace.js')}}"></script>
-    {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -443,10 +461,10 @@
     @endif
 
     <!-- Demo -->
-    <script src="{{asset('backend/js/analytics.js')}}"></script>
-    <script src="{{asset('backend/js/demo.js')}}"></script>
-    <script src="{{asset('backend/js/pages/ui_modals.js')}}"></script>
-    <script src="{{asset('backend/js/pages/forms_pickers.js')}}"></script>
+    {{-- <script src="{{asset('backend/js/analytics.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/js/demo.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/js/pages/ui_modals.js')}}"></script> --}}
+    {{-- <script src="{{asset('backend/js/pages/forms_pickers.js')}}"></script> --}}
 
     <script>
         // DataTable start

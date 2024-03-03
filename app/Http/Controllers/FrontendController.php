@@ -12,9 +12,12 @@ use App\Models\Order;
 use App\Models\privacy_policy;
 use App\Models\Product;
 use App\Models\ProductGallery;
+use App\Models\protfolio;
+use App\Models\protfoliogallery;
 use App\Models\serviceOrderCart;
 use App\Models\subscribe;
 use App\Models\terms_condition;
+use App\Models\testmonial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +44,8 @@ class FrontendController extends Controller
         $discount_products = Product::where('status', '1')->where('product_discount', '!=', null)->get();
         // $discount_products_count = Product::where('status', '1')->where('product_discount', '!=', null)->where('validity', '>', Carbon::now())->get();
         $banners = banner::all();
-
+        $portfolios = protfolio::where('status', 1)->get();
+        $testmonials = testmonial::where('status', 1)->get();
 
         return view('frontend.home.index', [
             'categories' => $categories,
@@ -51,6 +55,8 @@ class FrontendController extends Controller
             // 'top_selling_products' => $top_selling_products,
             'discount_products' => $discount_products,
             'banners' => $banners,
+            'portfolios' => $portfolios,
+            'testmonials' => $testmonials,
 
             // 'discount_products_count' => $discount_products_count,
         ]);
@@ -334,5 +340,21 @@ function subscribe_store(Request $request){
     return back()->with('subscribe', 'You Subscribe Successfully');
 }
 
+// portfolio_details
+function portfolio_details($slug){
+    $protfolio_details = protfolio::where('slug', $slug)->get();
+    $protfolio_gallery = protfoliogallery::where('protfolio_id', $protfolio_details->first()->id)->get();
+    $protfolio_next = protfolio::where('id', '>', $protfolio_details->first()->id)->orderBy('id')->first();
+    $protfolio_preview = protfolio::where('id', '<', $protfolio_details->first()->id)->orderBy('id', 'desc')->first();
+    $protfolio_similar = protfolio::where('project_type' ,$protfolio_details->first()->project_type)->where('id', '!=', $protfolio_details->first()->id)->get();
+
+    return view('frontend.portfolio_details.portfolio_details', [
+        'protfolio_details'=>$protfolio_details,
+        'protfolio_gallery'=>$protfolio_gallery,
+        'protfolio_next'=>$protfolio_next,
+        'protfolio_preview'=>$protfolio_preview,
+        'protfolio_similar'=>$protfolio_similar,
+    ]);
+}
 
 }

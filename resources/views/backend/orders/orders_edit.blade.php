@@ -107,7 +107,7 @@
 
                                     <div class="form-row">
                                         <div class="form-group col-12">
-                                            <label for="lead_customer">Lead Customer{{$orders->lead_customer}}</label>
+                                            <label for="lead_customer">Lead Customer</label>
                                             <select name="lead_customer" id="lead_customer" class="form-control select2">
                                                 <option value="">Select A Lead</option>
                                                 @foreach ($couriers as $courier)

@@ -36,7 +36,7 @@ class shippingMethodsController extends Controller
 
     public function editShipping(Request $request, $id) {
         $shipping = shippingMethods::find($id);
-    
+
         return response()->json([
             'status' => 200,
             'shipping' => $shipping,

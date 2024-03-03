@@ -189,7 +189,7 @@
 <section class="project-section">
     <div class="auto-container">
         <div class="sec-title">
-            <h2>Recently <br>Completed Projects</h2>
+            <h2>Recently <br>Completed Portfolio</h2>
             <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget
                 aliquet sagittis. Urna nec tincidunt praesent.</div>
         </div>
@@ -201,126 +201,24 @@
         </div>
     </div>
     <div class="row project-slider">
-
+        @foreach ($portfolios as $portfolio)
         <div class="project-block col-lg-3 col-md-6">
             <div class="inner-box">
                 <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-3.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
+                    <figure class="image overlay-anim"><a href="{{ route('portfolio.details', $portfolio->slug) }}">
+                        <img src="{{asset('uploads/protfolio')}}/{{ $portfolio->preview_image }}" alt></a>
+                    </figure>
+                    <figure class="image-2"><a href="{{ route('portfolio.details', $portfolio->slug) }}">
+                        <img src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a>
+                    </figure>
                 </div>
                 <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
+                    <span>{{ $portfolio->project_type }}</span>
+                    <h6 class="title"><a href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a></h6>
                 </div>
             </div>
         </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-4.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-3.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-4.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-4.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-3.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-block col-lg-3 col-md-6">
-            <div class="inner-box">
-                <div class="image-box">
-                    <figure class="image overlay-anim"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-1.jpg" alt></a></figure>
-                    <figure class="image-2"><a href="page-project-details.html"><img
-                                src="{{asset('frontend')}}/images/resource/projec1-2.png" alt></a></figure>
-                </div>
-                <div class="content-box">
-                    <span>Branding</span>
-                    <h6 class="title"><a href="page-project-details.html">Ora Branding Design</a></h6>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 
@@ -331,85 +229,25 @@
         </div>
         <div class="row testi-slider">
 
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-1.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Brooklyn Simmons</h6>
-                                <span>Product Design</span>
+            @foreach ($testmonials as $testmonial)
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text">{{ $testmonial->description }}</div>
+                            <div class="auther-info">
+                                <img src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt>
+                                <div class="info-box">
+                                    <h6 class="title">{{ $testmonial->name }}</h6>
+                                    <span>{{ $testmonial->designation }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-2.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Leslie Alexander</h6>
-                                <span>Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-1.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Brooklyn Simmons</h6>
-                                <span>Product Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-2.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Leslie Alexander</h6>
-                                <span>Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -467,7 +305,7 @@
                         <figure class="image overlay-anim"><a href="page-about.html"><img
                                     src="{{asset('frontend')}}/images/resource/choose1-1.jpg" alt></a></figure>
                         <div class="exp-box bounce-y">
-                            <h6 class="title">25+</h6>
+                            <h6 class="title">7+</h6>
                             <div class="text">Years of
                                 experience</div>
                         </div>
@@ -811,7 +649,7 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                         <li class="accordion block active-block">
                             <div class="acc-btn active">Facebook মার্কেটিং থেকে কি পরিমাণ সেল হতে পারে?<div
                                     class="icon fa fa-angle-down"></div>

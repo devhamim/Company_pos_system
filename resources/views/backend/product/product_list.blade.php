@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 @section('content')
 <div class="container-fluid flex-grow-1 container-p-y">
-    <h4 class="font-weight-bold py-3 mb-0">products</h4>
+    <h4 class="font-weight-bold py-3 mb-0">Service</h4>
     <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('home')}}"><i class="feather icon-home"></i></a></li>
             <li class="breadcrumb-item"><a href="#!">E-Commerce</a></li>
-            <li class="breadcrumb-item active"><a href="#!">products</a></li>
+            <li class="breadcrumb-item active"><a href="#!">Service</a></li>
         </ol>
     </div>
     <div class="row">
@@ -14,8 +14,8 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                        <h3>products</h3>
-                        <a href="{{route('product.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i> products</a>
+                        <h3>Service</h3>
+                        <a href="{{route('product.add')}}" class="btn btn-success btn-sm mb-3 btn-round"><i class="feather icon-plus"></i> Service</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -24,7 +24,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Image</th>
-                                    <th>Product</th>
+                                    <th>Service</th>
                                     <th>Category</th>
                                     <th>Sku</th>
                                     <th>Stock</th>

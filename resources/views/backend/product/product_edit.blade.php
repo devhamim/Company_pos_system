@@ -7,14 +7,14 @@
         <div class="col-lg-10 col-md-10 col-sm-12 m-auto">
         <div class="card mb-4">
             <div class="card-header">
-                <h6>Product</h6>
+                <h6>Service</h6>
             </div>
             <div class="card-body">
                         <div class="row">
 
                             <div class="col-lg-6">
                                 <div class="position-relative">
-                                    <label class="floating-label" for="Category">Product Category *</label>
+                                    <label class="floating-label" for="Category">Service Category *</label>
                                     <select class="select2-demo form-control select2-hidden-accessible" multiple style="width: 100%" name="category_id[]" tabindex="-1" aria-hidden="true">
                                         <optgroup label="">
                                             @php

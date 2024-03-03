@@ -241,7 +241,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/editUser/' + edit_id, // Include the user ID in the URL
+            url: '/editUser/' + edit_id,
             data: {'user_id': edit_id},
             dataType: 'json',
             success: function(data) {

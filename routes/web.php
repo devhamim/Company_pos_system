@@ -29,8 +29,11 @@ use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
+use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceProductOrderController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestmonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +89,21 @@ Route::post('/courire/store', [courierController::class, 'courire_store'])->name
 Route::post('/editCourier/{id}', [courierController::class, 'editCourier'])->name('editCourier');
 Route::post('/courire/update', [courierController::class, 'courire_update'])->name('courire.update');
 Route::get('/courire/delete/{id}', [courierController::class, 'courire_delete'])->name('courire.delete');
+
+
+// testimonial
+Route::get('/testimonial/list', [TestmonialController::class, 'testimonial_list'])->name('testimonial.list');
+Route::post('/testimonial/store', [TestmonialController::class, 'testimonial_store'])->name('testimonial.store');
+Route::post('/edittestimonial/{id}', [TestmonialController::class, 'edittestimonial'])->name('edittestimonial');
+Route::post('/testimonial/update', [TestmonialController::class, 'testimonial_update'])->name('testimonial.update');
+Route::get('/testimonial/delete/{id}', [TestmonialController::class, 'testimonial_delete'])->name('testimonial.delete');
+
+// team
+Route::get('/team/list', [TeamController::class, 'team_list'])->name('team.list');
+Route::post('/team/store', [TeamController::class, 'team_store'])->name('team.store');
+Route::post('/editteam/{id}', [TeamController::class, 'editteam'])->name('editteam');
+Route::post('/team/update', [TeamController::class, 'team_update'])->name('team.update');
+Route::get('/team/delete/{id}', [TeamController::class, 'team_delete'])->name('team.delete');
 
 
 // media
@@ -175,6 +193,13 @@ Route::get('/terms/privacy/policy', [TermsconditionController::class, 'terms_pri
 Route::post('/terms/conditions/update/{id}', [TermsconditionController::class, 'terms_conditions_update'])->name('terms.conditions.update');
 Route::post('/privacy/policy/update/{id}', [TermsconditionController::class, 'privacy_policy_update'])->name('privacy.policy.update');
 
+// portfolio.list
+Route::get('/portfolio/list', [ProtfolioController::class, 'portfolio_list'])->name('portfolio.list');
+Route::get('/portfolio/add', [ProtfolioController::class, 'portfolio_add'])->name('portfolio.add');
+Route::post('/portfolio/store', [ProtfolioController::class, 'portfolio_store'])->name('portfolio.store');
+Route::get('/portfolio/edit/{id}', [ProtfolioController::class, 'portfolio_edit'])->name('portfolio.edit');
+Route::get('/portfolio/delete/{id}', [ProtfolioController::class, 'portfolio_delete'])->name('portfolio.delete');
+Route::post('/portfolio/update', [ProtfolioController::class, 'portfolio_update'])->name('portfolio.update');
 
 
 
@@ -199,6 +224,7 @@ Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
+Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
 
 // paymentmethod
 Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');

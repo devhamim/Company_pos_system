@@ -20,7 +20,7 @@ class mediaController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     //media_list
     function media_list(){
         $medias = media::all();
@@ -52,7 +52,7 @@ class mediaController extends Controller
 
     public function editmedia(Request $request, $id) {
         $media = media::find($id);
-    
+
         return response()->json([
             'status' => 200,
             'media' => $media,
@@ -86,7 +86,7 @@ class mediaController extends Controller
 
         return back()->withSuccess('Media updated successfully');
     }
-    
+
     function media_delete($id){
         media::find($id)->delete();
         return back()->withError('Media Delete successfully');
