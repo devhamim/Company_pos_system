@@ -11,6 +11,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -133,5 +134,23 @@ class HomeController extends Controller
                 'canceled' => $total_canceled,
             ],
         ]);
+    }
+
+
+
+
+    // clear_all_cash
+    function clear_all_cash(){
+        Artisan::call('cache:clear');
+
+        Artisan::call('view:clear');
+
+        Artisan::call('route:clear');
+
+        Artisan::call('config:clear');
+
+        Artisan::call('optimize');
+
+        return back()->withSuccess('cache clear Successfully');
     }
 }

@@ -53,6 +53,7 @@ Route::get('/', [FrontendController::class, 'home'])->name('site');
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/clear/all/cash', [HomeController::class, 'clear_all_cash'])->name('clear.all.cash');
 
 // Custom login route
 Route::get('/system/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');

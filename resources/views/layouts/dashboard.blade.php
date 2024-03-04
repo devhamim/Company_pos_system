@@ -253,6 +253,7 @@
                 <!-- [ Layout navbar ( Header ) ] Start -->
                 <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
 
+
                     <!-- Brand demo (see assets/css/demo/demo.css) -->
                     <a href="{{ route('site') }}" class="navbar-brand app-brand demo bg-white d-lg-none py-0 mr-4">
                         <span class="app-brand-logo demo">
@@ -278,8 +279,11 @@
                         <hr class="d-lg-none w-100 my-2">
 
                         <div class="navbar-nav align-items-lg-center">
-                            <!-- Search -->
-
+                            <!-- cash clear -->
+                                <form action="{{ route('clear.all.cash') }}" method="GET">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Cache Clear</button>
+                                </form>
                         </div>
 
                         <div class="navbar-nav align-items-lg-center ml-auto">
