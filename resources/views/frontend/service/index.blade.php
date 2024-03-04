@@ -35,7 +35,7 @@
     </div>
 </section>
 
-<section class="testimonial-section">
+{{-- <section class="testimonial-section">
     <div class="inner-container">
         <div class="sec-title text-center">
             <h2>WHAT’s TALKING about<br> our coustomer?</h2>
@@ -123,9 +123,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
-<section class="pricing-section">
+{{-- <section class="pricing-section">
     <div class="auto-container">
         <div class="sec-title text-center">
             <h2>Website Design & <br>development Packages</h2>
@@ -205,6 +205,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 @endsection

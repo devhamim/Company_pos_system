@@ -93,7 +93,7 @@
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
-                            
+
                         </div>
                         <div class="content-box">
                             <h4 class="title"><a>{{ $team->name }}</a></h4>
@@ -141,85 +141,25 @@
             </div>
             <div class="row testi-slider">
 
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                                Tincidunt lobortis feugiat vivamus at augue.</div>
-                            <div class="auther-info">
-                                <img src="{{ asset('frontend') }}/images/resource/auther1-1.jpg" alt>
-                                <div class="info-box">
-                                    <h6 class="title">Brooklyn Simmons</h6>
-                                    <span>Product Design</span>
+                @foreach ($testmonials as $testmonial)
+                    <div class="testimonial-block col-md-6">
+                        <div class="inner-box">
+                            <div class="icon-box">
+                                <i class="flaticon-quote-1"></i>
+                            </div>
+                            <div class="content-box">
+                                <div class="text">{{ $testmonial->description }}</div>
+                                <div class="auther-info">
+                                    <img src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt>
+                                    <div class="info-box">
+                                        <h6 class="title">{{ $testmonial->name }}</h6>
+                                        <span>{{ $testmonial->designation }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                                Tincidunt lobortis feugiat vivamus at augue.</div>
-                            <div class="auther-info">
-                                <img src="{{ asset('frontend') }}/images/resource/auther1-2.jpg" alt>
-                                <div class="info-box">
-                                    <h6 class="title">Leslie Alexander</h6>
-                                    <span>Graphic Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                                Tincidunt lobortis feugiat vivamus at augue.</div>
-                            <div class="auther-info">
-                                <img src="{{ asset('frontend') }}/images/resource/auther1-1.jpg" alt>
-                                <div class="info-box">
-                                    <h6 class="title">Brooklyn Simmons</h6>
-                                    <span>Product Design</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                                lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                                Tincidunt lobortis feugiat vivamus at augue.</div>
-                            <div class="auther-info">
-                                <img src="{{ asset('frontend') }}/images/resource/auther1-2.jpg" alt>
-                                <div class="info-box">
-                                    <h6 class="title">Leslie Alexander</h6>
-                                    <span>Graphic Designer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -277,7 +217,7 @@
                             <figure class="image overlay-anim"><a href="page-about.html"><img
                                         src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt></a></figure>
                             <div class="exp-box bounce-y">
-                                <h6 class="title">25+</h6>
+                                <h6 class="title">7+</h6>
                                 <div class="text">Years of
                                     experience</div>
                             </div>

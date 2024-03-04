@@ -33,7 +33,7 @@ class FrontendController extends Controller
     //home
     function home() {
         $categories = Category::all();
-        $category= Category::take(8)->get();
+        $category= Category::where('status', 1)->take(8)->get();
         $products = Product::where('status', '1')->get();
         // $top_selling_products = Order::groupBy('product_id')
         // ->selectRaw('sum(total) as sum, product_id')
@@ -66,10 +66,12 @@ class FrontendController extends Controller
     // about
     function about(){
         $teams = team::where('status', 1)->get();
-        $category= Category::take(8)->get();
+        $category= Category::where('status', 1)->take(8)->get();
+        $testmonials= testmonial::where('status', 1)->get();
         return view('frontend.about.about', [
             'teams'=>$teams,
             'categoryy' => $category,
+            'testmonials' => $testmonials,
         ]);
     }
 
