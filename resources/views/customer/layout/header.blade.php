@@ -83,7 +83,7 @@
                                     <!-- Header Cart End -->
                                 </div>
                             @else
-                                <a href="{{ route('customer.login') }}" style="padding: 10px 30px; font-weight: 600; color: #fff; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px; background: #f94a29">login</a>
+                                <a href="{{ route('customer.login') }}" style="padding: 10px 30px; font-weight: 600; color: #fff; margin-left: 20px; height: 50px; line-height: 45px; margin-top: 11px; background: #f94a29; ">Login</a>
                             @endauth
 
                         </div>
