@@ -4023,7 +4023,9 @@ button.list-group-item-dark {
     width: 12.625rem; }
   .sidenav-vertical .sidenav-inner {
     flex-direction: column;
-    flex: 1 1 auto; }
+    flex: 1 1 auto;
+    overflow-x: hidden;
+ }
     .sidenav-vertical .sidenav-inner > .sidenav-item {
       margin: 0.125rem 0; }
   .sidenav-vertical .sidenav-item .sidenav-link,

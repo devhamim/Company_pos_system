@@ -71,6 +71,29 @@
         .ec-header-user .dropdown-toggle::after{
             display: none;
         }
+
+
+                /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #F94A29 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #F94A29;
+    border-radius: 55px;
+    border: 30px outset #ffffff;
+  }
     </style>
 </head>
 

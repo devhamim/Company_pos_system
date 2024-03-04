@@ -58,6 +58,29 @@
             border: 1px solid #8897AA !important;
             border-radius: 5px;
         }
+
+
+        /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #0e0c28 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #0e0c28;
+    border-radius: 55px;
+    border: 30px outset #ffffff;
+  }
     </style>
 </head>
 
@@ -86,8 +109,6 @@
                         <i class="ion ion-md-menu align-middle"></i>
                     </a>
                 </div>
-                <div class="sidenav-divider mt-0"></div>
-
                 <!-- Links -->
                 <ul class="sidenav-inner py-1">
 
