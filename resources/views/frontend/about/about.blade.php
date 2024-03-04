@@ -88,149 +88,21 @@
                 <h2 class="text-white">OUR TEAM</h2>
             </div>
             <div class="row">
+                @foreach ($teams as $team)
                 <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-1.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
+                            <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
+                            
                         </div>
                         <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Cameron Williamson</a></h4>
-                            <span>Project Manager</span>
+                            <h4 class="title"><a>{{ $team->name }}</a></h4>
+                            <span>{{ $team->education }}</span>
+                            <span>{{ $team->designation }}</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-2.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Marvin McKinney</a></h4>
-                            <span>Creative Director</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-3.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Wade Warren</a></h4>
-                            <span>Project Manager</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-4.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Albert Flores</a></h4>
-                            <span>Head Of marketing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-2.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Marvin McKinney</a></h4>
-                            <span>Creative Director</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="600ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-3.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Wade Warren</a></h4>
-                            <span>Project Manager</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="700ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-4.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Albert Flores</a></h4>
-                            <span>Head Of marketing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-block col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="800ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><img src="images/resource/team1-1.png" alt></figure>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="content-box">
-                            <h4 class="title"><a href="page-team-details.html">Cameron Williamson</a></h4>
-                            <span>Project Manager</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

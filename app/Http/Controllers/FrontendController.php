@@ -16,6 +16,7 @@ use App\Models\protfolio;
 use App\Models\protfoliogallery;
 use App\Models\serviceOrderCart;
 use App\Models\subscribe;
+use App\Models\team;
 use App\Models\terms_condition;
 use App\Models\testmonial;
 use Carbon\Carbon;
@@ -64,10 +65,10 @@ class FrontendController extends Controller
 
     // about
     function about(){
-        // $categories = Category::all();
+        $teams = team::where('status', 1)->get();
         $category= Category::take(8)->get();
         return view('frontend.about.about', [
-            // 'categories'=>$categories,
+            'teams'=>$teams,
             'categoryy' => $category,
         ]);
     }
