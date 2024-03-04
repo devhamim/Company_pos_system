@@ -76,4 +76,29 @@ class ShopProductController extends Controller
 
         return redirect()->route('shop.product.list')->withSuccess('added successfully.');
     }
+
+    // shop_product_delete
+    function shop_product_delete($id){
+        $preview_image = ShopProduct::where('id', $id)->get();
+        $delete_preview_one = public_path('uploads/shop/'. $preview_image->first()->preview_image);
+        unlink($delete_preview_one);
+
+        $thumb_image = shopproductgallery::where('shopproduct_id', $id)->get();
+        foreach($thumb_image as $thumb) {
+            $delete_thumbnails = public_path('uploads/shop/gallery/'. $thumb->gallery_image);
+            unlink($delete_thumbnails);
+            shopproductgallery::find($thumb->id)->delete();
+        }
+
+        ShopProduct::find($id)->delete();
+        return back()->withSuccess('Deleted successfully');
+    }
+
+    // shop_product_edit
+    function shop_product_edit($id){
+        $shopproducts = ShopProduct::where('status', 1)->get();
+        return view('backend.shopproduct.edit',[
+            'shopproducts'=>$shopproducts,
+        ]);
+    }
 }

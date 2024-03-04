@@ -49,8 +49,8 @@
                                         <td>{{$shopproduct->tags}}</td>
                                         <td><span class="badge badge-{{$shopproduct->status == 1 ? 'success' : 'danger'}}">{{$shopproduct->status == 1 ? 'Active' : 'Deactive'}}</span></td>
                                         <td>
-                                            <a href="{{route('product.edit', $shopproduct->id)}}" class=""><i class="fa fa-edit"></i> </a>
-                                            <a href="{{route('product.delete', $shopproduct->id)}}" class=""><i class="fa fa-trash"></i> </a>
+                                            <a href="{{route('shop.product.edit', $shopproduct->id)}}" class=""><i class="fa fa-edit"></i> </a>
+                                            <a href="{{route('shop.product.delete', $shopproduct->id)}}" class=""><i class="fa fa-trash"></i> </a>
                                         </td>
                                     </tr>
                                 @endforeach

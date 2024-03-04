@@ -299,6 +299,8 @@ Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store'
 Route::get('shop/product/list', [ShopProductController::class, 'shop_product_list'])->name('shop.product.list');
 Route::get('shop/product/add', [ShopProductController::class, 'shop_product_add'])->name('shop.product.add');
 Route::post('shop/product/store', [ShopProductController::class, 'shop_product_store'])->name('shop.product.store');
+Route::get('shop/product/delete/{id}', [ShopProductController::class, 'shop_product_delete'])->name('shop.product.delete');
+Route::get('shop/product/edit/{id}', [ShopProductController::class, 'shop_product_edit'])->name('shop.product.edit');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
