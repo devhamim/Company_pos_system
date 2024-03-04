@@ -155,6 +155,29 @@
                             <div>Coupon</div>
                         </a>
                     </li>
+                    <li class="sidenav-item {{ Request::is('shop*') ? 'active open' : '' }}">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon lnr lnr-license"></i>
+                            <div>Shop Product</div>
+                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item {{ Request::is('shop/product') ? 'active' : '' }}">
+                                <a href="{{route('shop.product.list')}}" class="sidenav-link">
+                                    <div>product</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('privacy/policy') ? 'active' : '' }}">
+                                <a href="{{route('terms.privacy.policy')}}" class="sidenav-link">
+                                    <div>Delivery Policy</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item">
+                                <a href="{{ route('setting.add') }}" class="sidenav-link">
+                                    <div>Setting</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="sidenav-item {{ Request::is('banner/list') ? 'active' : '' }}">
                         <a href="{{route('banner.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
@@ -366,13 +389,13 @@
 
     {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
     <!-- Core scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script src="{{asset('backend/js/pace.js')}}"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     {{-- calander --}}
-    {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> --}}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
@@ -399,46 +422,19 @@
     <script src="{{asset('backend/js/pages/forms_selects.js')}}"></script>
     <script src="{{asset('backend/libs/bootstrap-sweetalert/bootstrap-sweetalert.js')}}"></script>
     <script src="{{asset('backend/libs/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
-    {{-- <script src="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script> --}}
     <script src="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js')}}"></script>
     <script src="{{asset('backend/libs/timepicker/timepicker.js')}}"></script>
     <script src="{{asset('backend/libs/minicolors/minicolors.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
+        <!-- Demo -->
+        <script src="{{asset('backend/js/analytics.js')}}"></script>
+        <script src="{{asset('backend/js/demo.js')}}"></script>
+        <script src="{{asset('backend/js/pages/ui_modals.js')}}"></script>
+        <script src="{{asset('backend/js/pages/forms_pickers.js')}}"></script>
 
 
     @yield('footer_script')
-
-    {{-- <script type="text/javascript">
-        $(document).ready(function () {
-            var start_date = moment('{{ $defaultStartDate }}');
-            var end_date = moment('{{ $defaultEndDate }}');
-
-            function cb(start, end) {
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                $('#start_date').val(start.format('YYYY-MM-DD'));
-                $('#end_date').val(end.format('YYYY-MM-DD'));
-            }
-
-            $('#reportrange').daterangepicker({
-                startDate: start_date,
-                endDate: end_date,
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-                }
-            }, cb);
-
-            cb(start_date, end_date);
-        });
-    </script> --}}
-
-
-
 
     @if(session('success')) {
     <script>
@@ -484,12 +480,6 @@
         </script>
     }
     @endif
-
-    <!-- Demo -->
-    {{-- <script src="{{asset('backend/js/analytics.js')}}"></script> --}}
-    {{-- <script src="{{asset('backend/js/demo.js')}}"></script> --}}
-    {{-- <script src="{{asset('backend/js/pages/ui_modals.js')}}"></script> --}}
-    {{-- <script src="{{asset('backend/js/pages/forms_pickers.js')}}"></script> --}}
 
     <script>
         // DataTable start

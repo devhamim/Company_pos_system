@@ -97,13 +97,15 @@ class ProductController extends Controller
         $preview_image_one = Product::where('id', $product_id)->get();
         $delete_preview_one = public_path('uploads/products/preview/'. $preview_image_one->first()->preview_image);
         unlink($delete_preview_one);
-        Product::find($product_id)->delete();
+
         $thumb_image = ProductGallery::where('product_id', $product_id)->get();
         foreach($thumb_image as $thumb) {
             $delete_thumbnails = public_path('uploads/products/gallery/'. $thumb->gallery_image);
             unlink($delete_thumbnails);
             ProductGallery::find($thumb->id)->delete();
         }
+
+        Product::find($product_id)->delete();
         return back()->withSuccess('Product item deleted successfully');
     }
 

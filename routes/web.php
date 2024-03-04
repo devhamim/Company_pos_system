@@ -31,6 +31,7 @@ use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceProductOrderController;
+use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestmonialController;
@@ -142,6 +143,7 @@ Route::get('/service/product/order', [ServiceProductOrderController::class, 'ser
 Route::get('/service/product/order/led', [ServiceProductOrderController::class, 'service_product_order_led'])->name('service.product.order.led');
 Route::get('/service/product/order/delete/{id}', [ServiceProductOrderController::class, 'service_product_order_delete'])->name('service.product.order.delete');
 Route::post('/service/product/order/update', [ServiceProductOrderController::class, 'service_product_order_update'])->name('service.product.order.update');
+
 
 
 // print
@@ -292,6 +294,11 @@ Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store'
 // Shop
 // Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
 // Route::post('/shop/filter', [ShopController::class, 'shop_filter'])->name('shop.filter');
+
+// shopproduct
+Route::get('shop/product/list', [ShopProductController::class, 'shop_product_list'])->name('shop.product.list');
+Route::get('shop/product/add', [ShopProductController::class, 'shop_product_add'])->name('shop.product.add');
+Route::post('shop/product/store', [ShopProductController::class, 'shop_product_store'])->name('shop.product.store');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');

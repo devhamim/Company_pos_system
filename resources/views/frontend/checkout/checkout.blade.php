@@ -66,14 +66,18 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="product-thumbnail"><a href="shop-product-details.html">
+                                    <td class="product-thumbnail"><a>
                                         <img alt="product" src="{{ asset('uploads/products/preview') }}/{{ $product_id->preview_image }}"></a>
                                     </td>
                                     <td class="product-name">
-                                        <a href="shop-product-details.html">{{ $product_id->product_name }}</a>
+                                        <a>{{ $product_id->product_name }}</a>
                                     </td>
                                     <td>
-                                        <input style="width: 50%; text-align: center" type="number" name="quantity" value="1">
+                                        @if ($product_id->id == 2)
+                                            <input style="width: 50%; text-align: center" type="number" name="quantity" value="5" min="5">
+                                        @else
+                                            <input style="width: 50%; text-align: center" type="number" name="quantity" value="1" min="1">
+                                        @endif
                                     </td>
                                     <td>
                                         <span class="amount">{{ $product_id->product_discount }}Tk</span>

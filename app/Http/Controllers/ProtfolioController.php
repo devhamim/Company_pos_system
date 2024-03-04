@@ -75,7 +75,6 @@ class ProtfolioController extends Controller
         $image = protfolio::where('id', $id)->get();
         $delete_preview = public_path('uploads/protfolio/'. $image->first()->preview_image);
         unlink($delete_preview);
-        protfolio::find($id)->delete();
 
         $thumb_image = protfoliogallery::where('protfolio_id', $id)->get();
         foreach($thumb_image as $thumb) {
@@ -84,6 +83,7 @@ class ProtfolioController extends Controller
             protfoliogallery::find($thumb->id)->delete();
         }
 
+        protfolio::find($id)->delete();
         return back()->withSuccess('Portfolio deleted successfully');
     }
 

@@ -99,13 +99,8 @@ class CheckoutController extends Controller
 
             foreach ($items_in_cart as $key => $itemdata) {
                 $productId = $itemdata['item_id'];
-
-                // Check if the product ID exists in the quantities array
                 if (isset($quantities[$productId])) {
-                    // Use the correct quantity for the current product
                     $quantity = $quantities[$productId];
-
-                    // Create OrderProduct record
                     OrderProduct::create([
                         'order_id' => $order_id,
                         'product_id' => $productId,
@@ -114,8 +109,7 @@ class CheckoutController extends Controller
                     ]);
 
                     // Update inventory
-                    Inventory::where('product_id', $productId)
-                        ->decrement('quantity', $quantity);
+                    // Inventory::where('product_id', $productId)->decrement('quantity', $quantity);
                 }
             }
 
@@ -123,8 +117,6 @@ class CheckoutController extends Controller
             Cookie::queue(Cookie::forget('shopping_cart'));
 
             return redirect()->route('order.success')->withSuccess("Order has been placed successfully")->withOrder($order_id);
-
-        // return back()->with('success', 'order has been placed successfully');
     }
 
     // // order_success
