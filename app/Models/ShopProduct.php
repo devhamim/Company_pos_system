@@ -15,4 +15,9 @@ class ShopProduct extends Model
     function rel_to_category() {
         return $this->belongsTo(shopcategory::class, 'category_id');
     }
+
+
+    function rel_to_shopgallery() {
+        return $this->hasMany(shopproductgallery::class, 'shopproduct_id');
+    }
 }

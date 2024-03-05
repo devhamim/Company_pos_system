@@ -226,6 +226,7 @@ Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->na
 Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
+Route::get('/product/details/{slug}', [FrontendController::class, 'product_details'])->name('product.details');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
@@ -256,10 +257,6 @@ Route::post('/customer/profile/update', [CustomerAuthController::class, 'custome
 Route::get('/order/cancel/{id}', [CustomerAuthController::class, 'order_cancel'])->name('order.cancel');
 Route::get('/order/view/{order_id}', [CustomerAuthController::class, 'order_view'])->name('order.view');
 
-// Product details
-Route::get('/product/details/{slug}', [DetailsController::class, 'product_details'])->name('product.details');
-Route::post('/get_size', [DetailsController::class, 'getSize']);
-Route::post('/quick_get_size', [DetailsController::class, 'quick_get_size']);
 
 
 // Cart

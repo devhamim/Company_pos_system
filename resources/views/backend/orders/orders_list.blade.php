@@ -366,7 +366,7 @@
                                                 <a href="{{ route('orders.edit', $order->order_id) }}" class="d-block mb-1">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a href="{{ route('orders.delete', $order->id) }}" class="d-block mb-1" onclick="return confirm('Are you sure to delete this?')">
+                                                <a href="{{ route('orders.delete', $order->order_id) }}" class="d-block mb-1" onclick="return confirm('Are you sure to delete this?')">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
                                             </td>

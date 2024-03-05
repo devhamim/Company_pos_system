@@ -621,9 +621,24 @@ www.nugortechit.com';
 }
 
 function orders_delete($id){
+    DB::beginTransaction();
 
-    Order::find($id)->delete();
-    return back()->withError('Order Delete Successfully');
+        try {
+            Billingdetails::where('order_id', $id)->delete();
+            OrderProduct::where('order_id', $id)->delete();
+            Order::where('order_id', $id)->delete();
+            DB::commit();
+            return back()->withSuccess('Deleted successfully');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return back()->withErrors('Failed to delete order: ' . $e->getMessage());
+        }
+
+
+    // OrderProduct::find($id)->delete();
+    // Order::find($id)->delete();
+    // Billingdetails::find($id)->delete();
+    // return back()->withError('Order Delete Successfully');
 }
 
 function orders_product_delete($id){

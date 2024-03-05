@@ -17,6 +17,7 @@ use App\Models\protfoliogallery;
 use App\Models\serviceOrderCart;
 use App\Models\shopcategory;
 use App\Models\ShopProduct;
+use App\Models\shopproductgallery;
 use App\Models\subscribe;
 use App\Models\team;
 use App\Models\terms_condition;
@@ -277,6 +278,18 @@ class FrontendController extends Controller
         return view('frontend.product.index',[
             'shopproducts'=>$shopproducts,
             'shopcategorys'=>$shopcategorys,
+        ]);
+    }
+
+    // product_details
+    function product_details($slug){
+        $shopproducts = ShopProduct::where('slug', $slug)->first();
+        $productgallerys = shopproductgallery::where('shopproduct_id', $shopproducts->id)->get();
+        $similarproducts = ShopProduct::where('category_id', $shopproducts->category_id)->where('id', '!=', $shopproducts->id)->get();
+        return view('frontend.product.details',[
+            'shopproducts'=>$shopproducts,
+            'productgallerys'=>$productgallerys,
+            'similarproducts'=>$similarproducts,
         ]);
     }
 
