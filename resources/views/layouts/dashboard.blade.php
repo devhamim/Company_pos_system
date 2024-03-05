@@ -200,43 +200,45 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidenav-item {{ Request::is('banner/list') ? 'active' : '' }}">
-                        <a href="{{route('banner.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Sliders</div>
+                    <li class="sidenav-item {{ Request::is('banner*', 'portfolio*','testimonial/list','team/list','media/list') ? 'active open' : '' }}">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon lnr lnr-license"></i>
+                            <div>Web Dynamics</div>
                         </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('portfolio/list') ? 'active' : '' }}">
-                        <a href="{{route('portfolio.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Portfolio</div>
-                        </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('testimonial/list') ? 'active' : '' }}">
-                        <a href="{{route('testimonial.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Testimonial</div>
-                        </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('team/list') ? 'active' : '' }}">
-                        <a href="{{route('team.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Team</div>
-                        </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('media/list') ? 'active' : '' }}">
-                        <a href="{{route('media.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Media</div>
-                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item {{ Request::is('banner/list') ? 'active' : '' }}">
+                                <a href="{{route('banner.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Sliders</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('portfolio/list') ? 'active' : '' }}">
+                                <a href="{{route('portfolio.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Portfolio</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('testimonial/list') ? 'active' : '' }}">
+                                <a href="{{route('testimonial.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Testimonial</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('team/list') ? 'active' : '' }}">
+                                <a href="{{route('team.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Team</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('media/list') ? 'active' : '' }}">
+                                <a href="{{route('media.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Media</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
-                    <li class="sidenav-item {{ Request::is('subscribe/list') ? 'active' : '' }}">
-                        <a href="{{route('subscribe.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Subscribe</div>
-                        </a>
-                    </li>
                     <li class="sidenav-item {{ Request::is('courier*') ? 'active open' : '' }}">
                         <a href="{{route('courier.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-car"></i>
@@ -255,11 +257,26 @@
                             <div>Users</div>
                         </a>
                     </li>
-                    <li class="sidenav-item {{ Request::is('contact/info') ? 'active' : '' }}">
-                        <a href="{{route('contact.list')}}" class="sidenav-link">
+
+                    <li class="sidenav-item {{ Request::is('subscribe/list', 'contact/list') ? 'active open' : '' }}">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
                             <i class="sidenav-icon lnr lnr-license"></i>
-                            <div>Messages</div>
+                            <div>Contect</div>
                         </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item {{ Request::is('subscribe/list') ? 'active' : '' }}">
+                                <a href="{{route('subscribe.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Subscribe</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('contact/list') ? 'active' : '' }}">
+                                <a href="{{route('contact.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-license"></i>
+                                    <div>Messages</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="sidenav-item {{ Request::is('terms*', 'setting*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
