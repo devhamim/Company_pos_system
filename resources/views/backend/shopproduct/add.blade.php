@@ -14,9 +14,9 @@
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="floating-label" for="Category">Category *</label>
-                                        <select class="form-control" name="category_id">
+                                        <select class="form-control" name="category_id" required>
                                             @foreach ($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -24,7 +24,7 @@
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="form-label">Name *</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Name">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" required>
                                         @error('name')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -33,7 +33,7 @@
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="form-label">Price *</label>
-                                        <input type="number" name="price" class="form-control" placeholder="Price">
+                                        <input type="number" name="price" class="form-control" placeholder="Price" required>
                                         @error('price')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -42,13 +42,13 @@
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="form-label">Discount</label>
-                                        <input type="number" name="discount" class="form-control" placeholder="Discount">
+                                        <input type="number" name="discount" class="form-control" placeholder="Discount%" value="0" min="0" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="form-label">SKU *</label>
-                                        <input type="text" name="sku" class="form-control" placeholder="SKU">
+                                        <input type="text" name="sku" class="form-control" placeholder="SKU" required>
                                         @error('sku')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -56,8 +56,8 @@
                                 </div>
                                 <div class="col-lg-6 col-lg-6">
                                     <div class="form-group">
-                                        <label class="form-label">Tag *</label>
-                                        <input type="text" name="tags" class="form-control" placeholder="Tag">
+                                        <label class="form-label">Tags *</label>
+                                        <input type="text" name="tags" class="form-control" placeholder="Tags" required>
                                         @error('tags')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -68,7 +68,7 @@
                                         <label class="form-label w-100">Preview image</label>
                                         <label class="btn btn-outline-primary  mt-2">
                                             Preview image
-                                            <input type="file" name="preview_image" class="image">
+                                            <input type="file" name="preview_image" class="image" required>
                                         </label>
                                         @error('preview_image')
                                             <strong class="text-danger">{{$message}}</strong>
@@ -80,14 +80,14 @@
                                         <label class="form-label w-100">Gallery images</label>
                                         <label class="btn btn-outline-primary  mt-2">
                                             Gallery images
-                                            <input type="file" multiple name="gallery_image[]" class="image">
+                                            <input type="file" multiple name="gallery_image[]" class="image" required>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="form-label">Sort Description*</label>
-                                        <input type="text" name="sort_description" class="form-control" placeholder="Sort Description">
+                                        <textarea name="sort_description" class="form-control" placeholder="Sort Description" required></textarea>
                                         @error('sort_description')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
@@ -96,7 +96,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="form-label w-100 mb-2">Description *</label>
-                                        <textarea id="summernote" name="description" class="form-control" placeholder="description"></textarea>
+                                        <textarea id="summernote" name="description" class="form-control" placeholder="Description" required></textarea>
                                         @error('description')
                                             <strong class="text-danger">{{$message}}</strong>
                                         @enderror

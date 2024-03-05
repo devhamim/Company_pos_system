@@ -14,22 +14,6 @@
                         <div class="page-header">
                             <div class="d-flex justify-content-between">
                                 <h4 class="font-weight-bold py-3 mb-0">All Orders</h4>
-                                {{-- <div class="filter">
-                                    @if ($order_status->first())
-                                        <form action="{{ route('orders.list.status',$order_status->first()->status) }}" method="GET">
-                                    @else
-                                        <form action="{{ route('orders.list.status',$order_status) }}" method="GET">
-                                    @endif
-
-                                        <label for="start_date">Start Date:</label>
-                                        <input type="date" id="start_date" name="start_date" value="{{ $defaultStartDate }}" optional>
-
-                                        <label for="end_date">End Date:</label>
-                                        <input type="date" id="end_date" name="end_date" value="{{ $defaultEndDate }}" optional>
-
-                                        <button type="submit">Filter</button>
-                                    </form>
-                                </div> --}}
                                 <div class="filter row">
                                     <div class="col-lg-10">
                                         <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
@@ -66,11 +50,7 @@
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-md-2 col-2">
-                        <a href="{{ route('orders.add') }}"
-                           class="btn btn-success btn-sm">Add Order</a>
-                    </div>
-                    <div class="col-md-2 col-2 text-end">
+                    <div class="col-md-3 col-3 text-end">
                             <form action="{{ route('multi.view.invoice') }}" method="post" id="all_print_form">
                                 @csrf
 
@@ -81,7 +61,7 @@
                             </form>
                     </div>
 
-                    <div class="col-md-4 col-4">
+                    <div class="col-md-5 col-5">
 
                         <form action="{{ route('excel.exportOrdersReport') }}" method="post" id="all_courier_csv">
                             @csrf

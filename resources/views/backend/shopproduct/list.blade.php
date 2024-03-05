@@ -41,7 +41,7 @@
                                         <td>{{$sl+1}}</td>
                                         <td><img src="{{asset('uploads/shop')}}/{{$shopproduct->preview_image}}" alt class="img-fluid wid-40"></td>
                                         <td>{{$shopproduct->name}}</td>
-                                        <td>{{$shopproduct->rel_to_category->category_name}}</td>
+                                        <td>{{$shopproduct->rel_to_category->name}}</td>
                                         <td>{{$shopproduct->price}}</td>
                                         <td>{{$shopproduct->discount}}</td>
                                         <td>{{$shopproduct->after_discount}}</td>

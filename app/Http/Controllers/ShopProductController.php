@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\shopcategory;
 use App\Models\ShopProduct;
 use App\Models\shopproductgallery;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class ShopProductController extends Controller
 
     // shop_product_add
     function shop_product_add(){
-        $categories = Category::where('status', 1)->get();
+        $categories = shopcategory::where('status', 1)->get();
         return view('backend.shopproduct.add',[
             'categories'=>$categories,
         ]);
@@ -96,9 +97,72 @@ class ShopProductController extends Controller
 
     // shop_product_edit
     function shop_product_edit($id){
-        $shopproducts = ShopProduct::where('status', 1)->get();
+        $shopproducts = ShopProduct::find($id);
+        $gallerys = shopproductgallery::where('shopproduct_id', $id)->get();
+        $categories = shopcategory::where('status', 1)->get();
         return view('backend.shopproduct.edit',[
             'shopproducts'=>$shopproducts,
+            'categories'=>$categories,
+            'gallerys'=>$gallerys,
         ]);
+    }
+
+    // shop_product_update
+    function shop_product_update(Request $request){
+        $rules = [
+            'category_id' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'discount' => '',
+            'sku' => '',
+            'tags' => 'required',
+            'sort_description' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $total_discount = $request->price * ($request->discount / 100);
+        $validatedData['after_discount'] = $request->price - $total_discount;
+
+        if ($request->hasFile('preview_image')) {
+            $img_del = ShopProduct::where('id', $request->shopproducts_id)->first()->preview_image;
+            $delete_from = public_path('uploads/shop/'.$img_del);
+            if(file_exists($delete_from)){
+                unlink($delete_from);
+            }
+
+            $image = $request->file('preview_image');
+            $extension = $image->getClientOriginalExtension();
+            $fileName = Str::random(5) . rand(100000, 999999) . '.' . $extension;
+            $image->move(public_path('uploads/shop'), $fileName);
+            $validatedData['preview_image'] = $fileName;
+        }
+
+        $portfolio = ShopProduct::where('id', $request->shopproducts_id)->update($validatedData);
+
+        if ($request->hasFile('gallery_image')) {
+            $thumb_image = shopproductgallery::where('shopproduct_id', $request->shopproducts_id)->get();
+            foreach($thumb_image as $thumb) {
+                $delete_from_thumb = public_path('uploads/shop/gallery/'.$thumb->gallery_image);
+                if(file_exists($delete_from_thumb)){
+                    unlink($delete_from_thumb);
+                }
+            }
+            $galleryImages = $request->file('gallery_image');
+            foreach ($galleryImages as $galleryImage) {
+                $extension = $galleryImage->getClientOriginalExtension();
+                $fileName = Str::random(5) . rand(100000, 999999) . '.' . $extension;
+                $galleryImage->move(public_path('uploads/shop/gallery'), $fileName);
+
+                shopproductgallery::create([
+                    'shopproduct_id' => $request->shopproducts_id,
+                    'gallery_image' => $fileName,
+                ]);
+            }
+        }
+
+        return redirect()->route('shop.product.list')->withSuccess('Update successfully.');
     }
 }

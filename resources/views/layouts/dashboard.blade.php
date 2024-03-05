@@ -131,29 +131,51 @@
                         </a>
                     </li>
                     @if (Auth::user()->role == 1)
-                    <li class="sidenav-item {{ Request::is('product/list') ? 'active' : '' }}">
-                        <a href="{{route('product.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-coffee-cup"></i>
-                            <div>Service</div>
+                    <li class="sidenav-item {{ Request::is('product/list', 'category/list') ? 'active open' : '' }} ">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon lnr lnr-license"></i>
+                            <div>Services</div>
                         </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item {{ Request::is('product/list') ? 'active' : '' }}">
+                                <a href="{{route('product.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-coffee-cup"></i>
+                                    <div>Service</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('category/list') ? 'active' : '' }}">
+                                <a href="{{route('category.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon feather icon-grid"></i>
+                                    <div>Category</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="sidenav-item {{ Request::is('service/product/order') ? 'active' : '' }}">
-                        <a href="{{route('service.product.order')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
+                    <li class="sidenav-item {{ Request::is('service*', 'coupon/list') ? 'active open' : '' }}">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon lnr lnr-license"></i>
                             <div>Service Order</div>
                         </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('category/list') ? 'active' : '' }}">
-                        <a href="{{route('category.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon feather icon-grid"></i>
-                            <div>Category</div>
-                        </a>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('coupon/list') ? 'active' : '' }}">
-                        <a href="{{route('coupon.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon feather icon-grid"></i>
-                            <div>Coupon</div>
-                        </a>
+                        <ul class="sidenav-menu">
+                            <li class="sidenav-item {{ Request::is('service/product/order') ? 'active' : '' }}">
+                                <a href="{{route('service.product.order')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Service Order</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('coupon/list') ? 'active' : '' }}">
+                                <a href="{{route('coupon.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon feather icon-grid"></i>
+                                    <div>Coupon</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('service/product/order/led') ? 'active' : '' }}">
+                                <a href="{{route('service.product.order.led')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Unverify</div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="sidenav-item {{ Request::is('shop*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
@@ -161,14 +183,14 @@
                             <div>Shop Product</div>
                         </a>
                         <ul class="sidenav-menu">
-                            <li class="sidenav-item {{ Request::is('shop/product') ? 'active' : '' }}">
+                            <li class="sidenav-item {{ Request::is('shop/product/list') ? 'active' : '' }}">
                                 <a href="{{route('shop.product.list')}}" class="sidenav-link">
                                     <div>product</div>
                                 </a>
                             </li>
-                            <li class="sidenav-item {{ Request::is('privacy/policy') ? 'active' : '' }}">
-                                <a href="{{route('terms.privacy.policy')}}" class="sidenav-link">
-                                    <div>Delivery Policy</div>
+                            <li class="sidenav-item {{ Request::is('shop/category/list') ? 'active' : '' }}">
+                                <a href="{{route('shop.category.list')}}" class="sidenav-link">
+                                    <div>Category</div>
                                 </a>
                             </li>
                             <li class="sidenav-item">
@@ -208,12 +230,7 @@
                             <div>Media</div>
                         </a>
                     </li>
-                    <li class="sidenav-item {{ Request::is('service/product/order/led') ? 'active' : '' }}">
-                        <a href="{{route('service.product.order.led')}}" class="sidenav-link">
-                            <i class="sidenav-icon lnr lnr-picture"></i>
-                            <div>Led</div>
-                        </a>
-                    </li>
+
                     <li class="sidenav-item {{ Request::is('subscribe/list') ? 'active' : '' }}">
                         <a href="{{route('subscribe.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-picture"></i>
@@ -302,16 +319,14 @@
                         <hr class="d-lg-none w-100 my-2">
 
                         <div class="navbar-nav align-items-lg-center">
-                            <!-- cash clear -->
-                                <form action="{{ route('clear.all.cash') }}" method="GET">
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger">Cache Clear</button>
-                                </form>
+                            {{-- pos --}}
+                            <div class="col-md-2 col-2">
+                                <a href="{{ route('orders.add') }}"
+                                   class="btn btn-success btn-sm px-5" style="font-size: 18px">POS</a>
+                            </div>
                         </div>
 
                         <div class="navbar-nav align-items-lg-center ml-auto">
-
-
                             <div class="demo-navbar-messages nav-item dropdown mr-lg-3">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="#" data-toggle="dropdown">
                                     <i class="feather icon-mail navbar-icon align-middle"></i>
@@ -342,6 +357,11 @@
                                 </div>
                             </div>
 
+                            <!-- cash clear -->
+                            <form action="{{ route('clear.all.cash') }}" method="GET">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Cache Clear</button>
+                            </form>
                             <!-- Divider -->
                             <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
                             <div class="demo-navbar-user nav-item dropdown">

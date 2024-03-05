@@ -28,14 +28,9 @@
                 </div>
 
                 <div class="row mb-2">
-                    <div class="col-md-2 col-2">
-                        <a href="{{ route('orders.add') }}"
-                           class="btn btn-success btn-sm">Add Order</a>
-                    </div>
-                    <div class="col-md-2 col-2 text-end">
+                    <div class="col-md-3 col-3 text-end">
                             <form action="{{ route('multi.view.invoice') }}" method="post" id="all_print_form">
                                 @csrf
-
                                 <input type="hidden" name="print_data" id="checked_value">
                                 <div class="form-group">
                                     <button type="submit" id="bulk_print_btn" class="btn btn-info btn-sm">Print Invoice</button>
@@ -43,7 +38,7 @@
                             </form>
                     </div>
 
-                    <div class="col-md-4 col-4">
+                    <div class="col-md-5 col-5">
 
                         <form action="{{ route('excel.exportOrdersReport') }}" method="post" id="all_courier_csv">
                             @csrf

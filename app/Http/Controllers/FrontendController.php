@@ -15,6 +15,8 @@ use App\Models\ProductGallery;
 use App\Models\protfolio;
 use App\Models\protfoliogallery;
 use App\Models\serviceOrderCart;
+use App\Models\shopcategory;
+use App\Models\ShopProduct;
 use App\Models\subscribe;
 use App\Models\team;
 use App\Models\terms_condition;
@@ -270,7 +272,12 @@ class FrontendController extends Controller
 
     // our_products
     function our_products(){
-        return view('frontend.product.index');
+        $shopproducts = ShopProduct::where('status', 1)->get();
+        $shopcategorys = shopcategory::where('status', 1)->get();
+        return view('frontend.product.index',[
+            'shopproducts'=>$shopproducts,
+            'shopcategorys'=>$shopcategorys,
+        ]);
     }
 
     // our_blogs

@@ -48,6 +48,17 @@
     <!-- Background css -->
     <link rel="stylesheet" id="bg-switcher-css" href="{{ asset('customer') }}/css/backgrounds/bg-4.css">
 
+    <!-- Meta Pixel Code -->
+    @if($setting->first()->fbpixel != null)
+        {!! $setting->first()->fbpixel !!}
+    @endif
+    {{-- <!-- End Meta Pixel Code --> --}}
+
+    <!-- googletag Code -->
+    @if($setting->first()->googletag != null)
+        {!! $setting->first()->googletag !!}
+    @endif
+    <!-- End googletag Code -->
 
     <style>
                         /* ===== Scrollbar CSS ===== */

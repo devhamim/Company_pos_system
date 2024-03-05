@@ -31,6 +31,7 @@ use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceProductOrderController;
+use App\Http\Controllers\ShopcategoryController;
 use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
@@ -301,6 +302,14 @@ Route::get('shop/product/add', [ShopProductController::class, 'shop_product_add'
 Route::post('shop/product/store', [ShopProductController::class, 'shop_product_store'])->name('shop.product.store');
 Route::get('shop/product/delete/{id}', [ShopProductController::class, 'shop_product_delete'])->name('shop.product.delete');
 Route::get('shop/product/edit/{id}', [ShopProductController::class, 'shop_product_edit'])->name('shop.product.edit');
+Route::post('shop/product/update', [ShopProductController::class, 'shop_product_update'])->name('shop.product.update');
+
+//
+Route::get('shop/category/list', [ShopcategoryController::class, 'shop_category_list'])->name('shop.category.list');
+Route::post('shop/category/store', [ShopcategoryController::class, 'shop_category_store'])->name('shop.category.store');
+Route::post('editshopcategory/{id}', [ShopcategoryController::class, 'editshopcategory'])->name('editshopcategory');
+Route::post('shop/category/update', [ShopcategoryController::class, 'shop_category_update'])->name('shop.category.update');
+Route::get('shop/category/delete/{id}', [ShopcategoryController::class, 'shop_category_delete'])->name('shop.category.delete');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
