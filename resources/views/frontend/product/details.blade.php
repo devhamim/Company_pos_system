@@ -17,49 +17,14 @@
     <div class="container pb-70">
         <div class="row">
             <div class="col-lg-6 col-xl-6">
-                <div class="bxslider">
+                <div class="">
                     <div class="slider-content">
                         <figure class="image-box">
                             <a href="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" class="lightbox-image" data-fancybox="gallery">
                                 <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" alt>
                             </a>
                         </figure>
-                        <div class="slider-pager">
-                            <ul class="thumb-box">
-                                @foreach ($productgallerys as $sl=>$productgallery)
-                                    <li>
-                                        <a class="{{ $productgallery->id?'active':'' }}" data-slide-index="{{ $productgallery->id }}" href="#">
-                                            <figure>
-                                                <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallery->gallery_image }}" alt>
-                                            </figure>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
                     </div>
-                    {{-- <div class="slider-content">
-                        @foreach ($productgallerys as $productgallery)
-                        <figure class="image-box">
-                                <a href="{{ asset('uploads/shop/gallery') }}/{{ $productgallery->gallery_image }}" class="lightbox-image" data-fancybox="gallery">
-                                    <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallery->gallery_image }}" alt="">
-                                </a>
-                            </figure>
-                            @endforeach
-                            <div class="slider-pager">
-                                <ul class="thumb-box">
-                                    @foreach ($productgallerys as $thumbnail)
-                                        <li>
-                                            <a class="{{ $thumbnail->id == $productgallery->id ? 'active' : 'hidden' }}" data-slide-index="{{ $thumbnail->id }}" href="#">
-                                                <figure>
-                                                    <img src="{{ asset('uploads/shop/gallery') }}/{{ $thumbnail->gallery_image }}" alt="">
-                                                </figure>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div> --}}
                 </div>
             </div>
             <div class="col-lg-6 col-xl-6 product-info">
@@ -85,12 +50,13 @@
                     </div>
                 </div>
                 <div class="product-details__buttons">
-                    <div class="product-details__buttons-1">
-                        <a href="shop-cart.html" class="theme-btn btn-style-one">Add to Cart</a>
-                    </div>
+                    @auth('customerauth')
+                        <div class="product-details__buttons-1">
+                            <a href="shop-cart.html" class="theme-btn btn-style-one">Add to Cart</a>
+                        </div>
+                    @endauth
                     <div class="product-details__buttons-2">
-                        <a href="shop-product-details.html" class="theme-btn btn-style-one">Add to
-                            Wishlist</a>
+                        <a href="shop-product-details.html" class="theme-btn btn-style-one">Order Now</a>
                     </div>
                 </div>
                 <div class="product-details__social">
@@ -128,14 +94,16 @@
                             </p>
                         </div>
                     </div>
-                    {{-- <div class="tab" id="tab-2">
+                    <div class="tab" id="tab-2">
                         <div class="customer-comment">
                             <div class="row clearfix">
+                                @foreach ($product_comment as $comment)
                                 <div class="col-lg-6 col-md-6 col-sm-12 comment-column">
                                     <div class="single-comment-box">
                                         <div class="inner-box">
-                                            <figure class="comment-thumb"><img
-                                                    src="images/resource/testi-thumb1-1.png" alt></figure>
+                                            <figure class="comment-thumb">
+                                                <img src="{{ Avatar::create($comment->name)->toBase64() }}" alt>
+                                            </figure>
                                             <div class="inner">
                                                 <ul class="rating clearfix">
                                                     <li><i class="fas fa-star"></i></li>
@@ -144,89 +112,42 @@
                                                     <li><i class="fas fa-star"></i></li>
                                                     <li><i class="fas fa-star"></i></li>
                                                 </ul>
-                                                <h5>Jon D. William, <span>10 Jan, 2023 . 4:00 pm</span></h5>
-                                                <p>Aliquam hendrerit a augue insuscipit. Etiam aliquam massa
-                                                    quis des mauris commodo.</p>
+                                                <h5>{{ $comment->name }}, <span>{{ $comment->created_at->format('d M Y') }}</span></h5>
+                                                <p>{{ $comment->message }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 comment-column">
-                                    <div class="single-comment-box">
-                                        <div class="inner-box">
-                                            <figure class="comment-thumb"><img
-                                                    src="images/resource/testi-thumb1-2.png" alt></figure>
-                                            <div class="inner">
-                                                <ul class="rating clearfix">
-                                                    <li><i class="fas fa-star"></i></li>
-                                                    <li><i class="fas fa-star"></i></li>
-                                                    <li><i class="fas fa-star"></i></li>
-                                                    <li><i class="fas fa-star"></i></li>
-                                                    <li><i class="fas fa-star"></i></li>
-                                                </ul>
-                                                <h5>Aleesha Brown, <span>12 Feb, 2023 . 8:00 pm</span></h5>
-                                                <p>Aliquam hendrerit a augue insuscipit. Etiam aliquam massa
-                                                    quis des mauris commodo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="comment-box">
                             <h3>Add Your Comments</h3>
-                            <form id="contact_form" name="contact_form" class
-                                action="https://html.kodesolution.com/2023/digitex-html/includes/sendmail.php"
-                                method="post">
+                            <form id="contact_form" action="{{ route('product.comment.store') }}" method="post">
+                                @csrf
                                 <div class="mb-3">
-                                    <textarea name="form_message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                                    <textarea name="message" class="form-control required" rows="7" required placeholder="Enter Message"></textarea>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb-3">
-                                            <input name="form_name" class="form-control" type="text"
-                                                placeholder="Enter Name">
+                                            <input name="name" class="form-control" type="text" placeholder="Enter Name" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="mb-3">
-                                            <input name="form_email" class="form-control required email"
-                                                type="email" placeholder="Enter Email">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                    <div class="review-box clearfix">
-                                        <p>Your Review</p>
-                                        <ul class="rating clearfix">
-                                            <li><i class="far fa-star"></i></li>
-                                            <li><i class="far fa-star"></i></li>
-                                            <li><i class="far fa-star"></i></li>
-                                            <li><i class="far fa-star"></i></li>
-                                            <li><i class="far fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                    <div class="form-group clearfix">
-                                        <div class="custom-controls-stacked">
-                                            <label class="custom-control material-checkbox">
-                                                <input type="checkbox" class="material-control-input">
-                                                <span class="material-control-indicator"></span>
-                                                <span class="description">Save my name, email, and website in
-                                                    this browser for the next time I comment.</span>
-                                            </label>
+                                            <input name="email" class="form-control required email" type="email" required placeholder="Enter Email">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <input name="form_botcheck" class="form-control" type="hidden" value />
+                                    <input name="product_id" class="form-control" type="hidden" value="{{ $shopproducts->id }}" />
                                     <button type="submit" class="theme-btn btn-style-one"
                                         data-loading-text="Please wait...">Submit Comment</button>
                                 </div>
                             </form>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

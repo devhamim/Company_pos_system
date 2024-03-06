@@ -230,6 +230,7 @@ Route::get('/product/details/{slug}', [FrontendController::class, 'product_detai
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
 Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
+Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
 
 // paymentmethod
 Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');

@@ -11,6 +11,7 @@ use App\Models\Inventory;
 use App\Models\Order;
 use App\Models\privacy_policy;
 use App\Models\Product;
+use App\Models\ProductComment;
 use App\Models\ProductGallery;
 use App\Models\protfolio;
 use App\Models\protfoliogallery;
@@ -286,10 +287,12 @@ class FrontendController extends Controller
         $shopproducts = ShopProduct::where('slug', $slug)->first();
         $productgallerys = shopproductgallery::where('shopproduct_id', $shopproducts->id)->get();
         $similarproducts = ShopProduct::where('category_id', $shopproducts->category_id)->where('id', '!=', $shopproducts->id)->get();
+        $product_comment = ProductComment::where('product_id', $shopproducts->id)->get();
         return view('frontend.product.details',[
             'shopproducts'=>$shopproducts,
             'productgallerys'=>$productgallerys,
             'similarproducts'=>$similarproducts,
+            'product_comment'=>$product_comment,
         ]);
     }
 
@@ -378,6 +381,20 @@ function portfolio_details($slug){
         'protfolio_preview'=>$protfolio_preview,
         'protfolio_similar'=>$protfolio_similar,
     ]);
+}
+
+// product_comment_store
+function product_comment_store(Request $request){
+    $rules = [
+        'name'=>'required',
+        'message'=>'required',
+        'email'=>'required',
+        'product_id'=>'required',
+    ];
+    $validatedData =$request->validate($rules);
+
+    ProductComment::create($validatedData);
+    return back()->withSuccess('Your Comment add successfully');
 }
 
 }
