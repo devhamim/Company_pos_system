@@ -291,7 +291,7 @@ Route::post('/check-coupon-code', [CouponController::class, 'check_coupon_code']
 Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store');
 
 // Shop
-// Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
+Route::post('/shop/order/checkout', [ShopController::class, 'shop_order_checkout'])->name('shop.order.checkout');
 // Route::post('/shop/filter', [ShopController::class, 'shop_filter'])->name('shop.filter');
 
 // shopproduct

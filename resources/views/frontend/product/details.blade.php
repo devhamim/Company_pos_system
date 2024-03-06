@@ -41,14 +41,6 @@
                 <div class="product-details__content">
                     <p class="product-details__content-text1">{{ $shopproducts->sort_description }}</p>
                 </div>
-                <div class="product-details__quantity">
-                    <h3 class="product-details__quantity-title">Choose quantity</h3>
-                    <div class="quantity-box">
-                        <button type="button" class="sub"><i class="fa fa-minus"></i></button>
-                        <input type="number" id="1" value="1" />
-                        <button type="button" class="add"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div>
                 <div class="product-details__buttons">
                     @auth('customerauth')
                         <div class="product-details__buttons-1">
@@ -56,7 +48,11 @@
                         </div>
                     @endauth
                     <div class="product-details__buttons-2">
-                        <a href="shop-product-details.html" class="theme-btn btn-style-one">Order Now</a>
+                        <form action="{{ route('shop.order.checkout') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $shopproducts->id }}">
+                            <button type="submit"class="theme-btn btn-style-one">Order Now</button>
+                        </form>
                     </div>
                 </div>
                 <div class="product-details__social">
