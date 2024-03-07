@@ -45,7 +45,8 @@
             <main>
                 <div class="row">
                     <div class="col-sm-6">
-                        <strong>Date:</strong> {{ $order->first()->created_at->format('d,M,Y') }}<br/>
+                        <strong>Order Date:</strong> {{ $order->first()->created_at->format('Y-m-d') }}<br/>
+                        <strong>Delivery Date:</strong> {{ $order->first()->delivery_date }}<br/>
                         <strong>Invoice No:</strong> #{{ $order->first()->order_id }}
                     </div>
                     <div class="col-sm-6 text-sm-end">
