@@ -5,25 +5,187 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
+use App\Models\Coupon;
+use App\Models\customers;
 use App\Models\Inventory;
 use App\Models\Product;
+use App\Models\ShopOrderProduct;
 use App\Models\ShopProduct;
 use App\Models\Size;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Cookie;
+use Http;
+use UddoktaPay\LaravelSDK\UddoktaPay;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
 
     // product_checkout_view
     function product_checkout_view(Request $request){
-        $shopproduct = ShopProduct::where('id', $request->product_id)->get();
+        $shopproduct = ShopProduct::where('id', $request->product_id)->first();
         return view('frontend.product.checkout',[
             'shopproduct'=>$shopproduct,
         ]);
     }
 
+    // shop_product_checkout
+    function shop_product_checkout(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required|min:11|max:11',
+            'email'=>'required',
+        ]);
 
+        $lastOrder = ShopOrderProduct::orderBy('id', 'desc')->first();
+        if ($lastOrder) {
+            $lastOrderId = $lastOrder->order_id;
+            $lastOrderNumber = intval(substr($lastOrderId, 4));
+        } else {
+            $lastOrderNumber = 0;
+        }
+        $newOrderNumber = $lastOrderNumber + 1;
+
+        $order_id = 'NIT-' . str_pad($newOrderNumber, 8, '0', STR_PAD_LEFT);
+
+        if($request->coupon){
+            $coupon_name = Coupon::where('coupon_name', $request->coupon)->first();
+            $coupons = $coupon_name->coupon_amount;
+        }
+        else{
+          $coupons = 0;
+        }
+
+
+        $price = ShopProduct::where('id', $request->shopproduct_id)->first()->price;
+        $aftercoupon = $price*$coupons/100;
+        $mobile_verify = rand(100000,999999);
+
+        $shoporder_id =  ShopOrderProduct::insertGetId([
+            'order_id'=>$order_id,
+            'shopproduct_id'=> $request->shopproduct_id,
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'email'=> $request->email,
+            'note'=> $request->note,
+            'mobile_verify'=> $mobile_verify,
+            'price'=> $price,
+            'coupon'=> $coupons,
+            'total'=> $price-$aftercoupon,
+            'created_at'=>Carbon::now(),
+        ]);
+
+        $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
+        $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+        $smsqSenderId = "8809617620771";
+        $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
+
+        $smsqMessage = urlencode($smsqMessage);
+        $smsqMobileNumbers = '+88' .$request->phone;
+
+        $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+
+        $response = Http::get($smsqUrl);
+
+        $request->session()->put('mobile_verify', $mobile_verify);
+        $request->session()->put('phone', $request->phone);
+        $request->session()->put('shoporder_id', $shoporder_id);
+
+        return view('frontend.product.mobile_varify');
+
+    }
+
+    // shop_number_otp
+    function shop_number_otp(Request $request){
+        $number_verify = $request->session()->get('mobile_verify');
+        $phone_number = $request->session()->get('phone');
+        $shoporder_id = $request->session()->get('shoporder_id');
+
+            $mobile_otp =  $request->mobile_varify_code;
+            $shoporders = ShopOrderProduct::where('id', $shoporder_id)->first();
+
+            if($mobile_otp == $number_verify){
+
+                if(customers::where('customer_phone', $phone_number)->exists()){
+                    $customer_num = customers::where('customer_phone', $phone_number)->first();
+                    if($customer_num){
+                        Auth::guard('customerauth')->loginUsingId($customer_num->id);
+                    }
+                } else {
+                    customers::insert([
+                        'added_by'=>0,
+                        'customer_name'=>$shoporders->name,
+                        'customer_phone'=>$phone_number,
+                        'busines_name'=>'N/A',
+                        'customer_email'=>$shoporders->email,
+                        'mobile_verify'=>null,
+                        'created_at'=>Carbon::now(),
+                    ]);
+
+                    $customer_num = customers::where('customer_phone', $phone_number)->first();
+                    if($customer_num){
+                        Auth::guard('customerauth')->loginUsingId($customer_num->id);
+                    }
+                }
+
+                $shoporders->update([
+                    'mobile_verify'=> null,
+                ]);
+                $request->session()->forget('mobile_verify');
+                $request->session()->forget('phone');
+
+                // $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
+                // $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
+                // $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+
+                // $requestData = [
+                //     'full_name'     => $shoporders->name,
+                //     'email'         => "test@test.com",
+                //     'amount'        => $shoporders->total,
+                //     'metadata'      => [
+                //         'example_metadata_key' => "example_metadata_value",
+                //     ],
+                //     'redirect_url'  => route('shop.order.success'),
+                //     'return_type'   => 'GET',
+                //     'cancel_url'    => route('shop.order.cancel'),
+                //     'webhook_url'   => route('shop.order.ipn'),
+                // ];
+
+                // try {
+                //     // Initiate payment
+                //     $paymentUrl = $uddoktaPay->initPayment($requestData);
+                //     return redirect($paymentUrl);
+                // } catch (\Exception $e) {
+                //     return back()->with('error', "Initialization Error: " . $e->getMessage());
+                // }
+                // // demo redirect
+                return redirect()->route('shop.order.success')->with('success', 'order success');
+
+            }
+            else{
+                return back()->with('error','OTP not match');
+            }
+    }
+
+    // shop_order_success
+    function shop_order_success(Request $request){
+        $shoporder_id = $request->session()->get('shoporder_id');
+        $shopproduct = ShopOrderProduct::findOrFail($shoporder_id);
+        $shopproduct->update(['status' => 1]);
+        return redirect()->route('customer.shop.history');
+    }
+
+    // shop_order_cancel\
+    function shop_order_cancel(Request $request){
+        $shoporder_id = $request->session()->get('shoporder_id');
+        $shopproduct = ShopOrderProduct::findOrFail($shoporder_id);
+        $shopproduct->update(['status' => 0]);
+        return redirect('/');
+    }
+    // shop_order_ipn\
+    function shop_order_ipn(){
+        return redirect('/');
+    }
 
 
     // shop

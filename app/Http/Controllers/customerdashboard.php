@@ -6,6 +6,7 @@ use App\Models\Billingdetails;
 use App\Models\customers;
 use App\Models\OrderProduct;
 use App\Models\serviceOrderCart;
+use App\Models\ShopOrderProduct;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use UddoktaPay\LaravelSDK\UddoktaPay;
@@ -38,6 +39,18 @@ class customerdashboard extends Controller
         return view('customer.history', [
             'serviceorders'=>$serviceorders,
             'billingdetails'=>$billingdetails,
+        ]);
+    }
+
+    // customer_shop_history
+    function customer_shop_history(){
+        $user_phone = Auth::guard('customerauth')->user()->customer_phone;
+
+        // $billingdetails = Billingdetails::where('customer_phone', $user_phone)->with('rel_to_orderpro')->with('rel_to_order')->get();
+        $shopproducts = ShopOrderProduct::where('phone', $user_phone)->get();
+
+        return view('customer.shoporder',[
+            'shopproducts'=>$shopproducts,
         ]);
     }
 

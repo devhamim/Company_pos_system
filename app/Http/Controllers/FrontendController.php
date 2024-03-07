@@ -178,25 +178,34 @@ class FrontendController extends Controller
         $service_cart_id = $request->session()->get('service_cart_id');
 
             $mobile_otp =  $request->mobile_varify_code;
-
             $service_cart = serviceOrderCart::where('id', $service_cart_id)->first();
 
             if($mobile_otp == $number_verify){
 
-                customers::insert([
-                    'added_by'=>0,
-                    'customer_name'=>$service_cart->name,
-                    'customer_phone'=>$phone_number,
-                    'busines_name'=>$service_cart->business_name,
-                    'mobile_verify'=>null,
-                    'created_at'=>Carbon::now(),
-                ]);
 
+                if(customers::where('customer_phone', $phone_number)->exists()){
+                    $customer_num = customers::where('customer_phone', $phone_number)->first();
+                    if($customer_num){
+                        Auth::guard('customerauth')->loginUsingId($customer_num->id);
+                    }
+                } else {
+                    customers::insert([
+                        'added_by'=>0,
+                        'customer_name'=>$service_cart->name,
+                        'customer_phone'=>$phone_number,
+                        'busines_name'=>$service_cart->business_name,
+                        'mobile_verify'=>null,
+                        'created_at'=>Carbon::now(),
+                    ]);
 
                     $customer_num = customers::where('customer_phone', $phone_number)->first();
                     if($customer_num){
                         Auth::guard('customerauth')->loginUsingId($customer_num->id);
                     }
+                }
+
+
+
 
                 // if(customers::where('customer_phone', $phone_number)->exists()){
                 //     $customer_num = customers::where('customer_phone', $phone_number)->first();

@@ -32,6 +32,7 @@ use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceProductOrderController;
 use App\Http\Controllers\ShopcategoryController;
+use App\Http\Controllers\ShopOrderController;
 use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
@@ -171,11 +172,7 @@ Route::get('/banner/edit/{banner_id}', [bannerContoller::class, 'banner_edit'])-
 Route::get('/banner/delete/{banner_id}', [bannerContoller::class, 'banner_delete'])->name('banner.delete');
 Route::post('/banner/update/', [bannerContoller::class, 'banner_update'])->name('banner.update');
 
-// Size
-Route::get('/size/add', [SizeController::class, 'size_add'])->name('size.add');
-Route::post('/size/store', [SizeController::class, 'size_store'])->name('size.store');
-Route::get('/size/list', [SizeController::class, 'size_list'])->name('size.list');
-Route::get('/size/delete/{size_id}', [SizeController::class, 'size_delete'])->name('size.delete');
+
 
 // setting
 Route::get('/setting/add', [settingController::class, 'setting_add'])->name('setting.add');
@@ -239,6 +236,7 @@ Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'
 // customer dashboard
 Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
 Route::get('/customer/order/history', [customerdashboard::class, 'customer_order_history'])->name('customer.order.history');
+Route::get('/customer/shop/history', [customerdashboard::class, 'customer_shop_history'])->name('customer.shop.history');
 Route::post('/auth/pay/due', [FrontendController::class, 'auth_pay_due'])->name('auth.pay.due');
 // panding customer dashboard
 Route::get('/panding/customer/dashboard', [pandingcustomerdashboard::class, 'panding_customer_dashboard'])->name('panding.customer.dashboard');
@@ -293,6 +291,10 @@ Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store'
 // Shop
 Route::get('/product/checkout/view', [ShopController::class, 'product_checkout_view'])->name('product.checkout.view');
 Route::post('/shop/product/checkout', [ShopController::class, 'shop_product_checkout'])->name('shop.product.checkout');
+Route::post('/shop/number/otp', [ShopController::class, 'shop_number_otp'])->name('shop.number.otp');
+Route::get('/shop/order/success', [ShopController::class, 'shop_order_success'])->name('shop.order.success');
+Route::get('/shop/order/cancel', [ShopController::class, 'shop_order_cancel'])->name('shop.order.cancel');
+Route::get('/shop/order/ipn', [ShopController::class, 'shop_order_ipn'])->name('shop.order.ipn');
 
 // shopproduct
 Route::get('shop/product/list', [ShopProductController::class, 'shop_product_list'])->name('shop.product.list');
@@ -302,12 +304,16 @@ Route::get('shop/product/delete/{id}', [ShopProductController::class, 'shop_prod
 Route::get('shop/product/edit/{id}', [ShopProductController::class, 'shop_product_edit'])->name('shop.product.edit');
 Route::post('shop/product/update', [ShopProductController::class, 'shop_product_update'])->name('shop.product.update');
 
-//
+//shop category
 Route::get('shop/category/list', [ShopcategoryController::class, 'shop_category_list'])->name('shop.category.list');
 Route::post('shop/category/store', [ShopcategoryController::class, 'shop_category_store'])->name('shop.category.store');
 Route::post('editshopcategory/{id}', [ShopcategoryController::class, 'editshopcategory'])->name('editshopcategory');
 Route::post('shop/category/update', [ShopcategoryController::class, 'shop_category_update'])->name('shop.category.update');
 Route::get('shop/category/delete/{id}', [ShopcategoryController::class, 'shop_category_delete'])->name('shop.category.delete');
+
+//shop order
+Route::get('shop/order/list', [ShopOrderController::class, 'shop_order_list'])->name('shop.order.list');
+Route::get('shop/order/delete/{id}', [ShopOrderController::class, 'shop_order_delete'])->name('shop.order.delete');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');

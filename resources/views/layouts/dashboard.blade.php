@@ -194,8 +194,8 @@
                                 </a>
                             </li>
                             <li class="sidenav-item">
-                                <a href="{{ route('setting.add') }}" class="sidenav-link">
-                                    <div>Setting</div>
+                                <a href="{{ route('shop.order.list') }}" class="sidenav-link">
+                                    <div>Order List</div>
                                 </a>
                             </li>
                         </ul>

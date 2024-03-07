@@ -60,7 +60,9 @@
                                 <tr>
                                     <th>Photo</th>
                                     <th>Product Name</th>
-                                    <th>Quantity</th>
+                                    @if ($shopproduct->discount != 0)
+                                        <th>Discount</th>
+                                    @endif
                                     <th>Total</th>
                                 </tr>
                             </thead>
@@ -72,6 +74,11 @@
                                     <td class="product-name">
                                         <a>{{ $shopproduct->name }}</a>
                                     </td>
+                                    @if ($shopproduct->discount != 0)
+                                        <td>
+                                            <span>{{ $shopproduct->discount }}% off</span>
+                                        </td>
+                                    @endif
                                     <td>
                                         <span class="amount">{{ $shopproduct->after_discount }}Tk</span>
                                     </td>
@@ -80,7 +87,7 @@
                         </table>
                         <div class="col-lg-12 col-md-12 col-sm-12 column text-end">
                             <div class="field-input message-btn">
-                                {{-- <input type="hidden" value="{{ $product_id->id }}" name="product_id"> --}}
+                                <input type="hidden" value="{{ $shopproduct->id }}" name="shopproduct_id">
                                 <button type="submit" class="theme-btn btn-style-one w-100" data-loading-text="Please wait...">Order Now</button>
                             </div>
                         </div>

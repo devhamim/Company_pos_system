@@ -37,7 +37,7 @@
                     <div class="ec-vendor-card-header">
                         <h5>Product History</h5>
                         <div class="ec-header-btn">
-                            <a class="btn btn-lg btn-primary" href="{{ route('our.services') }}">Services</a>
+                            <a class="btn btn-lg btn-primary" href="{{ route('our.products') }}">Products</a>
                         </div>
                     </div>
                     <div class="ec-vendor-card-body">
@@ -85,62 +85,32 @@
                                     @endif --}}
 
                                     @if (Auth::guard('customerauth')->check())
-                                            @if ($serviceorders)
-                                                @foreach ($serviceorders as $key => $serviceproductorder)
+                                            @if ($shopproducts)
+                                                @foreach ($shopproducts as $key => $shopproduct)
                                                     <tr>
-                                                        <th scope="row"><span>{{ $serviceproductorder->order_id }}</span></th>
+                                                        <th scope="row"><span>{{ $shopproduct->order_id }}</span></th>
                                                         <td>
-                                                            <img class="prod-img" src="{{ asset('uploads/products/preview') }}/{{ $serviceproductorder->rel_to_product->preview_image }}"alt="product image">
+                                                            <img class="prod-img" src="{{ asset('uploads/shop') }}/{{ $shopproduct->rel_to_product->preview_image }}"alt="product image">
                                                         </td>
-                                                        <td><span>{{ $serviceproductorder->rel_to_product->product_name }}</span></td>
-                                                        <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
-                                                        <td><span>{{ $serviceproductorder->total }}</span></td>
+                                                        <td><span>{{ $shopproduct->rel_to_product->name }}</span></td>
+                                                        <td><span>{{ $shopproduct->created_at->format('d M Y') }}</span></td>
+                                                        <td><span>{{ $shopproduct->total }}</span></td>
                                                         <td>
                                                             <span>
-                                                                @if ($serviceproductorder->status == 1)
-                                                                    <strong class="bg-success text-white px-2 py-1 rounded">Paid</strong>
+                                                                @if ($shopproduct->status == 1)
+                                                                    <a href="{{ $shopproduct->rel_to_product->download_link }}" class="bg-success text-white px-2 py-1 rounded">Download</a>
                                                                 @else
                                                                     <form action="{{ route('auth.pay.due') }}" method="POST">
                                                                         @csrf
-                                                                            <input type="hidden" name="id" value="{{ $serviceproductorder->id }}">
+                                                                            <input type="hidden" name="id" value="{{ $shopproduct->id }}">
                                                                             <input type="hidden" name="name" value="{{ Auth::guard('customerauth')->user()->name }}">
-                                                                            <input type="hidden" name="total" value="{{ $serviceproductorder->total }}">
+                                                                            <input type="hidden" name="total" value="{{ $shopproduct->total }}">
                                                                         <button type="submit" class="bg-danger text-white px-2 py-1 rounded">Unpaid</button>
                                                                     </form>
                                                                 @endif
                                                             </span>
                                                         </td>
                                                     </tr>
-                                                @endforeach
-                                            @endif
-                                            @if ($billingdetails)
-                                                @foreach ($billingdetails as $key => $serviceproductorder)
-                                                @if ($serviceproductorder->rel_to_order)
-                                                    <tr>
-                                                        <th scope="row"><span>{{ $serviceproductorder->order_id }}</span></th>
-                                                        <td>
-                                                            @foreach ($serviceproductorder->rel_to_orderpro as $product)
-                                                                <img class="prod-img" src="{{ asset('uploads/products/preview') }}/{{ $product->rel_to_product->preview_image }}"alt="product image"> <br>
-                                                            @endforeach
-                                                        </td>
-                                                        <td><span>
-                                                            @foreach ($serviceproductorder->rel_to_orderpro as $product)
-                                                                {{ $product->rel_to_product->product_name }} <br>
-                                                            @endforeach
-                                                        </span></td>
-                                                        <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
-                                                        <td><span>{{ $serviceproductorder->rel_to_order->paid+$serviceproductorder->rel_to_order->due }}</span></td>
-                                                        <td>
-                                                            <span>
-                                                                @if ($serviceproductorder->rel_to_order->due != 0)
-                                                                    <strong class="bg-danger text-white px-2 py-1 rounded">Unpaid</strong>
-                                                                @else
-                                                                    <strong class="bg-success text-white px-2 py-1 rounded">Paid</strong>
-                                                                @endif
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                @endif
                                                 @endforeach
                                             @endif
 

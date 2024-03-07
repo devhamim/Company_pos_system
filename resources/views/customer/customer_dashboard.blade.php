@@ -117,7 +117,8 @@
                             <div class="ec-vendor-block-items">
                                 <ul>
                                     <li><a href="{{ route('customer.dashboard') }}">User Profile</a></li>
-                                    <li><a href="{{ route('customer.order.history') }}">History</a></li>
+                                    <li><a href="{{ route('customer.order.history') }}">Service Order</a></li>
+                                    <li><a href="{{ route('customer.shop.history') }}">Product Order</a></li>
                                     {{-- <li><a href="wishlist.html">Wishlist</a></li>
                                     <li><a href="cart.html">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
