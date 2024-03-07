@@ -42,12 +42,15 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="card">
-                                <h4 class="card-header">Customer Info</h4>
+                                <div class="d-flex" style="justify-content: space-between">
+                                    <h4 class="card-header">Customer Info</h4>
+                                    <p class="card-header">Order Date: {{ $orders->created_at->format('d m Y') }}</p>
+                                </div>
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="form-group col-md-6 col-12">
                                             <input type="hidden" name="order_id" value="{{ $orders->order_id }}">
-                                            <label for="delivery_date">Order Date <span class="text-danger">*</span></label>
+                                            <label for="delivery_date">Delivery Date <span class="text-danger">*</span></label>
                                             <input type="date" class="form-control datetimepicker" value="{{ $orders->delivery_date }}" id="delivery_date" name="delivery_date" required>
                                         </div>
 

@@ -63,6 +63,22 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-lg-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Download Link</label>
+                                        <input type="text" name="download_link" class="form-control" placeholder="Download Link">
+                                        @error('download_link')
+                                            <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Preview Product</label>
+                                        <input type="text" name="preview_product" class="form-control" placeholder="Preview Product">
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-6">
                                     <div class="form-group upload_file">
                                         <label class="form-label w-100">Preview image</label>
@@ -75,21 +91,32 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-lg-6">
-                                    <div class="form-group upload_file">
-                                        <label class="form-label w-100">Gallery images</label>
-                                        <label class="btn btn-outline-primary  mt-2">
-                                            Gallery images
-                                            <input type="file" multiple name="gallery_image[]" class="image" required>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="form-label">Sort Description*</label>
                                         <textarea name="sort_description" class="form-control" placeholder="Sort Description" required></textarea>
                                         @error('sort_description')
                                             <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Video Link</label>
+                                        <input type="text" name="video_link" class="form-control" placeholder="Video Link">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group upload_file">
+                                        <label class="form-label w-100">Gallery images</label>
+                                        <label class="btn btn-outline-primary  mt-2">
+                                            Gallery images
+                                            <input type="file" multiple name="gallery_image[]" class="image">
+                                        </label>
+                                        @error('gallery_image')
+                                            <strong class="text-danger">{{$message}}</strong>
                                         @enderror
                                     </div>
                                 </div>

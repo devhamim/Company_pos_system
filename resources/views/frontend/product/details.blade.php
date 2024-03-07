@@ -48,7 +48,7 @@
                         </div>
                     @endauth
                     <div class="product-details__buttons-2">
-                        <form action="{{ route('shop.order.checkout') }}" method="POST">
+                        <form action="{{ route('product.checkout.view') }}" method="GET">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $shopproducts->id }}">
                             <button type="submit"class="theme-btn btn-style-one">Order Now</button>

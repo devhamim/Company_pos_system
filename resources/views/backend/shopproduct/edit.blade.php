@@ -65,11 +65,23 @@
                     </div>
                     <div class="col-lg-6 col-lg-6">
                         <div class="form-group">
-                            <label class="form-label">tags</label>
+                            <label class="form-label">Tags</label>
                             <input type="text" name="tags" class="form-control" required placeholder="tags" value="{{$shopproducts->tags != null ? $shopproducts->tags : ''}}">
                             @error('tags')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label">Download Link</label>
+                            <input type="text" name="download_link" class="form-control" placeholder="Download Link" value="{{$shopproducts->download_link != null ? $shopproducts->download_link : ''}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label">Preview Product</label>
+                            <input type="text" name="preview_product" class="form-control" placeholder="Preview Product" value="{{$shopproducts->preview_product != null ? $shopproducts->preview_product : ''}}">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -83,24 +95,33 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form-group upload_file">
-                            <label class="form-label w-100">Gallery images</label>
-                            <label class="btn btn-outline-primary  mt-2">
-                                Gallery images
-                                <input type="file" multiple name="gallery_image[]" class="image">
-                            </label>
-                            @foreach ($gallerys as $gallery)
-                                <img width="90" class="mt-3 mb-3 mr-2" id="image" height="auto" src="{{asset('uploads/shop/gallery')}}/{{$gallery->gallery_image}}" alt="">
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-label">Sort description</label>
                             <textarea name="sort_description"  class="form-control" required placeholder="Sort description" id="">{{$shopproducts->sort_description != null ? $shopproducts->sort_description : ''}}</textarea>
                             @error('sort_description')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-6">
+                        <div class="form-group">
+                            <label class="form-label">Video Link</label>
+                            <input type="text" name="video_link" class="form-control" placeholder="Video Link" value="{{$shopproducts->video_link != null ? $shopproducts->video_link : ''}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group upload_file">
+                            <label class="form-label w-100">Gallery images</label>
+                            <label class="btn btn-outline-primary  mt-2">
+                                Gallery images
+                                <input type="file" multiple name="gallery_image[]" class="image">
+                            </label>
+                            @error('gallery_image')
+                                <strong class="text-danger">{{$message}}</strong>
+                            @enderror
+                            @foreach ($gallerys as $gallery)
+                                <img width="90" class="mt-3 mb-3 mr-2" id="image" height="auto" src="{{asset('uploads/shop/gallery')}}/{{$gallery->gallery_image}}" alt="">
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-md-12">

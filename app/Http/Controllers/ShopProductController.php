@@ -35,6 +35,9 @@ class ShopProductController extends Controller
             'price' => 'required',
             'discount' => '',
             'sku' => '',
+            'preview_product' => '',
+            'video_link' => '',
+            'download_link' => 'required',
             'tags' => 'required',
             'sort_description' => 'required',
             'description' => 'required',
@@ -57,6 +60,13 @@ class ShopProductController extends Controller
             $image->move(public_path('uploads/shop'), $fileName);
             $validatedData['preview_image'] = $fileName;
         }
+        // if ($request->hasFile('preview_banner')) {
+        //     $image = $request->file('preview_banner');
+        //     $extension = $image->getClientOriginalExtension();
+        //     $fileName = Str::random(5) . rand(100000, 999999) . '.' . $extension;
+        //     $image->move(public_path('uploads/shop/gallery'), $fileName);
+        //     $validatedData['preview_banner'] = $fileName;
+        // }
 
         $ShopProduct = ShopProduct::create($validatedData);
 
@@ -81,13 +91,30 @@ class ShopProductController extends Controller
     // shop_product_delete
     function shop_product_delete($id){
         $preview_image = ShopProduct::where('id', $id)->get();
-        $delete_preview_one = public_path('uploads/shop/'. $preview_image->first()->preview_image);
-        unlink($delete_preview_one);
+        $delete_preview = public_path('uploads/shop/'. $preview_image->first()->preview_image);
+        if(file_exists($delete_preview)){
+            unlink($delete_preview);
+        }
+
+
+        // $preview_banner = ShopProduct::where('id', $id)->get();
+        // if($preview_banner->first()->preview_banner != null){
+        //     $delete_preview_one = public_path('uploads/shop/gallery/'. $preview_banner->first()->preview_banner);
+        //     if(file_exists($delete_preview_one)){
+        //         unlink($delete_preview_one);
+        //     }
+        // }
+
 
         $thumb_image = shopproductgallery::where('shopproduct_id', $id)->get();
         foreach($thumb_image as $thumb) {
-            $delete_thumbnails = public_path('uploads/shop/gallery/'. $thumb->gallery_image);
-            unlink($delete_thumbnails);
+            if($thumb->gallery_image != null){
+                $delete_thumbnails = public_path('uploads/shop/gallery/'. $thumb->gallery_image);
+                if(file_exists($delete_thumbnails)){
+                    unlink($delete_thumbnails);
+                }
+            }
+
             shopproductgallery::find($thumb->id)->delete();
         }
 
@@ -115,6 +142,9 @@ class ShopProductController extends Controller
             'price' => 'required',
             'discount' => '',
             'sku' => '',
+            'preview_product' => '',
+            'video_link' => '',
+            'download_link' => 'required',
             'tags' => 'required',
             'sort_description' => 'required',
             'description' => 'required',
@@ -139,6 +169,19 @@ class ShopProductController extends Controller
             $image->move(public_path('uploads/shop'), $fileName);
             $validatedData['preview_image'] = $fileName;
         }
+        // if ($request->hasFile('preview_banner')) {
+        //     $img_del = ShopProduct::where('id', $request->shopproducts_id)->first()->preview_banner;
+        //     $delete_from = public_path('uploads/shop/gallery'.$img_del);
+        //     if(file_exists($delete_from)){
+        //         unlink($delete_from);
+        //     }
+
+        //     $image = $request->file('preview_banner');
+        //     $extension = $image->getClientOriginalExtension();
+        //     $fileName = Str::random(5) . rand(100000, 999999) . '.' . $extension;
+        //     $image->move(public_path('uploads/shop/gallery'), $fileName);
+        //     $validatedData['preview_banner'] = $fileName;
+        // }
 
         $portfolio = ShopProduct::where('id', $request->shopproducts_id)->update($validatedData);
 

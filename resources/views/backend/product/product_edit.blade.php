@@ -100,7 +100,6 @@
                                     @error('gallery_image')
                                         <strong class="text-danger">{{$message}}</strong>
                                     @enderror
-                                    {{-- {{$gallery}} --}}
                                     @foreach ($gallery as $gallery)
                                     <img width="90" class="mt-3 mb-3 mr-2" id="image" height="auto" src="{{asset('uploads/products/gallery')}}/{{$gallery->gallery_image}}" alt="">
                                     @endforeach

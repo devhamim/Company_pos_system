@@ -18,7 +18,7 @@
 <section>
     <div class="container pt-70">
         <div class="section-content">
-            <form id="checkout-form" action="{{ route('services.order.checkout') }}" method="POST">
+            <form id="checkout-form" action="{{ route('shop.product.checkout') }}" method="POST">
                 @csrf
                 <div class="row mt-30">
                     <div class="col-md-6">
@@ -35,8 +35,8 @@
                                         <input id="checkuot-form-cname" name="phone" type="number" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}" required>
                                     </div>
                                     <div class="mb-3 col-md-12">
-                                        <label for="checkuot-form-fname">Business Name <span class="text-danger">*</span></label>
-                                        <input id="checkuot-form-fname" name="business_name" type="text" class="form-control" placeholder="Business Name" value="{{ old('business_name') }}" required>
+                                        <label for="checkuot-form-fname">Email <span class="text-danger">*</span></label>
+                                        <input id="checkuot-form-fname" name="email" type="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required>
                                     </div>
                                 </div>
                                 <div class="mb-3 col-md-12">
@@ -67,27 +67,20 @@
                             <tbody>
                                 <tr>
                                     <td class="product-thumbnail"><a>
-                                        <img alt="product" src="{{ asset('uploads/products/preview') }}/{{ $product_id->preview_image }}"></a>
+                                        <img alt="product" src="{{ asset('uploads/shop') }}/{{ $shopproduct->preview_image }}"></a>
                                     </td>
                                     <td class="product-name">
-                                        <a>{{ $product_id->product_name }}</a>
+                                        <a>{{ $shopproduct->name }}</a>
                                     </td>
                                     <td>
-                                        @if ($product_id->id == 2)
-                                            <input style="width: 50%; text-align: center" type="number" name="quantity" value="5" min="5">
-                                        @else
-                                            <input style="width: 50%; text-align: center" type="number" name="quantity" value="1" min="1">
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <span class="amount">{{ $product_id->product_discount }}Tk</span>
+                                        <span class="amount">{{ $shopproduct->after_discount }}Tk</span>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                         <div class="col-lg-12 col-md-12 col-sm-12 column text-end">
                             <div class="field-input message-btn">
-                                <input type="hidden" value="{{ $product_id->id }}" name="product_id">
+                                {{-- <input type="hidden" value="{{ $product_id->id }}" name="product_id"> --}}
                                 <button type="submit" class="theme-btn btn-style-one w-100" data-loading-text="Please wait...">Order Now</button>
                             </div>
                         </div>

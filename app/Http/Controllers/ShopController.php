@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Inventory;
 use App\Models\Product;
+use App\Models\ShopProduct;
 use App\Models\Size;
 use Illuminate\Http\Request;
 use Cookie;
@@ -14,9 +15,12 @@ use Cookie;
 class ShopController extends Controller
 {
 
-    // shop_order_checkout
-    function shop_order_checkout(Request $request){
-        return $request->all();
+    // product_checkout_view
+    function product_checkout_view(Request $request){
+        $shopproduct = ShopProduct::where('id', $request->product_id)->get();
+        return view('frontend.product.checkout',[
+            'shopproduct'=>$shopproduct,
+        ]);
     }
 
 
