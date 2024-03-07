@@ -44,7 +44,7 @@
                             <div class="card">
                                 <div class="d-flex" style="justify-content: space-between">
                                     <h4 class="card-header">Customer Info</h4>
-                                    <p class="card-header">Order Date: {{ $orders->created_at->format('d m Y') }}</p>
+                                    <p class="card-header">Order Date: {{ $orders->created_at->format('d/m/Y') }}</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-row">
