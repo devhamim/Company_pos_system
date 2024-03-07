@@ -51,6 +51,7 @@
                                         <th scope="col">Date</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Status</th>
+                                        <th scope="col">Pay</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,6 +96,7 @@
                                                         <td><span>{{ $serviceproductorder->rel_to_product->product_name }}</span></td>
                                                         <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
                                                         <td><span>{{ $serviceproductorder->total }}</span></td>
+                                                        <td><span>N/A</span></td>
                                                         <td>
                                                             <span>
                                                                 @if ($serviceproductorder->status == 1)
@@ -130,6 +132,23 @@
                                                         </span></td>
                                                         <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
                                                         <td><span>{{ $serviceproductorder->rel_to_order->paid+$serviceproductorder->rel_to_order->due }}</span></td>
+                                                        <td>
+                                                            <span>
+                                                                @if ($serviceproductorder->rel_to_order->status == 0)
+                                                                    <strong class="bg-default text-white px-2 py-1 rounded">Pending</strong>
+                                                                @elseif ($serviceproductorder->rel_to_order->status == 2)
+                                                                    <strong class="bg-info text-white px-2 py-1 rounded">On Going</strong>
+                                                                @elseif ($serviceproductorder->rel_to_order->status == 3)
+                                                                    <strong class="bg-warning text-white px-2 py-1 rounded">Due Payment</strong>
+                                                                @elseif ($serviceproductorder->rel_to_order->status == 4)
+                                                                    <strong class="bg-secondary text-white px-2 py-1 rounded">Refund payment</strong>
+                                                                @elseif ($serviceproductorder->rel_to_order->status == 5)
+                                                                    <strong class="bg-success text-white px-2 py-1 rounded">Completed</strong>
+                                                                @else
+                                                                    <strong class="bg-danger text-white px-2 py-1 rounded">Canceled</strong>
+                                                                @endif
+                                                            </span>
+                                                        </td>
                                                         <td>
                                                             <span>
                                                                 @if ($serviceproductorder->rel_to_order->due != 0)
