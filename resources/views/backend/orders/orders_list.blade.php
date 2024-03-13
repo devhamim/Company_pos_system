@@ -201,7 +201,7 @@
                             <div class="card-body">
                                 <h5 class="text-secondary">Total P. Price</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_p_price }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_p_price) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                             <div class="card-body">
                                 <h5 class="text-secondary">Total P. Discound</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_p_discount }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_p_discount) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@
                             <div class="card-body">
                                 <h5 class="text-secondary">Total Amount</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_amount }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_amount) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +231,7 @@
                             <div class="card-body">
                                 <h5 class="text-info">Total Payment</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_payment }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_payment) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +241,7 @@
                             <div class="card-body">
                                 <h5 class="text-warning">Total Due</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_due }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_due) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -251,7 +251,7 @@
                             <div class="card-body">
                                 <h5 class="text-danger">Total Refund Pay</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_refund }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_refund) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +261,7 @@
                             <div class="card-body">
                                 <h5 class="text-success">Total Blance</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_blance }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_blance) }}</h3>
                                 </div>
                             </div>
                         </div>
@@ -271,7 +271,7 @@
                             <div class="card-body">
                                 <h5 class="text-success">Total Commission</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h3 class="mb-1">৳{{ $total_commission }}</h3>
+                                    <h3 class="mb-1">৳{{ number_format($total_commission) }}</h3>
                                 </div>
                             </div>
                         </div>
