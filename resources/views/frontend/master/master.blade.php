@@ -438,7 +438,7 @@
                         <div class="footer-column col-lg-3 col-sm-6">
                             <div class="footer-widget about-widget">
                                 <h4 class="widget-title">Newsletter</h4>
-                                <div class="text">Corporate clients and leisure for travelers has been relying </div>
+                                <div class="text">Provide your email to know our future update. </div>
                                 <div class="subscribe-form-two">
                                     <form method="post" action="{{ route('subscribe.store') }}">
                                         @csrf
