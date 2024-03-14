@@ -469,7 +469,7 @@
                     <div class="inner-container">
                         <div class="copyright-text">
                             @if ($setting->first()->footer != null)
-                                {{ $setting->first()->footer }}| Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>. All Rights Reserved.
+                                {{ $setting->first()->footer }} | Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>.
                             @endif
                         </div>
                     </div>
