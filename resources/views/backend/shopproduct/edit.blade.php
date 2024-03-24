@@ -97,7 +97,7 @@
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-label">Sort description</label>
-                            <textarea name="sort_description"  class="form-control" required placeholder="Sort description" id="">{{$shopproducts->sort_description != null ? $shopproducts->sort_description : ''}}</textarea>
+                            <textarea id="sort_summernote" name="sort_description"  class="form-control" required placeholder="Sort description">{{$shopproducts->sort_description != null ? $shopproducts->sort_description : ''}}</textarea>
                             @error('sort_description')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror

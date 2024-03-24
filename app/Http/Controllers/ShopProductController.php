@@ -144,7 +144,7 @@ class ShopProductController extends Controller
             'sku' => '',
             'preview_product' => '',
             'video_link' => '',
-            'download_link' => 'required',
+            'download_link' => '',
             'tags' => 'required',
             'sort_description' => 'required',
             'description' => 'required',
@@ -169,19 +169,6 @@ class ShopProductController extends Controller
             $image->move(public_path('uploads/shop'), $fileName);
             $validatedData['preview_image'] = $fileName;
         }
-        // if ($request->hasFile('preview_banner')) {
-        //     $img_del = ShopProduct::where('id', $request->shopproducts_id)->first()->preview_banner;
-        //     $delete_from = public_path('uploads/shop/gallery'.$img_del);
-        //     if(file_exists($delete_from)){
-        //         unlink($delete_from);
-        //     }
-
-        //     $image = $request->file('preview_banner');
-        //     $extension = $image->getClientOriginalExtension();
-        //     $fileName = Str::random(5) . rand(100000, 999999) . '.' . $extension;
-        //     $image->move(public_path('uploads/shop/gallery'), $fileName);
-        //     $validatedData['preview_banner'] = $fileName;
-        // }
 
         $portfolio = ShopProduct::where('id', $request->shopproducts_id)->update($validatedData);
 

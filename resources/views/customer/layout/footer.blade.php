@@ -35,11 +35,11 @@
                             </div>
                             <div class="mt-3">
                                 <ul class="social-icons footer_icon d-flex">
-                                    <li><a href="https://www.linkedin.com/company/nugortechitbd/" target="_blank"><i class="fi fi-brands-linkedin"></i></a></li>
-                                    <li><a href="https://www.facebook.com/nugortechitcom" target="_blank"><i class="fi fi-brands-facebook"></i></a></li>
-                                    <li><a href="https://www.tiktok.com/@nugortechitbd" target="_blank"><i class="fi fi-brands-tik-tok"></i></a></li>
-                                    <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fi fi-brands-youtube"></i></a></li>
-                                    <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fi fi-brands-behance"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/nugortechitbd/" target="_blank"><i class="fi fi-brands-linkedin text-white"></i></a></li>
+                                    <li><a href="https://www.facebook.com/nugortechitcom" target="_blank"><i class="fi fi-brands-facebook text-white"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@nugortechitbd" target="_blank"><i class="fi fi-brands-tik-tok text-white"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fi fi-brands-youtube text-white"></i></a></li>
+                                    <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fi fi-brands-behance text-white"></i></a></li>
                                 </ul>
                             </div>
                         </div>

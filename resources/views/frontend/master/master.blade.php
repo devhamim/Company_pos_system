@@ -32,7 +32,6 @@
     @if($setting->first()->fbpixel != null)
         {!! $setting->first()->fbpixel !!}
     @endif
-    {{-- <!-- End Meta Pixel Code --> --}}
 
     <!-- googletag Code -->
     @if($setting->first()->googletag != null)
@@ -45,8 +44,6 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            /* width: 50%;
-            height: 50%; */
             transform: translate(-50%, -50%);
             padding: 20px;
             background-color: #fff;
@@ -74,13 +71,11 @@
 
 
                 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
   * {
     scrollbar-width: thin;
     scrollbar-color: #F94A29 #ffffff;
   }
 
-  /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 10px;
   }
@@ -129,53 +124,38 @@
 
                         </div>
                             <div class="mob_btn">
-                                {{-- <div class="search-btn">
-                                    <a href="#" class="search"><i class="flaticon-search-3"></i></a>
-                                </div> --}}
-                                    @auth('customerauth')
+                                @auth('customerauth')
+                                    <div class="header_icon">
+                                        <div class="ec-header-user dropdown">
+                                            <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                                                <i class="fa-regular fa-user"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @else
+                                    @auth('customerreg')
                                         <div class="header_icon">
                                             <div class="ec-header-user dropdown">
                                                 <button class="dropdown-toggle" data-bs-toggle="dropdown">
                                                     <i class="fa-regular fa-user"></i>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
                                                         <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                        {{-- <div class="header_icon">
-                                            <i class="fa-regular fa-heart"></i>
-                                        </div>
-                                        <div class="header_icon">
-                                            <i class="fa-regular fa-bag-shopping"></i>
-                                        </div> --}}
                                     @else
-                                        @auth('customerreg')
-                                            <div class="header_icon">
-                                                <div class="ec-header-user dropdown">
-                                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                                                        <i class="fa-regular fa-user"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-right">
-                                                            <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                            <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="header_icon">
-                                                <i class="fa-regular fa-heart"></i>
-                                            </div>
-                                            <div class="header_icon">
-                                                <i class="fa-regular fa-bag-shopping"></i>
-                                            </div> --}}
-                                        @else
-                                            <div class="btn">
-                                                <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
-                                            </div>
-                                        @endauth
-
+                                        <div class="btn">
+                                            <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
+                                        </div>
                                     @endauth
+
+                                @endauth
                                 <div class="mobile-nav-toggler">
                                     <i class="fa fa-bars"></i>
                                 </div>
@@ -499,7 +479,6 @@
             });
         });
     </script> --}}
-
 
 
     {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}

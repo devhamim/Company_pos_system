@@ -29,7 +29,8 @@
             </div>
             <div class="col-lg-6 col-xl-6 product-info">
                 <div class="product-details__top">
-                    <h3 class="product-details__title">{{ $shopproducts->name }}
+                    <h3 class="product-details__title">{{ $shopproducts->name }}</h3>
+                    <h3>
                         @if ($shopproducts->discount !=0)
                         <span>{{ $shopproducts->after_discount }}Tk</span>
                         <del style="font-size: 12px">{{ $shopproducts->price }}Tk</del>
@@ -39,7 +40,7 @@
                     </h3>
                 </div>
                 <div class="product-details__content">
-                    <p class="product-details__content-text1">{{ $shopproducts->sort_description }}</p>
+                    <p class="product-details__content-text1">{!! $shopproducts->sort_description !!}</p>
                 </div>
                 <div class="product-details__buttons">
                     @auth('customerauth')

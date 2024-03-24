@@ -532,6 +532,14 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#sort_summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+    </script>
 
 
     </body>

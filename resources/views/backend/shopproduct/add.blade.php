@@ -95,7 +95,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label class="form-label">Sort Description*</label>
-                                        <textarea name="sort_description" class="form-control" placeholder="Sort Description" required></textarea>
+                                        <textarea id="sort_summernote" name="sort_description" class="form-control" placeholder="Sort Description" required></textarea>
                                         @error('sort_description')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror

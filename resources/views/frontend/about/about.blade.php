@@ -67,13 +67,13 @@
                             </div>
                         </div>
                         <div class="btn-box">
-                            <a href="#" class="theme-btn-v2">Get started <i
+                            <a href="{{ route('our.services') }}" class="theme-btn-v2">Get started <i
                                     class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
                             </a>
                             <div class="contact-btn">
-                                <i class="flaticon-telephone-1"></i>
+                                <a href="tel:09613753442"><i class="flaticon-telephone-1"></i></a>
                                 <span>Call us</span>
-                                <h6 class="title">09613753442</h6>
+                                <h6 class="title"><a href="tel:09613753442">09613753442</a></h6>
                             </div>
                         </div>
                     </div>
@@ -120,10 +120,10 @@
                                 <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="">
                             </div>
                             <div class="content-box">
-                                <h3 class="title"><a href="page-service-details.html">{{ $category->category_name }}</a>
+                                <h3 class="title"><a href="{{ route('services.product', $category->id) }}">{{ $category->category_name }}</a>
                                 </h3>
                                 <div class="text">{{ $category->category_desp }}</div>
-                                <a href="page-service-details.html" data-animation-in="fadeInUp" data-delay-in="0.4"
+                                <a href="{{ route('services.product', $category->id) }}" data-animation-in="fadeInUp" data-delay-in="0.4"
                                     class="theme-btn ser-btn">Learn more <i
                                         class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i></a>
                             </div>
