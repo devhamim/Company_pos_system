@@ -78,7 +78,7 @@ class ShopController extends Controller
         $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
         $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
         $smsqSenderId = "8809617620771";
-        $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
+        $smsqMessage = 'Your Nugortech IT 6 digit verify code is '.$mobile_verify;
 
         $smsqMessage = urlencode($smsqMessage);
         $smsqMobileNumbers = '+88' .$request->phone;
@@ -94,6 +94,7 @@ class ShopController extends Controller
         return view('frontend.product.mobile_varify');
 
     }
+
 
     // shop_number_otp
     function shop_number_otp(Request $request){
@@ -158,12 +159,11 @@ class ShopController extends Controller
                 } catch (\Exception $e) {
                     return back()->with('error', "Initialization Error: " . $e->getMessage());
                 }
-                // // demo redirect
+                // demo redirect
                 // return redirect()->route('shop.order.success')->with('success', 'order success');
-
             }
-            else{
-                return back()->with('error','OTP not match');
+            else {
+                return back()->with('error', 'OTP not match');
             }
     }
 
