@@ -179,6 +179,7 @@ class ShopProductController extends Controller
                 if(file_exists($delete_from_thumb)){
                     unlink($delete_from_thumb);
                 }
+                shopproductgallery::find($thumb->id)->delete();
             }
             $galleryImages = $request->file('gallery_image');
             foreach ($galleryImages as $galleryImage) {
