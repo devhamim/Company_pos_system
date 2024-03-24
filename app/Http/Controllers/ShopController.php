@@ -134,32 +134,32 @@ class ShopController extends Controller
                 $request->session()->forget('mobile_verify');
                 $request->session()->forget('phone');
 
-                // $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
-                // $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
-                // $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
+                $apiKey = "c3684b1473dc5b5ab83ec6c9786a4367881b2cae";
+                $apiBaseURL = "https://pay.nugortechit.com/api/checkout-v2";
+                $uddoktaPay = new UddoktaPay($apiKey, $apiBaseURL);
 
-                // $requestData = [
-                //     'full_name'     => $shoporders->name,
-                //     'email'         => "test@test.com",
-                //     'amount'        => $shoporders->total,
-                //     'metadata'      => [
-                //         'example_metadata_key' => "example_metadata_value",
-                //     ],
-                //     'redirect_url'  => route('shop.order.success'),
-                //     'return_type'   => 'GET',
-                //     'cancel_url'    => route('shop.order.cancel'),
-                //     'webhook_url'   => route('shop.order.ipn'),
-                // ];
+                $requestData = [
+                    'full_name'     => $shoporders->name,
+                    'email'         => "test@test.com",
+                    'amount'        => $shoporders->total,
+                    'metadata'      => [
+                        'example_metadata_key' => "example_metadata_value",
+                    ],
+                    'redirect_url'  => route('shop.order.success'),
+                    'return_type'   => 'GET',
+                    'cancel_url'    => route('shop.order.cancel'),
+                    'webhook_url'   => route('shop.order.ipn'),
+                ];
 
-                // try {
-                //     // Initiate payment
-                //     $paymentUrl = $uddoktaPay->initPayment($requestData);
-                //     return redirect($paymentUrl);
-                // } catch (\Exception $e) {
-                //     return back()->with('error', "Initialization Error: " . $e->getMessage());
-                // }
+                try {
+                    // Initiate payment
+                    $paymentUrl = $uddoktaPay->initPayment($requestData);
+                    return redirect($paymentUrl);
+                } catch (\Exception $e) {
+                    return back()->with('error', "Initialization Error: " . $e->getMessage());
+                }
                 // // demo redirect
-                return redirect()->route('shop.order.success')->with('success', 'order success');
+                // return redirect()->route('shop.order.success')->with('success', 'order success');
 
             }
             else{
