@@ -91,10 +91,14 @@ class ShopController extends Controller
         $request->session()->put('phone', $request->phone);
         $request->session()->put('shoporder_id', $shoporder_id);
 
-        return view('frontend.product.mobile_varify');
+        return redirect()->route('product.mobile.varify');
 
     }
 
+    // product_mobile_varify
+    function product_mobile_varify(){
+        return view('frontend.product.mobile_varify');
+    }
 
     // shop_number_otp
     function shop_number_otp(Request $request){
@@ -166,6 +170,7 @@ class ShopController extends Controller
                 return back()->with('error', 'OTP not match');
             }
     }
+
 
     // shop_order_success
     function shop_order_success(Request $request){

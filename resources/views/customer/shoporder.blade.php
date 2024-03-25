@@ -103,7 +103,11 @@
                                                                     <form action="{{ route('auth.pay.due') }}" method="POST">
                                                                         @csrf
                                                                             <input type="hidden" name="id" value="{{ $shopproduct->id }}">
+                                                                            @if (Auth::guard('customerauth')->user()->name != null)
                                                                             <input type="hidden" name="name" value="{{ Auth::guard('customerauth')->user()->name }}">
+                                                                            @else
+                                                                            <input type="hidden" name="name" value="Customer">
+                                                                            @endif
                                                                             <input type="hidden" name="total" value="{{ $shopproduct->total }}">
                                                                         <button type="submit" class="bg-danger text-white px-2 py-1 rounded">Unpaid</button>
                                                                     </form>

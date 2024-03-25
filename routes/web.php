@@ -291,6 +291,7 @@ Route::post('/buy/store', [BuyController::class, 'buy_store'])->name('buy.store'
 // Shop
 Route::get('/product/checkout/view', [ShopController::class, 'product_checkout_view'])->name('product.checkout.view');
 Route::post('/shop/product/checkout', [ShopController::class, 'shop_product_checkout'])->name('shop.product.checkout');
+Route::get('/product/mobile/varify', [ShopController::class, 'product_mobile_varify'])->name('product.mobile.varify');
 Route::post('/shop/number/otp', [ShopController::class, 'shop_number_otp'])->name('shop.number.otp');
 Route::get('/shop/order/success', [ShopController::class, 'shop_order_success'])->name('shop.order.success');
 Route::get('/shop/order/cancel', [ShopController::class, 'shop_order_cancel'])->name('shop.order.cancel');
