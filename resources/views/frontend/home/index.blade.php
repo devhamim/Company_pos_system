@@ -11,12 +11,10 @@
                             <h1 data-animation-in="fadeInLeft" data-delay-in="0.2">{{ $banner->banner_title }}</h1>
                             <div data-animation-in="fadeInUp" data-delay-in="0.3" class="text">{{ $banner->banner_desp }}</div>
                             <div class="btn-box">
-                                <a href="page-services.html" data-animation-in="fadeInUp" data-delay-in="0.4"
-                                    class="theme-btn">Our services <i
-                                        class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
-                                <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="play-btn"
-                                    data-fancybox="gallery" data-caption data-animation-in="fadeInLeft"
-                                    data-delay-in="0.4">
+                                <a href="page-services.html" data-animation-in="fadeInUp" data-delay-in="0.2" class="theme-btn">Our services
+                                    <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="play-btn" data-fancybox="gallery" data-caption data-animation-in="fadeInLeft" data-delay-in="0.4">
                                     <i class="fa-sharp fa-solid fa-play"></i>
                                     <span>Play intro</span>
                                 </a>
@@ -72,9 +70,9 @@
             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="image-box">
-                        <figure class="image overlay-anim"><img style="ru" src="{{asset('frontend')}}/images/resource/about1-1.jpg" alt></figure>
+                        <figure class="image overlay-anim"><img style="ru" src="{{asset('frontend')}}/images/resource/about1-1.webp" alt></figure>
                         <div class="play-box">
-                            <figure class="image-2 overlay-anim"><img src="{{asset('frontend')}}/images/resource/about1-2.jpg" alt>
+                            <figure class="image-2 overlay-anim"><img src="{{asset('frontend')}}/images/resource/about1-2.webp" alt>
                             </figure>
                             <a title href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
                                 data-caption>
