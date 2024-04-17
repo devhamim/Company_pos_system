@@ -97,7 +97,7 @@
                         </div>
                         <div class="content-box">
                             <h4 class="title"><a>{{ $team->name }}</a></h4>
-                            <span>{{ $team->education }}</span>
+                            <span>{{ $team->education }}</span><br>
                             <span>{{ $team->designation }}</span>
                         </div>
                     </div>
