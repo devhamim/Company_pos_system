@@ -72,12 +72,12 @@ class CategoryController extends Controller
 
     // category update
     function category_update(Request $request) {
+        print_r($request->all());
         $request->validate([
             'category_name' => 'required',
-            'category_desp' => 'required|max:60',
             'category_image' => 'mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
-        if($request->category_image == null) {
+        if($request->category_image == '') {
             Category::find($request->category_id)->update([
                 'category_name' => $request->category_name,
                 'category_desp' => $request->category_desp,
@@ -85,11 +85,11 @@ class CategoryController extends Controller
                 'added_by' => Auth::id(),
                 'updated_at' => Carbon::now(),
             ]);
-            return redirect()->route('category.list')->withSuccess('Category updated successfully');
         } else {
             $category_img_del = Category::where('id', $request->category_id)->first()->category_image;
             $delete_from = public_path('uploads/category/'.$category_img_del);
             unlink($delete_from);
+
             $upload_img = $request->category_image;
             $extension = $upload_img->getClientOriginalExtension();
             $after_replace = str_replace(' ', '-', $request->category_name);
@@ -102,8 +102,8 @@ class CategoryController extends Controller
                 'added_by' => Auth::id(),
                 'updated_at' => Carbon::now(),
             ]);
-            return redirect()->route('category.list')->withSuccess('Category updated successfully');
         }
+        return redirect()->route('category.list')->withSuccess('Category updated successfully');
     }
 
     function category_delete($category_id){

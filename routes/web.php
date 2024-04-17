@@ -164,7 +164,7 @@ Route::get('/category/list', [CategoryController::class, 'category_list'])->name
 Route::post('/category/store', [CategoryController::class, 'category_store'])->name('category.store');
 Route::get('/category/edit/{category_id}', [CategoryController::class, 'category_edit'])->name('category.edit');
 Route::get('/category/delete/{category_id}', [CategoryController::class, 'category_delete'])->name('category.delete');
-Route::post('/category/update/', [CategoryController::class, 'category_update'])->name('category.update');
+Route::post('/category/update', [CategoryController::class, 'category_update'])->name('category.update');
 
 // banner
 Route::get('/banner/add', [bannerContoller::class, 'banner_add'])->name('banner.add');
