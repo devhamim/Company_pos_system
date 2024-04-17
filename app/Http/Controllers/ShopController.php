@@ -49,6 +49,9 @@ class ShopController extends Controller
         $order_id = 'NIT-' . str_pad($newOrderNumber, 8, '0', STR_PAD_LEFT);
 
         if($request->coupon){
+            $request->validate([
+                'coupon_name'=>'required',
+            ]);
             $coupon_name = Coupon::where('coupon_name', $request->coupon)->first();
             $coupons = $coupon_name->coupon_amount;
         }

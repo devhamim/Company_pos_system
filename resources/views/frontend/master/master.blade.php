@@ -458,28 +458,7 @@
             <div class="scroll-to-top scroll-to-target arrow-btn" data-target="html" style><i
                     class="fa-sharp fa-solid fa-arrow-up"></i></div>
         </footer>
-        {{-- <div id="popup-container">
-            <!-- Add your popup content here -->
-            <h3>This site is under construction</h3>
-            <img src="{{ asset('frontend/images/121.jpg') }}" alt="">
-        </div> --}}
-
     </div>
-
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Show the popup after 10 seconds
-            setTimeout(function () {
-                document.getElementById('popup-container').style.display = 'block';
-            }, 1); // 10 seconds in milliseconds
-
-            // Hide the popup when the user clicks on it
-            document.getElementById('popup-container').addEventListener('click', function () {
-                this.style.display = 'none';
-            });
-        });
-    </script> --}}
-
 
     {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}
     <script src="{{asset('frontend')}}/js/jquery.js"></script>

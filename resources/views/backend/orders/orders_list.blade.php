@@ -385,7 +385,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 @section('footer_script')
 <script type="text/javascript">
@@ -419,12 +418,11 @@
                 'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
             }
         }, cb);
-
         cb(start_date, end_date);
     });
 </script>
 @endsection
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
         var checkboxes = document.querySelectorAll('.sub_chk');
         let checked_value = document.getElementById('checked_value');
@@ -461,8 +459,8 @@
             });
         });
     });
-</script>
-<script>
+</script> --}}
+{{-- <script>
     $('.print').on('click', function () {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
@@ -483,9 +481,9 @@
             }
         });
     });
-</script>
+</script> --}}
 
-<script>
+{{-- <script>
     //courier export
     $('#steadfast_csv').on('click', function (e) {
         var allVals = [];
@@ -517,4 +515,4 @@
         }
     });
 
-</script>
+</script> --}}

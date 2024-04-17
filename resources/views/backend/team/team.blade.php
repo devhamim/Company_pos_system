@@ -29,6 +29,7 @@
                                     <th>Name</th>
                                     <th>Designation</th>
                                     <th>Education</th>
+                                    <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -36,7 +37,9 @@
                                 @foreach ($teams as $sl=>$team)
                                     <tr>
                                         <td>{{ $sl+1 }}</td>
-                                        <td><img src="{{asset('uploads/team')}}/{{$team->image}}" alt class="img-fluid wid-100"></td>
+                                        <td>
+                                            <img src="{{asset('uploads/team')}}/{{$team->image}}" class="img-fluid wid-100">
+                                        </td>
                                         <td>{{$team->name}}</td>
                                         <td>{{$team->designation}}</td>
                                         <td>{{$team->education}}</td>

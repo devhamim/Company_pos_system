@@ -77,11 +77,11 @@ iframe {
 /* .invoice_page{
     position: relative;
 } */
-.sub_company{
+.sub_company {
     position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
+    bottom: 10%;
+    right: 10%;
+    width: 80%;
 }
 
 .sub_company img{

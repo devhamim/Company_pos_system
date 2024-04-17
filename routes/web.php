@@ -29,6 +29,7 @@ use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\pandingcustomerdashboard;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceProductOrderController;
 use App\Http\Controllers\ShopcategoryController;
@@ -147,7 +148,6 @@ Route::get('/service/product/order/delete/{id}', [ServiceProductOrderController:
 Route::post('/service/product/order/update', [ServiceProductOrderController::class, 'service_product_order_update'])->name('service.product.order.update');
 
 
-
 // print
 Route::get('/order/view-invoice/{orderId}', [printInvoiceController::class, 'view_invoice'])->name('view.invoice');
 Route::post('/getclickdatas', [printInvoiceController::class, 'getclickdatas'])->name('getclickdatas');
@@ -155,6 +155,8 @@ Route::post('/getprints', [printInvoiceController::class, 'getprints'])->name('g
 Route::post('/multi/view/invoice', [printInvoiceController::class, 'multi_view_invoice'])->name('multi.view.invoice');
 Route::post('/excel/exportOrdersReport', [printInvoiceController::class, 'excel_exportOrdersReport'])->name('excel.exportOrdersReport');
 
+// pdf
+// Route::get('/view/invoice/{orderId}', [PDFController::class, 'view_invoice'])->name('view.invoice');
 
 // Category
 Route::get('/category/add', [CategoryController::class, 'category_add'])->name('category.add');

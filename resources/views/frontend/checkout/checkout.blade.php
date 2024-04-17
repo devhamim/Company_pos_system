@@ -52,6 +52,9 @@
                         <div class="mb-3 col-md-12 mb-5">
                             <label for="checkuot-form-fname">Coupon</label>
                             <input id="checkuot-form-fname" name="coupon" type="text" class="form-control" placeholder="Coupon">
+                            @error('coupon')
+                                <strong class="text-danger">{{ $message }}</strong>
+                            @enderror
                         </div>
 
                         <h3>Your order</h3>
