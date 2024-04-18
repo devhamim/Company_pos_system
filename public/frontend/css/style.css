@@ -3785,7 +3785,7 @@ figure.image {
 .about-section {
     position: relative;
     padding: 120px 0;
-    background-image: url(../images/background/about-bg.jpg);
+    background-image: url(../images/background/about-bg.webp);
     -o-object-fit: cover;
     object-fit: cover;
     background-repeat: no-repeat;
@@ -4506,7 +4506,7 @@ figure.image {
 .service-section {
     position: relative;
     padding: 120px 0 90px;
-    background-image: url(../images/background/bg1-1.jpg);
+    background-image: url(../images/background/bg1-1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     -o-object-fit: cover;
@@ -4689,7 +4689,7 @@ figure.image {
 .service-section-two {
     position: relative;
     padding: 120px 0 90px;
-    background-image: url(../images/background/ser1-1.jpg);
+    background-image: url(../images/background/ser1-1.webp);
     background-repeat: no-repeat;
     background-size: cover;
     -o-object-fit: cover;
@@ -4856,7 +4856,7 @@ figure.image {
 .project-section {
     position: relative;
     padding: 120px 0;
-    background-image: url(../images/background/bg-2.jpg);
+    background-image: url(../images/background/bg-2.webp);
     background-size: cover;
     background-repeat: no-repeat;
     -o-object-fit: cover;
@@ -5655,7 +5655,7 @@ figure.image {
 .team-section {
     position: relative;
     padding: 120px 0 171px;
-    background-image: url(../images/background/team-bg.jpg)
+    background-image: url(../images/background/team-bg.webp)
 }
 
 .team-block {
@@ -8239,7 +8239,7 @@ figure.image {
 .choose-us-section {
     position: relative;
     padding: 120px 0;
-    background-image: url(../images/background/bg-3.jpg);
+    background-image: url(../images/background/bg-3.webp);
     background-repeat: no-repeat;
     background-size: cover;
     -o-object-fit: cover;
@@ -8785,7 +8785,7 @@ figure.image {
 
 .contact-banner .outer-box {
     padding: 55px 100px;
-    background-image: url(../images/background/con-banner.jpg);
+    background-image: url(../images/background/con-banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
     -o-object-fit: cover;
@@ -8910,7 +8910,7 @@ figure.image {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/background/patter-con.png)
+    background-image: url(../images/background/patter-con.webp)
 }
 
 .contact-banner-two .outer-box {
@@ -9025,7 +9025,7 @@ figure.image {
 
 .contact-section {
     position: relative;
-    background-image: url(../images/background/contact.jpg);
+    background-image: url(../images/background/contact.webp);
     background-repeat: no-repeat;
     -o-object-fit: cover;
     object-fit: cover;

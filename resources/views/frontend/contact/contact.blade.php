@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.png);">
+<section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
         <div class="title-outer text-center">
             <h1 class="title">Contact Us</h1>

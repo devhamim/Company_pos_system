@@ -43,7 +43,7 @@ class ContactController extends Controller
 
     // contact_list
     function contact_list() {
-        $contact = Contact::latest()->get();
+        $contact = Contact::orderBy('id', 'DESC')->get();
         return view('backend.contact.contact_list', [
             'contact' => $contact,
         ]);

@@ -53,8 +53,8 @@
                             <h3 class="title"><a href="{{ route('services.product', $category->id) }}">{{$category->category_name}}</a></h3>
                             <div class="text">{{$category->category_desp}}</div>
                             <a href="{{ route('services.product', $category->id) }}" data-animation-in="fadeInUp" data-delay-in="0.4"
-                                class="theme-btn ser-btn">Learn more <i
-                                    class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i></a>
+                                class="theme-btn ser-btn">Learn more <i class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,6 @@
 <section class="about-section">
     <div class="auto-container">
         <div class="row">
-
             <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="image-box">
@@ -132,7 +131,6 @@
             <h2>our working process</h2>
         </div>
         <div class="row">
-
             <div class="process-block col-lg-3 col-sm-6 col-6">
                 <div class="inner-box">
                     <div class="icon-box">
@@ -188,14 +186,11 @@
     <div class="auto-container">
         <div class="sec-title">
             <h2>Recently <br>Completed Portfolio</h2>
-            <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget
-                aliquet sagittis. Urna nec tincidunt praesent.</div>
+            <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet sagittis. Urna nec tincidunt praesent.</div>
         </div>
         <div class="slider-btn">
-            <button class="prev-btn"><span><i
-                        class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
-            <button class="next-btn"><span><i
-                        class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
+            <button class="prev-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
+            <button class="next-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
         </div>
     </div>
     <div class="row project-slider">
@@ -226,7 +221,6 @@
             <h2>WHAT’s TALKING about<br> our coustomer?</h2>
         </div>
         <div class="row testi-slider">
-
             @foreach ($testmonials as $testmonial)
                 <div class="testimonial-block col-md-6">
                     <div class="inner-box">
@@ -339,8 +333,9 @@
                             <li><i class="fa-solid fa-circle-check"></i>Social Media Marketing</li>
                             <li><i class="fa-solid fa-circle-check"></i>Online support (24/7)</li>
                         </ul>
-                        <a href="page-pricing.html" class="theme-btn-v2">Choose Package<i
-                                class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i></a>
+                        <a href="page-pricing.html" class="theme-btn-v2">Choose Package
+                            <i class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -514,8 +509,9 @@
             <div class="news-block col-lg-4 col-md-6">
                 <div class="inner-box">
                     <div class="image-box">
-                        <figure class="image"><a href="news-details.html"><img src="{{asset('frontend')}}/images/resource/news1-1.jpg"
-                                    alt></a></figure>
+                        <figure class="image">
+                            <a href="news-details.html"><img src="{{asset('frontend')}}/images/resource/news1-1.jpg" alt></a>
+                        </figure>
                     </div>
                     <div class="content-box">
                         <ul class="post">
@@ -584,22 +580,19 @@
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                     viewBox="0 0 14 14" fill="none">
-                                    <path opacity="0.8"
-                                        d="M4.9 0V1.4H9.1V0H10.5V1.4H13.3C13.6866 1.4 14 1.7134 14 2.1V13.3C14 13.6866 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6866 0 13.3V2.1C0 1.7134 0.313404 1.4 0.7 1.4H3.5V0H4.9ZM12.6 7H1.4V12.6H12.6V7ZM3.5 2.8H1.4V5.6H12.6V2.8H10.5V4.2H9.1V2.8H4.9V4.2H3.5V2.8Z"
-                                        fill="#F94A29" />
+                                    <path opacity="0.8" d="M4.9 0V1.4H9.1V0H10.5V1.4H13.3C13.6866 1.4 14 1.7134 14 2.1V13.3C14 13.6866 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6866 0 13.3V2.1C0 1.7134 0.313404 1.4 0.7 1.4H3.5V0H4.9ZM12.6 7H1.4V12.6H12.6V7ZM3.5 2.8H1.4V5.6H12.6V2.8H10.5V4.2H9.1V2.8H4.9V4.2H3.5V2.8Z" fill="#F94A29" />
                                 </svg>01 JAN 2023
                             </li>
                             <li>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14"
                                     viewBox="0 0 10 14" fill="none">
-                                    <path opacity="0.8"
-                                        d="M0.625 0H9.375C9.72019 0 10 0.303636 10 0.678183V13.6608C10 13.8481 9.86006 14 9.6875 14C9.62881 14 9.57125 13.982 9.5215 13.9481L5 10.8722L0.478494 13.9481C0.332269 14.0476 0.139412 13.9997 0.0477311 13.841C0.0165436 13.787 0 13.7246 0 13.6608V0.678183C0 0.303636 0.279825 0 0.625 0ZM8.75 1.35637H1.25V11.8224L5 9.27123L8.75 11.8224V1.35637Z"
-                                        fill="#F94A29" />
+                                    <path opacity="0.8" d="M0.625 0H9.375C9.72019 0 10 0.303636 10 0.678183V13.6608C10 13.8481 9.86006 14 9.6875 14C9.62881 14 9.57125 13.982 9.5215 13.9481L5 10.8722L0.478494 13.9481C0.332269 14.0476 0.139412 13.9997 0.0477311 13.841C0.0165436 13.787 0 13.7246 0 13.6608V0.678183C0 0.303636 0.279825 0 0.625 0ZM8.75 1.35637H1.25V11.8224L5 9.27123L8.75 11.8224V1.35637Z" fill="#F94A29" />
                                 </svg>Business
                             </li>
                         </ul>
-                        <h6 class="title"><a href="news-details.html">Your Complete Digital Marketing Strategy
-                                for 2020</a></h6>
+                        <h6 class="title">
+                            <a href="news-details.html">Your Complete Digital Marketing Strategy for 2020</a>
+                        </h6>
                     </div>
                 </div>
             </div>

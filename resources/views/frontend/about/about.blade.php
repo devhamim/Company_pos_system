@@ -1,6 +1,6 @@
 @extends('frontend.master.master')
 @section('content')
-    <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.png);">
+    <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
         <div class="auto-container">
             <div class="title-outer text-center">
                 <h1 class="title">About Us</h1>
@@ -21,11 +21,11 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend') }}/images/resource/about1-1.jpg" alt>
+                                    src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt>
                             </figure>
                             <div class="play-box">
                                 <figure class="image-2 overlay-anim"><img
-                                        src="{{ asset('frontend') }}/images/resource/about1-2.jpg" alt>
+                                        src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt>
                                 </figure>
                                 <a title href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
                                     data-caption>
