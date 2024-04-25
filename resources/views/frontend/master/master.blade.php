@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    {{-- <meta charset="utf-8"> --}}
     @if($setting->first()->title != null)
         <title>{{$setting->first()->title}}</title>
     @endif
-    @if ($setting->first()->meta_title != null)
+    {{-- @if ($setting->first()->meta_title != null)
         <meta name="title" content="{{$setting->first()->meta_title}}">
     @endif
     @if ($setting->first()->meta_tag != null)
@@ -14,10 +14,10 @@
     @endif
     @if ($setting->first()->meta_description != null)
         <meta name="description" content="{{$setting->first()->meta_description}}">
-    @endif
+    @endif --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    {{-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> --}}
 
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick-theme.css">
