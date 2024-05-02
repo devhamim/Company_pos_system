@@ -27,15 +27,15 @@ class CustomerAuthController extends Controller
                 'mobile_verify'=>$verify_code,
             ]);
 
-            $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-            $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-            $smsqSenderId = "8809617620771";
+            $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+            // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+            $smsqSenderId = "8809617618342";
             $smsqMessage = 'Your nugortechit 6 digit verify code is '.$verify_code;
 
             $smsqMessage = urlencode($smsqMessage);
             $smsqMobileNumbers = '+88' .$request->number;
 
-            $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+            $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
             $response = Http::get($smsqUrl);
 
@@ -146,15 +146,15 @@ class CustomerAuthController extends Controller
                 'mobile_verify'=>$mobile_verify,
                 'created_at'=>Carbon::now(),
             ]);
-            $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-            $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-            $smsqSenderId = "8809617620771";
+            $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+            // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+            $smsqSenderId = "8809617618342";
             $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
 
             $smsqMessage = urlencode($smsqMessage);
             $smsqMobileNumbers = '+88' .$request->phone;
 
-            $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+            $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
             $response = Http::get($smsqUrl);
 

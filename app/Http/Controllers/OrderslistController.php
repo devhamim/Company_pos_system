@@ -334,9 +334,9 @@ function orders_store(Request $request){
             echo 'nai';
         }
     }
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Dear ' .$request->customer_name.',
 Thank you for placing your order with Nugortech IT!
 Order Number: #'.$order_id.'
@@ -349,7 +349,7 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
     if ($response->successful()) {
@@ -520,9 +520,9 @@ public function orders_update(Request $request)
 
     // on going
 if($request->status == 2 && $currentStatus != 2){
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Order #'.$order_id.' Update:
 We are started working on your order at Nugortech IT. Our team is dedicated to delivering great results. Stay tuned for more updates!
@@ -534,16 +534,16 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
 }
 
 // due payment
 if($request->status == 3 && $currentStatus != 3){
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Friendly reminder: Your bill ('.$request->due.'Tk) is due ['.$request->delivery_date.']. Please ensure payment is made by then to avoid any inconvenience.
 
@@ -554,15 +554,15 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
 }
 // Refund
 if($request->status == 4 && $currentStatus != 4){
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Great news! Your refund for order #'.$order_id.' is complete. The refunded amount should now be reflected in your account. If you have any further questions, feel free to contact us.
 
@@ -573,15 +573,15 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
 }
 // Completed
 if($request->status == 5 && $currentStatus != 5){
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Good news! Your order #'.$order_id.' has been successfully completed. We hope you are satisfied with our service. If you have any questions or feedback, feel free to reach out.
 
@@ -592,15 +592,15 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
 }
 // Canceled
 if($request->status == 6 && $currentStatus != 6){
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 We regret to inform you that your order #'.$order_id.' has been canceled. If you have any concerns or require further assistance, feel free to contact us.
 
@@ -611,7 +611,7 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
 }

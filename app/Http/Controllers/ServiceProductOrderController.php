@@ -128,9 +128,9 @@ if (serviceOrderCart::where('id', $request->id)->exists()) {
         'price' => $serviceOrderCart->price,
     ]);
 
-    $smsqApiKey = "OwvBJvQgd/a6OmOiw7lKD73ZUgZ9StYVMNmpmrn1vV0=";
-    $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617620771";
+    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
+    $smsqSenderId = "8809617618342";
     $smsqMessage = 'Dear ' .$serviceOrderCart->name.',
 Thank you for placing your order with Nugortech IT!
 Order Number: #'.$order_id.'
@@ -143,7 +143,7 @@ www.nugortechit.com';
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$serviceOrderCart->phone;
 
-    $smsqUrl = "https://api.smsq.global/api/v2/SendSMS?ApiKey=$smsqApiKey&ClientId=$smsqClientId&SenderId=$smsqSenderId&Message=$smsqMessage&MobileNumbers=$smsqMobileNumbers";
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
     Log::info('SMSQ API Response: ' . $response->status());
