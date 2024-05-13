@@ -157,7 +157,7 @@ class FrontendController extends Controller
     $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
-
+    
     $request->session()->put('mobile_verify', $mobile_verify);
     $request->session()->put('phone_number', $request->phone);
     $request->session()->put('service_cart_id', $service_cart_id);

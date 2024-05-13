@@ -18,7 +18,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> --}}
-
+    <meta name="google-site-verification" content="0phVgcYl1TqUsDujq36cMYt2ReanMyB-AEB1_MHKlqk" />
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick.css">

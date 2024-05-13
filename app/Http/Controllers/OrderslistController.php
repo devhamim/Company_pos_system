@@ -76,7 +76,6 @@ class OrderslistController extends Controller
                 $total_canceled = Order::where('status', 6)->count();
                 $refund_payment = Order::where('status', 4)->get();
             }
-
         }
         else{
             if(!empty($startDate) && !empty($endDate)){
