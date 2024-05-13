@@ -28,6 +28,16 @@
         <link rel="icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}" type="image/x-icon">
     @endif
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1R7CXK501W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1R7CXK501W');
+</script>
+
     <!-- Meta Pixel Code -->
     @if($setting->first()->fbpixel != null)
         {!! $setting->first()->fbpixel !!}
