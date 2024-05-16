@@ -293,8 +293,10 @@
                             <tr>
                                 <td>{{ $sl+1 }}</td>
                                 <td>{{ $orders->created_at->format('d M Y') }}</td>
-                                <td>{{ $orders->rel_to_billing->customer_name }}</td>
-                                <td>{{ $orders->rel_to_billing->customer_phone }}</td>
+                                @if ($orders->rel_to_billing)
+                                    <td>{{ $orders->rel_to_billing->customer_name }}</td>
+                                    <td>{{ $orders->rel_to_billing->customer_phone }}</td>
+                                @endif
                                 <td>{{ $orders->created_at->format('d-M-Y') }}</td>
                                 <td>
                                     <label class="label label-warning">
