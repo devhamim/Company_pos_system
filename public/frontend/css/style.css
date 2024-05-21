@@ -33,7 +33,7 @@
     --line-height-heading: 54px;
     --line-height-heading-small: 1.35em;
     --h1-font-size: 118px;
-    --h2-font-size: 50px;
+    --h2-font-size: 38px;
     --h3-font-size: 30px;
     --h4-font-size: 24px;
     --h5-font-size: 22px;
@@ -263,7 +263,6 @@ ul {
 b,
 strong {
     color: #333;
-    font-weight: var(--body-font-weight-bold)
 }
 
 iframe {
@@ -2913,7 +2912,7 @@ figure.image {
 }
 
 .sec-title .text {
-    margin-top: 30px
+    margin-top: 15px
 }
 
 .sec-title.light .text,
@@ -3086,12 +3085,6 @@ figure.image {
 
 .banner-section {
     position: relative;
-    height: 100vh
-}
-@media(max-width:575.98px) {
-    .banner-section {
-        height: 50vh
-    }
 }
 
 .banner-section .btn-box {
@@ -3794,8 +3787,9 @@ figure.image {
 
 .about-section .image-column .inner-column {
     position: relative;
-    margin-right: 106px;
-    margin-left: -128px
+    margin-left: 106px;
+    /* margin-right: 106px;
+    margin-left: -128px; */
 }
 
 @media(max-width:1399.98px) {
@@ -3893,9 +3887,9 @@ figure.image {
     }
 }
 
-.about-section .content-column .inner-column {
+/* .about-section .content-column .inner-column {
     margin-top: 73px
-}
+} */
 
 @media(max-width:1199.98px) {
     .about-section .content-column .inner-column {
@@ -3930,10 +3924,10 @@ figure.image {
 .about-section .content-column .inner-column .sec-title h2::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 18%;
     left: 0;
     width: 6px;
-    height: 100%;
+    height: 70%;
     background-color: var(--theme-color1)
 }
 
@@ -3941,7 +3935,7 @@ figure.image {
     color: var(--theme-color-light);
     opacity: .8;
     line-height: 26px;
-    margin-top: 30px;
+    margin-top: 10px;
     text-transform: lowercase
 }
 @media(max-width:575.98px) {
@@ -3955,9 +3949,9 @@ figure.image {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-bottom: 1px solid var(--theme-color1);
-    padding-bottom: 39px;
-    margin-bottom: 40px
+    /* border-bottom: 1px solid var(--theme-color1); */
+    padding-bottom: 15px;
+    /* margin-bottom: 40px */
 }
 
 @media(max-width:575.98px) {
@@ -4226,10 +4220,6 @@ figure.image {
     line-height: 35px;
     text-transform: uppercase;
     font-family: var(--title-font)
-}
-
-.about-section-two .content-column .inner-column {
-    margin-top: 30px
 }
 
 @media(max-width:1399.98px) {
@@ -4506,7 +4496,7 @@ figure.image {
 .service-section {
     position: relative;
     padding: 120px 0 90px;
-    background-image: url(../images/background/bg1-1.webp);
+    /* background-image: url(../images/background/bg1-1.webp); */
     background-repeat: no-repeat;
     background-size: cover;
     -o-object-fit: cover;
@@ -4696,9 +4686,6 @@ figure.image {
     object-fit: cover
 }
 
-.service-section-two .content-column .inner-column {
-    margin-top: 141px
-}
 
 @media(max-width:991.98px) {
     .service-section-two .content-column .inner-column {
@@ -4864,7 +4851,7 @@ figure.image {
 }
 
 .project-section .sec-title {
-    max-width: 498px
+    max-width: 50%
 }
 
 .project-section .sec-title h2 {
@@ -4878,7 +4865,7 @@ figure.image {
     top: 50%;
     left: 0;
     width: 6px;
-    height: 100px;
+    height: 75%;
     background-color: var(--theme-color1);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%)
@@ -6214,7 +6201,7 @@ figure.image {
 }
 
 .clients-section {
-    padding: 95px 0
+    padding-bottom: 95px;
 }
 
 @media(max-width:767.98px) {
@@ -8247,7 +8234,7 @@ figure.image {
 }
 
 .choose-us-section .content-column .inner-column {
-    margin-top: 88px
+    margin-top: 0
 }
 
 @media(max-width:1199.98px) {
@@ -8290,10 +8277,10 @@ figure.image {
 .choose-us-section .content-column .inner-column .sec-title h2::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 15%;
     left: 0;
     width: 6px;
-    height: 120px;
+    height: 75%;
     background-color: var(--theme-color1)
 }
 
@@ -8778,13 +8765,13 @@ figure.image {
 
 .contact-banner {
     position: relative;
-    padding: 120px 0;
-    margin-top: -101px;
-    z-index: 99
+    padding: 0px 0;
+    margin-top: -2%;
+    z-index: 99;
 }
 
 .contact-banner .outer-box {
-    padding: 55px 100px;
+    padding: 20px 100px;
     background-image: url(../images/background/con-banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -8799,6 +8786,34 @@ figure.image {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between
+}
+.banner-contact {
+    position: relative;
+    padding: 0px 0;
+    margin-top: -2%;
+    z-index: 99;
+}
+.banner-contact .outer-box {
+    padding: 20px 100px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    -webkit-box-shadow: 0px 6px 20px -4px rgba(0,0,0,0.64);
+    -moz-box-shadow: 0px 6px 20px -4px rgba(0,0,0,0.64);
+    box-shadow: 0px 6px 20px -4px rgba(0,0,0,0.64);
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 @media(max-width:991.98px) {
@@ -9031,7 +9046,6 @@ figure.image {
     object-fit: cover;
     background-size: cover;
     z-index: -11;
-    margin-bottom: 208px
 }
 
 @media(max-width:1199.98px) {
@@ -14266,3 +14280,34 @@ table.tbl-shopping-cart>tfoot>tr>th {
     background-color: #fff;
     height: 180px
 }
+
+
+/* custom css */
+.about-rihgt h2{
+    font-size: 26px;
+}
+.about-right-text{
+    margin-top: 10px !important;
+}
+
+.service-section-two .content-column .inner-column .list-sec .list li i {
+    position: absolute;
+    left: 0;
+    color: var(--theme-color1);
+}
+.service-section-two .content-column .inner-column .list-sec .list li{
+    padding-left: 25px;
+}
+.service-section-two .image-column .inner-column .exp-box {
+    position: absolute;
+    top: 60%;
+    left: 48%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 48%;
+    background-color: var(--theme-color1);
+    -webkit-box-shadow: -30px 30px 60px 0 rgba(17, 17, 17, .05);
+    box-shadow: -30px 30px 60px 0 rgba(17, 17, 17, .05);
+    padding: 15px 35px;
+}
+

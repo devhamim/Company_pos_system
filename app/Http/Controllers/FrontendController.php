@@ -51,6 +51,7 @@ class FrontendController extends Controller
         $banners = banner::all();
         $portfolios = protfolio::where('status', 1)->get();
         $testmonials = testmonial::where('status', 1)->get();
+        $teams = team::where('status', 1)->get();
 
         return view('frontend.home.index', [
             'categories' => $categories,
@@ -62,6 +63,7 @@ class FrontendController extends Controller
             'banners' => $banners,
             'portfolios' => $portfolios,
             'testmonials' => $testmonials,
+            'teams' => $teams,
 
             // 'discount_products_count' => $discount_products_count,
         ]);
@@ -157,7 +159,7 @@ class FrontendController extends Controller
     $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
-    
+
     $request->session()->put('mobile_verify', $mobile_verify);
     $request->session()->put('phone_number', $request->phone);
     $request->session()->put('service_cart_id', $service_cart_id);

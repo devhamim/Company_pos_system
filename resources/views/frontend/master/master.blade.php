@@ -306,18 +306,6 @@
         @yield('content')
         {{-- main end --}}
 
-        <section class="clients-section">
-            <div class="auto-container">
-                <ul class="clients-carousel">
-                    <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-1.png" alt></a> </li>
-                    <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-2.png" alt></a> </li>
-                    <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-3.png" alt></a> </li>
-                    <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-4.png" alt></a> </li>
-                    <li class="client-block-two"> <a href="#"><img src="{{ asset('frontend') }}/images/clients/1-5.png" alt></a> </li>
-                </ul>
-            </div>
-        </section>
-
         <section class="contact-banner-two">
             <div class="auto-container">
                 <div class="outer-box">
