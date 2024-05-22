@@ -304,9 +304,51 @@
         </div>
     </section>
 
-    <section class="featured-products">
+    {{-- <section class="project-section">
         <div class="auto-container">
-
+            <div class="sec-title">
+                <h2>Recently Completed Portfolio</h2>
+                <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet
+                    sagittis. Urna nec tincidunt praesent.</div>
+            </div>
+            <div class="slider-btn">
+                <button class="prev-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
+                <button class="next-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
+            </div>
+        </div>
+        <div class="row project-slider">
+            @foreach ($portfolios as $portfolio)
+                <div class="project-block col-lg-3 col-md-6">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image overlay-anim"><a
+                                    href="{{ route('portfolio.details', $portfolio->slug) }}">
+                                    <img src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt></a>
+                            </figure>
+                            <figure class="image-2"><a href="{{ route('portfolio.details', $portfolio->slug) }}">
+                                    <img src="{{ asset('frontend') }}/images/resource/projec1-2.png" alt></a>
+                            </figure>
+                        </div>
+                        <div class="content-box">
+                            <span>{{ $portfolio->project_type }}</span>
+                            <h6 class="title"><a
+                                    href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section> --}}
+    <section class="featured-products">
+        <div class="auto-container text-center">
+            <div class="sec-title">
+                <h2>Recently Completed Portfolio</h2>
+                <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet
+                    sagittis. Urna nec tincidunt praesent.</div>
+            </div>
+        </div>
+        <div class="auto-container">
             <div class="mixitup-gallery">
 
                 <div class="filters clearfix">
@@ -337,8 +379,15 @@
                         </div>
                     </div>
                     @endforeach
-
                 </div>
+            </div>
+        </div>
+        <div class="auto-container text-center">
+            <div class="sec-title">
+                <a href="{{ route('about') }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn">
+                    See More
+                    <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                </a>
             </div>
         </div>
     </section>
