@@ -340,6 +340,44 @@
             @endforeach
         </div>
     </section>
+    <section class="featured-products">
+        <div class="auto-container">
+
+            <div class="mixitup-gallery">
+
+                <div class="filters clearfix">
+                    <ul class="filter-tabs filter-btns clearfix">
+                        <li class="active filter" data-role="button" data-filter="all">All</li>
+                        @php
+                            $uniqueProjectTypes = $portfolios->unique('project_type');
+                        @endphp
+                        @foreach ($uniqueProjectTypes as $portfolio)
+                            <li class="filter" data-role="button" data-filter=".{{ str_replace(' ', '', $portfolio->project_type) }}">{{ $portfolio->project_type }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="filter-list row">
+                    @foreach ($portfolios as $portfolio)
+                    <div class="product-block all mix {{ str_replace(' ', '',$portfolio->project_type) }} col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image"><a href="{{ route('portfolio.details', $portfolio->slug) }}"><img
+                                        src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt /></a></div>
+                            <div class="content">
+                                <h4><a href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a></h4>
+                            </div>
+                            <div class="icon-box">
+                                <a href="{{ route('portfolio.details', $portfolio->slug) }}" class="ui-btn like-btn">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="about-section-two">
         <div class="auto-container">
