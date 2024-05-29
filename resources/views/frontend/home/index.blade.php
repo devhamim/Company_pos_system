@@ -854,67 +854,72 @@
                         <ul class="accordion-box wow fadeInRight">
 
                             <li class="accordion block">
-                                <div class="acc-btn">আপনারা কি কি সার্ভিস প্রোভাইড করেন?<div
+                                <div class="acc-btn">WHAT'S THE EXPECTED TIMELINE TO OBSERVE SEO IMPROVEMENTS ON MY WEBSITE?<div
                                         class="icon fa fa-angle-down"></div>
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">
-                                            <p>আমাদের সার্ভিস সমূহ :</p>
-                                            <ul>
-                                                <li>🔘সোশ্যাল মিডিয়া মার্কেটিং</li>
-                                                <li>🔘সোশ্যাল মিডিয়া কন্টেন্ট ডিজাইন</li>
-                                                <li>🔘ডিজিটাল মার্কেটিং স্ট্রাটেজি</li>
-                                                <li>🔘গ্রাফিস ডিজাইন</li>
-                                                <li>🔘ওয়েবসাইট ডেভেলপমেন্ট</li>
-                                                <li>🔘সফটওয়ার ডেভেলপমেন্ট</li>
-                                                <li>🔘আপস ডেভেলপমেন্ট</li>
-                                            </ul>
+                                            <p>After optimizing a website that’s been around for one or two years, you can anticipate initial signs of improvement in search rankings within 2, or 3 weeks. This timeframe accounts for search engines requiring time to crawl, analyze,  re-index new content, and respond to enhanced website performance. However, it typically takes 8-10 weeks to observe substantial and noticeable progress on your website.</p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
 
                             <li class="accordion block active-block">
-                                <div class="acc-btn active">Facebook মার্কেটিং থেকে কি পরিমাণ সেল হতে পারে?<div
+                                <div class="acc-btn active">HOW MUCH DOES AN SEO SERVICE COST?<div
                                         class="icon fa fa-angle-down"></div>
                                 </div>
                                 <div class="acc-content current">
                                     <div class="content">
-                                        <div class="text">পোস্ট বুস্ট মানেই সেল না।
-                                            সেল নির্ভর করবে আপনার প্রোডাক্ট কোয়ালিটি, প্রাইসিং এবং কনভিন্সিং পাওয়ার এর উপর।
-                                            আমরা আপনার প্রোডাক্ট টার্গেট অডিয়েন্স এর কাছে রিচ করতে পারবো।
-                                            টার্গেট অডিয়েন্স বেসড প্রতি ডলার রিচ করবে ৫০০-২৫০০+-।
-                                            এখানে যার কাছে আপনার প্রোডাক্ট নিড ফিল মনে করবে সে আপনাকে কুয়েরি করবে।
-                                            কি পরিমান মেসেজ বা অর্ডার আসবে কখনো ফিক্সড করে বলা সম্ভব না এমন কি ফেসবুক ও
-                                            ফিক্সড করে বলতে পারে না।
+                                        <div class="text">The amount of SEO service pricing depends on different facts. It consists of the current performance search, web page amount, competitors and many other things.
                                         </div>
                                     </div>
                                 </div>
                             </li>
 
                             <li class="accordion block">
-                                <div class="acc-btn">আমার অ্যাড অ্যাক্টিভ হতে কতক্ষন সময় লাগবে? <div
+                                <div class="acc-btn">WHO WILL PROVIDE THE CONTENT FOR MY NEW WEBSITE?<div
                                         class="icon fa fa-angle-down"></div>
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
-                                        <div class="text">ফেসবুক মার্কেটিং সার্ভিস ১০০% অ্যাডভান্স করতে হবে।
-                                            আপনি পেমেন্ট করার ১ ঘণ্টার মধ্যে এড পাবলিশ করা
-                                            হবে এবং ফেসবুক এড একটিভ করতে ২৪ ঘণ্টা সময় নিতে পারে।
+                                        <div class="text">You have the option to supply content for your website, or if preferred, we can furnish content for an extra fee.
                                         </div>
                                     </div>
                                 </div>
                             </li>
 
                             <li class="accordion block">
-                                <div class="acc-btn">আমি কেনো আপনাদের সার্ভিস নিবো?<div class="icon fa fa-angle-down">
+                                <div class="acc-btn">IS IT NECESSARY FOR ME TO BE IN CLOSE PROXIMITY TO COLLABORATE WITH YOU?                                    <div class="icon fa fa-angle-down">
                                     </div>
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
-                                        <div class="text">আমাদের রয়েছে ২৪/৭ অনলাইন সাপোর্ট। এবং অভিজ্ঞ ডিজিটাল মার্কেটিং
-                                            টিম।</div>
+                                        <div class="text">Certainly not. Our services can be utilized from any corner of the globe.</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn"> WHAT KINDS OF CONTENT ARE AVAILABLE FROM YOUR OFFERINGS?<div class="icon fa fa-angle-down">
+                                    </div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">Our writers excel in crafting a wide range of content, including articles, blogs, social media posts, Q&A content, and more. Additionally, we are proficient in producing content in both Bengali and English to serve various purposes.</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn"> WHICH SECTORS DOES CONTENT MARKETING ENCOMPASS?<div class="icon fa fa-angle-down">
+                                    </div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">The content serves as a valuable resource for all aspects of your business, including areas such as search, social media, email marketing, PR, PPC, and numerous others.
+
+                                        Certainly, we conduct comprehensive keyword research for your content to ensure that our service delivers SEO-friendly content to you.
+                                        </div>
                                     </div>
                                 </div>
                             </li>

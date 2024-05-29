@@ -50,7 +50,7 @@ serviceOrderCart::where('id', $request->id)->update([
 ]);
 $serviceOrderCart = serviceOrderCart::find($request->id);
 if (serviceOrderCart::where('id', $request->id)->exists()) {
-    $order_id = 'INV'.'-'.rand(1000,9999);
+    $order_id = 'INV'.'-'.rand(10000000,99999999);
     // Create an order
 
     if($serviceOrderCart->status == 1){
