@@ -2272,7 +2272,8 @@ figure.image {
 .sticky-header.fixed-header {
     opacity: 1;
     z-index: 9999;
-    visibility: visible
+    visibility: visible;
+    padding: 10px 0;
 }
 
 .sticky-header .logo {
