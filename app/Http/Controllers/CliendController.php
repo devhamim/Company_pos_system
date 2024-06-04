@@ -21,6 +21,7 @@ class CliendController extends Controller
     function cliend_store(Request $request){
         $rules = [
             'name' => 'required',
+            'type' => 'required',
             'image' => 'required',
         ];
 
@@ -61,6 +62,7 @@ class CliendController extends Controller
     function cliend_update(Request $request){
         $rules = [
             'name' => 'required',
+            'type' => 'required',
             'image' => '',
             'status' => 'required',
         ];

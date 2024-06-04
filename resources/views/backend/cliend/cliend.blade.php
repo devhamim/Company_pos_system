@@ -27,6 +27,7 @@
                                     <th>Sl</th>
                                     <th>Image</th>
                                     <th>Name</th>
+                                    <th>Type</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -39,6 +40,7 @@
                                             <img src="{{asset('uploads/cliend')}}/{{$cliend->image}}" class="img-fluid wid-100">
                                         </td>
                                         <td>{{$cliend->name}}</td>
+                                        <td>{{$cliend->type}}</td>
                                         <td>
                                             <span class="badge badge-{{$cliend->status == 1 ? 'success' : 'danger'}}">{{$cliend->status == 1 ? 'Active' : 'Deactive'}}</span>
                                         </td>
@@ -83,6 +85,20 @@
                                 <label class="form-label">Name *</label>
                                 <input type="text" name="name" id="name" class="form-control" required>
                                 @error('name')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="form-label">Type *</label>
+                                <select name="type" id="type" class="form-control" required>
+                                    <option value="happyclient">OUR HAPPY CLIENTS</option>
+                                    <option value="workingwith">WE ARE WORKING WITH</option>
+                                    <option value="membersof">WE ARE MEMBERS OF</option>
+                                </select>
+                                @error('type')
                                     <span class="text-danger">{{$message}}</span>
                                 @enderror
                                 <div class="clearfix"></div>
@@ -147,6 +163,20 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
+                                    <label class="form-label">Type *</label>
+                                    <select name="type" id="type" class="form-control" required>
+                                        <option value="happyclient">OUR HAPPY CLIENTS</option>
+                                        <option value="workingwith">WE ARE WORKING WITH</option>
+                                        <option value="membersof">WE ARE MEMBERS OF</option>
+                                    </select>
+                                    @error('type')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
                                     <label class="form-label">Image *</label>
                                     <input type="file" name="image" id="image" class="form-control" required>
                                     @error('image')
@@ -186,6 +216,7 @@
             success: function(data) {
                 $('#id').val(data.cliends.id);
                 $('#name').val(data.cliends.name);
+                $('#type').val(data.cliends.type);
                 $('#status').val(data.cliends.status);
                 $('#image').attr('src', data.cliends.image);
             }
