@@ -492,46 +492,37 @@
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
                         <li class="active filter" data-role="button" data-filter="all">All</li>
-                        <li class="filter" data-role="button" data-filter=".one">OUR HAPPY CLIENTS</li>
-                        <li class="filter" data-role="button" data-filter=".two">WE ARE WORKING WITH</li>
-                        <li class="filter" data-role="button" data-filter=".three">WE ARE MEMBERS OF</li>
+                        @foreach ($cliends as $cliend)
+                            @if ($cliend->type == 'one')
+                                <li class="filter" data-role="button" data-filter=".{{ $cliend->type }}">OUR HAPPY CLIENTS</li>
+                            @elseif ($cliend->type == 'two')
+                                <li class="filter" data-role="button" data-filter=".{{ $cliend->type }}">WE ARE WORKING WITH</li>
+                            @elseif ($cliend->type == 'three')
+                                <li class="filter" data-role="button" data-filter=".{{ $cliend->type }}">WE ARE MEMBERS OF</li>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
                 <div class="filter-list row">
-                    <div class="product-block all mix one col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('frontend') }}/images/clients/1-1.png" alt />
+                    @foreach ($cliends as $cliend)
+                        <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-block all mix three col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('frontend') }}/images/clients/1-2.png" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-block all mix three col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('frontend') }}/images/clients/1-3.png" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-block all mix two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('frontend') }}/images/clients/1-4.png" alt />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-block all mix one col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('frontend') }}/images/clients/1-5.png" alt />
-                            </div>
-                        </div>
+                    @endforeach
+
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-6 m-auto">
+                    <div class="text-center">
+                        <a href="{{ route('our.cliends') }}" data-animation-in="fadeInUp" data-delay-in="0.4"
+                            class="theme-btn">See More
+                            <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                        </a>
                     </div>
                 </div>
             </div>

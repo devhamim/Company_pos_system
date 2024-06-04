@@ -94,9 +94,9 @@
                             <div class="form-group">
                                 <label class="form-label">Type *</label>
                                 <select name="type" id="type" class="form-control" required>
-                                    <option value="happyclient">OUR HAPPY CLIENTS</option>
-                                    <option value="workingwith">WE ARE WORKING WITH</option>
-                                    <option value="membersof">WE ARE MEMBERS OF</option>
+                                    <option value="one">OUR HAPPY CLIENTS</option>
+                                    <option value="two">WE ARE WORKING WITH</option>
+                                    <option value="three">WE ARE MEMBERS OF</option>
                                 </select>
                                 @error('type')
                                     <span class="text-danger">{{$message}}</span>
@@ -165,9 +165,9 @@
                                 <div class="form-group">
                                     <label class="form-label">Type *</label>
                                     <select name="type" id="type" class="form-control" required>
-                                        <option value="happyclient">OUR HAPPY CLIENTS</option>
-                                        <option value="workingwith">WE ARE WORKING WITH</option>
-                                        <option value="membersof">WE ARE MEMBERS OF</option>
+                                        <option value="one">OUR HAPPY CLIENTS</option>
+                                        <option value="two">WE ARE WORKING WITH</option>
+                                        <option value="three">WE ARE MEMBERS OF</option>
                                     </select>
                                     @error('type')
                                         <span class="text-danger">{{$message}}</span>

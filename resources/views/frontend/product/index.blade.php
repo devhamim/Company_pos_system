@@ -4,7 +4,7 @@
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
         <div class="title-outer text-center">
-            <h1 class="title">Shop</h1>
+            <h1 class="title">Product</h1>
             <ul class="page-breadcrumb">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li>Products</li>

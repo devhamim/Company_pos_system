@@ -7,7 +7,7 @@ use App\Models\setting;
 use Illuminate\Support\ServiceProvider;
 use View;
 use Cookie;
-
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
 {
 
+    Paginator::useBootstrap();
     // footer category
     View::composer('frontend.master.master', function ($view){
         $view->with('categorys', Category::all());

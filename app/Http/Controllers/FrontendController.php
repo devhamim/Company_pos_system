@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\banner;
 use App\Models\Category;
+use App\Models\cliend;
 use App\Models\Coupon;
 use App\Models\customer_registers;
 use App\Models\customers;
@@ -52,6 +53,7 @@ class FrontendController extends Controller
         $portfolios = protfolio::where('status', 1)->get();
         $testmonials = testmonial::where('status', 1)->get();
         $teams = team::where('status', 1)->get();
+        $cliends = cliend::where('status', 1)->get();
 
         return view('frontend.home.index', [
             'categories' => $categories,
@@ -64,6 +66,7 @@ class FrontendController extends Controller
             'portfolios' => $portfolios,
             'testmonials' => $testmonials,
             'teams' => $teams,
+            'cliends' => $cliends,
 
             // 'discount_products_count' => $discount_products_count,
         ]);
@@ -406,6 +409,21 @@ function product_comment_store(Request $request){
 
     ProductComment::create($validatedData);
     return back()->withSuccess('Your Comment add successfully');
+}
+
+// our_cliends
+function our_cliends(){
+    $cliends = cliend::where('status', 1)->paginate(40);
+    return view('frontend.cliend.index',[
+        'cliends'=>$cliends,
+    ]);
+}
+// our_protfolio
+function our_protfolio(){
+    $portfolios = protfolio::where('status', 1)->paginate(24);
+    return view('frontend.protfolio.index',[
+        'portfolios'=>$portfolios,
+    ]);
 }
 
 }

@@ -127,6 +127,7 @@
                                     <li><a href="{{ route('about') }}">About</a></li>
                                     <li><a href="{{ route('our.services') }}">Services</a></li>
                                     <li> <a href="{{ route('our.products') }}">Product</a></li>
+                                    <li> <a href="{{ route('our.protfolio') }}">protfolio</a></li>
                                     <li> <a href="{{ route('our.blogs') }}">Blogs</a></li>
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
