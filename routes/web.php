@@ -6,6 +6,7 @@ use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CliendController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerAuthController;
@@ -109,6 +110,13 @@ Route::post('/team/store', [TeamController::class, 'team_store'])->name('team.st
 Route::post('/editteam/{id}', [TeamController::class, 'editteam'])->name('editteam');
 Route::post('/team/update', [TeamController::class, 'team_update'])->name('team.update');
 Route::get('/team/delete/{id}', [TeamController::class, 'team_delete'])->name('team.delete');
+
+// cliend
+Route::get('/cliend/list', [CliendController::class, 'cliend_list'])->name('cliend.list');
+Route::post('/cliend/store', [CliendController::class, 'cliend_store'])->name('cliend.store');
+Route::post('/editcliend/{id}', [CliendController::class, 'editcliend'])->name('editcliend');
+Route::post('/cliend/update', [CliendController::class, 'cliend_update'])->name('cliend.update');
+Route::get('/cliend/delete/{id}', [CliendController::class, 'cliend_delete'])->name('cliend.delete');
 
 
 // media

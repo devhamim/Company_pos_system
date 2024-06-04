@@ -233,6 +233,12 @@
                                     <div>Media</div>
                                 </a>
                             </li>
+                            <li class="sidenav-item {{ Request::is('cliend/list') ? 'active' : '' }}">
+                                <a href="{{route('cliend.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Cliend</div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
