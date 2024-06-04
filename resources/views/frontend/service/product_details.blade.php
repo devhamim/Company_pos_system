@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-12">
-                <div class="content mt-40">
+                {{-- <div class="content mt-40">
                     <div class="text">
                         <h3>Review</h3>
                     </div>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="innerpage mt-25">
                     <h3>Frequently Asked Question</h3>
                     {{-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui

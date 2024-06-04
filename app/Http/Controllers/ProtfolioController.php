@@ -29,11 +29,11 @@ class ProtfolioController extends Controller
         $rules = [
             'title' => 'required',
             'project_type' => 'required',
-            'delivery_date' => 'required',
-            'client' => 'required',
-            'website_link' => '',
-            'tage' => 'required',
-            'description' => 'required',
+            'delivery_date' => 'nullable',
+            'client' => 'nullable',
+            'website_link' => 'nullable',
+            'tage' => 'nullable',
+            'description' => 'nullable',
             'preview_image' => 'required',
             'gallery_image' => 'required',
         ];
@@ -102,16 +102,15 @@ class ProtfolioController extends Controller
         $rules = [
             'title' => 'required',
             'project_type' => 'required',
-            'delivery_date' => 'required',
-            'client' => 'required',
-            'website_link' => '',
-            'tage' => 'required',
-            'description' => 'required',
+            'delivery_date' => 'nullable',
+            'client' => 'nullable',
+            'website_link' => 'nullable',
+            'tage' => 'nullable',
+            'description' => 'nullable',
             'status' => 'required',
         ];
 
         $validatedData = $request->validate($rules);
-
         if ($request->hasFile('preview_image')) {
             $img_del = protfolio::where('id', $request->protfolio_id)->first()->preview_image;
             $delete_from = public_path('uploads/protfolio/'.$img_del);

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('project_type');
-            $table->date('delivery_date');
-            $table->string('client');
+            $table->date('delivery_date')->nullable();
+            $table->string('client')->nullable();
             $table->string('tage')->nullable();
             $table->integer('status')->default(1);
             $table->string('preview_image')->nullable();

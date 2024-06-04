@@ -31,20 +31,14 @@
                             </div>
                             <div class="col-lg-6 col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-label">Delivery Date *</label>
-                                    <input type="date" name="delivery_date" class="form-control" placeholder="Delivery Date" value="{{ old('delivery_date') }}" required>
-                                    @error('delivery_date')
-                                        <span class="text-danger">{{$message}}</span>
-                                    @enderror
+                                    <label class="form-label">Delivery Date </label>
+                                    <input type="date" name="delivery_date" class="form-control" placeholder="Delivery Date" value="{{ old('delivery_date') }}">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-lg-6">
                                 <div class="form-group">
-                                    <label class="form-label">Client *</label>
-                                    <input type="text" name="client" class="form-control" placeholder="Client" value="{{ old('client') }}" required>
-                                    @error('client')
-                                        <span class="text-danger">{{$message}}</span>
-                                    @enderror
+                                    <label class="form-label">Client</label>
+                                    <input type="text" name="client" class="form-control" placeholder="Client" value="{{ old('client') }}" >
                                 </div>
                             </div>
                             <div class="col-lg-6 col-lg-6">
@@ -56,10 +50,7 @@
                             <div class="col-lg-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Tage</label>
-                                    <input type="text" name="tage" class="form-control" placeholder="Tage" value="{{ old('tage') }}" required>
-                                    @error('tage')
-                                        <span class="text-danger">{{$message}}</span>
-                                    @enderror
+                                    <input type="text" name="tage" class="form-control" placeholder="Tage" value="{{ old('tage') }}">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -89,10 +80,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="form-label w-100 mb-2">Description</label>
-                                    <textarea id="summernote" name="description" value="{{ old('description') }}" required class="form-control" placeholder="Description"></textarea>
-                                    @error('description')
-                                        <strong class="text-danger">{{$message}}</strong>
-                                    @enderror
+                                    <textarea id="summernote" name="description" value="{{ old('description') }}" class="form-control" placeholder="Description"></textarea>
                                 </div>
                             </div>
 

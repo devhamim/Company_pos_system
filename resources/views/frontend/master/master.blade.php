@@ -344,6 +344,47 @@
                                     </div>
                                 </div>
                                 <div class="widget-content">
+                                    @if ($setting->first()->about != null)
+                                        <p class="text-white">{{ $setting->first()->about }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-column col-lg-3 col-sm-6">
+                            <div class="footer-widget links-widget pl-lg-30 pl-md--0">
+                                <h4 class="widget-title">Our Services</h4>
+                                <div class="widget-content">
+                                    <ul class="user-links style-two">
+                                        <li><a href="#">Digital marketing</a></li>
+                                        <li><a href="#">Branding design</a></li>
+                                        <li><a href="#">Product Design</a></li>
+                                        <li><a href="#">Web development</a></li>
+                                        <li><a href="#">App Development</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-column col-lg-3 col-sm-6">
+                            <div class="footer-widget links-widget two pl-lg-30 pl-md--0">
+                                <h4 class="widget-title">Useful Link</h4>
+                                <div class="widget-content">
+                                    <ul class="user-links style-two">
+                                        <li><a href="{{ route('about') }}">About Us</a></li>
+                                        <li><a href="{{ route('our.services') }}">Our Services</a></li>
+                                        <li><a href="{{ route('our.products') }}">Our Product</a></li>
+                                        <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
+                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-column col-lg-3 col-sm-6">
+                            <div class="footer-widget contact-widget">
+                                <h4 class="widget-title">Found Us</h4>
+                                <div class="widget-content">
                                     <div class="content-box">
                                         <div class="icon-box">
                                             <i class="flaticon-envelope"></i>
@@ -380,62 +421,6 @@
                                         <li><a href="https://www.youtube.com/@NugortechIT" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                                         <li><a href="https://www.behance.net/nugortech_it" target="_blank"><i class="fa-brands fa-behance"></i></a></li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="footer-column col-lg-3 col-sm-6">
-                            <div class="footer-widget links-widget pl-lg-30 pl-md--0">
-                                <h4 class="widget-title">Our Services</h4>
-                                <div class="widget-content">
-                                    <ul class="user-links style-two">
-                                        <li><a href="#">Digital marketing</a></li>
-                                        <li><a href="#">Branding design</a></li>
-                                        <li><a href="#">Product Design</a></li>
-                                        <li><a href="#">Web development</a></li>
-                                        <li><a href="#">App Development</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="footer-column col-lg-3 col-sm-6">
-                            <div class="footer-widget links-widget two pl-lg-30 pl-md--0">
-                                <h4 class="widget-title">Useful Link</h4>
-                                <div class="widget-content">
-                                    <ul class="user-links style-two">
-                                        <li><a href="{{ route('about') }}">About Us</a></li>
-                                        <li><a href="{{ route('our.services') }}">Our Services</a></li>
-                                        <li><a href="{{ route('our.products') }}">Our Product</a></li>
-                                        <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
-                                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="footer-column col-lg-3 col-sm-6">
-                            <div class="footer-widget about-widget">
-                                <h4 class="widget-title">Newsletter</h4>
-                                <div class="text">Get instant updates about our new products and special promos! </div>
-                                <div class="subscribe-form-two">
-                                    <form method="post" action="{{ route('subscribe.store') }}">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="email" name="email" class="email" placeholder="Enter your email here..." required>
-                                            <button type="submit" class="theme-btn">
-                                                <span class="btn-title">Subscribe Now</span><i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
-                                            </button>
-                                            <div class="mt-2">
-                                                @if (session('subscribe'))
-                                                    <strong class="text-success">{{ session('subscribe') }}</strong>
-                                                @endif
-                                                @error('email')
-                                                    <strong class="text-danger">{{ $message }}</strong>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
