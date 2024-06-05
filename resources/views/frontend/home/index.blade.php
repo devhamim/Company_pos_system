@@ -145,7 +145,7 @@
                         <div class="image-box">
                             <figure class="image overlay-anim"><img style="ru"
                                     src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt></figure>
-                            <div class="play-box">
+                            {{-- <div class="play-box">
                                 <figure class="image-2 overlay-anim"><img
                                         src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt>
                                 </figure>
@@ -153,7 +153,7 @@
                                     data-caption>
                                     <i class="icon fa fa-play"></i>
                                 </a>
-                            </div>
+                            </div> --}}
                             <div class="exp-box">
                                 <div class="icon-box">
                                     <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
@@ -401,7 +401,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend') }}/images/resource/about2-1.png" alt="">
+                                    src="{{ asset('frontend') }}/images/resource/about2-1.webp" alt="">
                             </figure>
                             <div class="exp-box bounce-y">
                                 <h6 class="title">7+</h6>
