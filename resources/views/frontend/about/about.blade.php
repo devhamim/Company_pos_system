@@ -18,7 +18,7 @@
             <div class="row">
 
                 <div class="image-column col-lg-6">
-                    <div class="inner-column">
+                    <div class="inner-column" style="margin-right: 106px; margin-left:0">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
                                     src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt>
@@ -46,11 +46,7 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <h2>Get the better experience & grow your business with us</h2>
-                            <div class="text">Unlock unparalleled growth with our professional digital marketing agency.
-                                Elevate your business experience with strategic campaigns, cutting-edge techniques, and a
-                                results-driven approach. Trust us to optimize your online presence, engage your audience,
-                                and drive success. Experience the difference in business growth with our expertise at your
-                                service.</div>
+                            <div class="text">Nugortech IT, the leading digital marketing agency, is the sister concern of Creative IT Institute. Here, we serve several services including SEO, SMM, content marketing, social media kit, graphic design, logo design, 3D floor plan, 3D modeling, and rendering. Our company has more than 150 employees working in different sectors. Gladly, we serve you 24/7. So, no matter what time zone you are in, you can reach us anytime. We are just a knock away from you!</div>
                         </div>
                         <div class="inner-box">
                             <div class="content-box">
