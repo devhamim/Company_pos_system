@@ -366,30 +366,30 @@
                     @foreach ($portfolios as $portfolio)
                     <div class="product-block all mix {{ str_replace(' ', '',$portfolio->project_type) }} col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box">
-                            <div class="image"><a href="{{ route('portfolio.details', $portfolio->slug) }}"><img
+                            <div class="image"><a href=""><img
                                         src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt /></a></div>
                             <div class="content">
-                                <h4><a href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a></h4>
+                                <h4><a href="">{{ $portfolio->title }}</a></h4>
                             </div>
-                            <div class="icon-box">
+                            {{-- <div class="icon-box">
                                 <a href="{{ route('portfolio.details', $portfolio->slug) }}" class="ui-btn like-btn">
                                     <i class="fa fa-heart"></i>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     @endforeach
                 </div>
             </div>
         </div>
-        <div class="auto-container text-center">
+        {{-- <div class="auto-container text-center">
             <div class="sec-title">
-                <a href="{{ route('about') }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn">
+                <a href="{{ route('our.protfolio') }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn">
                     See More
                     <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
                 </a>
             </div>
-        </div>
+        </div> --}}
     </section>
 
     <section class="about-section-two">

@@ -33,10 +33,12 @@
                 @foreach ($portfolios as $portfolio)
                 <div class="product-block all mix {{ str_replace(' ', '',$portfolio->project_type) }} col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
-                        <div class="image"><a href="{{ route('portfolio.details', $portfolio->slug) }}"><img
-                                    src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt /></a></div>
+                        <div class="image"><a href="">
+                            <img src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt /></a>
+                        </div>
                         <div class="content">
-                            <h4><a class="text-dark" href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a></h4>
+                            <h4><a class="text-dark" href="">{{ $portfolio->title }}</a></h4>
+                            {{-- <h4><a class="text-dark" href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a></h4> --}}
                         </div>
                     </div>
                 </div>
