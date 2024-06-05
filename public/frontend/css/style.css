@@ -424,7 +424,8 @@ button {
 img {
     display: inline-block;
     max-width: 100%;
-    height: auto
+    height: auto;
+    border-radius: 10px;
 }
 
 ul,
@@ -1222,6 +1223,7 @@ figure.image {
     z-index: 9;
     overflow: hidden;
     text-transform: capitalize;
+    border-radius: 10px;
 }
 
 @media(max-width:575.98px) {
@@ -3354,7 +3356,8 @@ figure.image {
     padding: 17px 25px;
     font-family: var(--title-font);
     letter-spacing: 2px;
-    margin-right: 29px
+    margin-right: 29px;
+    border-radius: 10px;
 }
 
 @media(max-width:767.98px) {
@@ -3380,7 +3383,8 @@ figure.image {
     text-align: center;
     color: var(--theme-color1);
     display: inline-block;
-    margin-right: 15px
+    margin-right: 15px;
+    border-radius: 10px;
 }
 
 .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .play-btn span,
@@ -3862,7 +3866,8 @@ figure.image {
     height: 110px;
     line-height: 110px;
     text-align: center;
-    background: #1e1e1e
+    background: #1e1e1e;
+    border-radius: 10px 0 0 0;
 }
 @media(max-width:575.98px) {
     .about-section .image-column .inner-column .image-box .exp-box .icon-box {
@@ -4528,7 +4533,8 @@ figure.image {
     position: relative;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-    z-index: 0
+    z-index: 0;
+    border-radius: 10px;
 }
 
 .service-block .inner-box:hover {
@@ -4569,7 +4575,7 @@ figure.image {
 
 .service-block .inner-box .icon-box {
     margin-bottom: 20px;
-    background-color: var(--theme-color1);
+    /* background-color: var(--theme-color1); */
     width: 75px;
     height: 75px;
     line-height: 75px;
@@ -5660,7 +5666,7 @@ figure.image {
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
     z-index: 0;
-    /* border-radius: 5%; */
+    border-radius: 5%;
 }
 
 .team-block .inner-box:hover .image-box .image img {
@@ -5785,7 +5791,8 @@ figure.image {
     background-color: var(--theme-color1);
     -webkit-transition: .3s ease;
     transition: .3s ease;
-    z-index: 0
+    z-index: 0;
+    border-radius: 10px;
 }
 
 .news-section {
@@ -11207,7 +11214,8 @@ figure.image {
     margin: 0 5px;
     padding: 6px 12px 10px;
     -webkit-transition: all 300ms ease;
-    transition: all 300ms ease
+    transition: all 300ms ease;
+    border-radius: 10px;
 }
 
 .featured-products .filters li:last-child {
