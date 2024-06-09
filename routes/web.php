@@ -36,6 +36,7 @@ use App\Http\Controllers\ServiceProductOrderController;
 use App\Http\Controllers\ShopcategoryController;
 use App\Http\Controllers\ShopOrderController;
 use App\Http\Controllers\ShopProductController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestmonialController;
@@ -356,3 +357,7 @@ Route::get('/invoice/download/{order_id}', [invoiceController::class, 'invoice_d
 Route::post('/subscribe/store', [FrontendController::class, 'subscribe_store'])->name('subscribe.store');
 Route::get('/subscribe/list', [SubscribeController::class, 'subscribe_list'])->name('subscribe.list');
 Route::get('/subscribe/delete/{id}', [SubscribeController::class, 'subscribe_delete'])->name('subscribe.delete');
+
+// sitemap
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
