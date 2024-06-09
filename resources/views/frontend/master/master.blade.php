@@ -80,10 +80,26 @@
         }
 
 
-                /* ===== Scrollbar CSS ===== */
+    /* ===== Scrollbar CSS ===== */
   * {
     scrollbar-width: thin;
     scrollbar-color: #F94A29 #ffffff;
+    border-radius: 10px;
+  }
+  section{
+    border-radius: 0;
+  }
+  footer{
+    border-radius: 0;
+  }
+  header{
+    border-radius: 0;
+  }
+  .page-wrapper{
+    border-radius: 0;
+  }
+  .sticky-header{
+    border-radius: 0;
   }
 
   *::-webkit-scrollbar {
@@ -345,7 +361,7 @@
                                 </div>
                                 <div class="widget-content">
                                     @if ($setting->first()->about != null)
-                                        <p class="text-white">{{ $setting->first()->about }}</p>
+                                        <p class="text-white">{{ $setting->first()->about }} <a class="text-danger" href="{{ route('about') }}">Read More</a> </p>
                                     @endif
                                 </div>
                             </div>
