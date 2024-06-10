@@ -14292,6 +14292,9 @@ table.tbl-shopping-cart>tfoot>tr>th {
 
 
 /* custom css */
+.sec-title h4{
+    color: #F94A29;
+}
 .about-rihgt h2{
     font-size: 26px;
 }

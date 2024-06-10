@@ -13,6 +13,10 @@
 </section>
 
 <section class="service-section-two">
+    <div class="sec-title text-center">
+        <h2 class="text-white">WE SHAPE YOUR IDEAS.</h2>
+        <h6 class="text-white">In Nugortech It, we serve more than a digital marketing company. Our marketing mix <br> helps you to separate your voice from hauling competitors.</h6>
+    </div>
     <div class="auto-container">
         <div class="row">
             @foreach ($services as $service)
@@ -35,176 +39,74 @@
     </div>
 </section>
 
-{{-- <section class="testimonial-section">
-    <div class="inner-container">
-        <div class="sec-title text-center">
-            <h2>WHAT’s TALKING about<br> our coustomer?</h2>
-        </div>
-        <div class="row testi-slider">
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-1.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Brooklyn Simmons</h6>
-                                <span>Product Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-2.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Leslie Alexander</h6>
-                                <span>Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-1.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Brooklyn Simmons</h6>
-                                <span>Product Design</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-block col-md-6">
-                <div class="inner-box">
-                    <div class="icon-box">
-                        <i class="flaticon-quote-1"></i>
-                    </div>
-                    <div class="content-box">
-                        <div class="text">Mi eget mauris pharetra et. Sed tempus urna et pharetra pharetra. Ut
-                            lectus arcu bibendum at. Pharetra magna ac placerat vestibulum lectus mauris.
-                            Tincidunt lobortis feugiat vivamus at augue.</div>
-                        <div class="auther-info">
-                            <img src="{{asset('frontend')}}/images/resource/auther1-2.jpg" alt>
-                            <div class="info-box">
-                                <h6 class="title">Leslie Alexander</h6>
-                                <span>Graphic Designer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
-{{-- <section class="pricing-section">
+<section class="featured-products">
     <div class="auto-container">
-        <div class="sec-title text-center">
-            <h2>Website Design & <br>development Packages</h2>
-        </div>
-        <div class="row">
 
-            <div class="pricing-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span>Basic Plan</span>
-                        <div class="content-box">
-                            <h2 class="title">$59.99</h2>
-                            <div class="text">per user <br>per month</div>
+        <div class="mixitup-gallery">
+            <div class="filters clearfix">
+                <ul class="filter-tabs filter-btns clearfix">
+                    <li class="active filter" data-role="button" data-filter=".TECHNOLOGY">LATEST TECHNOLOGY</li>
+                    <li class="filter" data-role="button" data-filter=".SUPPORT">AWESOME SUPPORT</li>
+                    <li class="filter" data-role="button" data-filter=".FUNCTIONAL">CROSS-FUNCTIONAL TEAM</li>
+                </ul>
+            </div>
+            <div class="filter-list row">
+                <div class="product-block mix TECHNOLOGY col-lg-12 col-md-12 col-sm-12">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="text">
+                                As an online marketing agency, the latest technology usage plays a big role. So, team Nugortech IT always stays updated with different technology. With proper training and guidance, each member of Nugortech IT stays technologically advanced.
+                            </div>
+                            <div class="text">
+                                We are digital marketers. Striving for customer-centric service is our target. Hence, from first to last in any project we utilize software that suits the best.
+                            </div>
+                            <div class="text">
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> WordPress and other advanced digital marketing tools <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Javascript,React,Node.js, PHP, Laravel, Vue.js, etc. for web services <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> SketchUp, Maya, AutoCAD, Cinema 4D, etc for 3D modeling and rendering
+                            </div>
                         </div>
-                    </div>
-                    <div class="text v2">What you'll get</div>
-                    <div class="list-sec">
-                        <ul class="list">
-                            <li><i class="fa-solid fa-circle-check"></i>Landing page (25 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>HTML+CSS design (30 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>WordPress Themes (20 Pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Social Media Marketing</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Online support (24/7)</li>
-                        </ul>
-                        <a href="page-pricing.html" class="theme-btn-v2">Choose Package<i
-                                class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i></a>
                     </div>
                 </div>
-            </div>
-
-            <div class="pricing-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span>STANDARD PLAN</span>
-                        <div class="content-box">
-                            <h2 class="title">$89.99</h2>
-                            <div class="text">per user <br>per month</div>
+                <div class="product-block mix SUPPORT col-lg-12 col-md-12 col-sm-12" >
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="text">
+                                From assigning tasks to submitting the final project we give all time support for you. Remarkably, you get everything with us that you need for your online business. No matter if you are a well-established brand or just a start-up, we do our best for the perfect support.
+                            </div>
+                            <div class="text">
+                                Importantly, we have cross-functional mates. This is the fact that makes our team skilled in different sectors. Whatever you need for digital marketing, you can get complete support from us.
+                            </div>
+                            <div class="text">
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Transparent support system, accessible to all clients <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Accurate and faster response <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Friendly online consultants <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> 24/7 online support
+                            </div>
                         </div>
-                    </div>
-                    <div class="text v2">What you'll get</div>
-                    <div class="list-sec">
-                        <ul class="list">
-                            <li><i class="fa-solid fa-circle-check"></i>Landing page (25 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>HTML+CSS design (30 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>WordPress Themes (20 Pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Social Media Marketing</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Online support (24/7)</li>
-                        </ul>
-                        <a href="page-pricing.html" class="theme-btn-v2">Choose Package<i
-                                class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i></a>
                     </div>
                 </div>
-            </div>
-
-            <div class="pricing-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="upper-box">
-                        <span>PLATINUM PLAN</span>
-                        <div class="content-box">
-                            <h2 class="title">$99.99</h2>
-                            <div class="text">per user <br>per month</div>
+                <div class="product-block mix FUNCTIONAL col-lg-12 col-md-12 col-sm-12">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="text">
+                                We are team Nugortech IT. We are crazy strategy geniuses, inventive writers, deep data-divers, and project management masterminds. And all together we are a whole that’s bigger than the total of its parts.
+                            </div>
+                            <div class="text">
+                                There are several reasons we gather from different backgrounds. So, working with Nugortech IT is easier than looking for each service separately.
+                            </div>
+                            <div class="text">
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Intelligent analysts, SEO experts, and creative content writers <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Skilled and experienced mad developers <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Innovative and jolley graphic designers <br>
+                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Talented 3D artists
+                            </div>
                         </div>
-                    </div>
-                    <div class="text v2">What you'll get</div>
-                    <div class="list-sec">
-                        <ul class="list">
-                            <li><i class="fa-solid fa-circle-check"></i>Landing page (25 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>HTML+CSS design (30 pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>WordPress Themes (20 Pages)</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Social Media Marketing</li>
-                            <li><i class="fa-solid fa-circle-check"></i>Online support (24/7)</li>
-                        </ul>
-                        <a href="page-pricing.html" class="theme-btn-v2">Choose Package<i
-                                class="flaticon-arrow-pointing-to-right btn-icon ml-10"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section> --}}
+</section>
 
 @endsection

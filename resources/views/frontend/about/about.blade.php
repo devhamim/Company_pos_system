@@ -13,6 +13,62 @@
     </section>
 
 
+    <section class="about-section innerpage" style="padding-bottom: 0">
+        <div class="auto-container">
+            <div class="row">
+
+                <div class="content-column col-lg-6">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <h2>FULL-SERVICE DIGITAL MARKETING AGENCY</h2>
+                            <div class="my-3">
+                                <h4>OUR MISSION</h4>
+                                <div class="text">We provide innovative brand marketing that helps our clients reach their business goals.</div>
+                            </div>
+                            <div class="my-3">
+                                <h4>OUR VISION</h4>
+                                <div class="text">Our vision is to be a trustworthy digital marketing agency by improving your sales and fostering your growth.</div>
+                            </div>
+                            <div class="my-3">
+                                <h4>OUR VALUES</h4>
+                                <div class="text">
+                                    In Nugortech IT, we maintain certain values.
+                                    <ul>
+                                        <li>- Professionalism</li>
+                                        <li>- Diversity</li>
+                                        <li>- Friendly ambiance</li>
+                                        <li>- Promising work</li>
+                                        <li>- Equality in the workforce</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-column col-lg-6">
+                    <div class="inner-column">
+                        <div class="sec-title pt-5">
+                            <div class="text">
+                                Nugortech IT is the leading digital marketing agency. Here, we serve several services including SEO, SMM, content marketing, social media kit, graphic design, logo design, 3D floor plan, 3D modeling, and rendering. Our company has more than 20 employees working in different sectors. Gladly, we serve you 24/7. So, no matter what time zone you are in, you can reach us anytime. We are just a knock away from you!
+                                </div>
+                        </div>
+                        <div class="inner-box">
+                            <div class="content-box">
+                                <img width="85%" src="{{ asset('frontend/images/shan.webp') }}" alt="">
+                            </div>
+                            <div class="content-box pt-3">
+                                <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We love to explore</h6>
+                                <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We stop at nothing</h6>
+                                <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We solve real problems</h6>
+                                <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We keep everything simple</h6>
+                                <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We think differently</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="about-section innerpage">
         <div class="auto-container">
             <div class="row">
@@ -45,32 +101,25 @@
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <h2>Get the better experience & grow your business with us</h2>
-                            <div class="text">Nugortech IT, the leading digital marketing agency, is the sister concern of Creative IT Institute. Here, we serve several services including SEO, SMM, content marketing, social media kit, graphic design, logo design, 3D floor plan, 3D modeling, and rendering. Our company has more than 150 employees working in different sectors. Gladly, we serve you 24/7. So, no matter what time zone you are in, you can reach us anytime. We are just a knock away from you!</div>
+                            <h2>WE ARE TEAM Nugortech IT</h2>
+                            <div class="text">Nugortech IT is an innovative digital marketing agency. Here, we believe integrating experience with technology brings the perfect outcome. Accordingly, we empower more than thousands of businesses across the world. So, we are the global marketing platform to boost any business to reach the apex.</div>
                         </div>
                         <div class="inner-box">
                             <div class="content-box">
-                                <span>7+</span>
-                                <h6 class="title">Years of expericen</h6>
+                                <span>FREE AUDIT REPORT</span>
+                                <h6 class="title">Get 100% authentic audit reports
+                                    your online business absolutely free. </h6>
                             </div>
                             <div class="content-box">
-                                <span>500+</span>
-                                <h6 class="title">Successful project </h6>
-                            </div>
-                            <div class="content-box">
-                                <span>10K+</span>
-                                <h6 class="title">Happy customer </h6>
+                                <span>BEST TEAM MEMBERS</span>
+                                <h6 class="title">from  Expert teammates for
+                                    ensuring top-quality service.</h6>
                             </div>
                         </div>
-                        <div class="btn-box">
+                        <div class="btn-box mt-5">
                             <a href="{{ route('our.services') }}" class="theme-btn-v2">Get started <i
                                     class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
                             </a>
-                            <div class="contact-btn">
-                                <a href="tel:09613753442"><i class="flaticon-telephone-1"></i></a>
-                                <span>Call us</span>
-                                <h6 class="title"><a href="tel:09613753442">09613753442</a></h6>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -102,8 +151,15 @@
             </div>
         </div>
     </section>
+    <section class="contact-banner pt-0">
+        <div class="auto-container">
+            <div class="outer-box">
+                <h3 class="title text-center">GREAT THINGS IN BUSINESS ARE NEVER DONE BY ONE PERSON. THEY’RE DONE BY A TEAM OF PEOPLE.</h3>
+            </div>
+        </div>
+    </section>
 
-    <section class="service-section">
+    {{-- <section class="service-section">
         <div class="auto-container">
             <div class="sec-title text-center">
                 <h2>WE WILL PROVIDE YOU THE <br>BEST SERVICE</h2>
@@ -128,12 +184,13 @@
                 @endforeach
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="testimonial-section">
         <div class="inner-container">
             <div class="sec-title text-center">
-                <h2>WHAT’s TALKING about<br> our coustomer?</h2>
+                <h2>WHAT OUR CUSTOMERS ARE <br> TALKING ABOUT</h2>
+                <h6>Across the world, we have more than thousands of satisfied clients. So, <br> count our milestones with our client’s success stories.</h6>
             </div>
             <div class="row testi-slider">
 

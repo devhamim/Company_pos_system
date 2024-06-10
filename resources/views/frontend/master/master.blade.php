@@ -115,6 +115,13 @@
     border-radius: 55px;
     border: 30px outset #ffffff;
   }
+  .text {
+    text-align: justify;
+  }
+
+  .about-section .content-column .inner-column .inner-box .content-box span {
+    font-size: 25px;
+}
     </style>
 </head>
 
