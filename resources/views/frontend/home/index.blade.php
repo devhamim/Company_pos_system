@@ -486,13 +486,14 @@
 
     <section class="featured-products">
         <div class="auto-container">
-
             <div class="mixitup-gallery">
-
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
+                        @php
+                            $uniqueCliendsTypes = $cliends->unique('type');
+                        @endphp
                         <li class="active filter" data-role="button" data-filter="all">All</li>
-                        @foreach ($cliends as $cliend)
+                        @foreach ($uniqueCliendsTypes as $cliend)
                             @if ($cliend->type == 'one')
                                 <li class="filter" data-role="button" data-filter=".{{ $cliend->type }}">OUR HAPPY CLIENTS</li>
                             @elseif ($cliend->type == 'two')

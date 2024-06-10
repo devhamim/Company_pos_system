@@ -51,13 +51,24 @@
                 </ul>
             </div>
             <div class="filter-list row">
-                <div class="product-block mix TECHNOLOGY col-lg-12 col-md-12 col-sm-12">
+                <div class="product-block mix TECHNOLOGY col-lg-4 col-md-4 col-sm-12 hidden">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="image-box">
+                                <figure class="image overlay-anim"><img
+                                        src="{{ asset('frontend/images/s-3.webp') }}" alt>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-block active mix TECHNOLOGY col-lg-8 col-md-8 col-sm-12">
                     <div class="inner-box">
                         <div class="content">
                             <div class="text">
                                 As an online marketing agency, the latest technology usage plays a big role. So, team Nugortech IT always stays updated with different technology. With proper training and guidance, each member of Nugortech IT stays technologically advanced.
                             </div>
-                            <div class="text">
+                            <div class="text py-3" style="color: #F94A29">
                                 We are digital marketers. Striving for customer-centric service is our target. Hence, from first to last in any project we utilize software that suits the best.
                             </div>
                             <div class="text">
@@ -68,13 +79,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-block mix SUPPORT col-lg-12 col-md-12 col-sm-12" >
+                <div class="product-block mix SUPPORT col-lg-4 col-md-4 col-sm-12 ">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="image-box">
+                                <figure class="image overlay-anim"><img
+                                        src="{{ asset('frontend/images/s-1.webp') }}" alt>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-block mix SUPPORT col-lg-8 col-md-8 col-sm-12" >
                     <div class="inner-box">
                         <div class="content">
                             <div class="text">
                                 From assigning tasks to submitting the final project we give all time support for you. Remarkably, you get everything with us that you need for your online business. No matter if you are a well-established brand or just a start-up, we do our best for the perfect support.
                             </div>
-                            <div class="text">
+                            <div class="text py-3" style="color: #F94A29">
                                 Importantly, we have cross-functional mates. This is the fact that makes our team skilled in different sectors. Whatever you need for digital marketing, you can get complete support from us.
                             </div>
                             <div class="text">
@@ -86,13 +108,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-block mix FUNCTIONAL col-lg-12 col-md-12 col-sm-12">
+                <div class="product-block mix FUNCTIONAL col-lg-4 col-md-4 col-sm-12">
+                    <div class="inner-box">
+                        <div class="content">
+                            <div class="image-box">
+                                <figure class="image overlay-anim"><img
+                                        src="{{ asset('frontend/images/s-2.webp') }}" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-block mix FUNCTIONAL col-lg-8 col-md-8 col-sm-12">
                     <div class="inner-box">
                         <div class="content">
                             <div class="text">
                                 We are team Nugortech IT. We are crazy strategy geniuses, inventive writers, deep data-divers, and project management masterminds. And all together we are a whole that’s bigger than the total of its parts.
                             </div>
-                            <div class="text">
+                            <div class="text py-3" style="color: #F94A29">
                                 There are several reasons we gather from different backgrounds. So, working with Nugortech IT is easier than looking for each service separately.
                             </div>
                             <div class="text">
