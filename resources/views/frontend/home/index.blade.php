@@ -292,7 +292,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><a href="page-about.html"><img
-                                        src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt></a></figure>
+                                        src="{{ asset('frontend') }}/images/resource/boss-1.jpg" alt></a></figure>
                             <div class="exp-box bounce-y">
                                 <h6 class="title">Live</h6>
                                 <div class="text">experience With us</div>
