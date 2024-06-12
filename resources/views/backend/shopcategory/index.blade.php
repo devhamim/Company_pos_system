@@ -42,7 +42,7 @@
                                             <button type="button" value="{{$shopcategory->id}}" class="btn btn-info btn-sm edit-btn" data-user-id="{{$shopcategory->id}}" data-toggle="modal" data-target="#modals-default">
                                                 <i class="feather icon-edit"></i>&nbsp;
                                             </button>
-                                            <a href="{{route('shop.category.delete', $shopcategory->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp; </a>
+                                            {{-- <a href="{{route('shop.category.delete', $shopcategory->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp; </a> --}}
 
                                         </td>
                                     </tr>

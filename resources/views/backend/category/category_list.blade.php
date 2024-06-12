@@ -46,7 +46,7 @@
                                         </td>
                                         <td>
                                             <a href="{{route('category.edit', $category->id)}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="{{route('category.delete', $category->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                            {{-- <a href="{{route('category.delete', $category->id)}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a> --}}
                                         </td>
                                     </tr>
                                 @endforeach

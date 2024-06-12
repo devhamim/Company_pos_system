@@ -61,7 +61,7 @@
                                         <td><span class="badge badge-{{$product->status == 1 ? 'success' : 'danger'}}">{{$product->status == 1 ? 'Active' : 'Deactive'}}</span></td>
                                         <td>
                                             <a href="{{route('product.edit', $product->id)}}" class=""><i class="fa fa-edit"></i> </a>
-                                            <a href="{{route('product.delete', $product->id)}}" class=""><i class="fa fa-trash"></i> </a>
+                                            {{-- <a href="{{route('product.delete', $product->id)}}" class=""><i class="fa fa-trash"></i> </a> --}}
                                         </td>
                                     </tr>
                                 @endforeach
