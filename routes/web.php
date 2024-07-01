@@ -39,6 +39,7 @@ use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestmonialController;
+use App\Http\Controllers\WhatsappController;
 
 /*
 |--------------------------------------------------------------------------
@@ -357,4 +358,5 @@ Route::post('/subscribe/store', [FrontendController::class, 'subscribe_store'])-
 Route::get('/subscribe/list', [SubscribeController::class, 'subscribe_list'])->name('subscribe.list');
 Route::get('/subscribe/delete/{id}', [SubscribeController::class, 'subscribe_delete'])->name('subscribe.delete');
 
-
+// whatapp
+Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage']);
