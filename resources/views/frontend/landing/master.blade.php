@@ -139,6 +139,10 @@
     font-family: "Hind Siliguri", sans-serif;
     font-weight: 700;
 }
+.innerpage .accordion-box .block .acc-btn {
+    font-family: "Hind Siliguri", sans-serif;
+    font-weight: 700;
+}
 
 .landing_ul ul li {
   list-style-type: circle;
