@@ -815,7 +815,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend/images/landing/banner.jpg') }}" alt=""></figure>
+                                    src="{{ asset('frontend/images/landing/certificate.jpg') }}" alt=""></figure>
                         </div>
                     </div>
                 </div>
