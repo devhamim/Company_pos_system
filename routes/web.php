@@ -363,4 +363,4 @@ Route::get('/subscribe/delete/{id}', [SubscribeController::class, 'subscribe_del
 Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage']);
 
 // landing
-Route::get('/landing', [LandingController::class, 'landing'])->name('landing');
+Route::get('/successful/online/business/with/digital/marketing', [LandingController::class, 'landing'])->name('landing');
