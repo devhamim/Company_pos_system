@@ -19,10 +19,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="google-site-verification" content="0phVgcYl1TqUsDujq36cMYt2ReanMyB-AEB1_MHKlqk" />
+    <meta name="author" content="kaow copy koiran na" />
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     @if ($setting->first()->favicon !== null)
         <link rel="shortcut icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}" type="image/x-icon">
         <link rel="icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}" type="image/x-icon">
@@ -49,6 +54,12 @@
     @endif
     <!-- End googletag Code -->
     <style>
+
+    .hind-siliguri-regular {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
         #popup-container {
             display: none;
             position: fixed;
@@ -85,6 +96,7 @@
     scrollbar-width: thin;
     scrollbar-color: #F94A29 #ffffff;
     border-radius: 10px;
+    font-family: "Hind Siliguri", sans-serif;
   }
   section{
     border-radius: 0;
@@ -121,6 +133,15 @@
 
   .about-section .content-column .inner-column .inner-box .content-box span {
     font-size: 25px;
+}
+.landing_font{
+    font-family: "Hind Siliguri", sans-serif;
+}
+
+.landing_ul ul li {
+  list-style-type: circle;
+  font-size: 18px;
+  padding: 5px 0;
 }
     </style>
 </head>
@@ -327,7 +348,7 @@
         </header>
 
         {{-- main start --}}
-        @yield('content')
+        @yield('landingcontent')
         {{-- main end --}}
 
         <section class="contact-banner-two">

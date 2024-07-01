@@ -29,6 +29,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProtfolioController;
@@ -360,3 +361,6 @@ Route::get('/subscribe/delete/{id}', [SubscribeController::class, 'subscribe_del
 
 // whatapp
 Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage']);
+
+// landing
+Route::get('/landing', [LandingController::class, 'landing'])->name('landing');

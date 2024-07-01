@@ -89,5 +89,9 @@ class AppServiceProvider extends ServiceProvider
      View::composer('backend.user.userdashboardview.app', function ($view){
         $view->with('setting', setting::all());
     });
+    // landing setting
+     View::composer('frontend.landing.index', function ($view){
+        $view->with('setting', setting::all());
+    });
 }
 }
