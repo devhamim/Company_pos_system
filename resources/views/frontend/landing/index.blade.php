@@ -555,7 +555,7 @@
                                 <div class="col-lg-4 col-6">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/1-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/1-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Meta Business Suit</h6>
                                     </div>
@@ -563,7 +563,7 @@
                                 <div class="col-lg-4 col-6">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/2-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/2-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Facebook Pixel</h6>
                                     </div>
@@ -571,7 +571,7 @@
                                 <div class="col-lg-4 col-6">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/3-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/3-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Google Analytics 4</h6>
                                     </div>
@@ -579,7 +579,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/4-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/4-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Google Ads</h6>
                                     </div>
@@ -587,7 +587,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/5-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/5-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Google Tag Manager</h6>
                                     </div>
@@ -595,7 +595,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/6-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/6-icon.png') }}"
                                             alt="">
                                         <h6 class="title">ChatGPT</h6>
                                     </div>
@@ -603,7 +603,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/7icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/7-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Google Spreadsheet</h6>
                                     </div>
@@ -611,7 +611,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/8-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/8-icon.png') }}"
                                             alt="">
                                         <h6 class="title">WhatsApp</h6>
                                     </div>
@@ -619,7 +619,7 @@
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="40px" src="{{ asset('frontend/images/landing/9-icon.webp') }}"
+                                        <img width="40px" src="{{ asset('frontend/images/landing/9-icon.png') }}"
                                             alt="">
                                         <h6 class="title">Canva</h6>
                                     </div>
