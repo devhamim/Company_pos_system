@@ -97,6 +97,7 @@
     scrollbar-color: #F94A29 #ffffff;
     border-radius: 10px;
     font-family: "Hind Siliguri", sans-serif;
+    font-weight: 700;
   }
   section{
     border-radius: 0;
@@ -136,6 +137,7 @@
 }
 .landing_font{
     font-family: "Hind Siliguri", sans-serif;
+    font-weight: 700;
 }
 
 .landing_ul ul li {
