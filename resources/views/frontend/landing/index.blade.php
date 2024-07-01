@@ -926,7 +926,7 @@
             </div>
         </div>
     </section>
-    <section class="services-details">
+    {{-- <section class="services-details">
         <div class="container">
             <div class="row">
 
@@ -1082,5 +1082,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

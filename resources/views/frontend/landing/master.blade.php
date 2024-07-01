@@ -143,6 +143,9 @@
   font-size: 18px;
   padding: 5px 0;
 }
+.about-section .image-column .inner-column{
+    margin-left: 0;
+}
     </style>
 </head>
 
