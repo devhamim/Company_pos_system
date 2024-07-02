@@ -468,9 +468,7 @@
                     <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt>
-                                </figure>
-
+                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
                             </div>
                             <div class="content-box">
                                 <h4 class="title"><a>{{ $team->name }}</a></h4>
@@ -746,9 +744,9 @@
                                     <div class="form-column col-lg-12">
                                         <div class="inner-column">
                                             <h4 class="title">Get in touch</h4>
-                                            <form method="post" action="{{ route('contact.message') }}"
+                                            {{-- <form method="post" action="{{ route('contact.message') }}"
                                                 id="contact-form">
-                                                @csrf
+                                                @csrf --}}
                                                 <div class="row">
                                                     <div class="form-group col-lg-12">
                                                         <div class="input-outer">
@@ -784,7 +782,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                            </form>
+                                            {{-- </form> --}}
                                         </div>
                                     </div>
                                 </div>

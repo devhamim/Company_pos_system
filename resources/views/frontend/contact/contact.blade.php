@@ -24,8 +24,8 @@
                     <h2>Feel free to write</h2>
                 </div>
 
-                <form id="contact_form" name="contact_form" class action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
-                    @csrf
+                {{-- <form id="contact_form" name="contact_form" class action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
+                    @csrf --}}
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-3">
@@ -55,7 +55,7 @@
                         <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span
                                 class="btn-title">Reset</span></button>
                     </div>
-                </form>
+                {{-- </form> --}}
 
             </div>
             <div class="col-xl-5 col-lg-6">

@@ -1379,7 +1379,7 @@ figure.image {
     top: 0;
     height: 100vh;
     width: 100%;
-    z-index: 99;
+    z-index: 99999;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all 500ms ease;
@@ -6964,7 +6964,7 @@ figure.image {
 .accordion-box .block .acc-content .content .text {
     margin-bottom: 0;
     color: var(--text-color);
-    text-transform: lowercase
+    /* text-transform: lowercase */
 }
 
 .accordion-box .block .acc-content.current {

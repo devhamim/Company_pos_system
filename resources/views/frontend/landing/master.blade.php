@@ -152,16 +152,19 @@
 .about-section .image-column .inner-column{
     margin-left: 0;
 }
+
+.about-section {
+    padding: 60px 0;
+}
+
     </style>
 </head>
 
 <body>
     <div class="page-wrapper">
-
-        <header class="main-header header-style-one">
+        <header class="main-header header-style-one" style="background: #101828">
             <div class="header-lower">
                 <div class="auto-container">
-
                     <div class="main-box">
                         <div class="logo-box">
                             <div class="logo">
@@ -185,45 +188,45 @@
                                     <li><a href="{{ route('contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
-
                         </div>
-                            <div class="mob_btn">
-                                @auth('customerauth')
+
+                        <div class="mob_btn">
+                            @auth('customerauth')
+                                <div class="header_icon">
+                                    <div class="ec-header-user dropdown">
+                                        <button class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <i class="fa-regular fa-user"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @else
+                                @auth('customerreg')
                                     <div class="header_icon">
                                         <div class="ec-header-user dropdown">
                                             <button class="dropdown-toggle" data-bs-toggle="dropdown">
                                                 <i class="fa-regular fa-user"></i>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
                                                     <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 @else
-                                    @auth('customerreg')
-                                        <div class="header_icon">
-                                            <div class="ec-header-user dropdown">
-                                                <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                                                    <i class="fa-regular fa-user"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-right">
-                                                        <li><a class="dropdown-item" href="{{ route('panding.customer.dashboard') }}">Dashboard</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <div class="btn">
-                                            <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
-                                        </div>
-                                    @endauth
-
+                                    <div class="btn">
+                                        <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
+                                    </div>
                                 @endauth
-                                <div class="mobile-nav-toggler">
-                                    <i class="fa fa-bars"></i>
-                                </div>
+
+                            @endauth
+                            <div class="mobile-nav-toggler">
+                                <i class="fa fa-bars"></i>
                             </div>
+                        </div>
                     </div>
 
                 </div>
@@ -291,13 +294,46 @@
             <div class="search-popup">
                 <span class="search-back-drop"></span>
                 <button class="close-search"><span class="fa fa-times"></span></button>
-                <div class="search-inner">
-                    <form method="post" action="https://html.kodesolution.com/2023/digitex-html/index.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value placeholder="Search..." required>
-                            <button type="submit"><i class="fa fa-search"></i></button>
+                <div class="search-inner" style="top: 10%;">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6 text-center m-auto">
+                            <div class="sec-title ">
+                                <h2 class="text-white">Feel free to write</h2>
+                            </div>
+
+                            <form id="contact_form" name="contact_form" class action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb-3">
+                                            <input name="name" class="form-control" type="text" placeholder="Enter Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb-3">
+                                            <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <input name="phone" class="form-control" type="text" placeholder="Enter Phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                                </div>
+                                <div class="mb-5">
+                                    <input name="form_botcheck" class="form-control" type="hidden" value />
+                                    <button style="padding: 0 30%;" type="submit" class="theme-btn btn-style-one"
+                                        data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+                                </div>
+                            </form>
+
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
 
@@ -506,11 +542,12 @@
     <script src="{{asset('frontend')}}/js/jquery.fancybox.js"></script>
     <script src="{{asset('frontend')}}/js/progress-bar.js"></script>
     <script src="{{asset('frontend')}}/js/wow.js"></script>
+    <script src="{{asset('frontend')}}/js/jquery.syotimer.min.js"></script>
     <script src="{{asset('frontend')}}/js/appear.js"></script>
     <script src="{{asset('frontend')}}/js/mixitup.js"></script>
     <script src="{{asset('frontend')}}/js/script.js"></script>
 
-    @yield('footer_script')
+    @yield('landingfooter_script')
 
 </body>
 

@@ -1,60 +1,48 @@
 @extends('frontend.landing.master')
 @section('landingcontent')
-    <section class="page-title" style="background: #000">
+    <section class="page-title" style="background: #101828">
         <div class="auto-container">
             <div class="row">
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <h3 class="text-white ">Successful Online Business with Digital Marketing</h3>
-                        <div class="sec-title">
+                        <div class="sec-title" style="margin-bottom: 40px">
                             <div class="text landing_font">আপনার কাছে যদি একটি ল্যাপটপ/ কম্পিউটার/ স্মার্ট ফোন ও ইন্টারনেট
                                 কানেকশন থাকে। ও যদি আপনি অনলাইন বিজনেস করে প্রতিদিন লাখ টাকা সেলস করে, নিজেকে একজন সফল
                                 অনলাইন বিজনেস উদ্যোক্তা হিসেবে দেখার স্বপ্ন দেখেন তাহলে কোর্স টি হতে পারে আপনার জন্য বেস্ট
                                 চয়েজ। যদি এই ৩ মাসের জার্নি আপনি লেগে থাকতে পারেন। কথা দিলাম আপনার পরিশ্রম ও আমাদের চেষ্টায়
                                 সফল হবে ইনশাল্লাহ।</div>
+                                <div class="text landing_font" style="font-size: 20px">১০০০০৳</div>
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-3 col-6">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white landing_font">২৪ টি</span><br>
-                                        <span class="landing-title text-white landing_font">লাইভ ক্লাস</span>
+                                        <span class=" landing_font text-white">ব্যাচ শুরু</span><br>
+                                        <span class="landing-title text-white landing_font">২০ জুলাই</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-3 col-6">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white landing_font">ক্লাস রেকড</span><br>
-                                        <span class="landing-title text-white landing_font">ভিডিও</span>
+                                        <span class="landing_font text-white">লাইভ ক্লাস</span><br>
+                                        <span class="landing-title text-white landing_font">১০টা - ১১.৩০টা</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white">অফলাইন</span><br>
-                                        <span class="landing-title text-white landing_font">কন্সাল্টেন্সি</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6 mt-3">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white landing_font">লাইফ টাইম</span><br>
-                                        <span class="landing-title text-white landing_font">সাপোর্ট </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6 mt-3">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white landing_font">বিজনেস</span><br>
-                                        <span class="landing-title text-white landing_font">ফান্ডিং </span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6 mt-3">
+
+                                <div class="col-lg-3 col-6 ">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="text-white landing_font">জব</span><br>
-                                        <span class="landing-title text-white landing_font">প্লেসমেন্ট</span>
+                                        <span class=" landing_font text-white">সিট সংখ্যা</span><br>
+                                        <span class="landing-title text-white landing_font">২০ টি</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-6 ">
+                                    <div class="landing-content-box "
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <span class=" landing_font text-white">সিট বাকি</span><br>
+                                        <span class="landing-title text-white landing_font">7 টি</span>
                                     </div>
                                 </div>
                             </div>
@@ -81,16 +69,14 @@
             </div>
         </div>
     </section>
-    <section class="about-section innerpage" style="background: #f3f3f3; padding: 50px 0 0 0">
+    <section class="about-section innerpage" style="background: #f3f3f3; padding: 100px 0">
         <div class="auto-container">
             <div class="row">
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
-                        <h3>Successful Online Business with Digital Marketing</h3>
+                        <h3 class="landing_font">এই এক কোর্সে যা পাচ্ছেন</h3>
                         <div class="sec-title">
-                            <div class="text landing_font">দেশের সব চেয়ে কম খরচে বিজনেস কোর্স যেখেন আপনি সিখতে পারবেন কিভাবে
-                                শুন্য লাখ টাকার বিজনেস শুরু করা যায় । আমারা আসা করি যদি সময় দিয়ে লেখে থাকেন আপনি হবেন সহল
-                                অনলাইন বিজনেস উদ্যোক্তা।</div>
+                            <div class="text landing_font">ডিজিটাল মার্কেটিং সেক্টর এর উপর ডিটেইলস আলোচনা অন হ্যান্ড প্রজেক্ট,  ইনকাম গাইড লাইন, ও কিভাবে শূন্য থেকে শুরু করে লাখ টাকার বিজনেস বিজনেস করে সফল উদ্যোক্তা হওয়া যায়।</div>
                             <div class="text landing_font">কোর্স ফি - ১০০০০ টাকা মাত্র</div>
                             <div class="my-3 d-flex ">
                                 <form action="{{ route('services.product.checkout') }}" method="POST">
@@ -98,11 +84,11 @@
                                     <input type="hidden" name="product_id" value="{{ $products->id }}">
                                     <button type="submit" class="theme-btn text-white" style="color: #F94A29;"><a>Admission</a></button>
                                 </form>
-                                <form class="mx-2" action="{{ route('services.product.checkout') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{ $products->id }}">
-                                    <button type="submit" class="theme-btn text-white" style=" background: #29cff9;"><a>Consultancy</a></button>
-                                </form>
+                                <div class="outer-box mx-2">
+                                    <div class="search-btn">
+                                        <a href="#" class="search theme-btn text-white" style=" background: #29cff9;">Consultancy</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -112,47 +98,68 @@
                     <div class="inner-column">
                         <div class="landing-inner-box">
                             <div class="row">
-                                <div class="col-lg-4 col-6">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class=" landing_font">ব্যাচ শুরু</span><br>
-                                        <span class="landing-title  landing_font">২০ জুলাই</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-6">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="landing_font">রাত - ১০টা</span><br>
-                                        <span class="landing-title  landing_font">থেকে - ১১.৩০টা</span>
-                                    </div>
-                                </div>
 
-                                <div class="col-lg-4 col-6 ">
-                                    <div class="landing-content-box "
+                                <div class="col-lg-4 col-6">
+                                    <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class=" landing_font">সিট সংখ্যা</span><br>
-                                        <span class="landing-title  landing_font">২০ টি</span>
+                                        <img src="{{ asset('frontend/images/landing/10-icon.png') }}" alt=""><br>
+                                        <span class="landing-title landing_font">২৪ টি লাইভ ক্লাস</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-6">
+                                    <div class="landing-content-box"
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <img src="{{ asset('frontend/images/landing/13-icon.png') }}" alt=""><br>
+                                        <span class="landing-titlelanding_font">ক্লাস রেকড ভিডিও</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-6">
+                                    <div class="landing-content-box"
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <img width="54px" src="{{ asset('frontend/images/landing/19-icon.png') }}" alt=""><br>
+                                        <span class="landing-title landing_font">অফলাইন কনসালটেন্সি</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class=" landing_font">লাইফ টাইম</span><br>
-                                        <span class="landing-title  landing_font">সাপোর্ট </span>
+                                        <img src="{{ asset('frontend/images/landing/11-icon.png') }}" alt=""><br>
+                                        <span class="landing-title  landing_font">লাইফ টাইম সাপোর্ট </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class="landing_font">বিজনেস</span><br>
-                                        <span class="landing-title  landing_font">ফান্ডিং </span>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/16-icon.png') }}" alt=""><br>
+                                        <span  class="landing-title  landing_font">বিজনেস ফান্ডিং </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 mt-3">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class=" landing_font">জব</span><br>
-                                        <span class="landing-title  landing_font">প্লেসমেন্ট</span>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/17-icon.png') }}" alt=""><br>
+                                        <span class="landing-title  landing_font">জব প্লেসমেন্ট</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-6 mt-3">
+                                    <div class="landing-content-box"
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <img src="{{ asset('frontend/images/landing/12-icon.png') }}" alt=""><br>
+                                        <span class="landing-title  landing_font">ক্লাস নোটস</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-6 mt-3">
+                                    <div class="landing-content-box"
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <img width="54px" src="{{ asset('frontend/images/landing/15-icon.png') }}" alt=""><br>
+                                        <span class="landing-title  landing_font">ইনকাম গাইডলাইন</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-6 mt-3">
+                                    <div class="landing-content-box "
+                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
+                                        <img src="{{ asset('frontend/images/landing/14-icon.png') }}" alt=""><br>
+                                        <span class="landing-title  landing_font">এসেসমেন্ট ও সার্টিফিকেট</span>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +173,7 @@
             </div>
         </div>
     </section>
-    <section class="services-details" style="background: #000;">
+    <section class="services-details" style="background: #101828;">
         <div class="container" style="padding: 30px 0">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-12">
@@ -226,9 +233,10 @@
                                                 <div class="text">
                                                     <p>Class-4</p>
                                                     <ul>
-                                                        <li>কেনো একটা ভালো কপি দরকার? |
-                                                            ভালো কপি লিখবেন কীভাবে? | কপিরাইটিং এর সিক্রেট টিপস
-                                                        </li>
+                                                        <li>১. জানতে হবে কনটেন্ট রাইটিং ও কপিরাইটিং</li>
+                                                        <li>২.কেনো একটা ভালো কপি দরকার?</li>
+                                                        <li>৩.ভালো কপি লিখবেন কীভাবে?</li>
+                                                        <li>৪.কপিরাইটিং এর সিক্রেট টিপস</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -244,7 +252,7 @@
                                                 <div class="text">
                                                     <p>Class - 5</p>
                                                     <ul>
-                                                        <li>Exam</li>
+                                                        <li>Assignment & Test</li>
                                                     </ul>
                                                 </div>
                                                 <div class="text">
@@ -280,7 +288,7 @@
                                                 <div class="text">
                                                     <p>Class-8</p>
                                                     <ul>
-                                                        <li>Exam</li>
+                                                        <li>Assignment & Test</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -299,9 +307,9 @@
                                                 <div class="text">
                                                     <p>Class-9</p>
                                                     <ul>
-                                                        <li>১. ফেইসবুক বিজনেস ম্যানেজার </li>
+                                                        <li>১. ফেইসবুক বুস্ট, প্রমট, এড ক্যাম্পেইন কি ?</li>
                                                         <li>২. ফেইসবুক এড ম্যানেজার</li>
-                                                        <li>৩. ফেইসবুক বুস্ট, প্রমট, এড ক্যাম্পেইন কি ?</li>
+                                                        <li>৩. ফেইসবুক বিজনেস ম্যানেজার </li>
                                                         <li>৪. ক্যাম্পেইন অব্জেকটিভ সিলেকশন</li>
                                                         <li>৫. বিজনেস ম্যানেজার পেমেন্ট মেথড </li>
                                                     </ul>
@@ -315,7 +323,7 @@
                                                             এন্ড টুলস</li>
                                                         <li>২. ডেইলি বাজেট বনাম লাইফটাইম বাজেট ডেইলি বাজেট ম্যানেজমেন্ট ।
                                                             লাইফটাইম বাজেট স্ট্র্যাটেজিস</li>
-                                                        <li>৩. বাজেট অপটিমাইজেশন টেকনিক্স । বাজেটিং কন্সিডারেশন</li>
+                                                        <li>৩. বাজেট অপটিমাইজেশন টেকনিক্স </li>
                                                         <li>৪. ফেইসবুক পিক্সেল এবং ইভেন্ট সেটআপ মাস্টারি</li>
                                                         <li>৫. ফেইসবুক পিক্সেল এর পরিচিতি । ইভেন্ট ট্র্যাকিং সেটআপ ।
                                                             এডভান্সড ইভেন্ট কনফিগারেশন । ক্রস - ডোমেইন ট্র্যাকিং</li>
@@ -349,7 +357,7 @@
                                                 <div class="text">
                                                     <p>Class 12</p>
                                                     <ul>
-                                                        <li>Exam</li>
+                                                        <li>Assignment & Test</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -475,7 +483,7 @@
                                                 <div class="text">
                                                     <p>Class 20</p>
                                                     <ul>
-                                                        <li>* Exam</li>
+                                                        <li>Assignment & Test</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -491,9 +499,9 @@
                                                     <p>Class-21</p>
                                                     <ul>
                                                         <li>১. কাসটমার ক্মিনিকেসন</li>
-                                                        <li>২. লিড মানাজমেন্ট</li>
-                                                        <li>৩. কল সেন্তার মানাজমেন্ট</li>
-                                                        <li>৪. ডেলিভারি মানাজমেন্ট</li>
+                                                        <li>২. লিড ম্যানেজমেন্ট</li>
+                                                        <li>৩. কল সেন্তার ম্যানেজমেন্ট</li>
+                                                        <li>৪. ডেলিভারি ম্যানেজমেন্ট</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -501,11 +509,10 @@
                                                 <div class="text">
                                                     <p>Class 22</p>
                                                     <ul>
-                                                        <li>১. আমারা কম ইনভেস্টমেন্ট দিয়ে একটি বিজনেস শুরু করব?</li>
-                                                        <li>২. সেই বিজনেস দিয়ে প্রতি মাসে মিনিমাম ৫ লাখ টাকা সেলস নিয়ে আসব
+                                                        <li>১.বিজনেস ইনভেস্টমেন্ট নিয়ে বিস্তারিত আলোচনা</li>
+                                                        <li>২. কি ভাবে আমারা কম ইনভেস্টমেন্ট দিয়ে একটি বিজনেস শুরু করব?</li>
+                                                        <li>৩. সেই বিজনেস দিয়ে প্রতি মাসে মিনিমাম ৫ লাখ টাকা সেলস নিয়ে আসব
                                                             ইনশাল্লাহ</li>
-                                                        <li>৩. বিজনেস ইনভেস্টমেন্ট নিয়ে বিস্তারিত আলোচনা</li>
-                                                        <li>৪. কি ভাবে আমাদের থেকে ইনভেস্টমেন্ট পাবেন</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -520,7 +527,7 @@
                                                 <div class="text">
                                                     <p>Class-23</p>
                                                     <ul>
-
+                                                        <li>১. কি ভাবে আমাদের থেকে ইনভেস্টমেন্ট পাবেন ?</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -528,7 +535,7 @@
                                                 <div class="text">
                                                     <p>Class 24</p>
                                                     <ul>
-
+                                                        <li>Final Test</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -543,18 +550,36 @@
             </div>
         </div>
     </section>
+    {{-- <section class="team-section position-relative pt-120 pb-100" style="background: #101828;">
+        <div class="auto-container">
+            <div class="sec-title text-center">
+                <h2 class="text-white">OUR TEAM</h2>
+            </div>
+            <div class="row">
+                @foreach ($teams as $team)
+                    <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
+                            </div>
+                            <div class="content-box">
+                                <h4 class="title"><a>{{ $team->name }}</a></h4>
+                                <span>{{ $team->education }}</span><br>
+                                <span>{{ $team->designation }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section> --}}
     <section class="about-section innerpage">
         <div class="auto-container">
             <div class="row">
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <div class="sec-title">
-                            <h3>যেসব টুল ইউজ করবেন</h3>
-                            <div class="text">আপনার কাছে যদি একটি ল্যাপটপ/ কম্পিউটার/ স্মার্ট ফোন ও ইন্টারনেট কানেকশন
-                                থাকে। ও যদি আপনি অনলাইন বিজনেস করে প্রতিদিন লাখ টাকা সেলস করে, নিজেকে একজন সফল অনলাইন বিজনেস
-                                উদ্যোক্তা হিসেবে দেখার স্বপ্ন দেখেন তাহলে কোর্স টি হতে পারে আপনার জন্য বেস্ট চয়েজ। যদি এই ৩
-                                মাসের জার্নি আপনি লেগে থাকতে পারেন। কথা দিলাম আপনার পরিশ্রম ও আমাদের চেষ্টায় সফল হবে
-                                ইনশাল্লাহ।</div>
+                            <h3 class="landing_font">যেসব টুল ইউজ করবেন</h3>
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
@@ -646,16 +671,89 @@
             </div>
         </div>
     </section>
-    <section class="about-section innerpage" style="background: #000; padding: 50px 0 0 0">
+    <section class="about-section innerpage" style="background: #101828; padding: 50px 0 0 0">
         <div class="auto-container">
             <div class="row">
+
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <div class="landing-inner-box">
                             <div class="text landing_font mt-4">
-                                <a class="text landing_font" style="font-size: 20px" href="tel:01303523442">Countdown
-                                    hoba</a> <br>
-                                <a class="text landing_font" style="font-size: 20px" href="tel:01303523442">প্রয়োজনে ফোন
+                                <div class="image-column col-lg-6" style="padding-top: 7%">
+                                    <div class="elementor-widget-container">
+                                        <style>
+                                            /*! pro-elements - v3.21.0 - 30-04-2024 */
+                                            .elementor-countdown-expire--message {
+                                                display: none;
+                                                padding: 20px;
+                                                text-align: center
+                                            }
+
+                                            .elementor-countdown-wrapper {
+                                                flex-direction: row
+                                            }
+
+                                            .elementor-countdown-item {
+                                                padding: 20px 0;
+                                                text-align: center;
+                                                color: #fff
+                                            }
+
+                                            .elementor-countdown-digits,
+                                            .elementor-countdown-label {
+                                                line-height: 1
+                                            }
+
+                                            .elementor-countdown-digits {
+                                                font-size: 69px
+                                            }
+
+                                            .elementor-countdown-label {
+                                                font-size: 19px
+                                            }
+
+                                            .elementor-countdown-wrapper {
+                                                display: flex;
+                                                justify-content: center;
+                                                margin-right: auto;
+                                                margin-left: auto
+                                            }
+
+                                            .elementor-countdown-digits,
+                                            .elementor-countdown-label {
+                                                display: block
+                                            }
+
+                                            .elementor-countdown-item {
+                                                flex-basis: 0;
+                                                flex-grow: 1
+                                            }
+
+                                            .elementor-widget-countdown.elementor-countdown--label-inline {
+                                                text-align: center
+                                            }
+
+                                            .elementor-countdown-item {
+                                                display: inline-block;
+                                                padding-left: 5px;
+                                                padding-right: 5px
+                                            }
+                                        </style>
+                                        <div id="simple_timer" class="elementor-countdown-wrapper">
+                                            <div class="elementor-countdown-item text-white"><span
+                                                    class="elementor-countdown-digits elementor-countdown-hours"></span> <span
+                                                    class="elementor-countdown-label">Hours</span></div>
+                                            <div  class="elementor-countdown-item text-white"><span
+                                                    class="elementor-countdown-digits elementor-countdown-minutes"></span> <span
+                                                    class="elementor-countdown-label">Minutes</span></div>
+                                            <div class="elementor-countdown-item text-white"><span
+                                                    class="elementor-countdown-digits elementor-countdown-seconds"></span> <span
+                                                    class="elementor-countdown-label">Seconds</span></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <a class="text landing_font text-white" style="font-size: 20px" href="tel:01303523442">প্রয়োজনে ফোন
                                     করুন - 01303523442</a>
                             </div>
                         </div>
@@ -663,7 +761,7 @@
                 </div>
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
-                        <h3 class="text-white">Successful Online Business with Digital Marketing</h3>
+                        <h3 class="text-white landing_font">ক্যারিয়ার গড়ার সুযোগ কেমন?</h3>
                         <div class="sec-title">
                             <div class="text landing_font text-white">দেশের সব চেয়ে কম খরচে বিজনেস কোর্স যেখেন আপনি সিখতে
                                 পারবেন কিভাবে শুন্য লাখ টাকার বিজনেস শুরু করা যায় । আমারা আসা করি যদি সময় দিয়ে লেখে থাকেন
@@ -675,11 +773,11 @@
                                     <input type="hidden" name="product_id" value="{{ $products->id }}">
                                     <button type="submit" class="theme-btn text-white" style="color: #F94A29;"><a>Admission</a></button>
                                 </form>
-                                <form class="mx-2" action="{{ route('services.product.checkout') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{ $products->id }}">
-                                    <button type="submit" class="theme-btn text-white" style=" background: #29cff9;"><a>Consultancy</a></button>
-                                </form>
+                                <div class="outer-box mx-2">
+                                    <div class="search-btn">
+                                        <a href="#" class="search theme-btn text-white" style=" background: #29cff9;">Consultancy</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -711,7 +809,7 @@
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <div class="sec-title landing_ul">
-                            <h3>কোর্স টি কাদের জন্য</h3>
+                            <h3 class="landing_font">কোর্স টি কাদের জন্য</h3>
                             <ul style="margin-left: 20px">
                                 <li>অনলাইন বিজনেস শুরু করবেন ভাবছেন</li>
                                 <li>যারা নিজেই নিজের ব্যবসার অনলাইন মার্কেটিং করতে চান</li>
@@ -733,11 +831,11 @@
                                         <input type="hidden" name="product_id" value="{{ $products->id }}">
                                         <button type="submit" class="theme-btn text-white" style="color: #F94A29;"><a>Admission</a></button>
                                     </form>
-                                    <form class="mx-2" action="{{ route('services.product.checkout') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $products->id }}">
-                                        <button type="submit" class="theme-btn text-white" style=" background: #29cff9;"><a>Consultancy</a></button>
-                                    </form>
+                                    <div class="outer-box mx-2">
+                                        <div class="search-btn">
+                                            <a href="#" class="search theme-btn text-white" style=" background: #29cff9;">Consultancy</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -808,7 +906,7 @@
             </div>
         </div>
     </section>
-    <section class="about-section innerpage" style="background: #000; padding: 50px 0 0 0">
+    <section class="about-section innerpage" style="background: #101828; padding: 50px 0 0 0">
         <div class="auto-container">
             <div class="row">
                 <div class="image-column col-lg-6">
@@ -822,9 +920,9 @@
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <div class="sec-title landing_ul">
-                            <h3 class="text-white">title dita hoba certificate</h3>
+                            <h3 class="text-white landing_font">জব মার্কেটে ক্যারিয়ার গড়ার ক্ষেত্রে আমাদের সার্টিফিকেট ভিন্ন মাত্রা যোগ করবে</h3>
                             <div class="text text-white">
-                                demo জব মার্কেটে আমাদের এই সার্টিফিকেট আপনি বাড়তি যোগ্যতার প্রমাণ হিসেবে দেখাতে পারবেন। দক্ষতা অর্জনের এই সার্টিফিকেট ইন্ডাস্ট্রিতে আপনার ক্যারিয়ার ডেভেলপমেন্টে সহায়তা করবে। আমাদের এই সার্টিফিকেট জব ইন্ডাস্ট্রিতে আপনাকে প্রফেশনাল হিসেবে ইন্ট্রোডিউস করাবে। LinkedIn এর মতো প্রফেশনাল ওয়েবসাইটে সার্টিফিকেট অ্যাড করতে পারবেন।
+                                জব মার্কেটে আমাদের এই সার্টিফিকেট আপনি বাড়তি যোগ্যতার প্রমাণ হিসেবে দেখাতে পারবেন। দক্ষতা অর্জনের এই সার্টিফিকেট ইন্ডাস্ট্রিতে আপনার ক্যারিয়ার ডেভেলপমেন্টে হেল্প করবে। আমাদের এই সার্টিফিকেট জব ইন্ডাস্ট্রিতে আপনাকে প্রফেশনাল হিসেবে ইন্ট্রোডিউস করাবে। LinkedIn এর মতো প্রফেশনাল ওয়েবসাইটে সার্টিফিকেট অ্যাড করতে পারবেন।
                             </div>
                         </div>
                     </div>
@@ -833,7 +931,7 @@
             </div>
         </div>
     </section>
-    <section class="about-section innerpage">
+    {{-- <section class="about-section innerpage">
         <div class="auto-container">
             <div class="row">
 
@@ -859,7 +957,7 @@
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class=" landing_font">48</span><br>
-                                            <span class="landing-title  landing_font">লেসন</span>
+                                            <span class="landing-title  landing_font">প্রজেক্ট</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
@@ -873,7 +971,7 @@
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class="landing_font">5</span><br>
-                                            <span class="landing-title landing_font">Exam </span>
+                                            <span class="landing-title landing_font">পরীক্ষা</span>
                                         </div>
                                     </div>
                                 </div>
@@ -895,14 +993,111 @@
                     </div>
 
                 </div>
-                <div class="image-column col-lg-6">
-                    <div class="inner-column">
-                        <div class="image-box">
-                            <div class="text">countdown</div>
+                <div class="image-column col-lg-6" style="padding-top: 7%">
+                    <div class="elementor-widget-container">
+                        <style>
+                            /*! pro-elements - v3.21.0 - 30-04-2024 */
+                            .elementor-countdown-expire--message {
+                                display: none;
+                                padding: 20px;
+                                text-align: center
+                            }
+
+                            .elementor-countdown-wrapper {
+                                flex-direction: row
+                            }
+
+                            .elementor-countdown-item {
+                                padding: 20px 0;
+                                text-align: center;
+                                color: #000
+                            }
+
+                            .elementor-countdown-digits,
+                            .elementor-countdown-label {
+                                line-height: 1
+                            }
+
+                            .elementor-countdown-digits {
+                                font-size: 69px
+                            }
+
+                            .elementor-countdown-label {
+                                font-size: 19px
+                            }
+
+                            .elementor-countdown-wrapper {
+                                display: flex;
+                                justify-content: center;
+                                margin-right: auto;
+                                margin-left: auto
+                            }
+
+                            .elementor-countdown-digits,
+                            .elementor-countdown-label {
+                                display: block
+                            }
+
+                            .elementor-countdown-item {
+                                flex-basis: 0;
+                                flex-grow: 1
+                            }
+
+                            .elementor-widget-countdown.elementor-countdown--label-inline {
+                                text-align: center
+                            }
+
+                            .elementor-countdown-item {
+                                display: inline-block;
+                                padding-left: 5px;
+                                padding-right: 5px
+                            }
+                        </style>
+                        <div id="simple_timer" class="elementor-countdown-wrapper">
+                            <div class="elementor-countdown-item"><span
+                                    class="elementor-countdown-digits countdown-hours"></span> <span
+                                    class="elementor-countdown-label">Hours</span></div>
+                            <div class="elementor-countdown-item"><span
+                                    class="elementor-countdown-digits countdown-minutes"></span> <span
+                                    class="elementor-countdown-label">Minutes</span></div>
+                            <div class="elementor-countdown-item"><span
+                                    class="elementor-countdown-digits countdown-seconds"></span> <span
+                                    class="elementor-countdown-label">Seconds</span></div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+@endsection
+@section('landingfooter_script')
+<script>
+    function startCountdown() {
+        var countdownElement = document.getElementById('simple_timer');
+        var now = new Date().getTime();
+        var targetTime = now + (22 * 60 * 60 * 1000);
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = targetTime - now;
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.querySelector('.elementor-countdown-hours').innerHTML = hours;
+            countdownElement.querySelector('.elementor-countdown-minutes').innerHTML = minutes;
+            countdownElement.querySelector('.elementor-countdown-seconds').innerHTML = seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                startCountdown();
+            }
+        }, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        startCountdown();
+    });
+</script>
+
 @endsection
