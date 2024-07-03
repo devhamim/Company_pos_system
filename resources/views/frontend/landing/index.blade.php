@@ -1047,10 +1047,10 @@
 
                 <div class="content-column col-lg-12">
                     <div class="row">
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 col-4">
                             <img src="https://nugortechit.com/uploads/team/FanBd131697.png" alt="">
                         </div>
-                        <div class="col-lg-9">
+                        <div class="col-lg-9 col-8">
                             <div class="inner-column">
                                 <div class="">
                                     <h3>Successful Online Business with Digital Marketing</h3>
@@ -1070,14 +1070,14 @@
                                             <span class="landing-title  landing_font">প্রজেক্ট</span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-6">
+                                    <div class="col-lg-3 col-6 mt-3">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class="landing_font">24</span><br>
                                             <span class="landing-title  landing_font">ভিডিও</span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-6">
+                                    <div class="col-lg-3 col-6 mt-3">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class="landing_font">5</span><br>
