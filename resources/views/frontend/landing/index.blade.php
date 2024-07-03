@@ -16,14 +16,14 @@
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-3 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">ব্যাচ শুরু</span><br>
                                         <span class="landing-title text-white landing_font">২০ জুলাই</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-3 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class="landing_font text-white">লাইভ ক্লাস</span><br>
@@ -31,14 +31,14 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-6 ">
+                                <div class="col-lg-3 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">সিট সংখ্যা</span><br>
                                         <span class="landing-title text-white landing_font">২০ টি</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-6 ">
+                                <div class="col-lg-3 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">সিট বাকি</span><br>
@@ -99,63 +99,63 @@
                         <div class="landing-inner-box">
                             <div class="row">
 
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img src="{{ asset('frontend/images/landing/10-icon.png') }}" alt=""><br>
                                         <span class="landing-title landing_font">২৪ টি লাইভ ক্লাস</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img src="{{ asset('frontend/images/landing/13-icon.png') }}" alt=""><br>
                                         <span class="landing-titlelanding_font">ক্লাস রেকড ভিডিও</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="54px" src="{{ asset('frontend/images/landing/19-icon.png') }}" alt=""><br>
                                         <span class="landing-title landing_font">অফলাইন কনসালটেন্সি</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img src="{{ asset('frontend/images/landing/11-icon.png') }}" alt=""><br>
                                         <span class="landing-title  landing_font">লাইফ টাইম সাপোর্ট </span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="54px" src="{{ asset('frontend/images/landing/16-icon.png') }}" alt=""><br>
                                         <span  class="landing-title  landing_font">বিজনেস ফান্ডিং </span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="54px" src="{{ asset('frontend/images/landing/17-icon.png') }}" alt=""><br>
                                         <span class="landing-title  landing_font">জব প্লেসমেন্ট</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img src="{{ asset('frontend/images/landing/12-icon.png') }}" alt=""><br>
                                         <span class="landing-title  landing_font">ক্লাস নোটস</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="54px" src="{{ asset('frontend/images/landing/15-icon.png') }}" alt=""><br>
                                         <span class="landing-title  landing_font">ইনকাম গাইডলাইন</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img src="{{ asset('frontend/images/landing/14-icon.png') }}" alt=""><br>
@@ -180,7 +180,7 @@
                     <div class="innerpage mt-25">
                         <h3 class="text-center text-white landing_font">কোর্স কারিকুলাম</h3>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mt-2">
                                 <ul class="accordion-box wow fadeInRight">
 
                                     <li class="accordion block active-block">
@@ -296,7 +296,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mt-2">
                                 <ul class="accordion-box wow fadeInRight">
                                     <li class="accordion block">
                                         <div class="acc-btn">সপ্তাহ - ৫
@@ -430,7 +430,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mt-2">
                                 <ul class="accordion-box wow fadeInRight">
                                     <li class="accordion block">
                                         <div class="acc-btn">সপ্তাহ - ৯
@@ -583,7 +583,7 @@
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/1-icon.png') }}"
@@ -591,7 +591,7 @@
                                         <h6 class="title">Meta Business Suit</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/2-icon.png') }}"
@@ -599,7 +599,7 @@
                                         <h6 class="title">Facebook Pixel</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/3-icon.png') }}"
@@ -607,7 +607,7 @@
                                         <h6 class="title">Google Analytics 4</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/4-icon.png') }}"
@@ -615,7 +615,7 @@
                                         <h6 class="title">Google Ads</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/5-icon.png') }}"
@@ -623,7 +623,7 @@
                                         <h6 class="title">Google Tag Manager</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/6-icon.png') }}"
@@ -631,7 +631,7 @@
                                         <h6 class="title">ChatGPT</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/7-icon.png') }}"
@@ -639,7 +639,7 @@
                                         <h6 class="title">Google Spreadsheet</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/8-icon.png') }}"
@@ -647,7 +647,7 @@
                                         <h6 class="title">WhatsApp</h6>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-6 mt-3">
+                                <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/9-icon.png') }}"
@@ -793,16 +793,8 @@
                 <div class="image-column col-lg-6">
                     <div class="inner-column">
                         <div class="image-box">
-                            <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend/images/resource/about1-1.webp') }}" alt=""></figure>
-                            {{-- <div class="play-box">
-                            <figure class="image-2 overlay-anim"><img src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt="">
-                            </figure>
-                            <a title="" href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
-                                data-caption="">
-                                <i class="icon fa fa-play"></i>
-                            </a>
-                        </div> --}}
+                            <figure class="image overlay-anim">
+                                <img src="{{ asset('frontend/images/landing/cruse-image.jpg') }}" alt=""></figure>
                         </div>
                     </div>
                 </div>
@@ -928,6 +920,85 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+    <section class="services-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                    <div class="innerpage mt-25">
+                        <h3 class="text-center landing_font">Frequently Asked Question</h3>
+                        <ul class="accordion-box wow fadeInRight">
+
+                            <li class="accordion block">
+                                <div class="acc-btn">1. আমি কি মোবাইল দিয়ে জয়েন করতে পারবো?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content current">
+                                    <div class="content">
+                                        <div class="text">
+                                            মোবাইল দিয়ে লাইভ ক্লাসে জয়েন করতে পারবেন কিন্তু প্র্যাকটিস করতে পারবেন না
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion block active-block">
+                                <div class="acc-btn active">2. আমার কি ভিডিওগুলোর লাইফটাইম এক্সেস থাকবে?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">জ্বি, ভিডিও এবং রিসোর্সের লাইফ টাইম এক্সেস পাচ্ছেন।</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion block">
+                                <div class="acc-btn">3. প্রো ব্যাচে কাদেরকে নেয়া হবে?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">৭০% বা তার বেশি মার্ক নিয়ে যারা কোর্স কমপ্লিট করবেন তাদেরকে নিয়ে করা হবে প্রো ব্যাচ।</div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion block">
+                                <div class="acc-btn">4. এসেসমেন্ট কিভাবে হবে?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">প্রতি সপ্তাহে থাকবে একটি করে কুইজ এবং এক্সাম উইকে থাকবে এসাইনমেন্ট এবং কুইজ।</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">5. লাইভ ক্লাসের রেকর্ডিং থাকবে?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text">জ্বী, পাবেন লাইভ ক্লাস রেকর্ডিং এর লাইফ টাইম এক্সেস।</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">6. প্র্যাকটিস করতে গিয়ে সমস্যায় পড়লে সাপোর্ট পাবো কোথায়?
+                                    <div class="icon fa fa-plus"></div>
+                                </div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <div class="text"> যেকোনো সমস্যায় দুইবেলা সাপোর্ট ক্লাসে স্ক্রিন শেয়ার করে সাপোর্ট নিবেন দক্ষ সাবজেক্ট ম্যাটার এক্সপার্টদের থেকে। </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
