@@ -171,6 +171,13 @@ body{
     .landing_box{
         font-size: 14px;
     }
+    .theme-btn {
+    background-color: var(--theme-color1);
+    padding: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
 }
 
     </style>
