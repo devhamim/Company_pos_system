@@ -3331,7 +3331,7 @@ figure.image {
     color: var(--theme-color-light);
     font-weight: 600;
     line-height: 26px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     opacity: .8;
     max-width: 520px;
     margin-bottom: 40px
@@ -3942,13 +3942,13 @@ figure.image {
     opacity: .8;
     line-height: 26px;
     margin-top: 10px;
-    text-transform: lowercase
+    /* text-transform: lowercase */
 }
 @media(max-width:575.98px) {
     .about-section .content-column .inner-column .sec-title .text {
         line-height: 20px;
         margin-top: 20px;
-        font-size: 13px;
+        /* font-size: 13px; */
     }
 }
 .about-section .content-column .inner-column .inner-box {
@@ -8302,7 +8302,7 @@ figure.image {
 .choose-us-section .content-column .inner-column .sec-title .text {
     font-weight: 500;
     line-height: 26px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     opacity: .8;
     color: var(--theme-color-light)
 }
@@ -9108,7 +9108,7 @@ figure.image {
     font-size: 16px;
     font-weight: 500;
     line-height: 26px;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     color: var(--theme-color-light);
     opacity: .8
 }

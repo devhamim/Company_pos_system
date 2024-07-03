@@ -156,6 +156,19 @@
 .about-section {
     padding: 60px 0;
 }
+section>.container, section>.container-fluid{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.testimonial-section{
+    padding-top: 0px;
+    padding-bottom: 80px
+}
+@media(max-width:575.98px) {
+    .landing_box{
+        font-size: 14px;
+    }
+}
 
     </style>
 </head>

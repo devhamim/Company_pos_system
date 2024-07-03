@@ -6,39 +6,40 @@
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
                         <h3 class="text-white ">Successful Online Business with Digital Marketing</h3>
-                        <div class="sec-title" style="margin-bottom: 40px">
+                        <div class="sec-title" style="margin-bottom: 20px">
                             <div class="text landing_font">আপনার কাছে যদি একটি ল্যাপটপ/ কম্পিউটার/ স্মার্ট ফোন ও ইন্টারনেট
                                 কানেকশন থাকে। ও যদি আপনি অনলাইন বিজনেস করে প্রতিদিন লাখ টাকা সেলস করে, নিজেকে একজন সফল
                                 অনলাইন বিজনেস উদ্যোক্তা হিসেবে দেখার স্বপ্ন দেখেন তাহলে কোর্স টি হতে পারে আপনার জন্য বেস্ট
                                 চয়েজ। যদি এই ৩ মাসের জার্নি আপনি লেগে থাকতে পারেন। কথা দিলাম আপনার পরিশ্রম ও আমাদের চেষ্টায়
                                 সফল হবে ইনশাল্লাহ।</div>
-                                <div class="text landing_font" style="font-size: 20px">১০০০০৳</div>
+                                <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
+                                {{-- <div class="text landing_font" style="font-size: 20px">Regular Price: <del>১০০০০৳</del> Off ৬০০০৳</div> --}}
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
-                                <div class="col-lg-3 col-6 my-2">
+                                {{-- <div class="col-lg-3 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">ব্যাচ শুরু</span><br>
                                         <span class="landing-title text-white landing_font">২০ জুলাই</span>
                                     </div>
-                                </div>
-                                <div class="col-lg-3 col-6 my-2">
+                                </div> --}}
+                                <div class="col-lg-4 col-4 my-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class="landing_font text-white">লাইভ ক্লাস</span><br>
-                                        <span class="landing-title text-white landing_font">১০টা - ১১.৩০টা</span>
+                                        <span class="landing-title text-white landing_font landing_box">১০টা - ১১.৩০টা</span>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-6 my-2">
+                                <div class="col-lg-4 col-4 my-3">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">সিট সংখ্যা</span><br>
                                         <span class="landing-title text-white landing_font">২০ টি</span>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-6 my-2">
+                                <div class="col-lg-4 col-4 my-3">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <span class=" landing_font text-white">সিট বাকি</span><br>
@@ -76,8 +77,9 @@
                     <div class="inner-column">
                         <h3 class="landing_font">এই এক কোর্সে যা পাচ্ছেন</h3>
                         <div class="sec-title">
-                            <div class="text landing_font">ডিজিটাল মার্কেটিং সেক্টর এর উপর ডিটেইলস আলোচনা অন হ্যান্ড প্রজেক্ট,  ইনকাম গাইড লাইন, ও কিভাবে শূন্য থেকে শুরু করে লাখ টাকার বিজনেস বিজনেস করে সফল উদ্যোক্তা হওয়া যায়।</div>
-                            <div class="text landing_font">কোর্স ফি - ১০০০০ টাকা মাত্র</div>
+                            <div class="text landing_font">আমারা গত ৭ বছরে  ২ হাজারে বেশি ক্লাইন্ট বিজেনেসে সফলতা নিয়ে কাজ করেছি যাদের প্রতি মাসে সেল এখন কোটি টাকার বেশি । বিগত দিনের বিজেসের সফলাতার অভিজ্ঞতা থেকে আমারা শুরু করছি ১২ সপ্তাহের একটি চালেজিং কোর্স যেখান আমারা সেখানে একটি বিজনেস শুন্য থকে শুরু করে কি ভাবে সফলতা অর্জন করা যায় হাতে ধরে শেখাবো । শুধু সঠিক গাইড লাইন নয় প্রয়োজন আমরা ফান্ডিং সহ দিব। এবং আপনার সফলতা না আসা পুরজন্ত লেগে থাকব আমরা আপনার সাথে । যে কোন প্রবলেম পড়লে আছে ২৪/৭ অনলাইন সাপোর্ট ও এছাড়া আমাদের অফিস থেকে নিতে পারবেন লাইফ টাইম ফ্রি বিজনেস কনসালটেন্সি। তাহলে আর চিন্তা কিসের সিট শেষ হবার আগেই আপনার এডমিশন কনফার্ম করুন।</div>
+                            <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
+                            {{-- <div class="text landing_font" style="font-size: 20px">Regular Price: <del>১০০০০৳</del> Off ৬০০০৳</div> --}}
                             <div class="my-3 d-flex ">
                                 <form action="{{ route('services.product.checkout') }}" method="POST">
                                     @csrf
@@ -191,6 +193,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-1</p>
+                                                    <p><strong>বিজনেস আইডিয়া জেনারেট</strong></p>
                                                     <ul>
                                                         <li>১. বিজনেস আইডিয়া জেনারেট</li>
                                                         <li>২. প্রোডাক্ট সিলেকশন</li>
@@ -200,6 +203,7 @@
                                                 </div>
                                                 <div class="text">
                                                     <p>Class-2</p>
+                                                    <p><strong>মার্কেটিং কী?</strong></p>
                                                     <ul>
                                                         <li>১. মার্কেটিং কী? </li>
                                                         <li>২. কতরকমের মার্কেটিং হয়?</li>
@@ -219,6 +223,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class -3</p>
+                                                    <p><strong>কনটেন্ট মার্কেটিং</strong></p>
                                                     <ul>
                                                         <li>১. কনটেন্ট মার্কেটিং</li>
                                                         <li>২. কনটেন্ট কী?</li>
@@ -232,6 +237,7 @@
                                                 </div>
                                                 <div class="text">
                                                     <p>Class-4</p>
+                                                    <p><strong>জানতে হবে কনটেন্ট রাইটিং ও কপিরাইটিং</strong></p>
                                                     <ul>
                                                         <li>১. জানতে হবে কনটেন্ট রাইটিং ও কপিরাইটিং</li>
                                                         <li>২.কেনো একটা ভালো কপি দরকার?</li>
@@ -251,12 +257,14 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class - 5</p>
+
                                                     <ul>
                                                         <li>Assignment & Test</li>
                                                     </ul>
                                                 </div>
                                                 <div class="text">
                                                     <p>Class-6</p>
+                                                    <p><strong>ডিজাইন এন্ড ক্রিয়েটিভিটি</strong></p>
                                                     <ul>
                                                         <li>১. ডিজাইন এন্ড ক্রিয়েটিভিটি</li>
                                                         <li>২. ডিজাইন কীভাবে করবেন?</li>
@@ -275,6 +283,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-7</p>
+                                                    <p><strong>প্রফেশনাল ফেসবুক পেইজ ক্রিয়েট</strong></p>
                                                     <ul>
                                                         <li>১. প্রফেশনাল ফেসবুক পেইজ ক্রিয়েট</li>
                                                         <li>২. পেইজ সেটআপ</li>
@@ -306,6 +315,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-9</p>
+                                                    <p><strong>ফেইসবুক এড ম্যানেজার</strong></p>
                                                     <ul>
                                                         <li>১. ফেইসবুক বুস্ট, প্রমট, এড ক্যাম্পেইন কি ?</li>
                                                         <li>২. ফেইসবুক এড ম্যানেজার</li>
@@ -318,6 +328,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class 10</p>
+                                                    <p><strong>ক্যাম্পেইন ম্যানেজমেন্ট এন্ড রিপোর্টিতি । এডভান্সড ফিচারস এন্ড টুলস</strong></p>
                                                     <ul>
                                                         <li>১. ক্যাম্পেইন ম্যানেজমেন্ট এন্ড রিপোর্টিতি । এডভান্সড ফিচারস
                                                             এন্ড টুলস</li>
@@ -341,6 +352,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-11</p>
+                                                    <p><strong>কনভারসন এপিআই এবং ইভেন্ট ম্যাচ কোয়ালিটি সেটআপ</strong></p>
                                                     <ul>
                                                         <li>১. কনভারসন এপিআই এবং ইভেন্ট ম্যাচ কোয়ালিটি সেটআপপ</li>
                                                         <li>২. কনভারশন এপিআই এর পরিচিতি । বেনিফিটস অফ কনভারশন এপিআই ।
@@ -371,6 +383,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-13</p>
+                                                    <p><strong>ফেইসবুক কাস্টম এবং লুক এ লাইক অডিয়েন্স</strong></p>
                                                     <ul>
                                                         <li>১. ফেইসবুক কাস্টম এবং লুক এ লাইক অডিয়েন্স</li>
                                                         <li>২. ওভারলেপ এনালাইসিস বিটুইন কাস্টম এন্ড লুক এ লাইক অডিয়েন্স ।
@@ -384,6 +397,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class 14</p>
+                                                    <p><strong>ওয়েবসাইট কি</strong></p>
                                                     <ul>
                                                         <li>১. ওয়েবসাইট কি</li>
                                                         <li>২. ওয়েব সাইট এর প্রয়জনিতা</li>
@@ -405,6 +419,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-15</p>
+                                                    <p><strong>Landing পেজ কি</strong></p>
                                                     <ul>
                                                         <li>১. Landing পেজ কি</li>
                                                         <li>২. ফেসবুক মার্কেটিং এর জন্য Landing পেজ কেন প্রয়োজন</li>
@@ -418,6 +433,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class 16</p>
+                                                    <p><strong>Google My Business Page Optimization (GMB)</strong></p>
                                                     <ul>
                                                         <li>১. Google My Business Page Optimization (GMB)</li>
                                                         <li>২. Claim/Create a GMB Listing</li>
@@ -440,6 +456,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-17</p>
+                                                    <p><strong>Search Engine Optimization (SEO)</strong></p>
                                                     <ul>
                                                         <li>১. What is Search Engine Optimization (SEO)?</li>
                                                         <li>২. Basic Search operators</li>
@@ -451,6 +468,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class 18</p>
+                                                    <p><strong>Website Analyzing (Google Analytics)</strong></p>
                                                     <ul>
                                                         <li>১. Google Trend</li>
                                                         <li>২. Organic Search (SEO)</li>
@@ -472,6 +490,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-19</p>
+                                                    <p><strong>Website Health Check (Google Search Console)</strong></p>
                                                     <ul>
                                                         <li>১. Submitting Website to Webmaster</li>
                                                         <li>২. Internal links & links to your site.</li>
@@ -497,6 +516,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-21</p>
+                                                    <p><strong>কাসটমার ক্মিনিকেসন</strong></p>
                                                     <ul>
                                                         <li>১. কাসটমার ক্মিনিকেসন</li>
                                                         <li>২. লিড ম্যানেজমেন্ট</li>
@@ -508,6 +528,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class 22</p>
+                                                    <p><strong>আমারা কম ইনভেস্টমেন্ট দিয়ে একটি বিজনেস শুরু করব?</strong></p>
                                                     <ul>
                                                         <li>১.বিজনেস ইনভেস্টমেন্ট নিয়ে বিস্তারিত আলোচনা</li>
                                                         <li>২. কি ভাবে আমারা কম ইনভেস্টমেন্ট দিয়ে একটি বিজনেস শুরু করব?</li>
@@ -526,6 +547,7 @@
                                             <div class="content">
                                                 <div class="text">
                                                     <p>Class-23</p>
+                                                    <p><strong></strong></p>
                                                     <ul>
                                                         <li>১. কি ভাবে আমাদের থেকে ইনভেস্টমেন্ট পাবেন ?</li>
                                                     </ul>
@@ -580,6 +602,7 @@
                     <div class="inner-column">
                         <div class="sec-title">
                             <h3 class="landing_font">যেসব টুল ইউজ করবেন</h3>
+                            <p class="landing_font">একটি অনলাইন বিজনেস শুন্য থকে শুরু করে সফলতা নিয়ে আসার জন্য যে সকল টুলস ব্যাবহার জানা আপনার জন্য অতি জরুরি সিখতে পারবেন তার সব কিছু ।</p>
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
@@ -679,7 +702,7 @@
                     <div class="inner-column">
                         <div class="landing-inner-box">
                             <div class="text landing_font mt-4">
-                                <div class="image-column col-lg-6" style="padding-top: 7%">
+                                <div class="image-column col-lg-6" >
                                     <div class="elementor-widget-container">
                                         <style>
                                             /*! pro-elements - v3.21.0 - 30-04-2024 */
@@ -753,6 +776,7 @@
 
                                     </div>
                                 </div>
+                                <p class="landing_font text-white">একটি অনলাইন বিজনেস শুন্য থকে শুরু করে সফলতা নিয়ে আসার জন্য যে সকল টুলস ব্যাবহার জানা আপনার জন্য অতি জরুরি সিখতে পারবেন তার সব কিছু ।</p>
                                 <a class="text landing_font text-white" style="font-size: 20px" href="tel:01303523442">প্রয়োজনে ফোন
                                     করুন - 01303523442</a>
                             </div>
@@ -763,10 +787,8 @@
                     <div class="inner-column">
                         <h3 class="text-white landing_font">ক্যারিয়ার গড়ার সুযোগ কেমন?</h3>
                         <div class="sec-title">
-                            <div class="text landing_font text-white">দেশের সব চেয়ে কম খরচে বিজনেস কোর্স যেখেন আপনি সিখতে
-                                পারবেন কিভাবে শুন্য লাখ টাকার বিজনেস শুরু করা যায় । আমারা আসা করি যদি সময় দিয়ে লেখে থাকেন
-                                আপনি হবেন সহল অনলাইন বিজনেস উদ্যোক্তা।</div>
-                            <div class="text landing_font text-white">কোর্স ফি - ১০০০০ টাকা মাত্র</div>
+                            <div class="text landing_font text-white">আপনি যদি সফল ভাবে আমাদের  ১২ সপ্তাহের কোর্স টি সম্পন্ন করতে পারেন তাহলে নিজের একটি সফল অনলাইন বিজনেস, কিংবা যে কোন অনলাইন ই-কমারস বিজনেস ফুল টাইম, পার্ট টাইম অথবা রিমোট জব ও ফ্রীলানিং করে আপনার কারিয়ার সেট করতে পারবেন।</div>
+                            <div class="text landing_font text-white">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
                             <div class="my-3 d-flex ">
                                 <form action="{{ route('services.product.checkout') }}" method="POST">
                                     @csrf
@@ -850,14 +872,14 @@
                             <i class="flaticon-quote-1"></i>
                         </div>
                         <div class="content-box">
-                            <div class="text">aaaaaa</div>
-                            <div class="auther-info">
+                            <div class="text"><p class="landing_font">Nugortech IT ফুল স্ট্যাক ডিজিটাল মার্কেটিং কোর্সটি আমার মার্কেটিং এর ধারনা চেঞ্জ করে দিয়েছে। একটা সিংগেল কোর্সে এত এত কিছু আমি শিখেছি যে একটা ক্লায়েন্টের সকল ধরনের সমস্যার সমাধান আমি দিতে পারি। গুগল এনালিটিক্স, ফেইসবুক পিক্সেল এবং সার্ভার সাইড ট্র্যাকিং ইউজ করে ক্লায়েন্টের রিয়েল টাইম প্রবলেম সল্যুশন আমার ফ্রিল্যান্সিং জার্নিকে আরো শক্ত করেছে। Nugortech IT কে ধন্যবাদ এমন সময়োপযোগী এবং পরিপুর্ন একটি কোর্স ডিজিটাল মার্কেটিং এর ওপর অফার করার জন্য।</p></div>
+                            {{-- <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -867,14 +889,14 @@
                             <i class="flaticon-quote-1"></i>
                         </div>
                         <div class="content-box">
-                            <div class="text">aaaaaa</div>
-                            <div class="auther-info">
+                            <div class="text"><p class="landing_font">Nugortech IT এর Full Stack Digital Marketing কোর্সটি বাংলাদেশের সেরা একটি কোর্স। কারন এই কোর্সে রয়েছে দেশসেরা অভিজ্ঞ মেন্টর। আমার কাছে সবচেয়ে ভালো লেগেছে Nugortech IT প্লাটফর্ম এর নিয়মকানুন।  প্রতিটি মডিউলে ২ টি লাইভ ক্লাসের পাশাপাশি ২ টি এসাইনমেন্ট, ১ টি কুইজ এবং ১ টি লাইভ টেস্ট। এবং এগুলোতে পার্ফরম্যান্স এর উপর ভিত্তি করে স্কোর দেওয়া হয়। স্কোরের ভিত্তিতে স্টুডেন্টদের র‍্যাংকিং করা হয়। এই নিয়মনীতির জন্যই এত লম্বা সময় ধরে কোর্সে মনযোগ ধরে রাখা সম্ভব হয়েছে আমার ক্ষেত্রে। এছাড়াও এটেন্ডেন্স কাউন্ট হওয়ার কারনে আমি কখনো ক্লাস মিস দেইনি।</p></div>
+                            {{-- <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -884,14 +906,31 @@
                             <i class="flaticon-quote-1"></i>
                         </div>
                         <div class="content-box">
-                            <div class="text">aaaaaa</div>
-                            <div class="auther-info">
+                            <div class="text"><p class="landing_font">Nugortech IT লার্নিং এক্সপেরিয়েন্স, নিয়মিত ক্লাস এবং এসাইনমেন্ট আমার লার্নিং জার্নিকে অনেক ইফেক্টিভ করেছে। আমি কোর্স শেষ হওয়ার আগে থেকেই ক্লায়েন্টের সাথে কাজ করা শুরু করে দিতে পেরেছি।</p></div>
+                            {{-- <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-block col-md-6">
+                    <div class="inner-box">
+                        <div class="icon-box">
+                            <i class="flaticon-quote-1"></i>
+                        </div>
+                        <div class="content-box">
+                            <div class="text"><p class="landing_font">শামিম বসের মতন একজন সেরা ট্রেইনার এবং Nugortech IT সুপার ইফেক্টিভ কারিকুলাম মিলে যে গাইডেড জার্নি পেয়েছি, সেটা মার্কেটপ্লেস কিংবা ক্লায়েন্ট সব জায়গার জন্য একদম পার্ফেক্টলি ফিট করেছে।</p></div>
+                            {{-- <div class="auther-info">
+                                <img src="ssss" alt>
+                                <div class="info-box">
+                                    <h6 class="title">sss</h6>
+                                    <span>sss</span>
+                                </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -913,7 +952,7 @@
                     <div class="inner-column">
                         <div class="sec-title landing_ul">
                             <h3 class="text-white landing_font">জব মার্কেটে ক্যারিয়ার গড়ার ক্ষেত্রে আমাদের সার্টিফিকেট ভিন্ন মাত্রা যোগ করবে</h3>
-                            <div class="text text-white">
+                            <div class="text text-white landing_font">
                                 জব মার্কেটে আমাদের এই সার্টিফিকেট আপনি বাড়তি যোগ্যতার প্রমাণ হিসেবে দেখাতে পারবেন। দক্ষতা অর্জনের এই সার্টিফিকেট ইন্ডাস্ট্রিতে আপনার ক্যারিয়ার ডেভেলপমেন্টে হেল্প করবে। আমাদের এই সার্টিফিকেট জব ইন্ডাস্ট্রিতে আপনাকে প্রফেশনাল হিসেবে ইন্ট্রোডিউস করাবে। LinkedIn এর মতো প্রফেশনাল ওয়েবসাইটে সার্টিফিকেট অ্যাড করতে পারবেন।
                             </div>
                         </div>
@@ -938,7 +977,7 @@
                                 <div class="acc-content current">
                                     <div class="content">
                                         <div class="text">
-                                            মোবাইল দিয়ে লাইভ ক্লাসে জয়েন করতে পারবেন কিন্তু প্র্যাকটিস করতে পারবেন না
+                                            জি মোবাইল দিয়ে লাইভ ক্লাসে জয়েন করতে পারবেন
                                         </div>
                                     </div>
                                 </div>
@@ -992,7 +1031,7 @@
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
-                                        <div class="text"> যেকোনো সমস্যায় দুইবেলা সাপোর্ট ক্লাসে স্ক্রিন শেয়ার করে সাপোর্ট নিবেন দক্ষ সাবজেক্ট ম্যাটার এক্সপার্টদের থেকে। </div>
+                                        <div class="text"> যেকোনো সমস্যায় ২৪/৭ সাপোর্ট ক্লাসে স্ক্রিন শেয়ার করে সাপোর্ট নিবেন দক্ষ সাবজেক্ট ম্যাটার এক্সপার্টদের থেকে। </div>
                                     </div>
                                 </div>
                             </li>
