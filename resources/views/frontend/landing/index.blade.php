@@ -931,8 +931,8 @@
                         <h3 class="text-center landing_font">Frequently Asked Question</h3>
                         <ul class="accordion-box wow fadeInRight">
 
-                            <li class="accordion block">
-                                <div class="acc-btn">1. আমি কি মোবাইল দিয়ে জয়েন করতে পারবো?
+                            <li class="accordion block active-block">
+                                <div class="acc-btn active">1. আমি কি মোবাইল দিয়ে জয়েন করতে পারবো?
                                     <div class="icon fa fa-plus"></div>
                                 </div>
                                 <div class="acc-content current">
@@ -944,8 +944,8 @@
                                 </div>
                             </li>
 
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">2. আমার কি ভিডিওগুলোর লাইফটাইম এক্সেস থাকবে?
+                            <li class="accordion block ">
+                                <div class="acc-btn">2. আমার কি ভিডিওগুলোর লাইফটাইম এক্সেস থাকবে?
                                     <div class="icon fa fa-plus"></div>
                                 </div>
                                 <div class="acc-content">
