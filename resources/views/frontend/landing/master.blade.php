@@ -164,6 +164,9 @@ section>.container, section>.container-fluid{
     padding-top: 0px;
     padding-bottom: 80px
 }
+body{
+    color: #000;
+}
 @media(max-width:575.98px) {
     .landing_box{
         font-size: 14px;

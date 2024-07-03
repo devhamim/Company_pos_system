@@ -1041,11 +1041,11 @@
             </div>
         </div>
     </section>
-    {{-- <section class="about-section innerpage">
+    <section class="about-section innerpage">
         <div class="auto-container">
             <div class="row">
 
-                <div class="content-column col-lg-6">
+                <div class="content-column col-lg-12">
                     <div class="row">
                         <div class="col-lg-3">
                             <img src="https://nugortechit.com/uploads/team/FanBd131697.png" alt="">
@@ -1087,7 +1087,7 @@
                                 </div>
                                 <div class="inner-column">
                                     <div class="sec-title">
-                                        <div class="text">কোর্স ফি - ১০০০০ টাকা মাত্র</div>
+                                        <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
                                         <div class="my-3">
                                             <form action="{{ route('services.product.checkout') }}" method="POST">
                                                 @csrf
@@ -1103,7 +1103,7 @@
                     </div>
 
                 </div>
-                <div class="image-column col-lg-6" style="padding-top: 7%">
+                {{-- <div class="image-column col-lg-6" style="padding-top: 7%">
                     <div class="elementor-widget-container">
                         <style>
                             /*! pro-elements - v3.21.0 - 30-04-2024 */
@@ -1176,10 +1176,10 @@
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
-    </section> --}}
+    </section>
 @endsection
 @section('landingfooter_script')
 
