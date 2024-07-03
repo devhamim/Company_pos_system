@@ -306,7 +306,10 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb-3">
-                                            <input name="name" class="form-control" type="text" placeholder="Enter Name">
+                                            <input name="name" class="form-control" type="text" placeholder="Enter Name" required>
+                                            @error('name')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -318,12 +321,18 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="mb-3">
-                                            <input name="phone" class="form-control" type="text" placeholder="Enter Phone">
+                                            <input name="phone" class="form-control" type="number" placeholder="Enter Phone" required>
+                                            @error('phone')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                                    <textarea name="message" class="form-control required" rows="7" required placeholder="Enter Message"></textarea>
+                                    @error('message')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="mb-5">
                                     <input name="form_botcheck" class="form-control" type="hidden" value />
@@ -533,7 +542,7 @@
         </footer>
     </div>
 
-    {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('frontend')}}/js/jquery.js"></script>
     <script src="{{asset('frontend')}}/js/popper.min.js"></script>
     <script src="{{asset('frontend')}}/js/bootstrap.min.js"></script>
@@ -548,6 +557,30 @@
     <script src="{{asset('frontend')}}/js/script.js"></script>
 
     @yield('landingfooter_script')
+
+    @if (session('success'))
+            {
+            <script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Success...",
+                    text: "Message Sent Successfully",
+                });
+            </script>
+            }
+        @endif
+        @if (session('error'))
+            {
+            <script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+            </script>
+            }
+        @endif
 
 </body>
 

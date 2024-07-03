@@ -1143,6 +1143,7 @@
     </section> --}}
 @endsection
 @section('landingfooter_script')
+
 <script>
     function startCountdown() {
         var countdownElement = document.getElementById('simple_timer');

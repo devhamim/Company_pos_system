@@ -26,7 +26,8 @@ class ContactController extends Controller
     function contact_message(Request $request) {
         $request->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => '',
+            'phone' => 'required|max:11|min:11',
             'message' => 'required',
         ]);
 
