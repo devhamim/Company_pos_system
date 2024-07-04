@@ -167,17 +167,25 @@ section>.container, section>.container-fluid{
 body{
     color: #000;
 }
+.order_price {
+    font-size: 24px;
+    color: #F94A29;
+}
 @media(max-width:575.98px) {
     .landing_box{
         font-size: 14px;
     }
     .theme-btn {
-    background-color: var(--theme-color1);
-    padding: 0 30px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-}
+        background-color: var(--theme-color1);
+        padding: 0 30px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    .order_price {
+        font-size: 16px;
+        color: #F94A29;
+    }
 }
 
     </style>

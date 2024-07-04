@@ -687,7 +687,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend/images/resource/about1-1.webp') }}" alt=""></figure>
+                                    src="{{ asset('frontend/images/landing/two_banner.jpg') }}" alt=""></figure>
                         </div>
                     </div>
                 </div>
@@ -860,7 +860,7 @@
             </div>
         </div>
     </section>
-    <section class="testimonial-section">
+    {{-- <section class="testimonial-section">
         <div class="inner-container">
             <div class="sec-title text-center">
                 <h2>WHAT’s TALKING about<br> our Learners?</h2>
@@ -873,13 +873,13 @@
                         </div>
                         <div class="content-box">
                             <div class="text"><p class="landing_font">Nugortech IT ফুল স্ট্যাক ডিজিটাল মার্কেটিং কোর্সটি আমার মার্কেটিং এর ধারনা চেঞ্জ করে দিয়েছে। একটা সিংগেল কোর্সে এত এত কিছু আমি শিখেছি যে একটা ক্লায়েন্টের সকল ধরনের সমস্যার সমাধান আমি দিতে পারি। গুগল এনালিটিক্স, ফেইসবুক পিক্সেল এবং সার্ভার সাইড ট্র্যাকিং ইউজ করে ক্লায়েন্টের রিয়েল টাইম প্রবলেম সল্যুশন আমার ফ্রিল্যান্সিং জার্নিকে আরো শক্ত করেছে। Nugortech IT কে ধন্যবাদ এমন সময়োপযোগী এবং পরিপুর্ন একটি কোর্স ডিজিটাল মার্কেটিং এর ওপর অফার করার জন্য।</p></div>
-                            {{-- <div class="auther-info">
+                            <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -890,13 +890,13 @@
                         </div>
                         <div class="content-box">
                             <div class="text"><p class="landing_font">Nugortech IT এর Full Stack Digital Marketing কোর্সটি বাংলাদেশের সেরা একটি কোর্স। কারন এই কোর্সে রয়েছে দেশসেরা অভিজ্ঞ মেন্টর। আমার কাছে সবচেয়ে ভালো লেগেছে Nugortech IT প্লাটফর্ম এর নিয়মকানুন।  প্রতিটি মডিউলে ২ টি লাইভ ক্লাসের পাশাপাশি ২ টি এসাইনমেন্ট, ১ টি কুইজ এবং ১ টি লাইভ টেস্ট। এবং এগুলোতে পার্ফরম্যান্স এর উপর ভিত্তি করে স্কোর দেওয়া হয়। স্কোরের ভিত্তিতে স্টুডেন্টদের র‍্যাংকিং করা হয়। এই নিয়মনীতির জন্যই এত লম্বা সময় ধরে কোর্সে মনযোগ ধরে রাখা সম্ভব হয়েছে আমার ক্ষেত্রে। এছাড়াও এটেন্ডেন্স কাউন্ট হওয়ার কারনে আমি কখনো ক্লাস মিস দেইনি।</p></div>
-                            {{-- <div class="auther-info">
+                            <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -907,13 +907,13 @@
                         </div>
                         <div class="content-box">
                             <div class="text"><p class="landing_font">Nugortech IT লার্নিং এক্সপেরিয়েন্স, নিয়মিত ক্লাস এবং এসাইনমেন্ট আমার লার্নিং জার্নিকে অনেক ইফেক্টিভ করেছে। আমি কোর্স শেষ হওয়ার আগে থেকেই ক্লায়েন্টের সাথে কাজ করা শুরু করে দিতে পেরেছি।</p></div>
-                            {{-- <div class="auther-info">
+                            <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -924,19 +924,19 @@
                         </div>
                         <div class="content-box">
                             <div class="text"><p class="landing_font">শামিম বসের মতন একজন সেরা ট্রেইনার এবং Nugortech IT সুপার ইফেক্টিভ কারিকুলাম মিলে যে গাইডেড জার্নি পেয়েছি, সেটা মার্কেটপ্লেস কিংবা ক্লায়েন্ট সব জায়গার জন্য একদম পার্ফেক্টলি ফিট করেছে।</p></div>
-                            {{-- <div class="auther-info">
+                            <div class="auther-info">
                                 <img src="ssss" alt>
                                 <div class="info-box">
                                     <h6 class="title">sss</h6>
                                     <span>sss</span>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <section class="about-section innerpage" style="background: #101828; padding: 50px 0 0 0">
         <div class="auto-container">
             <div class="row">
@@ -1048,7 +1048,7 @@
                 <div class="content-column col-lg-12">
                     <div class="row">
                         <div class="col-lg-3 col-4">
-                            <img src="https://nugortechit.com/uploads/team/FanBd131697.png" alt="">
+                            <img src="{{ asset('frontend/images/landing/cruse-image.jpg') }}" alt="">
                         </div>
                         <div class="col-lg-9 col-8">
                             <div class="inner-column">
@@ -1056,28 +1056,28 @@
                                     <h3>Successful Online Business with Digital Marketing</h3>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3 col-6">
+                                    <div class="col-lg-3 col-6 my-2">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                            <span class="landing_font">১৩</span><br>
+                                            <span class="landing_font">24</span><br>
                                             <span class="landing-title landing_font">টপিক</span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-6">
+                                    <div class="col-lg-3 col-6 my-2">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                            <span class=" landing_font">48</span><br>
+                                            <span class=" landing_font">4</span><br>
                                             <span class="landing-title  landing_font">প্রজেক্ট</span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-6 mt-3">
+                                    <div class="col-lg-3 col-6 my-2">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class="landing_font">24</span><br>
                                             <span class="landing-title  landing_font">ভিডিও</span>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-6 mt-3">
+                                    <div class="col-lg-3 col-6 my-2">
                                         <div class="landing-content-box"
                                             style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                             <span class="landing_font">5</span><br>
@@ -1087,12 +1087,12 @@
                                 </div>
                                 <div class="inner-column">
                                     <div class="sec-title">
-                                        <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
+                                        <div class="text landing_font order_price" >কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
                                         <div class="my-3">
                                             <form action="{{ route('services.product.checkout') }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" name="product_id" value="{{ $products->id }}">
-                                                <button type="submit" class="theme-btn text-white" style="color: #F94A29;"><a>Admission</a></button>
+                                                <button type="submit" class="theme-btn text-white" style="color: #F94A29; padding: 0 70px"><a>Admission</a></button>
                                             </form>
                                         </div>
                                     </div>
