@@ -1048,7 +1048,7 @@
                 <div class="content-column col-lg-12">
                     <div class="row">
                         <div class="col-lg-3 col-4">
-                            <img src="{{ asset('frontend/images/landing/cruse-image.jpg') }}" alt="">
+                            <img src="{{ asset('uploads/products/preview') }}/{{ $products->preview_image }}" alt="">
                         </div>
                         <div class="col-lg-9 col-8">
                             <div class="inner-column">
