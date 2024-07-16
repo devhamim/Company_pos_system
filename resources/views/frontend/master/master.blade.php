@@ -3,18 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-    @if($setting->first()->title != null)
-        <title>{{$setting->first()->title}}</title>
+    @if ($metaSettings && $metaSettings->first())
+        <title>{{ $metaSettings->first()->title }}</title>
+    @elseif ($setting && $setting->first())
+        <title>{{ $setting->first()->title }}</title>
     @endif
-    @if ($setting->first()->meta_title != null)
+
+    @if ($metaSettings && $metaSettings->first())
+        <meta name="title" content="{{$metaSettings->first()->meta_title}}">
+    @elseif ($setting && $setting->first())
         <meta name="title" content="{{$setting->first()->meta_title}}">
     @endif
-    @if ($setting->first()->meta_tag != null)
+
+    @if ($metaSettings && $metaSettings->first())
+        <meta name="keywords" content="{{$metaSettings->first()->meta_tag}}">
+    @elseif ($setting && $setting->first())
         <meta name="keywords" content="{{$setting->first()->meta_tag}}">
     @endif
-    @if ($setting->first()->meta_description != null)
+
+    @if ($metaSettings && $metaSettings->first())
+        <meta name="description" content="{{$metaSettings->first()->meta_description}}">
+    @elseif ($setting && $setting->first())
         <meta name="description" content="{{$setting->first()->meta_description}}">
     @endif
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

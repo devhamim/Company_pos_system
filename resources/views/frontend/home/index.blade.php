@@ -141,10 +141,10 @@
                     </div>
                 </div>
                 <div class="image-column col-lg-6 col-md-12 col-sm-12 ">
-                    <div class="inner-column">
+                    <div class="inner-column" style="margin-left: 0">
                         <div class="image-box">
-                            <figure class="image overlay-anim"><img style="ru"
-                                    src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt></figure>
+                            <figure class="image overlay-anim">
+                                <img style="ru" width="100%" src="{{ asset('frontend') }}/images/resource/about1-3.webp" alt></figure>
                             {{-- <div class="play-box">
                                 <figure class="image-2 overlay-anim"><img
                                         src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt>
@@ -154,12 +154,12 @@
                                     <i class="icon fa fa-play"></i>
                                 </a>
                             </div> --}}
-                            <div class="exp-box">
+                            {{-- <div class="exp-box">
                                 <div class="icon-box">
                                     <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
                                 </div>
                                 <h4 class="title">MARKETING SOLUTION</h4>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                             <i class="flaticon-workers"></i>
                         </div>
                         <div class="content-box">
-                            <h4 class="title">Analysis</h4>
+                            <h4 class="title">Plan</h4>
                             <div class="text">added activity to beta test. the digital divide.</div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                             <i class="flaticon-winner"></i>
                         </div>
                         <div class="content-box">
-                            <h4 class="title">prototype</h4>
+                            <h4 class="title">Recharge</h4>
                             <div class="text">added activity to beta test. the digital divide.</div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                             <i class="flaticon-web-programming"></i>
                         </div>
                         <div class="content-box">
-                            <h4 class="title">Test & Launch</h4>
+                            <h4 class="title">Result</h4>
                             <div class="text">added activity to beta test. the digital divide.</div>
                         </div>
                     </div>
@@ -267,7 +267,7 @@
                                 <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
                             </ul>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="choose-block col-xl-6 col-lg-12 col-md-6">
                                 <div class="inner-box">
                                     <div class="icon-box">
@@ -284,7 +284,7 @@
                                     <h6 class="title">search engine optimization</h6>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -344,7 +344,7 @@
         <div class="auto-container text-center">
             <div class="sec-title">
                 <h2>Recently Completed Portfolio</h2>
-                <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet
+                <div >We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet
                     sagittis. Urna nec tincidunt praesent.</div>
             </div>
         </div>
@@ -379,6 +379,16 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+                <div class="row my-3">
+                    <div class="col-lg-6 m-auto">
+                        <div class="text-center">
+                            <a href="{{ route('our.protfolio') }}" data-animation-in="fadeInUp" data-delay-in="0.4"
+                                class="theme-btn">See More
+                                <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -464,7 +474,7 @@
                 <h2 class="text-white">OUR TEAM</h2>
             </div>
             <div class="row">
-                @foreach ($teams as $team)
+                @foreach ($teams->take(12) as $team)
                     <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">

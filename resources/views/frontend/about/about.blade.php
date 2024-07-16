@@ -47,21 +47,21 @@
                 </div>
                 <div class="content-column col-lg-6">
                     <div class="inner-column">
-                        <div class="sec-title pt-5">
+                        <div class="sec-title">
                             <div class="text">
                                 Nugortech IT is the leading digital marketing agency. Here, we serve several services including SEO, SMM, content marketing, social media kit, graphic design, logo design, 3D floor plan, 3D modeling, and rendering. Our company has more than 20 employees working in different sectors. Gladly, we serve you 24/7. So, no matter what time zone you are in, you can reach us anytime. We are just a knock away from you!
                                 </div>
                         </div>
-                        <div class="inner-box">
-                            <div class="content-box">
-                                <img width="85%" src="{{ asset('frontend/images/shan.webp') }}" alt="">
-                            </div>
-                            <div class="content-box pt-3">
+                        <div class="inner-box row">
+                            <div class="content-box pt-3 col-lg-5 col-6">
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We love to explore</h6>
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We stop at nothing</h6>
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We solve real problems</h6>
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We keep everything simple</h6>
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We think differently</h6>
+                            </div>
+                            <div class="content-box col-lg-5 col-6">
+                                <img  src="{{ asset('frontend/images/shan.webp') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -74,10 +74,10 @@
             <div class="row">
 
                 <div class="image-column col-lg-6">
-                    <div class="inner-column" style="margin-right: 106px; margin-left:0">
+                    <div class="inner-column" style="margin-left:0">
                         <div class="image-box">
-                            <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt>
+                            <figure class="image overlay-anim">
+                                <img width="100%" src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt>
                             </figure>
                             {{-- <div class="play-box">
                                 <figure class="image-2 overlay-anim"><img
@@ -88,12 +88,12 @@
                                     <i class="icon fa fa-play"></i>
                                 </a>
                             </div> --}}
-                            <div class="exp-box">
+                            {{-- <div class="exp-box">
                                 <div class="icon-box">
                                     <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
                                 </div>
                                 <h4 class="title">MARKETING SOLUTION</h4>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

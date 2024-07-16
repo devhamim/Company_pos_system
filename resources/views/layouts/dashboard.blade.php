@@ -281,7 +281,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidenav-item {{ Request::is('terms*', 'setting*') ? 'active open' : '' }}">
+                    <li class="sidenav-item {{ Request::is('terms*') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
                             <i class="sidenav-icon lnr lnr-license"></i>
                             <div>Terms & Policy</div>
@@ -297,9 +297,22 @@
                                     <div>Delivery Policy</div>
                                 </a>
                             </li>
-                            <li class="sidenav-item">
+                        </ul>
+                    </li>
+                    <li class="sidenav-item {{ Request::is('setting*') ? 'active open' : '' }}">
+                        <a href="javascript:" class="sidenav-link sidenav-toggle">
+                            <i class="sidenav-icon lnr lnr-cog"></i>
+                            <div>Setting</div>
+                        </a>
+                        <ul class="sidenav-menu {{ Request::is('terms/policy') ? 'active' : '' }}">
+                            <li class="sidenav-item {{ Request::is('terms/condition') ? 'active' : '' }}">
                                 <a href="{{ route('setting.add') }}" class="sidenav-link">
-                                    <div>Setting</div>
+                                    <div>Site Setting</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('/meta/setting/add') ? 'active' : '' }}">
+                                <a href="{{route('meta.setting.add')}}" class="sidenav-link">
+                                    <div>Meta Setting</div>
                                 </a>
                             </li>
                         </ul>

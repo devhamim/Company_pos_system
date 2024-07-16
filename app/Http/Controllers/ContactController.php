@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Contactinfo;
+use App\Models\Meta;
 use App\Models\setting;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,9 +17,11 @@ class ContactController extends Controller
     function contact() {
         $categories = Category::all();
         $setting = setting::all();
+        $metaSettings = Meta::where('pages', 'contact')->where('status', 1)->get();
         return view('frontend.contact.contact', [
             'categories' => $categories,
             'setting' => $setting,
+            'metaSettings' => $metaSettings,
         ]);
     }
 

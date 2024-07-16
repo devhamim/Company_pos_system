@@ -76,7 +76,9 @@ class bannerContoller extends Controller
         else {
             $banner_img_del = banner::where('id', $request->banner_id)->first()->banner_image;
             $delete_from = public_path('uploads/banner/'.$banner_img_del);
-            unlink($delete_from);
+            if(file_exists($delete_from)){
+                unlink($delete_from);
+            }
 
             $upload_img = $request->banner_image;
             $extension = $upload_img->getClientOriginalExtension();
@@ -95,7 +97,9 @@ class bannerContoller extends Controller
     function banner_delete($banner_id){
         $banner_img_del = banner::where('id', $banner_id)->first()->banner_image;
         $delete_from = public_path('uploads/banner/'.$banner_img_del);
-        unlink($delete_from);
+        if(file_exists($delete_from)){
+            unlink($delete_from);
+        }
 
         banner::find($banner_id)->delete();
         return back()->withSuccess('Banner Delete successfully');

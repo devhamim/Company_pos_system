@@ -30,6 +30,7 @@ use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MetaController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\ProtfolioController;
@@ -189,6 +190,13 @@ Route::post('/banner/update/', [bannerContoller::class, 'banner_update'])->name(
 // setting
 Route::get('/setting/add', [settingController::class, 'setting_add'])->name('setting.add');
 Route::post('/setting/update', [settingController::class, 'setting_update'])->name('setting.update');
+
+// meta setting
+Route::get('/meta/setting/add', [MetaController::class, 'meta_setting_add'])->name('meta.setting.add');
+Route::post('/meta/setting/store', [MetaController::class, 'meta_setting_store'])->name('meta.setting.store');
+Route::post('/meta/setting/update', [MetaController::class, 'meta_setting_update'])->name('meta.setting.update');
+Route::post('/editmeta/{id}', [MetaController::class, 'editmeta'])->name('editmeta');
+Route::get('/meta/setting/delete/{id}', [MetaController::class, 'meta_setting_delete'])->name('meta.setting.delete');
 
 // Product
 Route::get('/product/add', [ProductController::class, 'product_add'])->name('product.add');

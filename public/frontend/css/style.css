@@ -3782,7 +3782,7 @@ figure.image {
 
 .about-section {
     position: relative;
-    padding: 120px 0;
+    padding: 50px 0;
     background-image: url(../images/background/about-bg.webp);
     -o-object-fit: cover;
     object-fit: cover;
@@ -3978,11 +3978,6 @@ figure.image {
     }
 }
 
-@media(max-width:575.98px) {
-    .about-section .content-column .inner-column .inner-box .content-box {
-        margin-bottom: 20px
-    }
-}
 
 .about-section .content-column .inner-column .inner-box .content-box::before {
     content: "";
@@ -14323,3 +14318,13 @@ table.tbl-shopping-cart>tfoot>tr>th {
     padding: 15px 35px;
 }
 
+@media(max-width:575.98px) {
+    .about-section .content-column .inner-column .inner-box .content-box {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .about-section .content-column .inner-column .inner-box .content-box .title {
+        font-size: 13px;
+        line-height: 19px;
+    }
+}

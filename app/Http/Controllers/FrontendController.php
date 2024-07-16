@@ -9,6 +9,7 @@ use App\Models\Coupon;
 use App\Models\customer_registers;
 use App\Models\customers;
 use App\Models\Inventory;
+use App\Models\Meta;
 use App\Models\Order;
 use App\Models\privacy_policy;
 use App\Models\Product;
@@ -55,6 +56,8 @@ class FrontendController extends Controller
         $teams = team::where('status', 1)->get();
         $cliends = cliend::where('status', 1)->get();
 
+        $metaSettings = Meta::where('pages', 'home')->where('status', 1)->get();
+
         return view('frontend.home.index', [
             'categories' => $categories,
             'categoryy' => $category,
@@ -67,7 +70,7 @@ class FrontendController extends Controller
             'testmonials' => $testmonials,
             'teams' => $teams,
             'cliends' => $cliends,
-
+            'metaSettings' => $metaSettings,
             // 'discount_products_count' => $discount_products_count,
         ]);
     }
@@ -77,10 +80,12 @@ class FrontendController extends Controller
         $teams = team::where('status', 1)->get();
         $category= Category::where('status', 1)->take(8)->get();
         $testmonials= testmonial::where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'about')->where('status', 1)->get();
         return view('frontend.about.about', [
             'teams'=>$teams,
             'categoryy' => $category,
             'testmonials' => $testmonials,
+            'metaSettings' => $metaSettings,
         ]);
     }
 
@@ -88,27 +93,30 @@ class FrontendController extends Controller
     // our_services
     function our_services() {
         $services = Category::where('status', '1')->get();
-        return view('frontend.service.index', compact(['services']));
+        $metaSettings = Meta::where('pages', 'services')->where('status', 1)->get();
+        return view('frontend.service.index', compact(['services', 'metaSettings']));
     }
 
     // services_product
     function services_product($id) {
         $services = Category::where('status', '1')->where('id', $id)->get();
         $products = Product::where('status', '1')->where('category_id', $id)->get();
-        return view('frontend.service.details', compact(['products','services']));
+        $metaSettings = Meta::where('pages', 'services_product')->where('status', 1)->get();
+        return view('frontend.service.details', compact(['products','services', 'metaSettings']));
     }
 
     // services_product_details
     function services_product_details($slug) {
         $products = Product::where('status', '1')->where('slug', $slug)->get();
         $productgallery = ProductGallery::where('product_id', $products->first()->id)->get();
-        return view('frontend.service.product_details', compact(['products','productgallery']));
+        $metaSettings = Meta::where('pages', 'services_product_details')->where('status', 1)->get();
+        return view('frontend.service.product_details', compact(['products','productgallery', 'metaSettings']));
     }
 
 
     // services_product_details
     function services_product_checkout(Request $request){
-        $product_id = Product::where('id', $request->product_id)->first() ;
+        $product_id = Product::where('id', $request->product_id)->get() ;
         return view('frontend.checkout.checkout',[
             'product_id'=>$product_id,
         ]);
@@ -290,9 +298,11 @@ class FrontendController extends Controller
     function our_products(){
         $shopproducts = ShopProduct::where('status', 1)->get();
         $shopcategorys = shopcategory::where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'our_products')->where('status', 1)->get();
         return view('frontend.product.index',[
             'shopproducts'=>$shopproducts,
             'shopcategorys'=>$shopcategorys,
+            'metaSettings'=>$metaSettings,
         ]);
     }
 
@@ -302,17 +312,22 @@ class FrontendController extends Controller
         $productgallerys = shopproductgallery::where('shopproduct_id', $shopproducts->id)->get();
         $similarproducts = ShopProduct::where('category_id', $shopproducts->category_id)->where('id', '!=', $shopproducts->id)->get();
         $product_comment = ProductComment::where('product_id', $shopproducts->id)->get();
+        $metaSettings = Meta::where('pages', 'product_details')->where('status', 1)->get();
         return view('frontend.product.details',[
             'shopproducts'=>$shopproducts,
             'productgallerys'=>$productgallerys,
             'similarproducts'=>$similarproducts,
             'product_comment'=>$product_comment,
+            'metaSettings'=>$metaSettings,
         ]);
     }
 
     // our_blogs
     function our_blogs(){
-        return view('frontend.blogs.index');
+        $metaSettings = Meta::where('pages', 'our_blogs')->where('status', 1)->get();
+        return view('frontend.blogs.index',[
+            'metaSettings'=>$metaSettings,
+        ]);
     }
 
 
@@ -320,9 +335,11 @@ class FrontendController extends Controller
     function privacy_policy(){
         $categories = Category::all();
         $privacy_policy = privacy_policy::all();
+        $metaSettings = Meta::where('pages', 'privacy_policy')->where('status', 1)->get();
         return view('frontend.privacy_policy.privacy_policy', [
             'categories'=>$categories,
             'privacy_policy'=>$privacy_policy,
+            'metaSettings'=>$metaSettings,
         ]);
     }
 
@@ -387,13 +404,14 @@ function portfolio_details($slug){
     $protfolio_next = protfolio::where('id', '>', $protfolio_details->first()->id)->orderBy('id')->first();
     $protfolio_preview = protfolio::where('id', '<', $protfolio_details->first()->id)->orderBy('id', 'desc')->first();
     $protfolio_similar = protfolio::where('project_type' ,$protfolio_details->first()->project_type)->where('id', '!=', $protfolio_details->first()->id)->get();
-
+    $metaSettings = Meta::where('pages', 'portfolio_details')->where('status', 1)->get();
     return view('frontend.portfolio_details.portfolio_details', [
         'protfolio_details'=>$protfolio_details,
         'protfolio_gallery'=>$protfolio_gallery,
         'protfolio_next'=>$protfolio_next,
         'protfolio_preview'=>$protfolio_preview,
         'protfolio_similar'=>$protfolio_similar,
+        'metaSettings'=>$metaSettings,
     ]);
 }
 
@@ -414,15 +432,19 @@ function product_comment_store(Request $request){
 // our_cliends
 function our_cliends(){
     $cliends = cliend::where('status', 1)->paginate(40);
+    $metaSettings = Meta::where('pages', 'our_cliends')->where('status', 1)->get();
     return view('frontend.cliend.index',[
         'cliends'=>$cliends,
+        'metaSettings'=>$metaSettings,
     ]);
 }
 // our_protfolio
 function our_protfolio(){
     $portfolios = protfolio::where('status', 1)->paginate(24);
+    $metaSettings = Meta::where('pages', 'our_protfolio')->where('status', 1)->get();
     return view('frontend.protfolio.index',[
         'portfolios'=>$portfolios,
+        'metaSettings'=>$metaSettings,
     ]);
 }
 
