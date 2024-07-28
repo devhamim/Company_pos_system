@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\Meta;
 use App\Models\setting;
 use Illuminate\Support\ServiceProvider;
 use View;
@@ -48,6 +49,10 @@ class AppServiceProvider extends ServiceProvider
      // customer header setting
      View::composer('customer.layout.header', function ($view){
         $view->with('setting', setting::all());
+    });
+     // checkout metaSettings
+     View::composer('frontend.master.master', function ($view){
+        $view->with('metaSettings', Meta::where('pages', 'services/product/checkout')->where('status', 1)->get());
     });
      // customer footer setting
      View::composer('customer.layout.footer', function ($view){

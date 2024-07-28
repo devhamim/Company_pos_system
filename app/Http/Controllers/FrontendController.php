@@ -116,7 +116,7 @@ class FrontendController extends Controller
 
     // services_product_details
     function services_product_checkout(Request $request){
-        $product_id = Product::where('id', $request->product_id)->get() ;
+        $product_id = Product::where('id', $request->product_id)->first() ;
         return view('frontend.checkout.checkout',[
             'product_id'=>$product_id,
         ]);
