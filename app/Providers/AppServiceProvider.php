@@ -51,9 +51,9 @@ class AppServiceProvider extends ServiceProvider
         $view->with('setting', setting::all());
     });
      // checkout metaSettings
-     View::composer('frontend.master.master', function ($view){
-        $view->with('metaSettings', Meta::where('pages', 'services/product/checkout')->where('status', 1)->get());
-    });
+    //  View::composer('frontend.master.master', function ($view){
+    //     $view->with('metaSettings', Meta::where('pages', 'services/product/checkout')->where('status', 1)->get());
+    // });
      // customer footer setting
      View::composer('customer.layout.footer', function ($view){
         $view->with('setting', setting::all());

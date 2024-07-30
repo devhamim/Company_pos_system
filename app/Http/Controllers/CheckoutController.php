@@ -11,6 +11,7 @@ use App\Models\Inventory;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\customers;
+use App\Models\Meta;
 use App\Models\shippingMethods;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class CheckoutController extends Controller
 {
     //checkout
     function checkout() {
+
         $categories = Category::all();
         $shipping_methods = shippingMethods::where('status', 1)->get();
         $cookie_data = stripslashes(Cookie::get('shopping_cart'));
@@ -33,8 +35,6 @@ class CheckoutController extends Controller
             'shipping_methods'=> $shipping_methods,
         ]);
     }
-
-
 
     // order_store
     function order_store(Request $request) {

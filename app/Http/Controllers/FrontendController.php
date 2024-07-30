@@ -117,8 +117,10 @@ class FrontendController extends Controller
     // services_product_details
     function services_product_checkout(Request $request){
         $product_id = Product::where('id', $request->product_id)->first() ;
+        $metaSettings = Meta::where('pages', 'services/product/checkout')->where('status', 1)->get();
         return view('frontend.checkout.checkout',[
             'product_id'=>$product_id,
+            'metaSettings'=> $metaSettings,
         ]);
     }
 
