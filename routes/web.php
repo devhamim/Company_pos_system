@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\bannerContoller;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BuyController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
@@ -222,6 +223,14 @@ Route::get('/portfolio/edit/{id}', [ProtfolioController::class, 'portfolio_edit'
 Route::get('/portfolio/delete/{id}', [ProtfolioController::class, 'portfolio_delete'])->name('portfolio.delete');
 Route::post('/portfolio/update', [ProtfolioController::class, 'portfolio_update'])->name('portfolio.update');
 
+// blogs.list
+Route::get('/blogs/list', [BlogController::class, 'blogs_list'])->name('blogs.list');
+Route::get('/blogs/add', [BlogController::class, 'blogs_add'])->name('blogs.add');
+Route::post('/blogs/store', [BlogController::class, 'blogs_store'])->name('blogs.store');
+Route::get('/blogs/edit/{id}', [BlogController::class, 'blogs_edit'])->name('blogs.edit');
+Route::get('/blogs/delete/{id}', [BlogController::class, 'blogs_delete'])->name('blogs.delete');
+Route::post('/blogs/update', [BlogController::class, 'blogs_update'])->name('blogs.update');
+
 
 
 // Role management system
@@ -245,7 +254,8 @@ Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
 Route::get('/product/details/{slug}', [FrontendController::class, 'product_details'])->name('product.details');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
-Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
+Route::get('/blog/details/{slug}', [FrontendController::class, 'blog_details'])->name('blog.details');
+Route::post('/blog/comment/store', [FrontendController::class, 'blog_comment_store'])->name('blog.comment.store');
 Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
 Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
 Route::get('/cliends', [FrontendController::class, 'our_cliends'])->name('our.cliends');

@@ -197,7 +197,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidenav-item {{ Request::is('banner*', 'portfolio*','testimonial/list','team/list','media/list') ? 'active open' : '' }}">
+                    <li class="sidenav-item {{ Request::is('banner*', 'portfolio*', 'blogs*','testimonial/list','team/list','media/list') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
                             <i class="sidenav-icon lnr lnr-license"></i>
                             <div>Web Dynamics</div>
@@ -237,6 +237,12 @@
                                 <a href="{{route('cliend.list')}}" class="sidenav-link">
                                     <i class="sidenav-icon lnr lnr-picture"></i>
                                     <div>Cliend</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('blogs/list') ? 'active' : '' }}">
+                                <a href="{{route('blogs.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Blogs</div>
                                 </a>
                             </li>
                         </ul>

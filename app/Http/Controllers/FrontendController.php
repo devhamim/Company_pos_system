@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\banner;
+use App\Models\Blogs;
 use App\Models\Category;
 use App\Models\cliend;
+use App\Models\Comment;
 use App\Models\Coupon;
 use App\Models\customer_registers;
 use App\Models\customers;
@@ -55,6 +57,8 @@ class FrontendController extends Controller
         $testmonials = testmonial::where('status', 1)->get();
         $teams = team::where('status', 1)->get();
         $cliends = cliend::where('status', 1)->get();
+        $blogs = Blogs::where('status', 1)->take(3)->get();
+
 
         $metaSettings = Meta::where('pages', 'home')->where('status', 1)->get();
 
@@ -70,6 +74,7 @@ class FrontendController extends Controller
             'testmonials' => $testmonials,
             'teams' => $teams,
             'cliends' => $cliends,
+            'blogs' => $blogs,
             'metaSettings' => $metaSettings,
             // 'discount_products_count' => $discount_products_count,
         ]);
@@ -327,9 +332,47 @@ class FrontendController extends Controller
     // our_blogs
     function our_blogs(){
         $metaSettings = Meta::where('pages', 'our_blogs')->where('status', 1)->get();
+        $blogs = Blogs::where('status', 1)->paginate(30);
         return view('frontend.blogs.index',[
             'metaSettings'=>$metaSettings,
+            'blogs'=>$blogs,
         ]);
+    }
+
+    // blog_details
+    function blog_details($slug){
+        $metaSettings = Meta::where('pages', 'blog_details')->where('status', 1)->get();
+        $blogs = Blogs::where('slug', $slug)->where('status', 1)->first();
+        $resent_blog = Blogs::where('status', 1)->take(8)->get();
+        $comments = Comment::where('blog_id', $blogs->id)->get();
+        $comments_count = Comment::where('blog_id', $blogs->id)->count();
+
+        $tagsString = $blogs->tage;
+        $tagsArray = explode(',', $tagsString);
+        return view('frontend.blogs.details',[
+            'metaSettings'=>$metaSettings,
+            'blogs'=>$blogs,
+            'resent_blog'=>$resent_blog,
+            'comments'=>$comments,
+            'comments_count'=>$comments_count,
+            'tagsArray'=>$tagsArray,
+        ]);
+    }
+
+    // blog_comment_store
+    function blog_comment_store(Request $request){
+        $rules = [
+            'name'=>'required',
+            'email'=>'nullable',
+            'message'=>'required',
+            'blog_id'=>'required',
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        Comment::create($validatedData);
+
+        return back()->withSuccess('successfully added.');
     }
 
 
