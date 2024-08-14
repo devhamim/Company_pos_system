@@ -474,7 +474,7 @@
                 <h2 class="text-white">OUR TEAM</h2>
             </div>
             <div class="row">
-                @foreach ($teams->take(8) as $team)
+                @foreach ($teams->take(12) as $team)
                     <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
@@ -489,6 +489,16 @@
                     </div>
                 @endforeach
             </div>
+            {{-- <div class="row my-3">
+                <div class="col-lg-6 m-auto">
+                    <div class="text-center">
+                        <a href="{{ route('terms') }}" data-animation-in="fadeInUp" data-delay-in="0.4"
+                            class="theme-btn">See More
+                            <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                        </a>
+                    </div>
+                </div>
+            </div> --}}
         </div>
     </section>
 
