@@ -5826,7 +5826,7 @@ figure.image {
     position: relative
 }
 
-.news-block .inner-box .image:before {
+.news-block .inner-box .image img:before {
     content: "";
     position: absolute;
     top: 0;
