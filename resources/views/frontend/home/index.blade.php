@@ -474,7 +474,7 @@
                 <h2 class="text-white">OUR TEAM</h2>
             </div>
             <div class="row">
-                @foreach ($teams->take(12) as $team)
+                @foreach ($teams->take(8) as $team)
                     <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
