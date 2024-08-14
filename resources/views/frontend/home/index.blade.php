@@ -517,7 +517,7 @@
                         <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img width="70px" height="70px" src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" />
+                                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" />
                                 </div>
                             </div>
                         </div>
@@ -757,7 +757,7 @@
                             <div class="content-box">
                                 <div class="text">{{ $testmonial->description }}</div>
                                 <div class="auther-info">
-                                    <img src="{{ asset('uploads/testimonial') }}/{{ $testmonial->image }}" alt>
+                                    <img  width="70px" height="70px" src="{{ asset('uploads/testimonial') }}/{{ $testmonial->image }}">
                                     <div class="info-box">
                                         <h6 class="title">{{ $testmonial->name }}</h6>
                                         <span>{{ $testmonial->designation }}</span>
