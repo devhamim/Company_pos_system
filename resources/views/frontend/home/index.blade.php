@@ -513,7 +513,7 @@
                     </ul>
                 </div>
                 <div class="filter-list row">
-                    @foreach ($cliends as $cliend)
+                    @foreach ($cliends->take(9) as $cliend)
                         <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">

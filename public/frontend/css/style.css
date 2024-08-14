@@ -11273,7 +11273,7 @@ figure.image {
 }
 
 .product-block .inner-box:hover {
-    border: 2px solid var(--theme-color1);
+    /* border: 2px solid var(--theme-color1); */
     -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, .1)
 }
