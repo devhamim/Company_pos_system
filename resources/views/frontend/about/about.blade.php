@@ -203,7 +203,7 @@
                             <div class="content-box">
                                 <div class="text">{{ $testmonial->description }}</div>
                                 <div class="auther-info">
-                                    <img src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt>
+                                    <img width="70px" height="70px" src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt>
                                     <div class="info-box">
                                         <h6 class="title">{{ $testmonial->name }}</h6>
                                         <span>{{ $testmonial->designation }}</span>
@@ -217,7 +217,7 @@
         </div>
     </section>
 
-    <section class="choose-us-section">
+    {{-- <section class="choose-us-section">
         <div class="auto-container">
             <div class="row">
 
@@ -279,7 +279,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 @endsection
 
