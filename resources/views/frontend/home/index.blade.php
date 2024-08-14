@@ -517,12 +517,11 @@
                         <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt />
+                                    <img width="70px" height="70px" src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" />
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
                 </div>
             </div>
             <div class="row my-3">
