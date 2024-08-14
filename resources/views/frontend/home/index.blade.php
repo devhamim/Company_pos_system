@@ -180,7 +180,7 @@
                         </div>
                         <div class="content-box">
                             <h4 class="title">Find new Ideas</h4>
-                            <div class="text">added activity to beta test. the digital divide.</div>
+                            <div class="text">Empowering Ideas, Creating Futures.</div>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                         </div>
                         <div class="content-box">
                             <h4 class="title">Plan</h4>
-                            <div class="text">added activity to beta test. the digital divide.</div>
+                            <div class="text">Planning Today for Tomorrow’s Triumphs.</div>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="content-box">
                             <h4 class="title">Recharge</h4>
-                            <div class="text">added activity to beta test. the digital divide.</div>
+                            <div class="text">Recharge: The Power to Keep Going.</div>
                         </div>
                     </div>
                 </div>
@@ -216,7 +216,7 @@
                         </div>
                         <div class="content-box">
                             <h4 class="title">Result</h4>
-                            <div class="text">added activity to beta test. the digital divide.</div>
+                            <div class="text">Your Success, Our Result.</div>
                         </div>
                     </div>
                 </div>
