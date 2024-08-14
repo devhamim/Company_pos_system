@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/timepicker/timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/minicolors/minicolors.css')}}">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
     <style>
         .sidenav-item a{
@@ -484,7 +484,7 @@
     <script src="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.js')}}"></script>
     <script src="{{asset('backend/libs/timepicker/timepicker.js')}}"></script>
     <script src="{{asset('backend/libs/minicolors/minicolors.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
         <!-- Demo -->
         <script src="{{asset('backend/js/analytics.js')}}"></script>
@@ -552,6 +552,7 @@
                 tabsize: 2,
                 height: 200
             });
+
         });
     </script>
     <script>
