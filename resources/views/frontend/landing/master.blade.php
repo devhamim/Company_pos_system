@@ -598,7 +598,7 @@ body{
                 <div class="outer-box">
                     <h2 class="title wow fadeInLeft" data-wow-delay="400ms">Have a project? <br>Let's discuss</h2>
                     <div class="btn-box wow fadeInRight" data-wow-delay="400ms">
-                        <a href="page-contact.html" class="theme-btn-v2">Free Consultations<i
+                        <a href="#" class="theme-btn-v2">Free Consultations<i
                                 class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
                         @if ($setting->first()->phone != null)
                             <a href="tel:{{ $setting->first()->phone }}" class="theme-btn-v2 two">
