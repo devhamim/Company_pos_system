@@ -55,7 +55,7 @@
                                 @error('preview_image')
                                     <strong class="text-danger">{{$message}}</strong>
                                 @enderror
-                                <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->preview_image}}" alt="">
+                                <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->preview_image}}" alt="{{$blogs->preview_image}}">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -68,7 +68,7 @@
                                 @error('image')
                                     <strong class="text-danger">{{$message}}</strong>
                                 @enderror
-                                <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->image}}" alt="">
+                                <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->image}}" alt="{{$blogs->image}}">
                             </div>
                         </div>
 

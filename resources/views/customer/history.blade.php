@@ -12,20 +12,12 @@
                         <div class="ec-vendor-block">
                             <div class="ec-vendor-block-items">
                                 <ul>
-                                    {{-- @if (Auth::guard('customerreg')->check())
-                                        <li><a href="{{ route('panding.customer.dashboard') }}">User Profile</a></li>
-                                        <li><a href="{{ route('customer.history') }}">Billing</a></li>
-                                    @endif --}}
+
                                     @if (Auth::guard('customerauth')->check())
                                         <li><a href="{{ route('customer.dashboard') }}">User Profile</a></li>
                                         <li><a href="{{ route('customer.order.history') }}">Service Order</a></li>
                                         <li><a href="{{ route('customer.shop.history') }}">Product Order</a></li>
                                     @endif
-                                    {{-- <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="track-order.html">Track Order</a></li>
-                                    <li><a href="user-invoice.html">Invoice</a></li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -55,35 +47,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @if (Auth::guard('customerreg')->check())
-                                        @foreach ($serviceproductorders as $key => $serviceproductorder)
-                                            <tr>
-                                                <th scope="row"><span>{{ $key+1 }}</span></th>
-                                                <td>
-                                                    <img class="prod-img" src="{{ asset('uploads/products/preview') }}/{{ $serviceproductorder->rel_to_product->preview_image }}"alt="product image">
-                                                </td>
-                                                <td><span>{{ $serviceproductorder->rel_to_product->product_name }}</span></td>
-                                                <td><span>{{ $serviceproductorder->created_at->format('d M Y') }}</span></td>
-                                                <td><span>{{ $serviceproductorder->total }} </span></td>
-                                                <td>
-
-                                                    <span>
-                                                        @if ($serviceproductorder->status == 1)
-                                                            <strong class="bg-success text-white px-2 py-1 rounded">Paid</strong>
-                                                        @else
-                                                            <form action="{{ route('pay.due') }}" method="POST">
-                                                                @csrf
-                                                                    <input type="hidden" name="id" value="{{ $serviceproductorder->id }}">
-                                                                    <input type="hidden" name="name" value="{{ Auth::guard('customerreg')->user()->name }}">
-                                                                    <input type="hidden" name="total" value="{{ $serviceproductorder->total }}">
-                                                                <button type="submit" class="bg-danger text-white px-2 py-1 rounded">Unpaid</button>
-                                                            </form>
-                                                        @endif
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    @endif --}}
 
                                     @if (Auth::guard('customerauth')->check())
                                             @if ($serviceorders)

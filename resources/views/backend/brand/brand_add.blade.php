@@ -24,12 +24,11 @@
                                 Brand image
                                 <input type="file" name="brand_image" class="image" onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" class="image">
                             </label>
-                            <img width="100" class="mt-3 mb-3" id="image1" height="auto" src="" alt="">
+                            <img width="100" class="mt-3 mb-3" id="image1" height="auto" src="" alt="img">
                             @error('brand_image')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                             <div class="clearfix"></div>
-                            {{-- <img class="mt-3" id="image" src="{{asset('uploads/category')}}/{{$bra->bra_image}}" width="100" height="100" /> --}}
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary">Add</button>

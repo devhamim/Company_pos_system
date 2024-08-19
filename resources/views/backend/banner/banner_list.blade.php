@@ -34,7 +34,7 @@
                                     <tr>
                                         <td>{{$sl+1}}</td>
                                         <td>
-                                            <img src="{{asset('uploads/banner')}}/{{$banner->banner_image}}" alt class="img-fluid wid-100">
+                                            <img src="{{asset('uploads/banner')}}/{{$banner->banner_image}}" alt="{{$banner->banner_image}}" class="img-fluid wid-100">
                                         </td>
                                         <td>{{ Str::limit($banner->banner_title, 30, '...') }}</td>
                                         <td>{{ Str::limit($banner->banner_desp, 30, '...') }}</td>

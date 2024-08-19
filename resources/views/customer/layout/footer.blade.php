@@ -8,7 +8,7 @@
                             <div class="ec-footer-logo">
                                 @if ($setting->first()->white_logo != null)
                                     <a href="{{url('/')}}">
-                                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="">
+                                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="logo">
                                         <img class="dark-footer-logo" src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="Site Logo" style="display: none;" />
                                     </a>
                                 @endif

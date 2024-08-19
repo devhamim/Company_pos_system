@@ -10,10 +10,10 @@
             </div>
             <ul class="eccart-pro-items">
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/6_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
+                        <a href="#" class="cart_pro_title">T-shirt For Women</a>
                         <span class="cart-price"><span>$76.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -22,10 +22,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/12_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
+                        <a href="#" class="cart_pro_title">Women Leather Shoes</a>
                         <span class="cart-price"><span>$64.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -34,10 +34,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/3_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
+                        <a href="#" class="cart_pro_title">Girls Nylon Purse</a>
                         <span class="cart-price"><span>$59.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -67,8 +67,8 @@
                 </table>
             </div>
             <div class="cart_btn">
-                <a href="cart.html" class="btn btn-primary">View Cart</a>
-                <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+                <a href="#" class="btn btn-primary">View Cart</a>
+                <a href="#" class="btn btn-secondary">Checkout</a>
             </div>
         </div>
     </div>
@@ -115,10 +115,7 @@
                     <div class="ec-login-form">
                         <form action="{{ route('customer.number.login') }}" method="POST">
                             @csrf
-                            {{-- <span class="ec-login-wrap">
-                                <label>Email Address*</label>
-                                <input type="text" name="name" placeholder="Enter your email add..." required />
-                            </span> --}}
+
                             <span class="ec-login-wrap">
                                 <label>Phone Number*</label>
                                 <input type="number" name="number" placeholder="Enter your number" required />

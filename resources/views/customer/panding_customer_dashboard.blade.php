@@ -10,10 +10,10 @@
             </div>
             <ul class="eccart-pro-items">
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/6_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">T-shirt For Women</a>
+                        <a href="#" class="cart_pro_title">T-shirt For Women</a>
                         <span class="cart-price"><span>$76.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -22,10 +22,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/12_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Women Leather Shoes</a>
+                        <a href="#" class="cart_pro_title">Women Leather Shoes</a>
                         <span class="cart-price"><span>$64.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -34,10 +34,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="product-left-sidebar.html" class="sidekka_pro_img"><img
+                    <a href="#" class="sidekka_pro_img"><img
                             src="{{ asset('customer') }}/images/product-image/3_1.jpg" alt="product"></a>
                     <div class="ec-pro-content">
-                        <a href="product-left-sidebar.html" class="cart_pro_title">Girls Nylon Purse</a>
+                        <a href="#" class="cart_pro_title">Girls Nylon Purse</a>
                         <span class="cart-price"><span>$59.00</span> x 1</span>
                         <div class="qty-plus-minus">
                             <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
@@ -67,8 +67,8 @@
                 </table>
             </div>
             <div class="cart_btn">
-                <a href="cart.html" class="btn btn-primary">View Cart</a>
-                <a href="checkout.html" class="btn btn-secondary">Checkout</a>
+                <a href="#" class="btn btn-primary">View Cart</a>
+                <a href="#" class="btn btn-secondary">Checkout</a>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
                     <div class="col-md-6 col-sm-12">
                         <!-- ec-breadcrumb-list start -->
                         <ul class="ec-breadcrumb-list">
-                            <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="ec-breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                             <li class="ec-breadcrumb-item active">Profile</li>
                         </ul>
                         <!-- ec-breadcrumb-list end -->
@@ -118,11 +118,6 @@
                                 <ul>
                                     <li><a href="{{ route('panding.customer.dashboard') }}">Customer Profile</a></li>
                                     <li><a href="{{ route('customer.history') }}">History</a></li>
-                                    {{-- <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li> --}}
-                                    {{-- <li><a href="track-order.html">Track Order</a></li> --}}
-                                    {{-- <li><a href="user-invoice.html">Invoice</a></li> --}}
                                 </ul>
                             </div>
                         </div>

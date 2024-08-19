@@ -417,7 +417,6 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="{{route('profile')}}" class="dropdown-item">
-                                        {{-- <i class="feather icon-user text-muted"></i> &nbsp; Account settings</a> --}}
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item">
                                         <i class="feather icon-power text-danger"></i> &nbsp; Log Out</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
