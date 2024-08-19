@@ -20,7 +20,7 @@
                 <div class="">
                     <div class="slider-content">
                         <figure class="image-box">
-                            <a href="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" class="lightbox-image" data-fancybox="gallery">
+                            <a href="#" class="lightbox-image" data-fancybox="gallery">
                                 <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" alt="{{ $productgallerys->first()->gallery_image }}">
                             </a>
                         </figure>
