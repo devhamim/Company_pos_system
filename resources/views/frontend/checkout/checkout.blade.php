@@ -70,7 +70,7 @@
                             <tbody>
                                 <tr>
                                     <td class="product-thumbnail"><a>
-                                        <img alt="product" src="{{ asset('uploads/products/preview') }}/{{ $product_id->preview_image }}"></a>
+                                        <img src="{{ asset('uploads/products/preview') }}/{{ $product_id->preview_image }}" alt="{{ $product_id->preview_image }}"></a>
                                     </td>
                                     <td class="product-name">
                                         <a>{{ $product_id->product_name }}</a>

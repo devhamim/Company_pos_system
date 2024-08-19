@@ -114,12 +114,6 @@
             </div>
             <div class="col-xl-4 col-lg-5">
                 <div class="sidebar">
-                    {{-- <div class="sidebar__single sidebar__search">
-                        <form action="#" class="sidebar__search-form">
-                            <input type="search" placeholder="Search here">
-                            <button type="submit"><i class="lnr-icon-search"></i></button>
-                        </form>
-                    </div> --}}
                     <div class="sidebar__single sidebar__post">
                         <h3 class="sidebar__title">Latest Posts</h3>
                         <ul class="sidebar__post-list list-unstyled">
@@ -138,23 +132,6 @@
                             @endforeach
                         </ul>
                     </div>
-                    {{-- <div class="sidebar__single sidebar__category">
-                        <h3 class="sidebar__title">Categories</h3>
-                        <ul class="sidebar__category-list list-unstyled">
-                            <li><a href="news-details.html">Business<span class="icon-right-arrow"></span></a>
-                            </li>
-                            <li class="active"><a href="news-details.html">Digital Agency<span
-                                        class="icon-right-arrow"></span></a></li>
-                            <li><a href="news-details.html">Introductions<span
-                                        class="icon-right-arrow"></span></a> </li>
-                            <li><a href="news-details.html">New Technologies<span
-                                        class="icon-right-arrow"></span></a> </li>
-                            <li><a href="news-details.html">Parallax Effects<span
-                                        class="icon-right-arrow"></span></a> </li>
-                            <li><a href="news-details.html">Web Development<span
-                                        class="icon-right-arrow"></span></a> </li>
-                        </ul>
-                    </div> --}}
                     <div class="sidebar__single sidebar__tags">
                         <h3 class="sidebar__title">Tags</h3>
                         <div class="sidebar__tags-list">
@@ -163,41 +140,6 @@
                             @endforeach
                         </div>
                     </div>
-                    {{-- <div class="sidebar__single sidebar__comments">
-                        <h3 class="sidebar__title">Recent Comments</h3>
-                        <ul class="sidebar__comments-list list-unstyled">
-                            <li>
-                                <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                <div class="sidebar__comments-text-box">
-                                    <p>A wordpress commenter on <br>
-                                        launch new mobile app
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                <div class="sidebar__comments-text-box">
-                                    <p> <span>John Doe</span> on template:</p>
-                                    <h5>comments</h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                <div class="sidebar__comments-text-box">
-                                    <p>A wordpress commenter on <br>
-                                        launch new mobile app
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
-                                <div class="sidebar__comments-text-box">
-                                    <p> <span>John Doe</span> on template:</p>
-                                    <h5>comments</h5>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </div>

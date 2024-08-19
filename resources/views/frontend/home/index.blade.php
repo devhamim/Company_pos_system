@@ -32,12 +32,12 @@
         <div class="banner-social">
             <h4>Follow us</h4>
             <ul>
-                <li><a href="https://www.tiktok.com/@nugortechitbd" title><i class="fab fa-tiktok"></i></a></li>
-                <li><a href="https://www.behance.net/nugortech_it" title><i class="fab fa-behance"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/nugortechitbd/" title><i class="fab fa-linkedin-in"></i></a>
+                <li><a href="https://www.tiktok.com/@nugortechitbd"><i class="fab fa-tiktok"></i></a></li>
+                <li><a href="https://www.behance.net/nugortech_it"><i class="fab fa-behance"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/nugortechitbd/"><i class="fab fa-linkedin-in"></i></a>
                 </li>
-                <li><a href="https://www.facebook.com/nugortechitcom" title><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://www.youtube.com/@NugortechIT" title><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/nugortechitcom"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.youtube.com/@NugortechIT"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </section>
@@ -47,7 +47,7 @@
             <div class="outer-box">
                 <div class="auto-container">
                     <ul class="clients-carousel">
-                        <li class="client-block-two"> <a href="#"><img
+                        <li class="client-block-two" > <a href="#"><img
                                     src="{{ asset('frontend') }}/images/clients/1-1.png" alt></a> </li>
                         <li class="client-block-two"> <a href="#"><img
                                     src="{{ asset('frontend') }}/images/clients/1-2.png" alt></a> </li>
@@ -68,7 +68,7 @@
         <div class="auto-container">
             <div class="sec-title text-center">
                 <h2>WE WILL PROVIDE YOU THE BEST SERVICE</h2>
-                <p style="width: 50%; margin: auto">Nearly 96% of your clients reach you online. So, work with us for your
+                <p>Nearly 96% of your clients reach you online. So, work with us for your
                     stronger online presence. Let your brand voice talk to the customers.</p>
             </div>
             <div class="row">
@@ -76,7 +76,7 @@
                     <div class="service-block col-lg-3 col-sm-6 col-6">
                         <div class="inner-box">
                             <div class="icon-box">
-                                <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="">
+                                <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="{{ $category->category_image }}">
                             </div>
                             <div class="content-box">
                                 <h3 class="title"><a
@@ -144,22 +144,7 @@
                     <div class="inner-column" style="margin-left: 0">
                         <div class="image-box">
                             <figure class="image overlay-anim">
-                                <img style="ru" width="100%" src="{{ asset('frontend') }}/images/resource/about1-3.webp" alt></figure>
-                            {{-- <div class="play-box">
-                                <figure class="image-2 overlay-anim"><img
-                                        src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt>
-                                </figure>
-                                <a title href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
-                                    data-caption>
-                                    <i class="icon fa fa-play"></i>
-                                </a>
-                            </div> --}}
-                            {{-- <div class="exp-box">
-                                <div class="icon-box">
-                                    <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
-                                </div>
-                                <h4 class="title">MARKETING SOLUTION</h4>
-                            </div> --}}
+                                <img style="ru" width="100%" src="{{ asset('frontend') }}/images/resource/about1-3.webp" alt="about1"></figure>
                         </div>
                     </div>
                 </div>
@@ -267,32 +252,14 @@
                                 <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
                             </ul>
                         </div>
-                        {{-- <div class="row">
-                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
-                                <div class="inner-box">
-                                    <div class="icon-box">
-                                        <i class="flaticon-title"></i>
-                                    </div>
-                                    <h6 class="title">best Consulting and Strategy</h6>
-                                </div>
-                            </div>
-                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
-                                <div class="inner-box">
-                                    <div class="icon-box">
-                                        <i class="flaticon-creativity"></i>
-                                    </div>
-                                    <h6 class="title">search engine optimization</h6>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
 
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image-box">
-                            <figure class="image overlay-anim"><a href="page-about.html"><img
-                                        src="{{ asset('frontend') }}/images/resource/boss-1.jpg" alt></a></figure>
+                            <figure class="image overlay-anim"><a href="#"><img
+                                        src="{{ asset('frontend') }}/images/resource/boss-1.jpg" alt="boss-1"></a></figure>
                             <div class="exp-box bounce-y">
                                 <h6 class="title">Live</h6>
                                 <div class="text">experience With us</div>
@@ -303,43 +270,6 @@
             </div>
         </div>
     </section>
-
-    {{-- <section class="project-section">
-        <div class="auto-container">
-            <div class="sec-title">
-                <h2>Recently Completed Portfolio</h2>
-                <div class="text">We Help You Build An Online Brand. Porta nibh venenatis cras sed felis eget aliquet
-                    sagittis. Urna nec tincidunt praesent.</div>
-            </div>
-            <div class="slider-btn">
-                <button class="prev-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
-                <button class="next-btn"><span><i class="flaticon-arrow-pointing-to-right btn-icon"></i></span></button>
-            </div>
-        </div>
-        <div class="row project-slider">
-            @foreach ($portfolios as $portfolio)
-                <div class="project-block col-lg-3 col-md-6">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image overlay-anim"><a
-                                    href="{{ route('portfolio.details', $portfolio->slug) }}">
-                                    <img src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt></a>
-                            </figure>
-                            <figure class="image-2"><a href="{{ route('portfolio.details', $portfolio->slug) }}">
-                                    <img src="{{ asset('frontend') }}/images/resource/projec1-2.png" alt></a>
-                            </figure>
-                        </div>
-                        <div class="content-box">
-                            <span>{{ $portfolio->project_type }}</span>
-                            <h6 class="title"><a
-                                    href="{{ route('portfolio.details', $portfolio->slug) }}">{{ $portfolio->title }}</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section> --}}
     <section class="featured-products">
         <div class="auto-container text-center">
             <div class="sec-title">
@@ -366,16 +296,11 @@
                     @foreach ($portfolios as $portfolio)
                     <div class="product-block all mix {{ str_replace(' ', '',$portfolio->project_type) }} col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box">
-                            <div class="image"><a href=""><img
-                                        src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt /></a></div>
+                            <div class="image"><a href="#"><img
+                                        src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt="{{ $portfolio->preview_image }}" /></a></div>
                             <div class="content">
-                                <h4><a href="">{{ $portfolio->title }}</a></h4>
+                                <h4><a href="#">{{ $portfolio->title }}</a></h4>
                             </div>
-                            {{-- <div class="icon-box">
-                                <a href="{{ route('portfolio.details', $portfolio->slug) }}" class="ui-btn like-btn">
-                                    <i class="fa fa-heart"></i>
-                                </a>
-                            </div> --}}
                         </div>
                     </div>
                     @endforeach
@@ -392,14 +317,6 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="auto-container text-center">
-            <div class="sec-title">
-                <a href="{{ route('our.protfolio') }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn">
-                    See More
-                    <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
-                </a>
-            </div>
-        </div> --}}
     </section>
 
     <section class="about-section-two">
@@ -411,7 +328,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend') }}/images/resource/about2-1.webp" alt="">
+                                    src="{{ asset('frontend') }}/images/resource/about2-1.webp" alt="about2-1">
                             </figure>
                             <div class="exp-box bounce-y">
                                 <h6 class="title">7+</h6>
@@ -478,7 +395,7 @@
                     <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
+                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt="{{ $team->name }}"></figure>
                             </div>
                             <div class="content-box">
                                 <h4 class="title"><a>{{ $team->name }}</a></h4>
@@ -489,16 +406,6 @@
                     </div>
                 @endforeach
             </div>
-            {{-- <div class="row my-3">
-                <div class="col-lg-6 m-auto">
-                    <div class="text-center">
-                        <a href="{{ route('terms') }}" data-animation-in="fadeInUp" data-delay-in="0.4"
-                            class="theme-btn">See More
-                            <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
-                        </a>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </section>
 
@@ -574,8 +481,8 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image-box">
-                            <figure class="image overlay-anim"><a href="page-about.html"><img
-                                        src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt></a></figure>
+                            <figure class="image overlay-anim"><a href="#"><img
+                                        src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt="choose1-1"></a></figure>
                             <div class="exp-box bounce-y">
                                 <div class="text text-white">Since</div>
                                 <h6 class="title text-white">2017</h6>
@@ -602,7 +509,6 @@
                 <h2>Latest from the blog</h2>
             </div>
             <div class="row">
-
                 @foreach ($blogs as $blog)
                     <div class="news-block col-lg-4 col-md-6">
                         <div class="inner-box">
@@ -673,8 +579,7 @@
                                         <div class="content-box"> <span>Email</span>
                                             <h6 class="title">
                                                 @if ($setting->first()->email != null)
-                                                    <a href="{{ $setting->first()->email }}" class="__cf_email__"
-                                                        data-cfemail="345d5a525b745051595b59555d581a575b59">{{ $setting->first()->email }}</a>
+                                                    <a href="mailto:{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
                                                 @endif
                                             </h6>
                                         </div>
@@ -767,7 +672,7 @@
                             <div class="content-box">
                                 <div class="text">{{ $testmonial->description }}</div>
                                 <div class="auther-info">
-                                    <img  width="70px" height="70px" src="{{ asset('uploads/testimonial') }}/{{ $testmonial->image }}">
+                                    <img  width="70px" height="70px" src="{{ asset('uploads/testimonial') }}/{{ $testmonial->image }}" alt="{{ $testmonial->image }}" >
                                     <div class="info-box">
                                         <h6 class="title">{{ $testmonial->name }}</h6>
                                         <span>{{ $testmonial->designation }}</span>
@@ -789,7 +694,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend') }}/images/resource/faq1-1.jpg" alt></figure>
+                                    src="{{ asset('frontend') }}/images/resource/faq1-1.jpg" alt="faq1-1"></figure>
                         </div>
                     </div>
                 </div>

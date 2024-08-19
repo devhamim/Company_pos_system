@@ -40,7 +40,7 @@
                 <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a><img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt /></a>
+                            <a><img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt="{{ $cliend->image }}" /></a>
                         </div>
                         <div class="content">
                             <h4 class="text-dark">{{ $cliend->name }}</h4>

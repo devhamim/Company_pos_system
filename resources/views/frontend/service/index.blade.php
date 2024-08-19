@@ -23,7 +23,7 @@
                 <div class="service-block-two col-xl-3 col-lg-4 col-md-6">
                     <div class="inner-box">
                         <div class="icon-box">
-                            <img style="height: 100%" src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
+                            <img style="height: 100%" src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="{{$service->category_image}}">
                         </div>
                         <div class="content-box">
                             <h3 class="title"><a href="{{ route('services.product', $service->id) }}">{{$service->category_name}}</a></h3>
@@ -56,7 +56,7 @@
                         <div class="content">
                             <div class="image-box">
                                 <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-3.webp') }}" alt>
+                                        src="{{ asset('frontend/images/s-3.webp') }}" alt="s-3">
                                 </figure>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                         <div class="content">
                             <div class="image-box">
                                 <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-1.webp') }}" alt>
+                                        src="{{ asset('frontend/images/s-1.webp') }}" alt="s-1">
                                 </figure>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                         <div class="content">
                             <div class="image-box">
                                 <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-2.webp') }}" alt="">
+                                        src="{{ asset('frontend/images/s-2.webp') }}" alt="s-2">
                                 </figure>
                             </div>
                         </div>

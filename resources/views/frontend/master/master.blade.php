@@ -30,7 +30,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="google-site-verification" content="0phVgcYl1TqUsDujq36cMYt2ReanMyB-AEB1_MHKlqk" />
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend')}}/css/slick.css">
@@ -134,13 +133,113 @@
   .about-section .content-column .inner-column .inner-box .content-box span {
     font-size: 25px;
 }
+
+
+
+/* megamanu navbar */
+
+.navbar {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #F94A29;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #202020e8;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 99999;
+  /* padding: 0 15px */
+}
+
+.dropdown-content .header {
+  background: red;
+  padding: 16px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background-color: #202020e8;
+}
+
+.column a {
+  float: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.column h5 {
+  color: #F94A29 ;
+}
+
+.column a:hover {
+  background-color: #F94A29 ;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    height: auto;
+  }
+}
+
     </style>
+
 </head>
 
 <body>
     <div class="page-wrapper">
 
-        <header class="main-header header-style-one">
+        <header class="main-header header-style-one" style="position: fixed">
             <div class="header-lower">
                 <div class="auto-container">
 
@@ -149,26 +248,43 @@
                             <div class="logo">
                                 <a href="{{url('/')}}">
                                     @if ($setting->first()->white_logo != null)
-                                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt title="Tronis">
+                                        <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="logo">
                                     @endif
                                 </a>
                             </div>
                         </div>
 
-                        <div class="nav-outer">
-                            <nav class="nav main-menu">
-                                <ul class="navigation">
-                                    <li ><a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
-                                    <li><a href="{{ route('about') }}">About</a></li>
-                                    <li><a href="{{ route('our.services') }}">Services</a></li>
-                                    <li> <a href="{{ route('our.products') }}">Product</a></li>
-                                    <li> <a href="{{ route('our.protfolio') }}">protfolio</a></li>
-                                    <li> <a href="{{ route('our.blogs') }}">Blogs</a></li>
-                                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                                </ul>
-                            </nav>
-
+                        <!-- mega manu -->
+                        <div class="nav-outer" style="position: static">
+                            <div class="navbar nav main-menutwo">
+                                <a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
+                                <a href="{{ route('about') }}">About</a>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Services
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <div class="row">
+                                            @foreach ($categorys as $category)
+                                                <div class="column">
+                                                    <h5>{{ $category->category_name }}</h5>
+                                                    @foreach ($services as $service)
+                                                        @if ($category->id == $service->category_id)
+                                                            <a href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ route('our.products') }}">Product</a>
+                                <a href="{{ route('our.protfolio') }}">protfolio</a>
+                                <a href="{{ route('our.blogs') }}">Blogs</a>
+                                <a href="{{ route('contact') }}">Contact</a>
+                            </div>
                         </div>
+                        <!-- mega manu -->
                             <div class="mob_btn">
                                 @auth('customerauth')
                                     <div class="header_icon">
@@ -218,15 +334,73 @@
                         <div class="nav-logo">
                             <a href="{{url('/')}}">
                                 @if ($setting->first()->white_logo != null)
-                                    <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt title>
+                                    <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="logo">
                                 @endif
                             </a>
                         </div>
                         <div class="close-btn"><i class="icon fa fa-times"></i></div>
                     </div>
-                    <ul class="navigation clearfix">
+                    <style>
+                        .navigation .submenu, .navigation .subsubmenu {
+                            display: none;
+                            position: absolute;
+                            background-color: #3f3f3f;
+                            list-style: none;
+                            padding: 0;
+                            z-index: 999999999;
+                        }
+                        .navigation li:hover > .submenu {
+                            display: block;
+                        }
+                        .navigation .submenu li {
+                            position: relative;
+                        }
 
+                        .navigation .submenu li:hover > .subsubmenu {
+                            display: block;
+                            left: 10%;
+                            top: 0;
+                            position: relative;
+                        }
+                        .navigation .submenu li p, .navigation .subsubmenu li a {
+                            padding: 6px 6px 0 6px;
+                            display: block;
+                            color: #ffffff;
+                            margin-bottom: 3px
+                        }
+                        .mobile-menu .navigation li>ul>li {
+                            padding-left: 10px;
+                        }
+
+                    </style>
+                    <ul class="navigation clearfix">
+                        <li><a href="{{url('/')}}" class="active">Home</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li>
+                            <a>Services</a>
+                            <!-- Submenu -->
+                            <ul class="submenu">
+                                @foreach ($categorys as $category)
+                                <li>
+                                    <p>{{ $category->category_name }}</p>
+                                    <!-- Sub-submenu -->
+                                    <ul class="subsubmenu">
+                                        @foreach ($services as $service)
+                                            @if ($category->id == $service->category_id)
+                                                <li><a href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li><a href="{{ route('our.products') }}">Product</a></li>
+                        <li><a href="{{ route('our.protfolio') }}">Protfolio</a></li>
+                        <li><a href="{{ route('our.blogs') }}">Blogs</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
+
                     <ul class="contact-list-one">
                         <li>
 
@@ -244,8 +418,8 @@
                                 <span class="icon lnr-icon-envelope1"></span>
                                 <span class="title">Send Email</span>
                                 @if ($setting->first()->email != null)
-                                    <a href="{{ $setting->first()->email }}">
-                                        <span class="__cf_email__" data-cfemail="ff979a938fbf9c90928f9e9186d19c9092">{{ $setting->first()->email }}</span>
+                                    <a href="mailto:{{ $setting->first()->email }}">
+                                        <span >{{ $setting->first()->email }}</span>
                                     </a>
                                 @endif
 
@@ -269,73 +443,6 @@
                     </ul>
                 </nav>
             </div>
-
-            <div class="search-popup">
-                <span class="search-back-drop"></span>
-                <button class="close-search"><span class="fa fa-times"></span></button>
-                <div class="search-inner">
-                    <form method="post" action="https://html.kodesolution.com/2023/digitex-html/index.html">
-                        <div class="form-group">
-                            <input type="search" name="search-field" value placeholder="Search..." required>
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="sticky-header">
-                <div class="auto-container">
-                    <div class="inner-container">
-
-                        <div class="logo">
-                            <a href="{{url('/')}}" title>
-                                @if ($setting->first()->white_logo != null)
-                                    <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt title>
-                                @endif
-                            </a>
-                        </div>
-                        <nav class="main-menu">
-                            <div class="navbar-collapse show collapse clearfix">
-                                <ul class="navigation clearfix">
-
-                                </ul>
-                            </div>
-                        </nav>
-                        <div class="mob_btn" style="display: flex; align-items: center;">
-                            {{-- <div class="search-btn">
-                                <a href="#" class="search"><i class="flaticon-search-3"></i></a>
-                            </div> --}}
-                                @auth('customerauth')
-                                    <div class="header_icon">
-                                        <div class="ec-header-user dropdown">
-                                            <button class="dropdown-toggle" data-bs-toggle="dropdown">
-                                                <i class="fa-regular fa-user"></i>
-                                            </button>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                    <li><a class="dropdown-item" href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                                    <li><a class="dropdown-item" href="{{ route('customer.logout') }}">Logout</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="header_icon">
-                                        <i class="fa-regular fa-heart"></i>
-                                    </div>
-                                    <div class="header_icon">
-                                        <i class="fa-regular fa-bag-shopping"></i>
-                                    </div> --}}
-                                @else
-                                    <div class="btn">
-                                        <a href="{{ route('customer.login') }}" class="theme-btn">login</a>
-                                    </div>
-                                @endauth
-                            <div class="mobile-nav-toggler" style="margin-top: -6%;">
-                                <i class="fa fa-bars"></i>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </header>
 
         {{-- main start --}}
@@ -347,7 +454,7 @@
                 <div class="outer-box">
                     <h2 class="title wow fadeInLeft" data-wow-delay="400ms">Have a project? <br>Let's discuss</h2>
                     <div class="btn-box wow fadeInRight" data-wow-delay="400ms">
-                        <a href="page-contact.html" class="theme-btn-v2">Free Consultations<i
+                        <a href="#" class="theme-btn-v2">Free Consultations<i
                                 class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
                         @if ($setting->first()->phone != null)
                             <a href="tel:{{ $setting->first()->phone }}" class="theme-btn-v2 two">
@@ -362,18 +469,16 @@
         </section>
 
         <footer class="main-footer footer-style-one">
-
             <div class="widgets-section">
                 <div class="auto-container">
                     <div class="row">
-
                         <div class="footer-column col-lg-3 col-sm-6">
                             <div class="footer-widget contact-widget">
                                 <div class="logo-box">
                                     <div class="logo">
                                         <a href="{{url('/')}}">
                                             @if ($setting->first()->white_logo != null)
-                                                <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt title="Tronis">
+                                                <img src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="footer Logo">
                                             @endif
                                         </a>
                                     </div>
@@ -427,7 +532,7 @@
                                         <span>Mail us</span>
                                         <h6 class="title">
                                             @if ($setting->first()->email != null)
-                                                <a href="{{ $setting->first()->email }}" class="__cf_email__" data-cfemail="b1d8dfd7def1c8dec4c3dcd0d8dd9fd2dedc">{{ $setting->first()->email }}</a>
+                                                <a href="mailto:{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
                                             @endif
                                         </h6>
                                     </div>
@@ -468,7 +573,7 @@
                     <div class="inner-container">
                         <div class="copyright-text">
                             @if ($setting->first()->footer != null)
-                                {{ $setting->first()->footer }} | Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>.
+                                {{ $setting->first()->footer }} | Design and Development By <a class="text-danger" href="https://nugortechit.com/">Nugortech it</a>
                             @endif
                         </div>
                     </div>
@@ -479,7 +584,6 @@
         </footer>
     </div>
 
-    {{-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> --}}
     <script src="{{asset('frontend')}}/js/jquery.js"></script>
     <script src="{{asset('frontend')}}/js/popper.min.js"></script>
     <script src="{{asset('frontend')}}/js/bootstrap.min.js"></script>

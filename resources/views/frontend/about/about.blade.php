@@ -61,7 +61,7 @@
                                 <h6 class="title mb-4"><i class="fa-solid fa-check" style="color: #f94a29;"></i> We think differently</h6>
                             </div>
                             <div class="content-box col-lg-5 col-6">
-                                <img  src="{{ asset('frontend/images/shan.webp') }}" alt="">
+                                <img  src="{{ asset('frontend/images/shan.webp') }}" alt="shan">
                             </div>
                         </div>
                     </div>
@@ -77,23 +77,8 @@
                     <div class="inner-column" style="margin-left:0">
                         <div class="image-box">
                             <figure class="image overlay-anim">
-                                <img width="100%" src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt>
+                                <img width="100%" src="{{ asset('frontend') }}/images/resource/about1-1.webp" alt="about1">
                             </figure>
-                            {{-- <div class="play-box">
-                                <figure class="image-2 overlay-anim"><img
-                                        src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt>
-                                </figure>
-                                <a title href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
-                                    data-caption>
-                                    <i class="icon fa fa-play"></i>
-                                </a>
-                            </div> --}}
-                            {{-- <div class="exp-box">
-                                <div class="icon-box">
-                                    <img src="{{ asset('frontend') }}/images/resource/tv.png" alt>
-                                </div>
-                                <h4 class="title">MARKETING SOLUTION</h4>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -137,8 +122,7 @@
                 <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
-
+                            <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt="{{ $team->name }}"></figure>
                         </div>
                         <div class="content-box">
                             <h4 class="title"><a>{{ $team->name }}</a></h4>
@@ -149,16 +133,6 @@
                 </div>
                 @endforeach
             </div>
-            {{-- <div class="row my-3">
-                <div class="col-lg-6 m-auto">
-                    <div class="text-center">
-                        <a href="{{ route('terms') }}" data-animation-in="fadeInUp" data-delay-in="0.4"
-                            class="theme-btn">See More
-                            <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
-                        </a>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </section>
     <section class="contact-banner pt-0">
@@ -169,33 +143,6 @@
         </div>
     </section>
 
-    {{-- <section class="service-section">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <h2>WE WILL PROVIDE YOU THE <br>BEST SERVICE</h2>
-            </div>
-            <div class="row">
-                @foreach ($categoryy->take(8) as $category)
-                    <div class="service-block col-lg-3 col-sm-6">
-                        <div class="inner-box">
-                            <div class="icon-box">
-                                <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="">
-                            </div>
-                            <div class="content-box">
-                                <h3 class="title"><a href="{{ route('services.product', $category->id) }}">{{ $category->category_name }}</a>
-                                </h3>
-                                <div class="text">{{ $category->category_desp }}</div>
-                                <a href="{{ route('services.product', $category->id) }}" data-animation-in="fadeInUp" data-delay-in="0.4"
-                                    class="theme-btn ser-btn">Learn more <i
-                                        class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> --}}
-
     <section class="testimonial-section">
         <div class="inner-container">
             <div class="sec-title text-center">
@@ -203,7 +150,6 @@
                 <h6>Across the world, we have more than thousands of satisfied clients. So, <br> count our milestones with our client’s success stories.</h6>
             </div>
             <div class="row testi-slider">
-
                 @foreach ($testmonials as $testmonial)
                     <div class="testimonial-block col-md-6">
                         <div class="inner-box">
@@ -213,7 +159,7 @@
                             <div class="content-box">
                                 <div class="text">{{ $testmonial->description }}</div>
                                 <div class="auther-info">
-                                    <img width="70px" height="70px" src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt>
+                                    <img width="70px" height="70px" src="{{asset('uploads/testimonial')}}/{{ $testmonial->image }}" alt="{{ $testmonial->image }}">
                                     <div class="info-box">
                                         <h6 class="title">{{ $testmonial->name }}</h6>
                                         <span>{{ $testmonial->designation }}</span>
@@ -226,71 +172,6 @@
             </div>
         </div>
     </section>
-
-    {{-- <section class="choose-us-section">
-        <div class="auto-container">
-            <div class="row">
-
-                <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="sec-title light">
-                            <h2>Why you should choose our services?</h2>
-                            <div class="text">phasellus egestas tellus rutrum. Facilisi morbi tempus
-                                iaculis urna id for volutpat lacus. Vel fringilla est ullamcorper eget nulla.
-                                Placerat orci nulla pellentesque dignissim. Cursus euismod quis viverra nibh
-                                pulvinar.
-                            </div>
-                        </div>
-                        <div class="list-sec">
-                            <ul class="list">
-                                <li><i class="fa-solid fa-circle-check"></i>Make website without a coding</li>
-                                <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
-                            </ul>
-                            <ul class="list">
-                                <li><i class="fa-solid fa-circle-check"></i>Make website without a coding</li>
-                                <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
-                                <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
-                            </ul>
-                        </div>
-                        <div class="row">
-                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
-                                <div class="inner-box">
-                                    <div class="icon-box">
-                                        <i class="flaticon-title"></i>
-                                    </div>
-                                    <h6 class="title">best Consulting and Strategy</h6>
-                                </div>
-                            </div>
-                            <div class="choose-block col-xl-6 col-lg-12 col-md-6">
-                                <div class="inner-box">
-                                    <div class="icon-box">
-                                        <i class="flaticon-creativity"></i>
-                                    </div>
-                                    <h6 class="title">search engine optimization</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="image-box">
-                            <figure class="image overlay-anim"><a href="page-about.html"><img
-                                        src="{{ asset('frontend') }}/images/resource/choose1-1.jpg" alt></a></figure>
-                            <div class="exp-box bounce-y">
-                                <h6 class="title">7+</h6>
-                                <div class="text">Years of
-                                    experience</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
 @endsection
 
 

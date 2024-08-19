@@ -31,7 +31,7 @@
                 <div class="product-block all mix {{ $product->category_id }} col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image"><a href="{{ route('product.details', $product->slug) }}"><img
-                                    src="{{ asset('uploads/shop') }}/{{ $product->preview_image }}" alt /></a></div>
+                                    src="{{ asset('uploads/shop') }}/{{ $product->preview_image }}" alt="{{ $product->preview_image }}" /></a></div>
                         <div class="content">
                             <h4><a href="{{ route('product.details', $product->slug) }}">{{ $product->name }}</a></h4>
                             @if ($product->discount != 0)
@@ -45,7 +45,7 @@
                             <a href="{{ route('product.details', $product->slug) }}" class="ui-btn like-btn">
                                 <i class="fa fa-heart"></i>
                                 </a>
-                            <a href="shop-cart.html" class="ui-btn add-to-cart">
+                            <a href="{{ route('product.details', $product->slug) }}" class="ui-btn add-to-cart">
                                 <i class="fa fa-shopping-cart"></i>
                                 </a>
                         </div>

@@ -88,8 +88,8 @@
                             <div class="text">
                                 <h6>Write email</h6>
                                 @if($setting->first()->email != null)
-                                    <a href="{{ $setting->first()->email }}">
-                                        <span class="__cf_email__" data-cfemail="28464d4d4c404d4458684b474558494651064b4745">{{ $setting->first()->email }}</span>
+                                    <a href="mailto:{{ $setting->first()->email }}">
+                                        <span>{{ $setting->first()->email }}</span>
                                     </a>
                                 @endif
                             </div>

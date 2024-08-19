@@ -89,32 +89,8 @@
                 </div>
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-12">
-                {{-- <div class="content mt-40">
-                    <div class="text">
-                        <h3>Review</h3>
-                    </div>
-                    <div class="feature-list mt-4">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                <img class="mb-3" src="{{ asset('frontend') }}/images/resource/service-d1.jpg"
-                                    alt="images" />
-                                <p>Lorem ipsum dolor sit amet consec adipis elit Dolor repellat pariatur
-                                    temporibus doloribus hic conse quatur copy typing refreshing</p>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                <img class="mb-3" src="{{ asset('frontend') }}/images/resource/service-d2.jpg"
-                                    alt="images" />
-                                <p>Lorem ipsum dolor sit amet consec adipis elit Dolor repellat pariatur
-                                    temporibus doloribus hic conse quatur copy typing refreshing</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="innerpage mt-25">
                     <h3>Frequently Asked Question</h3>
-                    {{-- <p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
-                        dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
-                        sunt explicabo.</p> --}}
                     <ul class="accordion-box wow fadeInRight">
 
                         <li class="accordion block">

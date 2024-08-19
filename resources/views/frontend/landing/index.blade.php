@@ -13,17 +13,9 @@
                                 চয়েজ। যদি এই ৩ মাসের জার্নি আপনি লেগে থাকতে পারেন। কথা দিলাম আপনার পরিশ্রম ও আমাদের চেষ্টায়
                                 সফল হবে ইনশাল্লাহ।</div>
                                 <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
-                                {{-- <div class="text landing_font" style="font-size: 20px">Regular Price: <del>১০০০০৳</del> Off ৬০০০৳</div> --}}
                         </div>
                         <div class="landing-inner-box">
                             <div class="row">
-                                {{-- <div class="col-lg-3 col-6 my-2">
-                                    <div class="landing-content-box"
-                                        style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <span class=" landing_font text-white">ব্যাচ শুরু</span><br>
-                                        <span class="landing-title text-white landing_font">২০ জুলাই</span>
-                                    </div>
-                                </div> --}}
                                 <div class="col-lg-4 col-4 my-3">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
@@ -55,15 +47,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img src="{{ asset('frontend/images/landing/banner.jpg') }}"
-                                    alt=""></figure>
-                            {{-- <div class="play-box">
-                            <figure class="image-2 overlay-anim"><img src="{{ asset('frontend') }}/images/resource/about1-2.webp" alt="">
-                            </figure>
-                            <a title="" href="https://www.youtube.com/watch?v=Fvae8nxzVz4" data-fancybox="gallery"
-                                data-caption="">
-                                <i class="icon fa fa-play"></i>
-                            </a>
-                        </div> --}}
+                                    alt="banner"></figure>
                         </div>
                     </div>
                 </div>
@@ -79,7 +63,6 @@
                         <div class="sec-title">
                             <div class="text landing_font">আমারা গত ৭ বছরে  ২ হাজারে বেশি ক্লাইন্ট বিজেনেসে সফলতা নিয়ে কাজ করেছি যাদের প্রতি মাসে সেল এখন কোটি টাকার বেশি । বিগত দিনের বিজেসের সফলাতার অভিজ্ঞতা থেকে আমারা শুরু করছি ১২ সপ্তাহের একটি চালেজিং কোর্স যেখান আমারা সেখানে একটি বিজনেস শুন্য থকে শুরু করে কি ভাবে সফলতা অর্জন করা যায় হাতে ধরে শেখাবো । শুধু সঠিক গাইড লাইন নয় প্রয়োজন আমরা ফান্ডিং সহ দিব। এবং আপনার সফলতা না আসা পুরজন্ত লেগে থাকব আমরা আপনার সাথে । যে কোন প্রবলেম পড়লে আছে ২৪/৭ অনলাইন সাপোর্ট ও এছাড়া আমাদের অফিস থেকে নিতে পারবেন লাইফ টাইম ফ্রি বিজনেস কনসালটেন্সি। তাহলে আর চিন্তা কিসের সিট শেষ হবার আগেই আপনার এডমিশন কনফার্ম করুন।</div>
                             <div class="text landing_font">কোর্স ফি - <del>১০০০০৳</del> Off ৬০০০৳</div>
-                            {{-- <div class="text landing_font" style="font-size: 20px">Regular Price: <del>১০০০০৳</del> Off ৬০০০৳</div> --}}
                             <div class="my-3 d-flex ">
                                 <form action="{{ route('services.product.checkout') }}" method="POST">
                                     @csrf
@@ -104,63 +87,63 @@
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img src="{{ asset('frontend/images/landing/10-icon.png') }}" alt=""><br>
+                                        <img src="{{ asset('frontend/images/landing/10-icon.png') }}" alt="10-icon"><br>
                                         <span class="landing-title landing_font">২৪ টি লাইভ ক্লাস</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img src="{{ asset('frontend/images/landing/13-icon.png') }}" alt=""><br>
+                                        <img src="{{ asset('frontend/images/landing/13-icon.png') }}" alt="13-icon"><br>
                                         <span class="landing-titlelanding_font">ক্লাস রেকড ভিডিও</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="54px" src="{{ asset('frontend/images/landing/19-icon.png') }}" alt=""><br>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/19-icon.png') }}" alt="19-icon"><br>
                                         <span class="landing-title landing_font">অফলাইন কনসালটেন্সি</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img src="{{ asset('frontend/images/landing/11-icon.png') }}" alt=""><br>
+                                        <img src="{{ asset('frontend/images/landing/11-icon.png') }}" alt="11-icon"><br>
                                         <span class="landing-title  landing_font">লাইফ টাইম সাপোর্ট </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="54px" src="{{ asset('frontend/images/landing/16-icon.png') }}" alt=""><br>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/16-icon.png') }}" alt="16-icon"><br>
                                         <span  class="landing-title  landing_font">বিজনেস ফান্ডিং </span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="54px" src="{{ asset('frontend/images/landing/17-icon.png') }}" alt=""><br>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/17-icon.png') }}" alt="17-icon"><br>
                                         <span class="landing-title  landing_font">জব প্লেসমেন্ট</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img src="{{ asset('frontend/images/landing/12-icon.png') }}" alt=""><br>
+                                        <img src="{{ asset('frontend/images/landing/12-icon.png') }}" alt="12-icon"><br>
                                         <span class="landing-title  landing_font">ক্লাস নোটস</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img width="54px" src="{{ asset('frontend/images/landing/15-icon.png') }}" alt=""><br>
+                                        <img width="54px" src="{{ asset('frontend/images/landing/15-icon.png') }}" alt="15-icon"><br>
                                         <span class="landing-title  landing_font">ইনকাম গাইডলাইন</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-6 my-2">
                                     <div class="landing-content-box "
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
-                                        <img src="{{ asset('frontend/images/landing/14-icon.png') }}" alt=""><br>
+                                        <img src="{{ asset('frontend/images/landing/14-icon.png') }}" alt="14-icon"><br>
                                         <span class="landing-title  landing_font">এসেসমেন্ট ও সার্টিফিকেট</span>
                                     </div>
                                 </div>
@@ -572,29 +555,6 @@
             </div>
         </div>
     </section>
-    {{-- <section class="team-section position-relative pt-120 pb-100" style="background: #101828;">
-        <div class="auto-container">
-            <div class="sec-title text-center">
-                <h2 class="text-white">OUR TEAM</h2>
-            </div>
-            <div class="row">
-                @foreach ($teams as $team)
-                    <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
-                        <div class="inner-box">
-                            <div class="image-box">
-                                <figure class="image"><img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt></figure>
-                            </div>
-                            <div class="content-box">
-                                <h4 class="title"><a>{{ $team->name }}</a></h4>
-                                <span>{{ $team->education }}</span><br>
-                                <span>{{ $team->designation }}</span>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section> --}}
     <section class="about-section innerpage">
         <div class="auto-container">
             <div class="row">
@@ -610,7 +570,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/1-icon.png') }}"
-                                            alt="">
+                                            alt="1-icon">
                                         <h6 class="title">Meta Business Suit</h6>
                                     </div>
                                 </div>
@@ -618,7 +578,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/2-icon.png') }}"
-                                            alt="">
+                                            alt="2-icon">
                                         <h6 class="title">Facebook Pixel</h6>
                                     </div>
                                 </div>
@@ -626,7 +586,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/3-icon.png') }}"
-                                            alt="">
+                                            alt="3-icon">
                                         <h6 class="title">Google Analytics 4</h6>
                                     </div>
                                 </div>
@@ -634,7 +594,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/4-icon.png') }}"
-                                            alt="">
+                                            alt="4-icon">
                                         <h6 class="title">Google Ads</h6>
                                     </div>
                                 </div>
@@ -642,7 +602,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/5-icon.png') }}"
-                                            alt="">
+                                            alt="5-icon">
                                         <h6 class="title">Google Tag Manager</h6>
                                     </div>
                                 </div>
@@ -650,7 +610,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/6-icon.png') }}"
-                                            alt="">
+                                            alt="6-icon">
                                         <h6 class="title">ChatGPT</h6>
                                     </div>
                                 </div>
@@ -658,7 +618,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/7-icon.png') }}"
-                                            alt="">
+                                            alt="7-icon">
                                         <h6 class="title">Google Spreadsheet</h6>
                                     </div>
                                 </div>
@@ -666,7 +626,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/8-icon.png') }}"
-                                            alt="">
+                                            alt="8-icon">
                                         <h6 class="title">WhatsApp</h6>
                                     </div>
                                 </div>
@@ -674,7 +634,7 @@
                                     <div class="landing-content-box"
                                         style="border: 1px solid #f94a29; text-align: center; padding-top: 10px;">
                                         <img width="40px" src="{{ asset('frontend/images/landing/9-icon.png') }}"
-                                            alt="">
+                                            alt="9-icon">
                                         <h6 class="title">Canva</h6>
                                     </div>
                                 </div>
@@ -687,7 +647,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend/images/landing/two_banner.jpg') }}" alt=""></figure>
+                                    src="{{ asset('frontend/images/landing/two_banner.jpg') }}" alt="two_banner"></figure>
                         </div>
                     </div>
                 </div>
@@ -816,7 +776,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim">
-                                <img src="{{ asset('frontend/images/landing/cruse-image.jpg') }}" alt=""></figure>
+                                <img src="{{ asset('frontend/images/landing/cruse-image.jpg') }}" alt="cruse-image"></figure>
                         </div>
                     </div>
                 </div>
@@ -860,83 +820,6 @@
             </div>
         </div>
     </section>
-    {{-- <section class="testimonial-section">
-        <div class="inner-container">
-            <div class="sec-title text-center">
-                <h2>WHAT’s TALKING about<br> our Learners?</h2>
-            </div>
-            <div class="row testi-slider">
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text"><p class="landing_font">Nugortech IT ফুল স্ট্যাক ডিজিটাল মার্কেটিং কোর্সটি আমার মার্কেটিং এর ধারনা চেঞ্জ করে দিয়েছে। একটা সিংগেল কোর্সে এত এত কিছু আমি শিখেছি যে একটা ক্লায়েন্টের সকল ধরনের সমস্যার সমাধান আমি দিতে পারি। গুগল এনালিটিক্স, ফেইসবুক পিক্সেল এবং সার্ভার সাইড ট্র্যাকিং ইউজ করে ক্লায়েন্টের রিয়েল টাইম প্রবলেম সল্যুশন আমার ফ্রিল্যান্সিং জার্নিকে আরো শক্ত করেছে। Nugortech IT কে ধন্যবাদ এমন সময়োপযোগী এবং পরিপুর্ন একটি কোর্স ডিজিটাল মার্কেটিং এর ওপর অফার করার জন্য।</p></div>
-                            <div class="auther-info">
-                                <img src="ssss" alt>
-                                <div class="info-box">
-                                    <h6 class="title">sss</h6>
-                                    <span>sss</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text"><p class="landing_font">Nugortech IT এর Full Stack Digital Marketing কোর্সটি বাংলাদেশের সেরা একটি কোর্স। কারন এই কোর্সে রয়েছে দেশসেরা অভিজ্ঞ মেন্টর। আমার কাছে সবচেয়ে ভালো লেগেছে Nugortech IT প্লাটফর্ম এর নিয়মকানুন।  প্রতিটি মডিউলে ২ টি লাইভ ক্লাসের পাশাপাশি ২ টি এসাইনমেন্ট, ১ টি কুইজ এবং ১ টি লাইভ টেস্ট। এবং এগুলোতে পার্ফরম্যান্স এর উপর ভিত্তি করে স্কোর দেওয়া হয়। স্কোরের ভিত্তিতে স্টুডেন্টদের র‍্যাংকিং করা হয়। এই নিয়মনীতির জন্যই এত লম্বা সময় ধরে কোর্সে মনযোগ ধরে রাখা সম্ভব হয়েছে আমার ক্ষেত্রে। এছাড়াও এটেন্ডেন্স কাউন্ট হওয়ার কারনে আমি কখনো ক্লাস মিস দেইনি।</p></div>
-                            <div class="auther-info">
-                                <img src="ssss" alt>
-                                <div class="info-box">
-                                    <h6 class="title">sss</h6>
-                                    <span>sss</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text"><p class="landing_font">Nugortech IT লার্নিং এক্সপেরিয়েন্স, নিয়মিত ক্লাস এবং এসাইনমেন্ট আমার লার্নিং জার্নিকে অনেক ইফেক্টিভ করেছে। আমি কোর্স শেষ হওয়ার আগে থেকেই ক্লায়েন্টের সাথে কাজ করা শুরু করে দিতে পেরেছি।</p></div>
-                            <div class="auther-info">
-                                <img src="ssss" alt>
-                                <div class="info-box">
-                                    <h6 class="title">sss</h6>
-                                    <span>sss</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-block col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <i class="flaticon-quote-1"></i>
-                        </div>
-                        <div class="content-box">
-                            <div class="text"><p class="landing_font">শামিম বসের মতন একজন সেরা ট্রেইনার এবং Nugortech IT সুপার ইফেক্টিভ কারিকুলাম মিলে যে গাইডেড জার্নি পেয়েছি, সেটা মার্কেটপ্লেস কিংবা ক্লায়েন্ট সব জায়গার জন্য একদম পার্ফেক্টলি ফিট করেছে।</p></div>
-                            <div class="auther-info">
-                                <img src="ssss" alt>
-                                <div class="info-box">
-                                    <h6 class="title">sss</h6>
-                                    <span>sss</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="about-section innerpage" style="background: #101828; padding: 50px 0 0 0">
         <div class="auto-container">
             <div class="row">
@@ -944,7 +827,7 @@
                     <div class="inner-column">
                         <div class="image-box">
                             <figure class="image overlay-anim"><img
-                                    src="{{ asset('frontend/images/landing/certificate.jpg') }}" alt=""></figure>
+                                    src="{{ asset('frontend/images/landing/certificate.jpg') }}" alt="certificate"></figure>
                         </div>
                     </div>
                 </div>
@@ -1048,7 +931,7 @@
                 <div class="content-column col-lg-12">
                     <div class="row">
                         <div class="col-lg-3 col-4">
-                            <img src="{{ asset('uploads/products/preview') }}/{{ $products->preview_image }}" alt="">
+                            <img src="{{ asset('uploads/products/preview') }}/{{ $products->preview_image }}" alt="{{ $products->preview_image }}">
                         </div>
                         <div class="col-lg-9 col-8">
                             <div class="inner-column">
@@ -1096,119 +979,45 @@
                                             </form>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                {{-- <div class="image-column col-lg-6" style="padding-top: 7%">
-                    <div class="elementor-widget-container">
-                        <style>
-                            /*! pro-elements - v3.21.0 - 30-04-2024 */
-                            .elementor-countdown-expire--message {
-                                display: none;
-                                padding: 20px;
-                                text-align: center
-                            }
 
-                            .elementor-countdown-wrapper {
-                                flex-direction: row
-                            }
-
-                            .elementor-countdown-item {
-                                padding: 20px 0;
-                                text-align: center;
-                                color: #000
-                            }
-
-                            .elementor-countdown-digits,
-                            .elementor-countdown-label {
-                                line-height: 1
-                            }
-
-                            .elementor-countdown-digits {
-                                font-size: 69px
-                            }
-
-                            .elementor-countdown-label {
-                                font-size: 19px
-                            }
-
-                            .elementor-countdown-wrapper {
-                                display: flex;
-                                justify-content: center;
-                                margin-right: auto;
-                                margin-left: auto
-                            }
-
-                            .elementor-countdown-digits,
-                            .elementor-countdown-label {
-                                display: block
-                            }
-
-                            .elementor-countdown-item {
-                                flex-basis: 0;
-                                flex-grow: 1
-                            }
-
-                            .elementor-widget-countdown.elementor-countdown--label-inline {
-                                text-align: center
-                            }
-
-                            .elementor-countdown-item {
-                                display: inline-block;
-                                padding-left: 5px;
-                                padding-right: 5px
-                            }
-                        </style>
-                        <div id="simple_timer" class="elementor-countdown-wrapper">
-                            <div class="elementor-countdown-item"><span
-                                    class="elementor-countdown-digits countdown-hours"></span> <span
-                                    class="elementor-countdown-label">Hours</span></div>
-                            <div class="elementor-countdown-item"><span
-                                    class="elementor-countdown-digits countdown-minutes"></span> <span
-                                    class="elementor-countdown-label">Minutes</span></div>
-                            <div class="elementor-countdown-item"><span
-                                    class="elementor-countdown-digits countdown-seconds"></span> <span
-                                    class="elementor-countdown-label">Seconds</span></div>
-                        </div>
-
-                    </div>
-                </div> --}}
             </div>
         </div>
     </section>
 @endsection
 @section('landingfooter_script')
 
-<script>
-    function startCountdown() {
-        var countdownElement = document.getElementById('simple_timer');
-        var now = new Date().getTime();
-        var targetTime = now + (22 * 60 * 60 * 1000);
-        var x = setInterval(function() {
+    <script>
+        function startCountdown() {
+            var countdownElement = document.getElementById('simple_timer');
             var now = new Date().getTime();
-            var distance = targetTime - now;
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var targetTime = now + (22 * 60 * 60 * 1000);
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = targetTime - now;
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.querySelector('.elementor-countdown-hours').innerHTML = hours;
-            countdownElement.querySelector('.elementor-countdown-minutes').innerHTML = minutes;
-            countdownElement.querySelector('.elementor-countdown-seconds').innerHTML = seconds;
+                countdownElement.querySelector('.elementor-countdown-hours').innerHTML = hours;
+                countdownElement.querySelector('.elementor-countdown-minutes').innerHTML = minutes;
+                countdownElement.querySelector('.elementor-countdown-seconds').innerHTML = seconds;
 
-            if (distance < 0) {
-                clearInterval(x);
-                startCountdown();
-            }
-        }, 1000);
-    }
+                if (distance < 0) {
+                    clearInterval(x);
+                    startCountdown();
+                }
+            }, 1000);
+        }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        startCountdown();
-    });
-</script>
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+        });
+    </script>
 
 @endsection

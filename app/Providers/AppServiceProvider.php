@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\Meta;
+use App\Models\Product;
 use App\Models\setting;
 use Illuminate\Support\ServiceProvider;
 use View;
@@ -29,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     Paginator::useBootstrap();
     // footer category
     View::composer('frontend.master.master', function ($view){
-        $view->with('categorys', Category::all());
+        $view->with('categorys', Category::where('status', 1)->get());
 
         if (Cookie::has('shopping_cart')) {
             $cookie_data = stripslashes(Cookie::get('shopping_cart'));
@@ -40,6 +41,11 @@ class AppServiceProvider extends ServiceProvider
 
         // Pass $cart_data to the view
         $view->with('totalItemsInCart', count($cart_data));
+    });
+
+    // service
+    View::composer('frontend.master.master', function ($view){
+        $view->with('services', Product::where('status', 1)->get());
     });
 
      // master setting
@@ -97,6 +103,14 @@ class AppServiceProvider extends ServiceProvider
     // landing setting
      View::composer('frontend.landing.index', function ($view){
         $view->with('setting', setting::all());
+    });
+    // landing
+    View::composer('frontend.landing.master', function ($view){
+        $view->with('categorys', Category::where('status', 1)->get());
+    });
+    // landing
+    View::composer('frontend.landing.master', function ($view){
+        $view->with('services', Product::where('status', 1)->get());
     });
 }
 }

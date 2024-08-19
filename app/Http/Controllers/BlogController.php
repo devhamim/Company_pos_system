@@ -9,6 +9,17 @@ use Str;
 
 class BlogController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //blog list
     function blogs_list(){
         $blogs = Blogs::where('status', 1)->get();

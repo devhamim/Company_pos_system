@@ -8,7 +8,7 @@
             @endif
             <ul class="page-breadcrumb">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Product</li>
+                <li>Service</li>
             </ul>
         </div>
     </div>
@@ -23,7 +23,7 @@
                 <div class="team-block col-lg-3 col-md-6 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img width="100%" src="{{ asset('uploads/products/preview') }}/{{ $product->preview_image }}" alt></figure>
+                            <figure class="image"><img width="100%" src="{{ asset('uploads/products/preview') }}/{{ $product->preview_image }}" alt="{{ $product->preview_image }}"></figure>
                         </div>
                         <div class="content-box">
                             <h4 class="title"><a href="{{ route('services.product.details',$product->slug) }}">{{ $product->product_name }}</a></h4>

@@ -1658,8 +1658,8 @@ figure.image {
 
 .main-header .main-box .nav-outer {
     position: relative;
-    margin-left: auto;
-    margin-right: auto
+    /* margin-left: auto;
+    margin-right: auto */
 }
 
 .main-menu {
@@ -3255,7 +3255,8 @@ figure.image {
 
 .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box,
 .banner-section .banner-slider .banner-slide .outer-box .content-box {
-    max-width: 910px
+    max-width: 910px;
+    padding-top: 10%;
 }
 
 .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .sub-title,
@@ -3340,6 +3341,7 @@ figure.image {
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .text, .banner-section .banner-slider .banner-slide .outer-box .content-box .text {
         line-height: 18px;
         font-size: 10px;
+        margin-bottom: 20px;
     }
 }
 
@@ -3697,7 +3699,7 @@ figure.image {
 
 @media(max-width:575.98px) {
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .theme-btn, .banner-section .banner-slider .banner-slide .outer-box .content-box .btn-box .theme-btn {
-        padding: 8px 15px;
+        padding: 5px 9px;
     }
     .banner-section .banner-slider-rtl .banner-slide .outer-box .content-box .btn-box .theme-btn, .banner-section .banner-slider .banner-slide .outer-box .content-box .btn-box .theme-btn {
         font-size: 10px;
@@ -6227,6 +6229,19 @@ figure.image {
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
     text-align: center
+}
+
+@media(max-width:767.98px) {
+    .client-block-two a {
+        padding: 0;
+    }
+
+}
+@media(max-width:575.98px) {
+    .client-block-two a {
+        padding: 0;
+    }
+
 }
 
 .client-block-two a:hover {
@@ -8798,7 +8813,7 @@ figure.image {
     z-index: 99;
 }
 .banner-contact .outer-box {
-    padding: 20px 100px;
+    padding: 20px ;
     border-radius: 10px;
     border: 1px solid #000;
     -webkit-box-shadow: 0px 6px 20px -4px rgba(0,0,0,0.64);
@@ -14328,3 +14343,6 @@ table.tbl-shopping-cart>tfoot>tr>th {
         line-height: 19px;
     }
 }
+
+
+

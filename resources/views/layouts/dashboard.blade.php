@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html lang="en" class="default-style layout-fixed layout-navbar-fixed">
 <head>
-    @if($setting->first()->title != null)
+    <title>Dashboard</title>
+    {{-- @if($setting->first()->title != null)
         <title>{{$setting->first()->title}}</title>
     @endif
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if($setting->first()->favicon != null)
         <link rel="icon" type="image/x-icon" href="{{ asset('uploads/setting') }}/{{ $setting->first()->favicon }}">
@@ -41,7 +42,6 @@
     <link rel="stylesheet" href="{{asset('backend/libs/perfect-scrollbar/perfect-scrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/select2/select2.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-datepicker/bootstrap-datepicker.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('backend/libs/bootstrap-material-datetimepicker/bootstrap-material-datetimepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/timepicker/timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('backend/libs/minicolors/minicolors.css')}}">

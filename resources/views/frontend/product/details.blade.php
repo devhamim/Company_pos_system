@@ -21,7 +21,7 @@
                     <div class="slider-content">
                         <figure class="image-box">
                             <a href="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" class="lightbox-image" data-fancybox="gallery">
-                                <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" alt>
+                                <img src="{{ asset('uploads/shop/gallery') }}/{{ $productgallerys->first()->gallery_image }}" alt="{{ $productgallerys->first()->gallery_image }}">
                             </a>
                         </figure>
                     </div>
@@ -45,7 +45,7 @@
                 <div class="product-details__buttons">
                     @auth('customerauth')
                         <div class="product-details__buttons-1">
-                            <a href="shop-cart.html" class="theme-btn btn-style-one">Add to Cart</a>
+                            <a href="#" class="theme-btn btn-style-one">Add to Cart</a>
                         </div>
                     @endauth
                     <div class="product-details__buttons-2">
@@ -99,7 +99,7 @@
                                     <div class="single-comment-box">
                                         <div class="inner-box">
                                             <figure class="comment-thumb">
-                                                <img src="{{ Avatar::create($comment->name)->toBase64() }}" alt>
+                                                <img src="{{ Avatar::create($comment->name)->toBase64() }}" alt="{{ $comment->name }}">
                                             </figure>
                                             <div class="inner">
                                                 <ul class="rating clearfix">
@@ -163,7 +163,7 @@
                             <div class="product-block all mix pantry fruit col-lg-3 col-md-6 col-sm-12">
                                 <div class="inner-box">
                                     <div class="image"><a href="{{ route('product.details', $similarproduct->slug) }}"><img
-                                                src="{{ asset('uploads/shop') }}/{{ $similarproduct->preview_image }}" alt /></a></div>
+                                                src="{{ asset('uploads/shop') }}/{{ $similarproduct->preview_image }}" alt="{{ $similarproduct->preview_image }}" /></a></div>
                                     <div class="content">
                                         <h4><a href="{{ route('product.details', $similarproduct->slug) }}">{{ $similarproduct->name }}</a></h4>
                                         <span class="price">{{ $similarproduct->after_discount }}Tk</span>
@@ -171,7 +171,7 @@
                                     <div class="icon-box">
                                         <a href="{{ route('product.details', $similarproduct->slug) }}" class="ui-btn like-btn"><i
                                                 class="fa fa-heart"></i></a>
-                                        <a href="shop-cart.html" class="ui-btn add-to-cart"><i
+                                        <a href="{{ route('product.details', $similarproduct->slug) }}" class="ui-btn add-to-cart"><i
                                                 class="fa fa-shopping-cart"></i></a>
                                     </div>
                                 </div>

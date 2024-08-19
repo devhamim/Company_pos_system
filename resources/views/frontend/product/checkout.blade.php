@@ -69,7 +69,7 @@
                             <tbody>
                                 <tr>
                                     <td class="product-thumbnail"><a>
-                                        <img alt="product" src="{{ asset('uploads/shop') }}/{{ $shopproduct->preview_image }}"></a>
+                                        <img src="{{ asset('uploads/shop') }}/{{ $shopproduct->preview_image }}" alt="{{ $shopproduct->preview_image }}"></a>
                                     </td>
                                     <td class="product-name">
                                         <a>{{ $shopproduct->name }}</a>
