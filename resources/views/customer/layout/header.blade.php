@@ -62,7 +62,7 @@
         <div class="ec-menu-inner">
             <div class="ec-menu-content">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="javascript:void(0)">Categories</a>
                         <ul class="sub-menu">
                             <li>
@@ -109,7 +109,7 @@
                                     <li><a href="#">Full width 2 columns</a></li>
                                 </ul>
                             </li>
-                            <li><a class="p-0" href="shop-left-sidebar-col-3.html"><img class="img-responsive"
+                            <li><a class="p-0" href="#"><img class="img-responsive"
                                         src="{{ asset('customer') }}/images/menu-banner/1.jpg" alt="manu banner"></a>
                             </li>
                         </ul>

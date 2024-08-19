@@ -28,7 +28,7 @@
                                     </li>
                                     <li class="ec-footer-link"><span>Email:</span>
                                         @if ($setting->first()->email != null)
-                                            <a href="{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
+                                            <a href="mailto:{{ $setting->first()->email }}">{{ $setting->first()->email }}</a>
                                         @endif
                                     </li>
                                 </ul>

@@ -112,14 +112,10 @@
                            class="ec-cart-noti ec-header-count cart-count-lable">3</span></a>
                </div>
                <div class="ec-nav-panel-icons">
-                   <a href="index.html" class="ec-header-btn"><i class="fi-rr-home"></i></a>
+                   <a href="{{ url('/') }}" class="ec-header-btn"><i class="fi-rr-home"></i></a>
                </div>
                <div class="ec-nav-panel-icons">
-                   <a href="wishlist.html" class="ec-header-btn"><i class="fi-rr-heart"></i><span
-                           class="ec-cart-noti">4</span></a>
-               </div>
-               <div class="ec-nav-panel-icons">
-                   <a href="login.html" class="ec-header-btn"><i class="fi-rr-user"></i></a>
+                   <a href="#" class="ec-header-btn"><i class="fi-rr-user"></i></a>
                </div>
 
            </div>
