@@ -408,9 +408,9 @@
                                     <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
 
                                         @if (Auth::user()->image == null)
-                                            <img src="{{Avatar::create(Auth::user()->name)->toBase64()}}" class="img-fluid img-radius wid-40" alt="">
+                                            <img src="{{Avatar::create(Auth::user()->name)->toBase64()}}" class="img-fluid img-radius wid-40" alt="name">
                                         @else
-                                            <img src="{{asset('uploads/user')}}/{{Auth::user()->image}}" alt class="d-block ui-w-30 rounded-circle">
+                                            <img src="{{asset('uploads/user')}}/{{Auth::user()->image}}" alt="name" class="d-block ui-w-30 rounded-circle">
                                         @endif
                                         <span class="px-1 mr-lg-2 ml-2 ml-lg-0">{{Auth::user()->name}}</span>
                                     </span>

@@ -119,7 +119,7 @@
                             <img src="{{asset('uploads/protfolio')}}/{{ $similar->preview_image }}" alt="{{ $similar->preview_image }}"></a>
                         </figure>
                         <figure class="image-2"><a href="{{ route('portfolio.details', $similar->slug) }}"><img
-                                    src="images/resource/projec1-2.png" alt></a></figure>
+                                    src="images/resource/projec1-2.png" alt="projec1-2"></a></figure>
                     </div>
                     <div class="content-box">
                         <span>{{ $similar->project_type }}</span>

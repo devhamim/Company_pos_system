@@ -4,7 +4,7 @@
         <div class="banner-slider">
             @foreach ($banners as $banner)
                 <div class="banner-slide">
-                    <img src="{{ asset('uploads/banner') }}/{{ $banner->banner_image }}" alt>
+                    <img src="{{ asset('uploads/banner') }}/{{ $banner->banner_image }}" alt="{{ $banner->banner_image }}">
                     <div class="outer-box">
                         <div class="auto-container">
                             <div class="content-box">
@@ -48,15 +48,15 @@
                 <div class="auto-container">
                     <ul class="clients-carousel">
                         <li class="client-block-two" > <a href="#"><img
-                                    src="{{ asset('frontend') }}/images/clients/1-1.png" alt></a> </li>
+                                    src="{{ asset('frontend') }}/images/clients/1-1.png" alt="1-1.png"></a> </li>
                         <li class="client-block-two"> <a href="#"><img
-                                    src="{{ asset('frontend') }}/images/clients/1-2.png" alt></a> </li>
+                                    src="{{ asset('frontend') }}/images/clients/1-2.png" alt="1-2.png"></a> </li>
                         <li class="client-block-two"> <a href="#"><img
-                                    src="{{ asset('frontend') }}/images/clients/1-3.png" alt></a> </li>
+                                    src="{{ asset('frontend') }}/images/clients/1-3.png" alt="1-3.png"></a> </li>
                         <li class="client-block-two"> <a href="#"><img
-                                    src="{{ asset('frontend') }}/images/clients/1-4.png" alt></a> </li>
+                                    src="{{ asset('frontend') }}/images/clients/1-4.png" alt="1-4.png"></a> </li>
                         <li class="client-block-two"> <a href="#"><img
-                                    src="{{ asset('frontend') }}/images/clients/1-5.png" alt></a> </li>
+                                    src="{{ asset('frontend') }}/images/clients/1-5.png" alt="1-5.png"></a> </li>
                     </ul>
                 </div>
             </div>
