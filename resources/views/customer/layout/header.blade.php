@@ -63,86 +63,11 @@
             <div class="ec-menu-content">
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="javascript:void(0)">Categories</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="javascript:void(0)">Classic Variation</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Left sidebar 3 column</a></li>
-                                    <li><a href="#">Left sidebar 4 column</a></li>
-                                    <li><a href="#">Right sidebar 3 column</a></li>
-                                    <li><a href="#">Right sidebar 4 column</a></li>
-                                    <li><a href="#">Full width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Classic Variation</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Banner left sidebar 3
-                                            column</a></li>
-                                    <li><a href="#">Banner left sidebar 4
-                                            column</a></li>
-                                    <li><a href="#">Banner right sidebar 3
-                                            column</a></li>
-                                    <li><a href="#">Banner right sidebar 4
-                                            column</a></li>
-                                    <li><a href="#">Banner Full width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Columns Variation</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">3 Columns full width</a></li>
-                                    <li><a href="#">4 Columns full width</a></li>
-                                    <li><a href="#">5 Columns full width</a></li>
-                                    <li><a href="#">6 Columns full width</a></li>
-                                    <li><a href="#">Banner 3 Columns</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">List Variation</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Shop left sidebar</a></li>
-                                    <li><a href="#">Shop right sidebar</a></li>
-                                    <li><a href="#">Banner left sidebar</a></li>
-                                    <li><a href="#">Banner right sidebar</a></li>
-                                    <li><a href="#">Full width 2 columns</a></li>
-                                </ul>
-                            </li>
-                            <li><a class="p-0" href="#"><img class="img-responsive"
-                                        src="{{ asset('customer') }}/images/menu-banner/1.jpg" alt="manu banner"></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="javascript:void(0)">Products</a>
-                        <ul class="sub-menu">
-                            <li><a href="javascript:void(0)">Product page</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Product left sidebar</a></li>
-                                    <li><a href="#">Product right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0)">Product 360</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">360 left sidebar</a></li>
-                                    <li><a href="#">360 right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0)">Product vodeo</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">vodeo left sidebar</a></li>
-                                    <li><a href="#">vodeo right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0)">Product gallery</a>
-                                <ul class="sub-menu">
-                                    <li><a href="#">Gallery left sidebar</a></li>
-                                    <li><a href="#">Gallery right sidebar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('our.services') }}">Services</a></li>
+                    <li> <a href="{{ route('our.products') }}">Product</a></li>
+                    <li> <a href="{{ route('our.blogs') }}">Blogs</a></li>
+                    <li><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="header-res-lan-curr">

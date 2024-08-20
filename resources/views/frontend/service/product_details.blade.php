@@ -19,7 +19,7 @@
 
             <div class="col-xl-8 col-lg-8 col-md-8 ">
                 <div class="services-details__content">
-                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt />
+                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $productgallery->first()->gallery_image }}" />
                     <h3 class="mt-4">Service Overview</h3>
                     <p>{!! $products->first()->description !!}</p>
                 </div>

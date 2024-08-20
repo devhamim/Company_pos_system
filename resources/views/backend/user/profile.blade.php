@@ -25,9 +25,6 @@
                                 href="#account-change-password">Change password</a>
                             <a class="list-group-item list-group-item-action" data-toggle="list"
                                 href="#account-info">Information</a>
-                            {{-- <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-                            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
-                            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a> --}}
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -35,7 +32,7 @@
                                 <div class="tab-pane fade show active" id="account-general">
 
                                     <div class="card-body media align-items-center">
-                                        @if (Auth::user()->image == null) 
+                                        @if (Auth::user()->image == null)
                                             <img src="{{Avatar::create(Auth::user()->name)->toBase64()}}" class="d-block ui-w-80" alt="">
                                         @else
                                             <img src="{{asset('uploads/user')}}/{{Auth::user()->image}}" alt class="d-block ui-w-80">
@@ -109,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                        
+
                     </div>
                 </div>
             </div>

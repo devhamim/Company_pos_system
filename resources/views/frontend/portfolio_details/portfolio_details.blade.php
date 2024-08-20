@@ -20,7 +20,7 @@
                 <div class="inner-box">
                     <div class="image-box">
                         <figure class="image overlay-anim"><a>
-                            <img src="{{ asset('uploads/protfolio/gallery') }}/{{ $gallery->gallery_image }}" alt></a>
+                            <img src="{{ asset('uploads/protfolio/gallery') }}/{{ $gallery->gallery_image }}" alt="{{ $gallery->gallery_image }}"></a>
                         </figure>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                 <div class="inner-box">
                     <div class="image-box">
                         <figure class="image overlay-anim"><a href="{{ route('portfolio.details', $similar->slug) }}">
-                            <img src="{{asset('uploads/protfolio')}}/{{ $similar->preview_image }}" alt></a>
+                            <img src="{{asset('uploads/protfolio')}}/{{ $similar->preview_image }}" alt="{{ $similar->preview_image }}"></a>
                         </figure>
                         <figure class="image-2"><a href="{{ route('portfolio.details', $similar->slug) }}"><img
                                     src="images/resource/projec1-2.png" alt></a></figure>
