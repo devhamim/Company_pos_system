@@ -7,18 +7,20 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    @if($setting->first()->title != null)
+    <title>@yield('title')</title>
+    <meta name="title" content="@yield('meta_title')">
+    {{-- @if($setting->first()->title != null)
         <title>{{$setting->first()->title}}</title>
     @endif
     @if ($setting->first()->meta_title != null)
         <meta name="title" content="{{$setting->first()->meta_title}}">
     @endif
     @if ($setting->first()->meta_tag != null)
-        <meta name="keywords" content="{{$setting->first()->meta_tag}}">
+
     @endif
     @if ($setting->first()->meta_description != null)
         <meta name="description" content="{{$setting->first()->meta_description}}">
-    @endif
+    @endif --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Nugortechit">
 

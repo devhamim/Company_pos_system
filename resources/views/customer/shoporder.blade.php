@@ -1,4 +1,6 @@
 @extends('customer.layout.app')
+@section('title', 'Customer Order')
+@section('meta_title', 'Customer Order')
 @section('content')
 <!-- User history section -->
 <section class="ec-page-content ec-vendor-uploads ec-user-account section-space-p">

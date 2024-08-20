@@ -1,4 +1,6 @@
 @extends('customer.layout.app')
+@section('title', 'Customer Dashboard')
+@section('meta_title', 'Customer Dashboard')
 @section('content')
 <div class="ec-side-cart-overlay"></div>
 <div id="ec-side-cart" class="ec-side-cart">

@@ -122,6 +122,7 @@ class CustomerAuthController extends Controller
 
     // customer_registers
     function customer_registers(){
+        
         return view('customer.customer_registers');
     }
 
