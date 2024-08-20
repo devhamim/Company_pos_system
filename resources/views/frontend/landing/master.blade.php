@@ -278,6 +278,9 @@ body{
     height: auto;
   }
 }
+.page-title {
+    margin-top: 40px;
+}
 
     </style>
 </head>
