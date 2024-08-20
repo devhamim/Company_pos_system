@@ -3,29 +3,33 @@
 
 <head>
     <meta charset="utf-8">
-    @if ($metaSettings && $metaSettings->first())
-        <title>{{ $metaSettings->first()->title }}</title>
+    <title>@yield('title')</title>
+    {{-- @if ($metaSettings && $metaSettings->first())
+        <title> {{ $metaSettings->first()->title }}</title>
     @elseif ($setting && $setting->first())
         <title>{{ $setting->first()->title }}</title>
-    @endif
+    @endif --}}
 
-    @if ($metaSettings && $metaSettings->first())
+    <meta name="title" content="@yield('meta_title')">
+    {{-- @if ($metaSettings && $metaSettings->first())
         <meta name="title" content="{{$metaSettings->first()->meta_title}}">
     @elseif ($setting && $setting->first())
         <meta name="title" content="{{$setting->first()->meta_title}}">
-    @endif
+    @endif --}}
 
-    @if ($metaSettings && $metaSettings->first())
+    <meta name="keywords" content="@yield('meta_tag')">
+    {{-- @if ($metaSettings && $metaSettings->first())
         <meta name="keywords" content="{{$metaSettings->first()->meta_tag}}">
     @elseif ($setting && $setting->first())
         <meta name="keywords" content="{{$setting->first()->meta_tag}}">
-    @endif
+    @endif --}}
 
-    @if ($metaSettings && $metaSettings->first())
+    <meta name="description" content="@yield('meta_description')">
+    {{-- @if ($metaSettings && $metaSettings->first())
         <meta name="description" content="{{$metaSettings->first()->meta_description}}">
     @elseif ($setting && $setting->first())
         <meta name="description" content="{{$setting->first()->meta_description}}">
-    @endif
+    @endif --}}
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
