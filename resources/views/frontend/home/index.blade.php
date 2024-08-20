@@ -311,8 +311,11 @@
                     @foreach ($portfolios as $portfolio)
                     <div class="product-block all mix {{ str_replace(' ', '',$portfolio->project_type) }} col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box">
-                            <div class="image"><a href="#"><img
-                                        src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt="{{ $portfolio->preview_image }}" /></a></div>
+                            <div class="image">
+                                <a href="#">
+                                    <img src="{{ asset('uploads/protfolio') }}/{{ $portfolio->preview_image }}" alt="{{ $portfolio->preview_image }}" />
+                                </a>
+                            </div>
                             <div class="content">
                                 <h4><a href="#">{{ $portfolio->title }}</a></h4>
                             </div>
@@ -449,7 +452,7 @@
                         <div class="product-block all mix {{ $cliend->type }} col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" />
+                                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt="{{ $cliend->image }}" />
                                 </div>
                             </div>
                         </div>
