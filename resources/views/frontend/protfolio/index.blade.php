@@ -1,4 +1,8 @@
 @extends('frontend.master.master')
+@section('title', $metaSettings->title ?? 'Protfolios')
+@section('meta_description', $metaSettings->meta_description ?? 'Protfolios' )
+@section('meta_title', $metaSettings->meta_title ?? 'Protfolios' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Protfolios' )
 @section('content')
 
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">

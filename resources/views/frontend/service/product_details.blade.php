@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
-@section('title', $metaSettings->title ?? $products->first()->product_name)
-@section('meta_description', $metaSettings->meta_description ?? $products->first()->product_name )
-@section('meta_title', $metaSettings->meta_title ?? $products->first()->product_name )
-@section('meta_tag', $metaSettings->meta_tag ?? $products->first()->product_name )
+@section('title', $products->first()->product_name ?? 'Product Details')
+@section('meta_description', $products->first()->product_name ?? 'Product Details' )
+@section('meta_title', $products->first()->product_name ?? 'Product Details')
+@section('meta_tag', $products->first()->product_name ?? 'Product Details')
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xl-8 col-lg-8 col-md-8 ">
+            <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="services-details__content">
                     <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $productgallery->first()->gallery_image }}" />
                     <h3 class="mt-4">Service Overview</h3>

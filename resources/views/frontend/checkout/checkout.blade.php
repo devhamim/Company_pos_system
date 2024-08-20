@@ -1,7 +1,9 @@
 @extends('frontend.master.master')
-
+@section('title', $metaSettings->title ?? 'Checkout')
+@section('meta_description', $metaSettings->meta_description ?? 'Checkout' )
+@section('meta_title', $metaSettings->meta_title ?? 'Checkout' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Checkout' )
 @section('content')
-
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
         <div class="title-outer text-center">
@@ -88,7 +90,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="col-lg-12 col-md-12 col-sm-12 column text-end">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-end">
                             <div class="field-input message-btn">
                                 <input type="hidden" value="{{ $product_id->id }}" name="product_id">
                                 <button type="submit" class="theme-btn btn-style-one w-100" data-loading-text="Please wait...">Order Now</button>

@@ -1,4 +1,8 @@
 @extends('frontend.master.master')
+@section('title', $metaSettings->title ?? 'Privacy Policy')
+@section('meta_description', $metaSettings->meta_description ?? 'Privacy Policy' )
+@section('meta_title', $metaSettings->meta_title ?? 'Privacy Policy' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Privacy Policy' )
 @section('content')
 
 <div class="container page-content">

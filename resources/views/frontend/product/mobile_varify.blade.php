@@ -1,4 +1,5 @@
 @extends('frontend.master.master')
+
 @section('content')
 
 <section class=" position-relative pt-120 pb-100 bg-light pt-5 mt-5" style="height: 50vh">

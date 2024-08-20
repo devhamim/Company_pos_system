@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
-@section('title', $metaSettings->title ?? $services->first()->category_name )
-@section('meta_description', $metaSettings->meta_description ?? $services->first()->category_name )
-@section('meta_title', $metaSettings->meta_title ?? $services->first()->category_name )
-@section('meta_tag', $metaSettings->meta_tag ?? $services->first()->category_name )
+@section('title', $services->first()->category_name ?? 'Service' )
+@section('meta_description', $services->first()->category_name ?? 'Service' )
+@section('meta_title', $services->first()->category_name ?? 'Service' )
+@section('meta_tag', $services->first()->category_name ?? 'Service' )
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">

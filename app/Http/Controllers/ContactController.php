@@ -17,7 +17,7 @@ class ContactController extends Controller
     function contact() {
         $categories = Category::all();
         $setting = setting::all();
-        $metaSettings = Meta::where('pages', 'contact')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'contact')->where('status', 1)->first();
         return view('frontend.contact.contact', [
             'categories' => $categories,
             'setting' => $setting,

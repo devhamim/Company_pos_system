@@ -206,12 +206,13 @@
 }
 
 .column a {
-  float: none;
-  color: rgb(255, 255, 255);
-  padding: 8px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+    float: none;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    line-height: 17px;
 }
 .column h5 {
   color: #F94A29 ;
@@ -264,17 +265,17 @@
                                 <a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
                                 <a href="{{ route('about') }}">About</a>
                                 <div class="dropdown">
-                                    <button class="dropbtn">Services
+                                    <button class="dropbtn"><a style="padding: 0 5px 0 0;" href="{{ route('our.services') }}">Services</a>
                                         <i class="fa fa-caret-down"></i>
                                     </button>
                                     <div class="dropdown-content">
                                         <div class="row">
                                             @foreach ($categorys as $category)
                                                 <div class="column">
-                                                    <h5>{{ $category->category_name }}</h5>
+                                                    <h5><a style="background: #F94A29" href="{{ route('services.product',$category->id) }}">{{ $category->category_name }}</a></h5>
                                                     @foreach ($services as $service)
                                                         @if ($category->id == $service->category_id)
-                                                            <a href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a>
+                                                            <a style="font-size: 12px" href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a>
                                                         @endif
                                                     @endforeach
                                                 </div>
@@ -366,7 +367,7 @@
                             top: 0;
                             position: relative;
                         }
-                        .navigation .submenu li p, .navigation .subsubmenu li a {
+                        .navigation .submenu li a, .navigation .subsubmenu li a {
                             padding: 6px 6px 0 6px;
                             display: block;
                             color: #ffffff;
@@ -381,17 +382,17 @@
                         <li><a href="{{url('/')}}" class="active">Home</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
                         <li>
-                            <a>Services</a>
+                            <a href="{{ route('our.services') }}">Services</a>
                             <!-- Submenu -->
                             <ul class="submenu">
                                 @foreach ($categorys as $category)
                                 <li>
-                                    <p>{{ $category->category_name }}</p>
+                                    <a href="{{ route('services.product',$category->id) }}">{{ $category->category_name }}</a>
                                     <!-- Sub-submenu -->
                                     <ul class="subsubmenu">
                                         @foreach ($services as $service)
                                             @if ($category->id == $service->category_id)
-                                                <li><a href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a></li>
+                                                <li><a style="font-size: 12px" href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a></li>
                                             @endif
                                         @endforeach
                                     </ul>

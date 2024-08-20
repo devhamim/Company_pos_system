@@ -60,7 +60,7 @@ class FrontendController extends Controller
         $blogs = Blogs::where('status', 1)->take(3)->get();
 
 
-        $metaSettings = Meta::where('pages', 'home')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'home')->where('status', 1)->first();
 
         return view('frontend.home.index', [
             'categories' => $categories,
@@ -85,7 +85,7 @@ class FrontendController extends Controller
         $teams = team::where('status', 1)->get();
         $category= Category::where('status', 1)->take(8)->get();
         $testmonials= testmonial::where('status', 1)->get();
-        $metaSettings = Meta::where('pages', 'about')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'about')->where('status', 1)->first();
         return view('frontend.about.about', [
             'teams'=>$teams,
             'categoryy' => $category,
@@ -98,7 +98,7 @@ class FrontendController extends Controller
     // our_services
     function our_services() {
         $services = Category::where('status', '1')->get();
-        $metaSettings = Meta::where('pages', 'services')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'services')->where('status', 1)->first();
         return view('frontend.service.index', compact(['services', 'metaSettings']));
     }
 
@@ -122,7 +122,7 @@ class FrontendController extends Controller
     // services_product_details
     function services_product_checkout(Request $request){
         $product_id = Product::where('id', $request->product_id)->first() ;
-        $metaSettings = Meta::where('pages', 'services/product/checkout')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'services/product/checkout')->where('status', 1)->first();
         return view('frontend.checkout.checkout',[
             'product_id'=>$product_id,
             'metaSettings'=> $metaSettings,
@@ -305,7 +305,7 @@ class FrontendController extends Controller
     function our_products(){
         $shopproducts = ShopProduct::where('status', 1)->get();
         $shopcategorys = shopcategory::where('status', 1)->get();
-        $metaSettings = Meta::where('pages', 'our_products')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'our_products')->where('status', 1)->first();
         return view('frontend.product.index',[
             'shopproducts'=>$shopproducts,
             'shopcategorys'=>$shopcategorys,
@@ -319,7 +319,7 @@ class FrontendController extends Controller
         $productgallerys = shopproductgallery::where('shopproduct_id', $shopproducts->id)->get();
         $similarproducts = ShopProduct::where('category_id', $shopproducts->category_id)->where('id', '!=', $shopproducts->id)->get();
         $product_comment = ProductComment::where('product_id', $shopproducts->id)->get();
-        $metaSettings = Meta::where('pages', 'product_details')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'product_details')->where('status', 1)->first();
         return view('frontend.product.details',[
             'shopproducts'=>$shopproducts,
             'productgallerys'=>$productgallerys,
@@ -331,7 +331,7 @@ class FrontendController extends Controller
 
     // our_blogs
     function our_blogs(){
-        $metaSettings = Meta::where('pages', 'our_blogs')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'our_blogs')->where('status', 1)->first();
         $blogs = Blogs::where('status', 1)->paginate(30);
         return view('frontend.blogs.index',[
             'metaSettings'=>$metaSettings,
@@ -341,7 +341,7 @@ class FrontendController extends Controller
 
     // blog_details
     function blog_details($slug){
-        $metaSettings = Meta::where('pages', 'blog_details')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'blog_details')->where('status', 1)->first();
         $blogs = Blogs::where('slug', $slug)->where('status', 1)->first();
         $resent_blog = Blogs::where('status', 1)->take(8)->get();
         $comments = Comment::where('blog_id', $blogs->id)->get();
@@ -380,7 +380,7 @@ class FrontendController extends Controller
     function privacy_policy(){
         $categories = Category::all();
         $privacy_policy = privacy_policy::all();
-        $metaSettings = Meta::where('pages', 'privacy_policy')->where('status', 1)->get();
+        $metaSettings = Meta::where('pages', 'privacy_policy')->where('status', 1)->first();
         return view('frontend.privacy_policy.privacy_policy', [
             'categories'=>$categories,
             'privacy_policy'=>$privacy_policy,
@@ -392,9 +392,11 @@ class FrontendController extends Controller
     function terms(){
         $categories = Category::all();
         $terms = terms_condition::all();
+        $metaSettings = Meta::where('pages', 'terms')->where('status', 1)->first();
         return view('frontend.terms.terms_and_condition', [
             'categories'=>$categories,
             'terms'=>$terms,
+            'metaSettings'=>$metaSettings,
         ]);
     }
 
@@ -449,7 +451,7 @@ function portfolio_details($slug){
     $protfolio_next = protfolio::where('id', '>', $protfolio_details->first()->id)->orderBy('id')->first();
     $protfolio_preview = protfolio::where('id', '<', $protfolio_details->first()->id)->orderBy('id', 'desc')->first();
     $protfolio_similar = protfolio::where('project_type' ,$protfolio_details->first()->project_type)->where('id', '!=', $protfolio_details->first()->id)->get();
-    $metaSettings = Meta::where('pages', 'portfolio_details')->where('status', 1)->get();
+    $metaSettings = Meta::where('pages', 'portfolio_details')->where('status', 1)->first();
     return view('frontend.portfolio_details.portfolio_details', [
         'protfolio_details'=>$protfolio_details,
         'protfolio_gallery'=>$protfolio_gallery,
@@ -477,7 +479,7 @@ function product_comment_store(Request $request){
 // our_cliends
 function our_cliends(){
     $cliends = cliend::where('status', 1)->paginate(40);
-    $metaSettings = Meta::where('pages', 'our_cliends')->where('status', 1)->get();
+    $metaSettings = Meta::where('pages', 'our_cliends')->where('status', 1)->first();
     return view('frontend.cliend.index',[
         'cliends'=>$cliends,
         'metaSettings'=>$metaSettings,
@@ -486,7 +488,7 @@ function our_cliends(){
 // our_protfolio
 function our_protfolio(){
     $portfolios = protfolio::where('status', 1)->paginate(24);
-    $metaSettings = Meta::where('pages', 'our_protfolio')->where('status', 1)->get();
+    $metaSettings = Meta::where('pages', 'our_protfolio')->where('status', 1)->first();
     return view('frontend.protfolio.index',[
         'portfolios'=>$portfolios,
         'metaSettings'=>$metaSettings,

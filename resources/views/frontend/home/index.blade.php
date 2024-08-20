@@ -1,4 +1,8 @@
 @extends('frontend.master.master')
+@section('title', $metaSettings->title ?? 'Home')
+@section('meta_description', $metaSettings->meta_description ?? 'Home' )
+@section('meta_title', $metaSettings->meta_title ?? 'Home' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Home' )
 @section('content')
     <section class="banner-section">
         <div class="banner-slider">
