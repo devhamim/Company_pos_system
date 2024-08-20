@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
-@section('title', $metaSettings->title ?? $shopproducts->name)
-@section('meta_description', $metaSettings->meta_description ?? $shopproducts->name )
-@section('meta_title', $metaSettings->meta_title ?? $shopproducts->name )
-@section('meta_tag', $metaSettings->meta_tag ?? $shopproducts->name )
+@section('title', 'Nugortech IT - '.  $shopproducts->name ?? 'Nugortech IT - Product Deatils')
+@section('meta_description', 'Nugortech IT - '.  $shopproducts->name ?? 'Nugortech IT - Product Deatils')
+@section('meta_title', 'Nugortech IT - '.  $shopproducts->name ?? 'Nugortech IT - Product Deatils')
+@section('meta_tag', 'Nugortech IT - '.  $shopproducts->name ?? 'Nugortech IT - Product Deatils')
 @section('content')
 
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">

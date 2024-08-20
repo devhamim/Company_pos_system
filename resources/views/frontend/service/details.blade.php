@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
-@section('title', $services->first()->category_name ?? 'Service' )
-@section('meta_description', $services->first()->category_name ?? 'Service' )
-@section('meta_title', $services->first()->category_name ?? 'Service' )
-@section('meta_tag', $services->first()->category_name ?? 'Service' )
+@section('title', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
+@section('meta_description', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
+@section('meta_title', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
+@section('meta_tag', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">

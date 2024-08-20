@@ -1,6 +1,6 @@
 @extends('customer.layout.app')
-@section('title', 'Customer Register')
-@section('meta_title', 'Customer Register')
+@section('title', 'Nugortech IT - Customer Register')
+@section('meta_title', 'Nugortech IT - Customer Register')
 @section('content')
 <div class="ec-side-cart-overlay"></div>
 

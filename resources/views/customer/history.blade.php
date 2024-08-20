@@ -1,6 +1,6 @@
 @extends('customer.layout.app')
-@section('title', 'Customer History')
-@section('meta_title', 'Customer History')
+@section('title', 'Nugortech IT - Customer History')
+@section('meta_title', 'Nugortech IT - Customer History')
 @section('content')
 <!-- User history section -->
 <section class="ec-page-content ec-vendor-uploads ec-user-account section-space-p">

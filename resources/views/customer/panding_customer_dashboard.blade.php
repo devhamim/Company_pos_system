@@ -1,6 +1,6 @@
 @extends('customer.layout.app')
-@section('title', 'Panding Customer Dashboard')
-@section('meta_title', 'Panding Customer Dashboard')
+@section('title', 'Nugortech IT - Panding Customer Dashboard')
+@section('meta_title', 'Nugortech IT - Panding Customer Dashboard')
 @section('content')
 <div class="ec-side-cart-overlay"></div>
 <div id="ec-side-cart" class="ec-side-cart">

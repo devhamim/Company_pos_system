@@ -1,6 +1,6 @@
 @extends('customer.layout.app')
-@section('title', 'Customer Login')
-@section('meta_title', 'Customer Login')
+@section('title', 'Nugortech IT - Customer Login')
+@section('meta_title', 'Nugortech IT - Customer Login')
 @section('content')
 <div class="ec-side-cart-overlay"></div>
 <!-- Ec breadcrumb start -->

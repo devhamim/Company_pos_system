@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
-@section('title', $blogs->title ?? 'Blog Details')
-@section('meta_description', $blogs->title ?? 'Blog Details')
-@section('meta_title', $blogs->title ?? 'Blog Details')
-@section('meta_tag', $blogs->title ?? 'Blog Details')
+@section('title', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
+@section('meta_description', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
+@section('meta_title', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
+@section('meta_tag', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
