@@ -9,6 +9,7 @@
 
     <title>@yield('title')</title>
     <meta name="title" content="@yield('meta_title')">
+    <meta name="description" content="@yield('meta_description')">
     {{-- @if($setting->first()->title != null)
         <title>{{$setting->first()->title}}</title>
     @endif

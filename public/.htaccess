@@ -1,8 +1,3 @@
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# RewriteCond %{HTTP_HOST} ^www.DOMAIN_NAME.TLD$ [NC]
-# RewriteRule ^(.*)$ https://DOMAIN_NAME.TLD/$1 [R=301,L]
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
