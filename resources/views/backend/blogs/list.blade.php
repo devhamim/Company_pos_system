@@ -39,7 +39,7 @@
                                     <tr>
                                         <td>{{$sl+1}}</td>
                                         <td><img src="{{asset('uploads/blogs')}}/{{$blog->preview_image}}" alt="{{$blog->preview_image}}" class="img-fluid wid-40"></td>
-                                        <td><img src="{{asset('uploads/blogs')}}/{{$blog->image}}" alt="{{$blogs->image}}" class="img-fluid wid-40"></td>
+                                        <td><img src="{{asset('uploads/blogs')}}/{{$blog->image}}" alt="{{$blog->image}}" class="img-fluid wid-40"></td>
                                         <td>{{$blog->title}}</td>
                                         <td>{{$blog->author}}</td>
                                         <td>{{$blog->category}}</td>

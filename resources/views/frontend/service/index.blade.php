@@ -68,7 +68,7 @@
                 </div>
                 <div class="product-block active mix TECHNOLOGY col-lg-8 col-md-8 col-sm-12">
                     <div class="inner-box">
-                        <div class="content">
+                        <div class="content" style="text-align: left">
                             <div class="text">
                                 As an online marketing agency, the latest technology usage plays a big role. So, team Nugortech IT always stays updated with different technology. With proper training and guidance, each member of Nugortech IT stays technologically advanced.
                             </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="product-block mix SUPPORT col-lg-8 col-md-8 col-sm-12" >
                     <div class="inner-box">
-                        <div class="content">
+                        <div class="content" style="text-align: left">
                             <div class="text">
                                 From assigning tasks to submitting the final project we give all time support for you. Remarkably, you get everything with us that you need for your online business. No matter if you are a well-established brand or just a start-up, we do our best for the perfect support.
                             </div>
@@ -125,7 +125,7 @@
                 </div>
                 <div class="product-block mix FUNCTIONAL col-lg-8 col-md-8 col-sm-12">
                     <div class="inner-box">
-                        <div class="content">
+                        <div class="content" style="text-align: left">
                             <div class="text">
                                 We are team Nugortech IT. We are crazy strategy geniuses, inventive writers, deep data-divers, and project management masterminds. And all together we are a whole that’s bigger than the total of its parts.
                             </div>
@@ -147,3 +147,4 @@
 </section>
 
 @endsection
+
