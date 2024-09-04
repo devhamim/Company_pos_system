@@ -1,3 +1,4 @@
 User-agent: *
-allow:
-http://127.0.0.1:8000/sitemap.xml
+Disallow: 
+
+sitemap: https://nugortechit.com/sitemap.xml
