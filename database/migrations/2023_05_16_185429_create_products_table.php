@@ -23,6 +23,11 @@ return new class extends Migration
             $table->integer('sku')->nullable();
             $table->text('preview_image')->nullable();
             $table->text('slug')->nullable();
+            $table->string('meta_title')->nullable();
+            $table->string('meta_tag')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->string('image_alt_tag')->nullable();
+            $table->string('gallery_image_alt_tag')->nullable();
             $table->date('validity')->nullable();
             $table->integer('campaign');
             $table->longText('description');

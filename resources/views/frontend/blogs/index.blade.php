@@ -26,7 +26,7 @@
                         <div class="image-box">
                             <figure class="image">
                                 <a href="{{ route('blog.details', $blog->slug) }}">
-                                    <img src="{{ asset('uploads/blogs') }}/{{ $blog->preview_image }}" alt="{{ $blog->preview_image }}">
+                                    <img src="{{ asset('uploads/blogs') }}/{{ $blog->preview_image }}" alt="{{ $blog->preview_image_alt_tag }}">
                                 </a>
                             </figure>
                         </div>

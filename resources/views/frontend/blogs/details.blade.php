@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
-@section('meta_description', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
-@section('meta_title', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
-@section('meta_tag', 'Nugortech IT - '. $blogs->title ?? 'Nugortech IT - Blog Details')
+@section('meta_description', 'Nugortech IT - '. $blogs->meta_description ?? 'Nugortech IT - '.$blogs->title)
+@section('meta_title', 'Nugortech IT - '. $blogs->meta_title ?? 'Nugortech IT - '.$blogs->title)
+@section('meta_tag', 'Nugortech IT - '. $blogs->meta_tag ?? 'Nugortech IT - '.$blogs->title)
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
@@ -22,7 +22,7 @@
             <div class="col-xl-8 col-lg-7">
                 <div class="blog-details__left">
                     <div class="blog-details__img">
-                        <img src="{{ asset('uploads/blogs') }}/{{ $blogs->image }}" alt="{{ $blogs->image }}">
+                        <img src="{{ asset('uploads/blogs') }}/{{ $blogs->image }}" alt="{{ $blogs->image_alt_tag }}">
                         <div class="blog-details__date">
                             <span class="day">{{ $blogs->created_at->format('d') }}</span>
                             <span class="month">{{ $blogs->created_at->format('M') }}</span>
@@ -35,7 +35,7 @@
                                     Comments</a>
                             </li>
                         </ul>
-                        <h3 class="blog-details__title">{{ $blogs->title }}</h3>
+                        <h1 class="blog-details__title">{{ $blogs->title }}</h1>
                         <p class="blog-details__text-2">
                             {!! $blogs->description !!}
                         </p>
@@ -123,7 +123,7 @@
                             @foreach ($resent_blog as $resent)
                                 <li>
                                     <div class="sidebar__post-image">
-                                        <img src="{{ asset('uploads/blogs') }}/{{ $resent->preview_image }}" alt="{{ $resent->preview_image }}">
+                                        <img src="{{ asset('uploads/blogs') }}/{{ $resent->preview_image }}" alt="{{ $resent->preview_image_alt_tag }}">
                                     </div>
                                     <div class="sidebar__post-content">
                                         <h3> <span class="sidebar__post-content-meta"><i

@@ -38,13 +38,22 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group upload_file">
-                                <label class="form-label w-100">Preview image</label>
+                                <label class="form-label w-100">Preview image *</label>
                                 <label class="btn btn-outline-primary  mt-2">
                                     Preview image
                                     <input type="file" name="preview_image" class="image" value="{{ old('preview_image') }}" required>
                                 </label>
                                 @error('preview_image')
                                     <strong class="text-danger">{{$message}}</strong>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Preview Image Alt Tag</label>
+                                <input type="text" name="preview_image_alt_tag" class="form-control" placeholder="Preview Image Alt Tag" value="{{ old('preview_image_alt_tag') }}" required>
+                                @error('preview_image_alt_tag')
+                                    <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
                         </div>
@@ -60,6 +69,43 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Image Alt Tag</label>
+                                <input type="text" name="image_alt_tag" class="form-control" placeholder="Image Alt Tag" value="{{ old('image_alt_tag') }}" required>
+                                @error('image_alt_tag')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Title</label>
+                                <input type="text" name="meta_title" class="form-control" placeholder="Meta Title" value="{{ old('meta_title') }}" required>
+                                @error('meta_title')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Tag</label>
+                                <input type="text" name="meta_tag" class="form-control" placeholder="Meta Tag" value="{{ old('meta_tag') }}" required>
+                                @error('meta_tag')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Description</label>
+                                <input type="text" name="meta_description" class="form-control" placeholder="Meta Description" value="{{ old('meta_description') }}" required>
+                                @error('meta_description')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-label w-100 mb-2">Description</label>

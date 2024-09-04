@@ -36,6 +36,24 @@
                                 <input type="text" name="tage" class="form-control" placeholder="Tage" value="{{$blogs->tage != null ? $blogs->tage : ''}}">
                             </div>
                         </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Title</label>
+                                <input type="text" name="meta_title" class="form-control" placeholder="Meta Title" value="{{$blogs->meta_title != null ? $blogs->meta_title : ''}}">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Tage</label>
+                                <input type="text" name="meta_tag" class="form-control" placeholder="Meta Tage" value="{{$blogs->meta_tag != null ? $blogs->meta_tag : ''}}">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Meta Description</label>
+                                <input type="text" name="meta_description" class="form-control" placeholder="Meta Description" value="{{$blogs->meta_description != null ? $blogs->meta_description : ''}}">
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-label mb-2">Status</label>
@@ -58,6 +76,12 @@
                                 <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->preview_image}}" alt="{{$blogs->preview_image}}">
                             </div>
                         </div>
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Preview Image Alt Tag</label>
+                                <input type="text" name="preview_image_alt_tag" class="form-control" placeholder="Preview Image Alt Tag" value="{{$blogs->preview_image_alt_tag != null ? $blogs->preview_image_alt_tag : ''}}">
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="form-group upload_file">
                                 <label class="form-label w-100">Image</label>
@@ -71,7 +95,12 @@
                                 <img width="90" class="mt-3 mb-3" id="image1" height="auto" src="{{asset('uploads/blogs')}}/{{$blogs->image}}" alt="{{$blogs->image}}">
                             </div>
                         </div>
-
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="form-group">
+                                <label class="form-label">Image Alt Tag</label>
+                                <input type="text" name="image_alt_tag" class="form-control" placeholder="Image Alt Tag" value="{{$blogs->image_alt_tag != null ? $blogs->image_alt_tag : ''}}">
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="form-label w-100 mb-2">description</label>

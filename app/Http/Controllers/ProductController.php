@@ -40,7 +40,11 @@ class ProductController extends Controller
             'preview_image' => 'required',
             'quantity' => 'required',
             'gallery_image' => 'required',
-
+            'meta_description'=>'required',
+            'meta_tag'=>'required',
+            'meta_title'=>'required',
+            'image_alt_tag'=>'required',
+            'gallery_image_alt_tag'=>'required',
         ]);
         $after_emplode_cat = implode(',', $request->category_id);
             $product_id = Product::insertGetId([
@@ -50,6 +54,11 @@ class ProductController extends Controller
                 'product_discount' => $request->product_discount,
                 'quantity' => $request->quantity,
                 'sku' => $request->sku,
+                'meta_title' => $request->meta_title,
+                'meta_tag' => $request->meta_tag,
+                'meta_description' => $request->meta_description,
+                'image_alt_tag' => $request->image_alt_tag,
+                'gallery_image_alt_tag' => $request->gallery_image_alt_tag,
                 'status' => $request->status,
                 'description' => $request->description,
                 'slug' => Str::random(8).'-'.rand(10000,99999),
@@ -125,6 +134,11 @@ class ProductController extends Controller
             'description'=> 'required',
             'product_price'=> 'required',
             'sku' => 'required',
+            'meta_description'=>'required',
+            'meta_tag'=>'required',
+            'meta_title'=>'required',
+            'image_alt_tag'=>'required',
+            'gallery_image_alt_tag'=>'required',
             'quantity' => 'required',
         ], [
             'category_id.required' => 'The category field is required',
@@ -171,6 +185,11 @@ class ProductController extends Controller
                 'product_discount' => $request->product_discount,
                 'quantity' => $request->quantity,
                 'sku' => $request->sku,
+                'meta_title' => $request->meta_title,
+                'meta_tag' => $request->meta_tag,
+                'meta_description' => $request->meta_description,
+                'image_alt_tag' => $request->image_alt_tag,
+                'gallery_image_alt_tag' => $request->gallery_image_alt_tag,
                 'status' => $request->status,
                 'description' => $request->description,
                 'updated_at' => Carbon::now(),

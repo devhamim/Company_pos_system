@@ -20,6 +20,11 @@ return new class extends Migration
             $table->longText('description');
             $table->string('tage')->nullable();
             $table->string('category');
+            $table->string('meta_title')->nullable();
+            $table->string('meta_tag')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->string('image_alt_tag')->nullable();
+            $table->string('preview_image_alt_tag')->nullable();
             $table->longText('slug');
             $table->string('status')->default(1);
             $table->timestamps();

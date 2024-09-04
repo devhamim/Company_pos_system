@@ -39,6 +39,7 @@ use App\Http\Controllers\ServiceProductOrderController;
 use App\Http\Controllers\ShopcategoryController;
 use App\Http\Controllers\ShopOrderController;
 use App\Http\Controllers\ShopProductController;
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestmonialController;
@@ -254,7 +255,7 @@ Route::get('/about', [FrontendController::class, 'about'])->name('about');
 Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
 Route::get('/product/details/{slug}', [FrontendController::class, 'product_details'])->name('product.details');
 Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
-Route::get('/blog/details/{slug}', [FrontendController::class, 'blog_details'])->name('blog.details');
+Route::get('/blog/{slug}', [FrontendController::class, 'blog_details'])->name('blog.details');
 Route::post('/blog/comment/store', [FrontendController::class, 'blog_comment_store'])->name('blog.comment.store');
 Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
 Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
@@ -382,3 +383,7 @@ Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage'])
 
 // landing
 Route::get('/successful/online/business/with/digital/marketing', [LandingController::class, 'landing'])->name('landing');
+
+// sitemap.xml
+Route::get('/sitemap.xml', [SitemapController::class, 'show'])->name('sitemap.details');
+

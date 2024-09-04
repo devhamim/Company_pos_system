@@ -2,35 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Product;
-use App\Models\protfolio;
-use App\Models\ShopProduct;
 use Illuminate\Console\Command;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
+use App\Models\Product;
+use App\Models\Protfolio;
+use App\Models\ShopProduct;
+use Illuminate\Support\Facades\Storage;
 
 class GenerateSitemap extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'sitemap:generate';
+    protected $description = 'Generate an automatic sitemap for the website';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Command description';
-
-    /**
-     * Execute the console command.
-     */
     public function handle()
     {
         $sitemap = Sitemap::create();
+        $urls = [];
+        $urlCount = 0;
+        $lastUpdated = now();
 
         // Add static routes
         $staticRoutes = [
@@ -46,31 +36,58 @@ class GenerateSitemap extends Command
 
         foreach ($staticRoutes as $route) {
             $sitemap->add(Url::create($route));
+            $urls[] = $route;
+            $urlCount++;
         }
 
         // Add dynamic shop products
-        $shopproducts = ShopProduct::all();
-        foreach ($shopproducts as $product) {
-            $sitemap->add(Url::create(route('product.details', $product->slug)));
-        }
+        ShopProduct::chunk(100, function ($shopproducts) use ($sitemap, &$urls, &$urlCount) {
+            foreach ($shopproducts as $product) {
+                if ($product->slug) {
+                    $url = route('product.details', $product->slug);
+                    $sitemap->add(Url::create($url));
+                    $urls[] = $url;
+                    $urlCount++;
+                }
+            }
+        });
 
         // Add dynamic products
-        $products = Product::all();
-        foreach ($products as $product) {
-            $sitemap->add(Url::create(route('services.product.details', $product->slug)));
-        }
+        Product::chunk(100, function ($products) use ($sitemap, &$urls, &$urlCount) {
+            foreach ($products as $product) {
+                if ($product->slug) {
+                    $url = route('services.product.details', $product->slug);
+                    $sitemap->add(Url::create($url));
+                    $urls[] = $url;
+                    $urlCount++;
+                }
+            }
+        });
 
-        // Add dynamic products
-        $protfolios = protfolio::all();
-        foreach ($protfolios as $protfolio) {
-            $sitemap->add(Url::create(route('portfolio.details', $protfolio->slug)));
-        }
+        // Add dynamic portfolios
+        Protfolio::chunk(100, function ($protfolios) use ($sitemap, &$urls, &$urlCount) {
+            foreach ($protfolios as $protfolio) {
+                if ($protfolio->slug) {
+                    $url = route('portfolio.details', $protfolio->slug);
+                    $sitemap->add(Url::create($url));
+                    $urls[] = $url;
+                    $urlCount++;
+                }
+            }
+        });
 
         // Write the sitemap to a file
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
-        $this->info('Sitemap generated successfully.');
+        // Save sitemap data for the view
+        $sitemapData = [
+            'lastUpdated' => $lastUpdated,
+            'urlCount' => $urlCount,
+            'urls' => $urls,
+        ];
 
-        return 0;
+        Storage::disk('local')->put('sitemap_data.json', json_encode($sitemapData));
+
+        $this->info('Sitemap generated successfully.');
     }
 }

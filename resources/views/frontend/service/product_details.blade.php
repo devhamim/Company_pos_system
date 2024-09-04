@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', 'Nugortech IT - '.  $products->first()->product_name ?? 'Nugortech IT - Product Details')
-@section('meta_description', 'Nugortech IT - '.  $products->first()->product_name ?? 'Nugortech IT - Product Details' )
-@section('meta_title', 'Nugortech IT - '.  $products->first()->product_name ?? 'Nugortech IT - Product Details')
-@section('meta_tag', 'Nugortech IT - '.  $products->first()->product_name ?? 'Nugortech IT - Product Details')
+@section('meta_description', 'Nugortech IT - '.  $products->first()->meta_description ?? 'Nugortech IT - '.  $products->first()->product_name)
+@section('meta_title', 'Nugortech IT - '.  $products->first()->meta_title ?? 'Nugortech IT - '.  $products->first()->product_name)
+@section('meta_tag', 'Nugortech IT - '.  $products->first()->meta_tag ?? 'Nugortech IT - '.  $products->first()->product_name)
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
@@ -22,7 +22,7 @@
 
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="services-details__content">
-                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $productgallery->first()->gallery_image }}" />
+                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $productgallery->first()->gallery_image_alt_tag }}" />
                     <h3 class="mt-4">Service Overview</h3>
                     <p>{!! $products->first()->description !!}</p>
                 </div>

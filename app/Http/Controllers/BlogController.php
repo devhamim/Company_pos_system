@@ -42,6 +42,11 @@ class BlogController extends Controller
             'category'=>'required',
             'preview_image'=>'nullable',
             'image'=>'nullable',
+            'meta_description'=>'required',
+            'meta_tag'=>'required',
+            'meta_title'=>'required',
+            'image_alt_tag'=>'required',
+            'preview_image_alt_tag'=>'required',
         ];
 
         $validatedData = $request->validate($rules);
@@ -84,6 +89,11 @@ class BlogController extends Controller
             'tage'=>'nullable',
             'preview_image'=>'nullable',
             'image'=>'nullable',
+            'meta_description'=>'required',
+            'meta_tag'=>'required',
+            'meta_title'=>'required',
+            'image_alt_tag'=>'required',
+            'preview_image_alt_tag'=>'required',
         ];
 
         $validatedData = $request->validate($rules);
@@ -94,8 +104,6 @@ class BlogController extends Controller
             if(file_exists($file_del)){
                 unlink($file_del);
             }
-
-
 
             $image = $request->file('preview_image');
             $fileName = $image->getClientOriginalName();

@@ -181,7 +181,7 @@
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 20%;
+  width: 25%;
   padding: 10px;
   background-color: #202020e8;
 }
@@ -251,7 +251,7 @@
                                     </button>
                                     <div class="dropdown-content">
                                         <div class="row">
-                                            @foreach ($categorys as $category)
+                                            @foreach ($categorys->take(4) as $category)
                                                 <div class="column">
                                                     <h5><a style="background: #F94A29" href="{{ route('services.product',$category->id) }}">{{ $category->category_name }}</a></h5>
                                                     @foreach ($services as $service)
