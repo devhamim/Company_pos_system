@@ -384,6 +384,4 @@ Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage'])
 // landing
 Route::get('/successful/online/business/with/digital/marketing', [LandingController::class, 'landing'])->name('landing');
 
-// sitemap.xml
-Route::get('/sitemap.xml', [SitemapController::class, 'show'])->name('sitemap.details');
 
