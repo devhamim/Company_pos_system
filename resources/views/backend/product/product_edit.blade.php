@@ -82,7 +82,7 @@
                                     <label class="form-label w-100">Preview image</label>
                                     <label class="btn btn-outline-primary  mt-2">
                                         Preview image
-                                        <input type="file" name="preview_image" class="image" required>
+                                        <input type="file" name="preview_image" class="image" >
                                     </label>
                                     @error('preview_image')
                                         <strong class="text-danger">{{$message}}</strong>
@@ -101,7 +101,7 @@
                                     <label class="form-label w-100">Gallery images</label>
                                     <label class="btn btn-outline-primary  mt-2">
                                         Gallery images
-                                        <input type="file" multiple name="gallery_image[]" class="image" required>
+                                        <input type="file" multiple name="gallery_image[]" class="image">
                                     </label>
                                     @error('gallery_image')
                                         <strong class="text-danger">{{$message}}</strong>
