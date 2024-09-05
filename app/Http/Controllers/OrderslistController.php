@@ -250,7 +250,7 @@ class OrderslistController extends Controller
     function orders_add(){
         $order_id = Order::all();
         $couriers = courier::where('status', 1)->get();
-        $products = Product::where('status', 1)->get();
+        $products = Product::all();
         $customers = customers::all();
         return view('backend.orders.orders_add', [
             'couriers'=>$couriers,
