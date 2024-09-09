@@ -479,14 +479,13 @@
 
                         <div class="footer-column col-lg-3 col-sm-6">
                             <div class="footer-widget links-widget pl-lg-30 pl-md--0">
-                                <h4 class="widget-title">Our Services</h4>
+                                <h4 class="widget-title">Explore</h4>
                                 <div class="widget-content">
                                     <ul class="user-links style-two">
-                                        <li><a href="#">Digital marketing</a></li>
-                                        <li><a href="#">Branding design</a></li>
-                                        <li><a href="#">Product Design</a></li>
-                                        <li><a href="#">Web development</a></li>
-                                        <li><a href="#">App Development</a></li>
+                                        <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                                        <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
+                                        <li><a href="{{ route('contact') }}">Support</a></li>
+                                        <li><a href="{{ route('about') }}">Meet Our Team</a></li>
                                     </ul>
                                 </div>
                             </div>

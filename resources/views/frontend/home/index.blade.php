@@ -265,11 +265,11 @@
                                 <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
                                 <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
                             </ul>
-                            <ul class="list">
+                            {{-- <ul class="list">
                                 <li><i class="fa-solid fa-circle-check"></i>Make website without a coding</li>
                                 <li><i class="fa-solid fa-circle-check"></i>creative branding solation</li>
                                 <li><i class="fa-solid fa-circle-check"></i>Business strategy Solation</li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -729,8 +729,8 @@
                         <ul class="accordion-box wow fadeInRight">
 
                             <li class="accordion block">
-                                <div class="acc-btn">WHAT'S THE EXPECTED TIMELINE TO OBSERVE SEO IMPROVEMENTS ON MY WEBSITE?<div
-                                        class="icon fa fa-angle-down"></div>
+                                <div class="acc-btn">WHAT'S THE EXPECTED TIMELINE TO OBSERVE SEO IMPROVEMENTS ON MY WEBSITE?
+                                    <div class="icon fa fa-angle-down"></div>
                                 </div>
                                 <div class="acc-content">
                                     <div class="content">
@@ -792,7 +792,6 @@
                                 <div class="acc-content">
                                     <div class="content">
                                         <div class="text">The content serves as a valuable resource for all aspects of your business, including areas such as search, social media, email marketing, PR, PPC, and numerous others.
-
                                         Certainly, we conduct comprehensive keyword research for your content to ensure that our service delivers SEO-friendly content to you.
                                         </div>
                                     </div>

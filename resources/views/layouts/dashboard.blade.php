@@ -295,12 +295,12 @@
                         <ul class="sidenav-menu {{ Request::is('terms/policy') ? 'active' : '' }}">
                             <li class="sidenav-item {{ Request::is('terms/condition') ? 'active' : '' }}">
                                 <a href="{{route('terms.condition')}}" class="sidenav-link">
-                                    <div>Return Policy</div>
+                                    <div>Term and condition</div>
                                 </a>
                             </li>
                             <li class="sidenav-item {{ Request::is('privacy/policy') ? 'active' : '' }}">
                                 <a href="{{route('terms.privacy.policy')}}" class="sidenav-link">
-                                    <div>Delivery Policy</div>
+                                    <div>Privacy Policy</div>
                                 </a>
                             </li>
                         </ul>

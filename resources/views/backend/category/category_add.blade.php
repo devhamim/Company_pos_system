@@ -12,8 +12,16 @@
                     @csrf
                         <div class="form-group">
                             <label class="form-label">Category name</label>
-                            <input type="text" name="category_name" class="form-control" placeholder="name">
+                            <input type="text" name="category_name" class="form-control" placeholder="name" required>
                             @error('category_name')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category Description</label>
+                            <input type="text" name="category_desp" class="form-control" placeholder="Description" required>
+                            @error('category_desp')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                             <div class="clearfix"></div>
@@ -32,7 +40,7 @@
                             <label class="form-label w-100">Category image</label>
                             <label class="btn btn-outline-primary  mt-2">
                                 category image
-                                <input type="file" name="category_image" onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" class="image">
+                                <input type="file" name="category_image" onchange="document.getElementById('image1').src = window.URL.createObjectURL(this.files[0])" class="image" required>
                             </label> &nbsp;
                             {{-- <img class="mt-3" id="image" width="100" height="100" alt src /> --}}
                             <img width="100" class="mt-3 mb-3" id="image1" height="auto" src="" alt="">

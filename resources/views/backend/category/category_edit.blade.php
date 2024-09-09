@@ -10,9 +10,17 @@
                     @csrf
                         <div class="form-group">
                             <label class="form-label">Category name</label>
-                            <input type="text" name="category_name" class="form-control" placeholder="name" value="{{$category->category_name}}">
+                            <input type="text" name="category_name" class="form-control" placeholder="name" value="{{$category->category_name}}" required>
                             <input type="hidden" name="category_id" class="form-control" placeholder="name" value="{{$category->id}}">
                             @error('category_name')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Category Description</label>
+                            <input type="text" name="category_desp" class="form-control" placeholder="Description" value="{{$category->category_desp}}" required>
+                            @error('category_desp')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                             <div class="clearfix"></div>

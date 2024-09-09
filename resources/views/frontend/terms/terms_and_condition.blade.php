@@ -10,14 +10,14 @@
             <div class="col-12">
                 <ul class="breadcrumbs_content list-unstyled">
 
-                    <li><span>রিটার্ন পলিসি</span></li>
+                    <li><span>Terms and Conditions</span></li>
                 </ul>
             </div>
 
         </div>
     </div>
     <div class="row mt-5 mb-7">
-        <div class="col-12">
+        <div class="col-12 py-5">
             {!! $terms->first()->terms_conditions !!}
         </div>
     </div>

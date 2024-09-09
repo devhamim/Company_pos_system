@@ -75,6 +75,7 @@ class CategoryController extends Controller
         print_r($request->all());
         $request->validate([
             'category_name' => 'required',
+            'category_desp' => 'required|max:50',
             'category_image' => 'mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
         if($request->category_image == '') {
