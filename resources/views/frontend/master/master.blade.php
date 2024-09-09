@@ -610,7 +610,7 @@
                     justify-content: center;
                     align-items: center;
                     border-radius: 50px;
-                    background-color: blue;
+                    background-color: #F94A29;
                     color: #fff;
                     font-size: 22px;
                     border: none
@@ -633,7 +633,7 @@
 
                 .header {
                     padding: 13px;
-                    background-color: blue;
+                    background-color: #F94A29;
                     border-radius: 5px 5px 0px 0px;
                     margin-bottom: 10px;
                     color: #fff
@@ -680,7 +680,7 @@
         <div class="popupbtn">
             <input type="checkbox" id="check">
             <label class="chat-btn text-center" style="line-height: 50px" for="check">
-                <img style="width: 35px;" src="{{ asset('landingpage/images/messeng.png')}}">
+                <img style="width: 20px;" src="{{ asset('frontend/call-icon.png')}}">
             </label>
             <div class="wrapper">
                 <div class="text-center popuptext p-2">
@@ -696,10 +696,10 @@
                     <ul class="popup_btns" style="padding: 0; margin: 0; list-style: none;">
                         <li>
                             @if ($setting->first()->phone != null)
-                                <a class="elementor-button elementor-button-link elementor-size-sm " href="tel: {{ $setting->first()->phone }}" style="background: #4822d4; padding: 7px 24px;">
+                                <a class="btn btn-success" href="tel: {{ $setting->first()->phone }}" style="background: #4822d4; padding: 7px 24px;">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-icon elementor-align-icon-left">
-                                            <img style="width: 22px" src="{{ asset('landingpage/images/phone-call.png') }}" alt="">
+                                            <img style="width: 22px" src="{{ asset('frontend/call-icon.png') }}" alt="">
                                             <span class="elementor-button-text">Call</span>
                                         </span>
                                 </a>
@@ -707,12 +707,12 @@
                         </li>
                         <li>
                             @if ($setting->first()->phone != null)
-                                <a class="elementor-button elementor-button-link elementor-size-sm"
+                                <a class="btn btn-success"
                                     href="https://api.whatsapp.com/send?phone=88{{ $setting->first()->phone }}&text=Hello%20there,%20I%20found%20you%20on%20website!%20i%20would%20like%20to%20talk%20about%20your%20Product."
                                     target="_blank" style="background: #33D422; padding: 7px 24px;">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-icon elementor-align-icon-left">
-                                            <img style="width: 22px" src="{{ asset('landingpage/images/whatsapp.png')}}">
+                                            <img style="width: 22px" src="{{ asset('frontend/whatsapp.png')}}">
                                             <span class="elementor-button-text">Whatsapp</span>
                                         </span>
                                 </a>
@@ -720,12 +720,12 @@
                         </li>
 
                         <li>
-                            <a class="elementor-button elementor-button-link elementor-size-sm "
+                            <a class="btn btn-success"
                                     href="https://m.me/218057834721211?ref=Hello%20there,%20I%20found%20you%20on%20website!%20I%20would%20like%20to%20talk%20about%20your%20service%20in%20details.%20Product:%20"
                                     target="_blank" style="background: #22d4c5; padding: 7px 24px;">
                                 <span class="elementor-button-content-wrapper">
                                     <span class="elementor-button-icon elementor-align-icon-left">
-                                        <img style="width: 22px" src="{{ asset('landingpage/images/messenger.png') }}" alt="">
+                                        <img style="width: 22px" src="{{ asset('frontend/massanger-icon.png') }}" alt="">
                                         <span class="elementor-button-text">Messanger</span>
                                     </span>
                             </a>
