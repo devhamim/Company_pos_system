@@ -61,12 +61,11 @@ class ProductController extends Controller
                 'gallery_image_alt_tag' => $request->gallery_image_alt_tag,
                 'status' => $request->status,
                 'description' => $request->description,
-                'slug' => Str::random(8).'-'.rand(10000,99999),
+                'slug' => Str::slug($request->product_name),
                 'created_at' => Carbon::now(),
             ]);
 
         // Preview image
-
         $uploaded_file_one = $request->preview_image;
         $extension = $uploaded_file_one->getClientOriginalExtension();
         $file_name_one = Str::random(8).'-'.rand(1000, 9999).'.'.$extension;
