@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', $metaSettings->title ?? 'Nugortech IT - Contact Us')
-@section('meta_description', $metaSettings->meta_description ?? 'Nugortech IT - Contact Us' )
+@section('meta_description', $metaSettings->meta_description ?? 'Contact Us' )
 @section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Contact Us' )
-@section('meta_tag', $metaSettings->meta_tag ?? 'Nugortech IT - Contact Us' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Contact Us' )
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
@@ -103,7 +103,7 @@
                             <div class="text">
                                 <h6>Visit anytime</h6>
                                 @if($setting->first()->address != null)
-                                    <span>{{ $setting->first()->address }}</span>
+                                    <span><a target="blanck" href="https://maps.app.goo.gl/Dz3vMuukdc1pZtrz8">{{ $setting->first()->address }}</a></span>
                                 @endif
                             </div>
                         </li>

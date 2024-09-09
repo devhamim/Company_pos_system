@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', $protfolio_details->first()->title ?? 'Nugortech IT - Protfolio Details')
-@section('meta_description', $protfolio_details->first()->title ?? 'Nugortech IT - Protfolio Details')
+@section('meta_description', $protfolio_details->first()->title ?? 'Protfolio Details')
 @section('meta_title', $protfolio_details->first()->title ?? 'Nugortech IT - Protfolio Details')
-@section('meta_tag', $protfolio_details->first()->title ?? 'Nugortech IT - Protfolio Details')
+@section('meta_tag', $protfolio_details->first()->title ?? 'Protfolio Details')
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">

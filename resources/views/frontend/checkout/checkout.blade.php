@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', $metaSettings->title ?? 'Nugortech IT - Checkout')
-@section('meta_description', $metaSettings->meta_description ?? 'Nugortech IT - Checkout' )
+@section('meta_description', $metaSettings->meta_description ?? 'Checkout' )
 @section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Checkout' )
-@section('meta_tag', $metaSettings->meta_tag ?? 'Nugortech IT - Checkout' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Checkout' )
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">

@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', $metaSettings->title ?? 'Nugortech IT - Home')
-@section('meta_description', $metaSettings->meta_description ?? 'Nugortech IT - Home' )
+@section('meta_description', $metaSettings->meta_description ?? 'Home' )
 @section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Home' )
-@section('meta_tag', $metaSettings->meta_tag ?? 'Nugortech IT - Home' )
+@section('meta_tag', $metaSettings->meta_tag ?? 'Home' )
 @section('content')
     <section class="banner-section">
         <div class="banner-slider">

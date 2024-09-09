@@ -1,8 +1,8 @@
 @extends('frontend.master.master')
 @section('title', $metaSettings->title ?? 'Nugortech IT - Terms Conditions')
-@section('meta_description', $metaSettings->meta_description ?? 'Nugortech IT - Terms Conditions' )
+@section('meta_description', $metaSettings->meta_description ?? 'Terms Conditions' )
 @section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Terms Conditions' )
-@section('meta_tag', $metaSettings->meta_tag ?? 'Nugortech IT - Terms Conditions' )
+@section('meta_tag', $metaSettings->meta_tag ?? ' Terms Conditions' )
 @section('content')
 <div class="container page-content">
     <div class="border-bottom mb-4">
