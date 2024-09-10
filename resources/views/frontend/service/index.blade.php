@@ -30,9 +30,9 @@
                             <img style="height: 100%" src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="{{$service->category_image}}">
                         </div>
                         <div class="content-box">
-                            <h3 class="title"><a href="{{ route('services.product', $service->id) }}">{{$service->category_name}}</a></h3>
+                            <h3 class="title"><a href="{{ route('services.product', $service->slug) }}">{{$service->category_name}}</a></h3>
                             <div class="text">{{$service->category_desp}}</div>
-                            <a href="{{ route('services.product', $service->id) }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn ser-btn">Learn more
+                            <a href="{{ route('services.product', $service->slug) }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn ser-btn">Learn more
                                 <i class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i>
                             </a>
                         </div>

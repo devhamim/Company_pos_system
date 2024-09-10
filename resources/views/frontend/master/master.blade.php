@@ -253,7 +253,7 @@
                                         <div class="row">
                                             @foreach ($categorys->take(4) as $category)
                                                 <div class="column">
-                                                    <h5><a style="background: #F94A29" href="{{ route('services.product',$category->id) }}">{{ $category->category_name }}</a></h5>
+                                                    <h5><a style="background: #F94A29" href="{{ route('services.product',$category->slug) }}">{{ $category->category_name }}</a></h5>
                                                     @foreach ($services as $service)
                                                         @if ($category->id == $service->category_id)
                                                             <a style="font-size: 12px" href="{{ route('services.product.details',$service->slug) }}">{{ $service->product_name }}</a>
@@ -368,7 +368,7 @@
                             <ul class="submenu">
                                 @foreach ($categorys as $category)
                                 <li>
-                                    <a href="{{ route('services.product',$category->id) }}">{{ $category->category_name }}</a>
+                                    <a href="{{ route('services.product',$category->slug) }}">{{ $category->category_name }}</a>
                                     <!-- Sub-submenu -->
                                     <ul class="subsubmenu">
                                         @foreach ($services as $service)

@@ -103,9 +103,9 @@ class FrontendController extends Controller
     }
 
     // services_product
-    function services_product($id) {
-        $services = Category::where('status', '1')->where('id', $id)->get();
-        $products = Product::where('status', '1')->where('category_id', $id)->get();
+    function services_product($slug) {
+        $services = Category::where('status', '1')->where('slug', $slug)->first();
+        $products = Product::where('status', '1')->where('category_id', $services->id)->get();
         $metaSettings = Meta::where('pages', 'services_product')->where('status', 1)->first();
         return view('frontend.service.details', compact(['products','services', 'metaSettings']));
     }

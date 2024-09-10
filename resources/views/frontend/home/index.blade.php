@@ -99,10 +99,10 @@
                             </div>
                             <div class="content-box">
                                 <h3 class="title"><a
-                                        href="{{ route('services.product', $category->id) }}">{{ $category->category_name }}</a>
+                                        href="{{ route('services.product', $category->slug) }}">{{ $category->category_name }}</a>
                                 </h3>
                                 <div class="text">{{ $category->category_desp }}</div>
-                                <a href="{{ route('services.product', $category->id) }}" data-animation-in="fadeInUp"
+                                <a href="{{ route('services.product', $category->slug) }}" data-animation-in="fadeInUp"
                                     data-delay-in="0.4" class="theme-btn ser-btn">Learn more <i
                                         class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i>
                                 </a>

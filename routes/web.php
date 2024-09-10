@@ -241,8 +241,8 @@ Route::post('/permission/store', [RoleController::class, 'perimission_store'])->
 /******* Frontend start here *********/
 
 Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
-Route::get('/services/product/{id}', [FrontendController::class, 'services_product'])->name('services.product');
-Route::get('/services/product/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
+Route::get('/services/{slug}', [FrontendController::class, 'services_product'])->name('services.product');
+Route::get('/services/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
 Route::post('/services/product/checkout', [FrontendController::class, 'services_product_checkout'])->name('services.product.checkout');
 Route::post('/services/order/checkout', [FrontendController::class, 'services_order_checkout'])->name('services.order.checkout');
 Route::get('/service/order/otp', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');

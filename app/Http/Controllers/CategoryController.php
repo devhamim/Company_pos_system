@@ -39,6 +39,7 @@ class CategoryController extends Controller
             'category_desp' => $request->category_desp,
             'added_by' => Auth::id(),
             'status' => $request->status,
+            'slug'=>Str::slug($request->category_name),
             'created_at' => Carbon::now(),
         ]);
 
