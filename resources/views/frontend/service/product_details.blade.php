@@ -22,7 +22,7 @@
 
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="services-details__content">
-                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $productgallery->first()->gallery_image_alt_tag }}" />
+                    <img src="{{ asset('uploads/products/gallery') }}/{{ $productgallery->first()->gallery_image }}" alt="{{ $products->first()->gallery_image_alt_tag }}" />
                     <p>{!! $products->first()->description !!}</p>
                 </div>
             </div>
