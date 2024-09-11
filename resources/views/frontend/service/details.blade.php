@@ -1,14 +1,14 @@
 @extends('frontend.master.master')
-@section('title', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
-@section('meta_description',  $services->first()->category_name ?? ' Service' )
-@section('meta_title', 'Nugortech IT - '.  $services->first()->category_name ?? 'Nugortech IT - Service' )
-@section('meta_tag',  $services->first()->category_name ?? ' Service' )
+@section('title', 'Nugortech IT - '.  $services->category_name ?? 'Nugortech IT - Service' )
+@section('meta_description',  $services->category_name ?? ' Service' )
+@section('meta_title', 'Nugortech IT - '.  $services->category_name ?? 'Nugortech IT - Service' )
+@section('meta_tag',  $services->category_name ?? ' Service' )
 @section('content')
 <section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
     <div class="auto-container">
         <div class="title-outer text-center">
-            @if ($services->first() != null)
-                <h1 class="title">{{ $services->first()->category_name }}</h1>
+            @if ($services != null)
+                <h1 class="title">{{ $services->category_name }}</h1>
             @endif
             <ul class="page-breadcrumb">
                 <li><a href="{{ url('/') }}">Home</a></li>
