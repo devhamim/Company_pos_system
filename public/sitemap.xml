@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
         <loc>http://127.0.0.1:8000</loc>
             <changefreq>daily</changefreq>
@@ -81,107 +81,147 @@
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/ORaHPZrw-36845</loc>
+        <loc>http://127.0.0.1:8000/services/digital-marketing</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/1n2sVMNA-20165</loc>
+        <loc>http://127.0.0.1:8000/services/graphics-design</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/A46b0nmO-30605</loc>
+        <loc>http://127.0.0.1:8000/services/motion-graphics</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/wj5p87wS-70530</loc>
+        <loc>http://127.0.0.1:8000/services/website-development</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/aDI9QC7y-50104</loc>
+        <loc>http://127.0.0.1:8000/services/mobile-apps-development</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/KJMrQRTq-71135</loc>
+        <loc>http://127.0.0.1:8000/services/product-photography</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/AUNGp7ev-40033</loc>
+        <loc>http://127.0.0.1:8000/services/software-development</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/onz5U9tf-66516</loc>
+        <loc>http://127.0.0.1:8000/services/dusiness-consultancy</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/89FRqBRO-54360</loc>
+        <loc>http://127.0.0.1:8000/services/details/ORaHPZrw-36845</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/Cd857mix-28471</loc>
+        <loc>http://127.0.0.1:8000/services/details/1n2sVMNA-20165</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/2593pBPx-94830</loc>
+        <loc>http://127.0.0.1:8000/services/details/A46b0nmO-30605</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/LIZbIc8X-84153</loc>
+        <loc>http://127.0.0.1:8000/services/details/wj5p87wS-70530</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/8VvW3TKw-83683</loc>
+        <loc>http://127.0.0.1:8000/services/details/aDI9QC7y-50104</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/W71QGB3n-60085</loc>
+        <loc>http://127.0.0.1:8000/services/details/KJMrQRTq-71135</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/0TNcqra2-70778</loc>
+        <loc>http://127.0.0.1:8000/services/details/AUNGp7ev-40033</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/3nOcLIfa-60289</loc>
+        <loc>http://127.0.0.1:8000/services/details/onz5U9tf-66516</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/NdYA2t7n-26997</loc>
+        <loc>http://127.0.0.1:8000/services/details/89FRqBRO-54360</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/ZYZQtSWW-36828</loc>
+        <loc>http://127.0.0.1:8000/services/details/Cd857mix-28471</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/25S2MW9V-58359</loc>
+        <loc>http://127.0.0.1:8000/services/details/2593pBPx-94830</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/1NKU2532-31216</loc>
+        <loc>http://127.0.0.1:8000/services/details/LIZbIc8X-84153</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>
     <url>
-        <loc>http://127.0.0.1:8000/services/product/details/rXpwwNjs-31591</loc>
+        <loc>http://127.0.0.1:8000/services/details/8VvW3TKw-83683</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/W71QGB3n-60085</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/0TNcqra2-70778</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/3nOcLIfa-60289</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/NdYA2t7n-26997</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/ZYZQtSWW-36828</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/25S2MW9V-58359</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/1NKU2532-31216</loc>
+            <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/services/details/rXpwwNjs-31591</loc>
             <changefreq>daily</changefreq>
         <priority>0.8</priority>
             </url>

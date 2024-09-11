@@ -572,7 +572,9 @@
             body {
                 background-color: #eee
                 }
-
+                .popupbtn{
+                    z-index: 99999;
+                }
                 .chat-btn {
                     position: fixed;
                     right: 14px;
@@ -676,11 +678,14 @@
                     width: 100%;
 
                 }
+                .chat-btn{
+                    z-index: 999;
+                }
         </style>
         <div class="popupbtn">
             <input type="checkbox" id="check">
             <label class="chat-btn text-center" style="line-height: 50px" for="check">
-                <img style="width: 20px;" src="{{ asset('frontend/call-icon.png')}}">
+                <img style="width: 20px;" src="{{ asset('frontend/call-icon.png')}}" alt="call-icon.png">
             </label>
             <div class="wrapper">
                 <div class="text-center popuptext p-2">
@@ -691,7 +696,7 @@
                 </div>
                 <div class="chat-form">
                     <div class="popup_image">
-                        <img src="{{ asset('frontend/customer.svg') }}" alt="">
+                        <img src="{{ asset('frontend/customer.svg') }}" alt="customer.svg">
                     </div>
                     <ul class="popup_btns" style="padding: 0; margin: 0; list-style: none;">
                         <li>
@@ -699,7 +704,7 @@
                                 <a class="btn btn-success" href="tel: {{ $setting->first()->phone }}" style="background: #4822d4; padding: 7px 24px;">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-icon elementor-align-icon-left">
-                                            <img style="width: 22px" src="{{ asset('frontend/call-icon.png') }}" alt="">
+                                            <img style="width: 22px" src="{{ asset('frontend/call-icon.png') }}" alt="call-icon.png">
                                             <span class="elementor-button-text">Call</span>
                                         </span>
                                 </a>
@@ -712,7 +717,7 @@
                                     target="_blank" style="background: #33D422; padding: 7px 24px;">
                                     <span class="elementor-button-content-wrapper">
                                         <span class="elementor-button-icon elementor-align-icon-left">
-                                            <img style="width: 22px" src="{{ asset('frontend/whatsapp.png')}}">
+                                            <img style="width: 22px" src="{{ asset('frontend/whatsapp.png')}}" alt="whatsapp.png">
                                             <span class="elementor-button-text">Whatsapp</span>
                                         </span>
                                 </a>
@@ -725,7 +730,7 @@
                                     target="_blank" style="background: #22d4c5; padding: 7px 24px;">
                                 <span class="elementor-button-content-wrapper">
                                     <span class="elementor-button-icon elementor-align-icon-left">
-                                        <img style="width: 22px" src="{{ asset('frontend/massanger-icon.png') }}" alt="">
+                                        <img style="width: 22px" src="{{ asset('frontend/massanger-icon.png') }}" alt="massanger-icon.png">
                                         <span class="elementor-button-text">Messanger</span>
                                     </span>
                             </a>
