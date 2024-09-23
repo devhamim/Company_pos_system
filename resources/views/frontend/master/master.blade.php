@@ -10,8 +10,7 @@
     <meta name="keywords" content="@yield('meta_tag')">
 
     <meta name="description" content="@yield('meta_description')">
-
-
+    <meta name="robots" content="index">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -76,147 +75,147 @@
         }
 
 
-    /* ===== Scrollbar CSS ===== */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #F94A29 #ffffff;
-    border-radius: 10px;
-  }
-  section{
-    border-radius: 0;
-  }
-  footer{
-    border-radius: 0;
-  }
-  header{
-    border-radius: 0;
-  }
-  .page-wrapper{
-    border-radius: 0;
-  }
-  .sticky-header{
-    border-radius: 0;
-  }
+        /* ===== Scrollbar CSS ===== */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #F94A29 #ffffff;
+            border-radius: 10px;
+        }
+        section{
+            border-radius: 0;
+        }
+        footer{
+            border-radius: 0;
+        }
+        header{
+            border-radius: 0;
+        }
+        .page-wrapper{
+            border-radius: 0;
+        }
+        .sticky-header{
+            border-radius: 0;
+        }
 
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
+        *::-webkit-scrollbar {
+            width: 10px;
+        }
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+        *::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #F94A29;
-    border-radius: 55px;
-    border: 30px outset #ffffff;
-  }
-  /* .text {
-    text-align: justify;
-  } */
+        *::-webkit-scrollbar-thumb {
+            background-color: #F94A29;
+            border-radius: 55px;
+            border: 30px outset #ffffff;
+        }
+        /* .text {
+            text-align: justify;
+        } */
 
-  .about-section .content-column .inner-column .inner-box .content-box span {
-    font-size: 25px;
-}
+        .about-section .content-column .inner-column .inner-box .content-box span {
+            font-size: 25px;
+        }
 
 
 
-/* megamanu navbar */
+        /* megamanu navbar */
 
-.navbar {
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-}
+        .navbar {
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+        .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
 
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font: inherit;
-  margin: 0;
-}
+        .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font: inherit;
+        margin: 0;
+        }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #F94A29;
-}
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: #F94A29;
+        }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #202020e8;
-  width: 100%;
-  left: 0;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 99999;
-  /* padding: 0 15px */
-}
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #202020e8;
+        width: 100%;
+        left: 0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 99999;
+        /* padding: 0 15px */
+        }
 
-.dropdown-content .header {
-  background: red;
-  padding: 16px;
-  color: white;
-}
+        .dropdown-content .header {
+        background: red;
+        padding: 16px;
+        color: white;
+        }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
 
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-  background-color: #202020e8;
-}
+        /* Create three equal columns that floats next to each other */
+        .column {
+        float: left;
+        width: 25%;
+        padding: 10px;
+        background-color: #202020e8;
+        }
 
-.column a {
-    float: none;
-    color: rgb(255, 255, 255);
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    line-height: 17px;
-}
-.column h5 {
-  color: #F94A29 ;
-}
+        .column a {
+            float: none;
+            color: rgb(255, 255, 255);
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            line-height: 17px;
+        }
+        .column h5 {
+        color: #F94A29 ;
+        }
 
-.column a:hover {
-  background-color: #F94A29 ;
-}
+        .column a:hover {
+        background-color: #F94A29 ;
+        }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    height: auto;
-  }
-}
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            height: auto;
+        }
+        }
 
     </style>
 
