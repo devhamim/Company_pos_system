@@ -14,12 +14,19 @@
                             <div class="content-box">
                                 <h1 data-animation-in="fadeInLeft" data-delay-in="0.2">{{ $banner->banner_title }}</h1>
                                 <div data-animation-in="fadeInUp" data-delay-in="0.3" class="text">
-                                    {{ $banner->banner_desp }}</div>
+                                    {{ $banner->banner_desp }}
+                                </div>
+
                                 <div class="btn-box">
-                                    <a href="{{ route('our.services') }}" data-animation-in="fadeInUp" data-delay-in="0.2"
+                                    <span class="search-btn">
+                                        <a href="#" class="search theme-btn" data-animation-in="fadeInUp" data-delay-in="0.2">Free Consultations
+                                            <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                                        </a>
+                                    </span>
+                                    {{-- <a href="{{ route('our.services') }}" data-animation-in="fadeInUp" data-delay-in="0.2"
                                         class="theme-btn">Our services
                                         <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
-                                    </a>
+                                    </a> --}}
                                     <a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="play-btn"
                                         data-fancybox="gallery" data-caption data-animation-in="fadeInLeft"
                                         data-delay-in="0.4">

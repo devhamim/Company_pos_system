@@ -51,11 +51,11 @@
     <!-- End googletag Code -->
     <style>
 
-    .hind-siliguri-regular {
-        font-family: "Hind Siliguri", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
+        .hind-siliguri-regular {
+            font-family: "Hind Siliguri", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
         #popup-container {
             display: none;
             position: fixed;

@@ -260,6 +260,12 @@
                             <div>Shipping Methods</div>
                         </a>
                     </li>
+                    <li class="sidenav-item {{ Request::is('consultancy/list') ? 'active' : '' }}" >
+                        <a href="{{route('consultancy.list')}}" class="sidenav-link">
+                            <i class="sidenav-icon feather icon-users"></i>
+                            <div>consultancy</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item {{ Request::is('user/list') ? 'active' : '' }}" >
                         <a href="{{route('users')}}" class="sidenav-link">
                             <i class="sidenav-icon feather icon-users"></i>

@@ -7,6 +7,7 @@ use App\Models\Blogs;
 use App\Models\Category;
 use App\Models\cliend;
 use App\Models\Comment;
+use App\Models\consultancy;
 use App\Models\Coupon;
 use App\Models\customer_registers;
 use App\Models\customers;
@@ -493,6 +494,24 @@ function our_protfolio(){
         'portfolios'=>$portfolios,
         'metaSettings'=>$metaSettings,
     ]);
+}
+
+// consultancy store
+function consultancy_store(Request $request){
+    $rules = [
+        'name'=>'required',
+        'email'  => 'nullable|required_without:phone',
+        'phone'  => 'nullable|required_without:email',
+        'service'=>'required',
+        'message'=>'nullable',
+    ];
+
+    $validatedData = $request->validate($rules);
+
+    consultancy::create($validatedData);
+
+
+    return back()->withSuccess('successfully Sent.');
 }
 
 }

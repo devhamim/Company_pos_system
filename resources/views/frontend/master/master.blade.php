@@ -428,6 +428,75 @@
                     </ul>
                 </nav>
             </div>
+            <div class="search-popup">
+                <span class="search-back-drop"></span>
+                <button class="close-search"><span class="fa fa-times"></span></button>
+                <div class="search-inner" style="top: 10%;">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-6 text-center m-auto">
+                            <div class="sec-title ">
+                                <h2 class="text-white">Feel free to write</h2>
+                            </div>
+
+                            <form id="contact_form" name="contact_form" class action="{{route('consultancy.store')}}" class="contact-form mb-3" method="POST">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <input name="name" class="form-control" type="text" placeholder="Enter Name" required>
+                                            @error('name')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <input name="email" class="form-control" type="email" placeholder="Enter Email">
+                                            @error('email')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <input name="phone" class="form-control" type="number" placeholder="Enter Phone" >
+                                            @error('phone')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <select  name="service" class="form-control" required>
+                                                @foreach ($categorys as $category)
+                                                    <option value="{{ $category->category_name }}"><strong>{{ $category->category_name }}</strong></option>
+                                                @endforeach
+                                            </select>
+                                            @error('service')
+                                                <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea name="message" class="form-control " rows="7"  placeholder="Enter Message"></textarea>
+                                    @error('message')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-5">
+                                    <input name="form_botcheck" class="form-control" type="hidden" value />
+                                    <button style="padding: 0 30%;" type="submit" class="theme-btn btn-style-one"
+                                        data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </header>
 
         {{-- main start --}}
@@ -438,14 +507,23 @@
             <div class="auto-container">
                 <div class="outer-box">
                     <h2 class="title wow fadeInLeft" data-wow-delay="400ms">Have a project? <br>Let's discuss</h2>
-                    <div class="btn-box wow fadeInRight" data-wow-delay="400ms">
-                        <a href="#" class="theme-btn-v2">Free Consultations<i
-                                class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i></a>
+                    <div class="btn-box wow fadeInRight d-flex" data-wow-delay="400ms">
+
+                        <div class="outer-box">
+                            <div class="search-btn">
+                                <a href="#" class="search theme-btn-v2">Free Consultations
+                                    <i class="btn-icon fa-sharp far fa-arrow-right ml-10 font-size-18"></i>
+                                </a>
+                            </div>
+                        </div>
+
                         @if ($setting->first()->phone != null)
-                            <a href="tel:{{ $setting->first()->phone }}" class="theme-btn-v2 two">
-                                {{ $setting->first()->phone }}
-                                <i class="fa-sharp far fa-phone ml-10 font-size-18"></i>
-                            </a>
+                            <div class="number-btn">
+                                <a href="tel:{{ $setting->first()->phone }}" class="theme-btn-v2 two">
+                                    {{ $setting->first()->phone }}
+                                    <i class="fa-sharp far fa-phone ml-10 font-size-18"></i>
+                                </a>
+                            </div>
                         @endif
 
                     </div>
@@ -681,12 +759,12 @@
                     z-index: 999;
                 }
         </style>
-        <div class="popupbtn">
+        <div class="popupbtn" style="z-index: 99999">
             <input type="checkbox" id="check">
             <label class="chat-btn text-center" style="line-height: 50px" for="check">
                 <img style="width: 20px;" src="{{ asset('frontend/call-icon.png')}}" alt="call-icon.png">
             </label>
-            <div class="wrapper">
+            <div class="wrapper" style="z-index: 99999">
                 <div class="text-center popuptext p-2">
                     <strong>Talk To</strong><br>
                     @if ($setting->first()->name != null)
@@ -739,7 +817,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('frontend')}}/js/jquery.js"></script>
     <script src="{{asset('frontend')}}/js/popper.min.js"></script>
     <script src="{{asset('frontend')}}/js/bootstrap.min.js"></script>
@@ -753,6 +831,30 @@
     <script src="{{asset('frontend')}}/js/script.js"></script>
 
     @yield('footer_script')
+
+    @if (session('success'))
+            {
+            <script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Success...",
+                    text: "Message Sent Successfully",
+                });
+            </script>
+            }
+        @endif
+        @if (session('error'))
+            {
+            <script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+            </script>
+            }
+        @endif
 
 </body>
 

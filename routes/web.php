@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CliendController;
+use App\Http\Controllers\ConsultancyController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerAuthController;
@@ -261,6 +262,7 @@ Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_d
 Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
 Route::get('/cliends', [FrontendController::class, 'our_cliends'])->name('our.cliends');
 Route::get('/protfolio', [FrontendController::class, 'our_protfolio'])->name('our.protfolio');
+Route::post('/consultancy/store', [FrontendController::class, 'consultancy_store'])->name('consultancy.store');
 
 // paymentmethod
 Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');
@@ -384,4 +386,7 @@ Route::get('/send-whatsapp', [WhatsappController::class, 'sendWhatsAppMessage'])
 // landing
 Route::get('/successful/online/business/with/digital/marketing', [LandingController::class, 'landing'])->name('landing');
 
+// consultancy
+Route::get('/consultancy/list', [ConsultancyController::class, 'consultancy_list'])->name('consultancy.list');
+Route::get('/consultancy/delete/{id}', [ConsultancyController::class, 'consultancy_delete'])->name('consultancy.delete');
 
