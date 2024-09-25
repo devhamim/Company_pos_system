@@ -26,29 +26,50 @@
                     <h2>Feel free to write</h2>
                 </div>
 
-                {{-- <form id="contact_form" name="contact_form" class action="{{route('contact.message')}}" class="contact-form mb-3" method="POST">
-                    @csrf --}}
+                <form id="contact_form" name="contact_form" class action="{{route('consultancy.store')}}" class="contact-form mb-3" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-3">
-                                <input name="name" class="form-control" type="text" placeholder="Enter Name">
+                                <input name="name" class="form-control" type="text" placeholder="Enter Name" value="{{ old('name') }}" required>
+                                @error('name')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-3">
-                                <input name="email" class="form-control required email" type="email" placeholder="Enter Email">
+                                <input name="email" class="form-control email" type="email" value="{{ old('email') }}" placeholder="Enter Email">
+                                @error('email')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                             <div class="mb-3">
-                                <input name="phone" class="form-control" type="text" placeholder="Enter Phone">
+                                <input name="phone" class="form-control" type="text" value="{{ old('phone') }}" placeholder="Enter Phone">
+                                @error('phone')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <select  name="service" class="form-control" required>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->category_name }}"><strong>{{ $category->category_name }}</strong></option>
+                                    @endforeach
+                                </select>
+                                @error('service')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <textarea name="message" class="form-control required" rows="7" placeholder="Enter Message"></textarea>
+                        <textarea name="message" class="form-control" rows="7" value="{{ old('message') }}" placeholder="Enter Message"></textarea>
                     </div>
                     <div class="mb-5">
                         <input name="form_botcheck" class="form-control" type="hidden" value />
@@ -57,7 +78,7 @@
                         <button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span
                                 class="btn-title">Reset</span></button>
                     </div>
-                {{-- </form> --}}
+                </form>
 
             </div>
             <div class="col-xl-5 col-lg-6">

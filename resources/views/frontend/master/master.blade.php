@@ -443,7 +443,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="mb-3">
-                                            <input name="name" class="form-control" type="text" placeholder="Enter Name" required>
+                                            <input name="name" class="form-control" type="text" value="{{ old('name') }}" placeholder="Enter Name" required>
                                             @error('name')
                                                 <span class="text-danger">{{$message}}</span>
                                             @enderror
@@ -451,7 +451,7 @@
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="mb-3">
-                                            <input name="email" class="form-control" type="email" placeholder="Enter Email">
+                                            <input name="email" class="form-control" type="email" placeholder="Enter Email" value="{{ old('name') }}">
                                             @error('email')
                                                 <span class="text-danger">{{$message}}</span>
                                             @enderror
