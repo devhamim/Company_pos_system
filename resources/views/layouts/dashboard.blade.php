@@ -262,7 +262,7 @@
                     </li>
                     <li class="sidenav-item {{ Request::is('consultancy/list') ? 'active' : '' }}" >
                         <a href="{{route('consultancy.list')}}" class="sidenav-link">
-                            <i class="sidenav-icon feather icon-users"></i>
+                            <i class="sidenav-icon feather lnr lnr-rocket"></i>
                             <div>consultancy</div>
                         </a>
                     </li>
