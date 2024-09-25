@@ -26,7 +26,7 @@
                     <h2>Feel free to write</h2>
                 </div>
 
-                <form id="contact_form" name="contact_form" class action="{{route('consultancy.store')}}" class="contact-form mb-3" method="POST">
+                <form id="contact_form" name="contact_form"  action="{{route('consultancy.store')}}" class="contact-form mb-3" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
@@ -62,9 +62,9 @@
                                         <option value="{{ $category->category_name }}"><strong>{{ $category->category_name }}</strong></option>
                                     @endforeach
                                 </select>
-                                @error('service')
-                                    <span class="text-danger">{{$message}}</span>
-                                @enderror
+                                    @error('service')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                             </div>
                         </div>
                     </div>

@@ -635,35 +635,53 @@
                                 <div class="row">
                                     <div class="form-column col-lg-12">
                                         <div class="inner-column">
-                                            <h4 class="title">Get in touch</h4>
-                                            {{-- <form method="post" action="{{ route('contact.message') }}"
+                                            <h4 class="title">Consultations</h4>
+                                            <form method="post" action="{{route('consultancy.store')}}"
                                                 id="contact-form">
-                                                @csrf --}}
+                                                @csrf
                                                 <div class="row">
                                                     <div class="form-group col-lg-12">
                                                         <div class="input-outer">
-                                                            <input type="text" name="name" placeholder="Enter Name"
-                                                                required>
+                                                            <input type="text" name="name" placeholder="Enter Name" required>
                                                             <span class="icon fa fa-user"></span>
+                                                            @error('name')
+                                                                <span class="text-danger">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-lg-12">
                                                         <div class="input-outer">
-                                                            <input type="email" name="email" placeholder="Your Email"
-                                                                required>
+                                                            <input type="email" name="email" placeholder="Your Email">
                                                             <span class="icon fa fa-envelope"></span>
+                                                            @error('email')
+                                                                <span class="text-danger">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-lg-12">
                                                         <div class="input-outer">
-                                                            <input type="text" name="Phone"
-                                                                placeholder="Phone Number" required>
+                                                            <input type="text" name="Phone" placeholder="Phone Number" >
                                                             <span class="icon fa fa-phone"></span>
+                                                            @error('Phone')
+                                                                <span class="text-danger">{{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-lg-12 mb-3">
+                                                        <div class="input-outer">
+                                                            <select name="service" class="form-control" required style="border: 1px solid #F94A29; border-radius: 10px">
+                                                                @foreach ($categories as $category)
+                                                                    <option value="{{ $category->category_name }}"><strong>{{ $category->category_name }}</strong></option>
+                                                                @endforeach
+                                                            </select>
+                                                            @error('service')
+                                                                <span class="text-danger">{{$message}}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-lg-12">
                                                         <div class="input-outer">
-                                                            <textarea name="message" placeholder="Message" required></textarea>
+                                                            <textarea name="message" placeholder="Message"></textarea>
                                                             <span class="icon fa fa-paper-plane"></span>
                                                         </div>
                                                     </div>
@@ -674,7 +692,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                            {{-- </form> --}}
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
