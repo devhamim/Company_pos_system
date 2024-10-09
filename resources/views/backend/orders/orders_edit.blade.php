@@ -104,6 +104,7 @@
                                                 <option value="expertxit" {{$orders->company_name == 'expertxit'?'selected':'' }}>ExpertX IT</option>
                                                 <option value="nugortecheschool" {{$orders->company_name == 'nugortecheschool'?'selected':'' }}>Nugortech e-school</option>
                                                 <option value="businessinsider" {{$orders->company_name == 'businessinsider'?'selected':'' }}>Business Insider</option>
+                                                <option value="barandmark" {{$orders->company_name == 'barandmark'?'selected':'' }}>Barand Mark</option>
                                             </select>
                                         </div>
                                     </div>
